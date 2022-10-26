@@ -1,0 +1,502 @@
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.h-body{
+    font-size:16px;
+    position:sticky;
+    top:-1.9em;
+    background-color: white;
+    z-index: 1000000;
+}
+.nav-header{
+    position: relative;
+    width: 100%;
+    margin:0;
+    padding:0;
+    box-sizing: border-box; 
+}
+.row-one{
+    height: 2em;
+    width: 100%;
+    padding: .2em 5em;
+    /*border-bottom:1px solid rgb(202, 202, 202);*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row-two{
+    height: 5em;
+    /*border-bottom:1px solid rgb(202, 202, 202);*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    transition: 0.3s;
+    
+}
+.logo{
+     position: absolute;
+     background:none;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 5em;
+     margin: 0;
+     padding: 0;
+
+}
+.logo img{
+    position:relative;
+    top: 5px;
+    left: 5em;
+    height: 3.5em;
+    vertical-align: baseline;
+    transition: 0.3s;
+}
+.nav-menu{
+    float: right;
+    height: 100%;
+    width:70%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 7% 0 0.5em;
+    gap: 1em;
+    transition: 0.3s;
+}
+.row-two:after,
+.row-one:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Navigation Menu End*/
+.nav-link{
+    height: 100%;
+    color: black;
+    border: 0;
+    text-decoration: none;
+    background:none;
+    font-family: sans-serif;
+    text-transform:capitalize;
+    font-weight: 400;
+    font-size: 1em;
+    letter-spacing:0;
+    cursor: pointer;
+    padding:0 0;
+    margin: 0 .5em;
+    transition: 0.3s;
+    
+}
+.sub-link{
+    background: white;
+    border-bottom:.1em solid rgb(212, 211, 211);
+    text-decoration: none;
+    color: #777;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding:.5em 1em;
+}
+.sub-link:hover{
+    background: #85CA63;
+    color: #fff;
+    text-decoration: none;
+}
+.nav-dropdown.active > .nav-link,
+.nav-link:hover{
+    color: #85CA63;
+}
+
+.nav-dropdown{
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+.nav-dropdown:hover,
+.nav-dropdown:focus{
+    background-color: #f1f1f18a;
+}
+.nav-dropdown-menu{
+    position: absolute;
+    top:0;
+    top:calc(100% + 0em);
+    background-color: white;
+    padding: .75em;
+    border-radius: .25em;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .5);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.nav-dropdown.active > .nav-link + .nav-dropdown-menu{
+    background-color: #f1f1f18a;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events:auto;
+
+}
+.infomation-grid{
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, max-content);
+    gap: 3em;
+    border-radius: 0;
+    border-top: 3px solid #85CA63;
+}
+
+.nav-dropdown-links{
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+}
+
+.nav-dropdown-links:before{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #85CA63;
+    top: -10px;
+    left: 15px;
+    transform: rotateZ(45deg);
+    transition: all 3s;
+    z-index: -1;
+}
+
+
+/* Navigation Menu End*/
+
+
+/* sidebar CSS =====================================================================*/
+/* Style the sidenav links and the dropdown button */
+
+.sidenav {
+    display: none;
+    font-family: "Lato", sans-serif;
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -300px;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  
+  .menu-btn{
+    display: none;
+    position:relative;
+    float: right;
+    font-family: "Lato", sans-serif;
+    padding: 1.5em 2em;
+    transition: 0.3s;
+  }
+  .menu-btn label{
+      display: inline;
+      font-weight: 600;
+  } 
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a{
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 20px;
+      outline: none;
+      color: #696969;
+      display: block;
+      border: none;
+      background-color: white;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover{
+    color: #85CA63;
+  }
+  
+  
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color:black;
+  }
+  
+  .collapsible {
+      font-family: "Lato", sans-serif;
+      width: 100%;
+      height: fit-content;
+      padding: 12px 8px 12px 32px;
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin: 0;
+      text-decoration: none;
+      outline: none;
+      background-color: white;
+      color: #696969;
+      display: block;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+  .collapsible:hover {
+    background-color:whitesmoke;
+    color: #85CA63;
+  }
+  .active1{
+    background-color:whitesmoke;
+    color: #85CA63;
+  }
+
+  
+  .collapsible:after {
+    content: '\002B';
+    color: #85CA63;
+    font-weight: bold;
+    float: right;
+    margin-right: 100px;
+  }
+  
+  .active1:after {
+    content: "\2212";
+  }
+  
+  .content1 {
+    font-family: "Lato", sans-serif;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background:none;
+    box-shadow:inset 0 2px 5px 0 rgba(0, 0, 0, .2);
+  
+  }
+    .content1 a{
+        font-size: 15px;
+        background:none;
+    }
+
+    
+    /* scrollbar Css */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: rgba(107, 107, 107, 0.24);
+        border-radius: 2px;
+        margin: 10px 0;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 252, 252, 0.7);
+    }
+    
+    @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
+
+
+/* ==================================================================================== */
+/* contact Css------------------------------------------------------- */
+.cotacts i, .cotacts a, .signing a{
+    color: grey;
+    text-decoration: none;
+}
+.cotacts i{
+    margin-right: 1em;
+}
+.cotacts{
+    float: left;
+    font-family: sans-serif;
+    font-size: .9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+.signing{
+    float: right;
+    font-family: sans-serif;
+    font-size: .9em;
+  
+}
+.cotacts-signing{
+    height: fit-content;
+    margin-top: auto ;
+    margin-bottom: auto ;
+    width: 100%;
+}
+.signing a{
+    color:grey;
+}
+.signing a:hover {
+    color: #85CA63;
+}
+.cotacts span, .signing span{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.anim{
+    transition: 0.3s;
+}
+.cart-logo{
+    position:fixed;
+    right:1vw;
+    top:25vh;
+    display:flex;
+    justify-content:center;
+    align-items:center; 
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color:#85CA63;
+    font-size: 20px;
+    border: 2px solid white;
+    transition: all .5s;
+}
+
+.cart-logo:hover{
+    transform: scale(1.1) translateY(-5px) translateZ(15px);
+    transition: all .5s;
+}
+/* smaller than Desktop HD */
+@media (max-width: 1200px) {}
+
+/* smaller than desktop */
+@media (max-width: 1000px) {}
+@media (max-width: 900px) {
+    .nav-header .nav-menu{
+        display: none;
+    }
+      .menu-btn{
+        display: block;
+        margin-right: 20px;
+      }
+      .sidenav{
+          display: block;
+      }
+}
+/* smaller than tablet */
+@media (max-width: 750px) {
+
+    .row-one{
+        height: fit-content;
+        padding: .4em 2em;
+    }
+    .row-two{
+        height: 4em;
+    }
+    .logo{
+        height: 4em;
+    }
+    .logo img{
+        left: 2em;
+        height: 3em;
+    }
+   
+    .cotacts i{
+        margin-right: .5em;
+    }
+    .cotacts, .signing{
+        line-height: 1.2em;
+        font-size: .8em;
+    }
+    
+    .cotacts span, .signing span{
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+    .menu-btn{
+        padding:1em 1em;
+    }
+
+}
+
+
+/* smaller than phablet (also point when grid becomes active) */
+@media (max-width: 500px) {
+    .row-one{
+        height: fit-content;
+        padding: .4em 1em;
+    }
+    
+    .h-body{
+        top:-1.9em;
+    }
+    .cotacts i{
+        margin-right: .2em;
+    }
+    .cotacts, .signing{
+        
+        font-size: .9em;
+    }
+    
+    .cotacts span, .signing span{
+        padding-left: .1em;
+        padding-right: .1em;
+    }
+    .menu-btn label{
+        font-size: 80%;
+    }
+}
+
+/* smaller than mobile */
+@media (max-width: 450px) {
+    .h-body{
+        top:-3em;
+    }
+    .cotacts, .signing{
+        width: 100%;
+    }
+}
+@media (max-width: 350px) {
+    .cotacts, .signing{
+        
+        font-size: .8em;
+    }
+    .menu-btn{
+        padding:1em 0em;
+      }
+      .logo img{
+        left: 1em;
+        height: 2.5em;
+    }
+    .menu-btn label{
+        display: none;
+        transition: display 1s ease-in-out;
+    }
+
+}

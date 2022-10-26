@@ -1,0 +1,148 @@
+.footer-main{
+    font-size: 14px;
+    margin-bottom:0; 
+    background-color: #000;
+    z-index:10000;
+}
+.footer-main h3{
+ 
+    letter-spacing: 1px;
+}
+.footer-main hr{ 
+    outline: 1px solid teal;
+    background-color: teal;
+}
+.footer-main .container-fluid{
+    padding: 20px 100px;
+    color: white;
+}
+.footer-main ul{
+    margin:20px 0 ;
+   
+}
+
+.footer-main li{
+    list-style: none;
+    line-height: 1.3em;
+    margin:0;
+    padding: 0;
+}
+.footer-main ul li a{
+    text-decoration: none;
+    color:#57c8eb;
+    margin:0;
+    padding: 0;
+}
+
+.footer-main a:hover{
+    text-decoration: none;
+    color:green;
+}
+.footer-main .Rights{
+    margin-top: 30px;
+    padding-left: 0;
+    color:rgb(27, 211, 192);
+}
+.footer-main .text-left a{
+    color:#57c8eb;
+}
+.footer-main .text-left span{
+    padding: 0 10px;
+}
+.footer-main .center-text{
+    display: flex;
+    justify-content:center ;
+    align-items: stretch;
+                 
+}
+.footer-main .center-text a{
+    color:#57c8eb;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 5% 5%;
+}
+
+.footer-main .poweredby{
+    display: flex;
+    justify-content:flex-end ;
+} 
+.footer-main .poweredby p a{
+    font-size: 1.5em;
+    color: #57c8eb;
+    gap: 10px;
+}
+.footer-main .anim{
+    transition: all .5s;
+}
+
+/* Media --------------------------------- */
+
+/* smaller than Desktop HD */
+@media (max-width: 1300px) {
+    .footer-main .container-fluid{
+        padding: 20px 70px;
+        transition: all .5s;
+    }
+
+}
+
+/* smaller than desktop */
+@media (max-width: 1150px) {
+   
+    .footer-main .container-fluid{
+        padding: 20px 50px;
+        transition: all .5s;
+    }
+    .footer-main .center-text a{
+        font-size: 1.8em;
+        padding: 5% 3%;
+    }
+}
+@media (max-width: 950px) {
+    .center-text a{
+        padding: 5% 3%;
+    }
+}
+
+/* smaller than tablet */
+@media (max-width: 767px) {
+   .adjust-top{
+       top:-230px;
+       transition: all .5s;
+   }
+   .adjust-bottom{
+       margin-bottom:-200px;
+   }
+   .center-text {
+        justify-content:start;
+                 
+    }
+    .poweredby{
+        justify-content:start ;
+    } 
+    
+}
+
+/* smaller than phablet (also point when grid becomes active) */
+@media (max-width: 576px) {
+    .adjust-top{
+        top:0;
+        transition: all .5s;
+    }
+    .adjust-bottom{
+        margin-bottom:0px;
+    }
+    .footer-main .center-text a{
+        padding: 5% 2%;
+    }
+    .poweredby p a{
+        font-size: 1em;
+    }
+}
+
+/* smaller than mobile */
+@media (max-width: 400px) {
+    .footer-main .center-text a{
+        font-size: 1.5em;
+    }
+}
