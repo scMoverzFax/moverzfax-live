@@ -40,8 +40,8 @@
     <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
+    <!--<link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
+    <link href="https://www.moversfax.com/corporate/css/themes/green.css" rel="stylesheet" id="style-color">-->
     <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
 
     <!-- formwidzard css -->
@@ -263,7 +263,7 @@
             letter-spacing: 0px;
         }
         .b-contaoner{
-            background-image: url(img/MoverZfax_index_2.png);  
+            background-image: url(../img/MoverZfax_index_2.png); /* this may need to chang back in production */
         }
     }
 
@@ -790,11 +790,11 @@
                 </div>
             </div>
         </div>
-
+        <!--
         <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
-            <img src="https://www.moversfax.com/frontend/corporate/img/up.png" style="width:40px; height:40px">
+            <img src="../img/up.png" style="width:40px; height:40px">
         </div>
-
+-->
     </>
 
     
