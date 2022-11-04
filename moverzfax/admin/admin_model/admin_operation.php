@@ -2,7 +2,7 @@
 
     $action = $_GET['action'];
     $id = $_GET['id'];
-    include 'connection.php';
+    include '../../model/connection.php';
     if($action == 'delete_user'){
         $sql = "DELETE FROM customer_register WHERE id = '".$id."'";
         if(mysqli_query($con ,$sql)){

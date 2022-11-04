@@ -1,7 +1,7 @@
-<?php include 'myheader.php'; ?>
+<?php include 'home/myheader.php'; ?>
 <?php
 if(isset($_POST['information'])){
-    include 'connection.php';
+    include 'model/connection.php';
     $information = $_POST['information'];
     $sql = "SELECT  ad.*,ci.name as ciname,st.name as stname FROM customer_register ad
             INNER JOIN `city` as ci ON  ci.id = ad.city
@@ -43,4 +43,4 @@ if(isset($_POST['information'])){
     }
 }
 
-include 'footer.php'; ?>
+include 'home/footer.php'; ?>
