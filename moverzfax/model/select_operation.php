@@ -22,7 +22,13 @@
                     $company_name = $res['company_name'];
                     $usdot = $res['usdot'];
                     $company_url = $res['company_website'];
-                    $state_id = $res['states'];
+
+                    //using the states abbreviation from mover_register to select for the state code from the state table
+                    $sql2 = "SELECT id FROM state WHERE state.code = '".$res['states']."'";
+                    $result2 = $con->query($sql2);
+                    $res2 = mysqli_fetch_assoc($result2);
+                    $state_id = $res2['id'];
+
                     $city_id = $res['city'];
                     $zipcode = $res['zip_code'];
                     $phone = $res['contact_number'];

@@ -1,6 +1,6 @@
 <?php
 include 'myheader.php';
-defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
+//defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
 ?>
 <style>
     * {
@@ -126,7 +126,9 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 <?php $usdot = isset($_GET["usdot"]) ? $_GET["usdot"] : NULL; ?>
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 
-<div class="b-container">
+<!--conditional rendering for if the user is not logged in-->
+<?php if (!defined('LOGIN')) { echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>';} ?>
+<div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
             <div class="row">
@@ -141,7 +143,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                         <div class="row">
                             <div class="d-flex col-md-12 form-group">
                                 <div class="col-md-4 search">
-                                    <span class="col-md-5">Add Compnay :</span>
+                                    <span class="col-md-5">Add Company :</span>
                                     <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT number" required>
                                     <input name="function" type="hidden" value="search">
                                 </div>
@@ -160,9 +162,9 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                                                                         } elseif ($status == "nr") {
                                                                             echo "is not registered with MoversFax.";
                                                                         } elseif ($status == "ae") {
-                                                                            echo "is Already Exist.";
+                                                                            echo "Already Exist.";
                                                                         } elseif ($status == "rf") {
-                                                                            echo "is Request Faild.";
+                                                                            echo "Request Failed.";
                                                                         } else {
                                                                             echo " ";
                                                                         }
