@@ -102,7 +102,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
     <div class="bg-form form-group">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-center mb-5">My Transaction</h2>
+          <h2 class="text-center mb-5">My Transactions</h2>
           <table class="table table-striped table-hover mb-5">
             <thead class="table-dark">
               <tr>

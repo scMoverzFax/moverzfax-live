@@ -123,7 +123,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
 				<h2 class="text-center mb-5" style="font-weight: 500">Frequently Asked Questions (FAQ)</h2>
-				<p class="p_q">How does MoverZfax rate a company? TEST TEST TEST</p>
+				<p class="p_q">How does MoverZfax rate a company?</p>
 				<p>We use complex algorithms that require tricky calculations. I guess it might easier to understand how Google ranks you on their page than understanding ours. We rate our company in %s, not like an A or anything of that sort. We feel %s give a better idea of how to select the mover than the standard letter rating. Also, a mover that is rated above 80% is recommended.</p>
 				<p class="p_q">Does it really cost ONLY $5?</p>
 				<p>Yes, it does. The sole purpose of MoverZfax is to eliminate rogue/scam movers from the market. Here it is, I said it. The United States Department of Transportation hasnt succeeded in that task yet; so, we decided to jump in and help. If everyone who needs to move orders the report prior to selecting a moving company, then all scam movers will NO longer be in operation because no one will ever use their services due to a bad rating/reputation. Whatever way we can help to complete this task successfully, we will be happy with the result. You can also order the report for a friend who can't navigate the Internet. Spread the word, and imagine that for the price of a beer, you can save your furniture from being taken hostage by a rogue mover. Not bad of a deal is it?</p>
