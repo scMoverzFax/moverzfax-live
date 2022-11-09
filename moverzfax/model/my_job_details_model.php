@@ -22,7 +22,7 @@ if ($con->connect_error) {
                         <div class="date h5">Moving Date : <span><strong><?= $res['date_of_move']; ?></strong></span></div>
                     </div>
                     <div class="col-md-4">
-                        <div class="date h5">Job Post Date : <span><strong></strong></span></div>
+                        <div class="date h5">Job Post Date : <span><strong><?= $res['posting_date']; ?></strong></span></div>
                     </div>
                     <div class="col-md-4">
                         <div class="date h5">MOVING JOB INFORMATION</div>

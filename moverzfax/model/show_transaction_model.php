@@ -19,5 +19,5 @@ if (mysqli_num_rows($result) > 0) {
 <?php $sr_no++;
     }
 } else {
-    echo "<tr><td colspan='6'><h3 class='text-center'>Sorry No Record Found!</h3></td></tr>";
+    echo "<tr><td colspan='8'><h3 class='text-center'>Sorry No Record Found!</h3></td></tr>";
 } ?>
