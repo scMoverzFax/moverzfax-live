@@ -95,7 +95,8 @@
     /* smaller than mobile */
     @media (max-width: 400px) {}
 </style>
-<div class="b-container">
+<?php if(!defined('LOGIN')){echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>';}?>
+<div class="b-container" <?php if(!defined('LOGIN')){echo 'style="display:none;';}?>>
     <div class="container-fluid in-container slide-in-bottom">
         <div class="row">
             <div class="col-12">

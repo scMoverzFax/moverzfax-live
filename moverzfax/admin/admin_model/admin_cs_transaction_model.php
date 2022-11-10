@@ -1,6 +1,6 @@
     <tbody>
 <?php
-include '../../model/connection.php';
+include '../model/connection.php';
 $limit = 15;
 $page = isset($_GET['page'])?$_GET['page'] : "1";
 $offset = ($page - 1) * $limit;
@@ -11,7 +11,7 @@ $sr_no = ($page * $limit) - ($limit - 1);
 $sql = "SELECT * FROM payment ORDER BY id DESC LIMIT {$offset} , {$limit} ";
 $result = mysqli_query($con , $sql);
 if(mysqli_num_rows($result) > 0){
-    while($res = mysqli_fetch_assoc($result)) { ?>
+    while($res = mysqli_fetch_assoc($result)) { ?> 
         <tr>
             <td><?= $sr_no; ?></td>
             <td><?= $res['tr_full_name']; ?></td>

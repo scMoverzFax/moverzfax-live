@@ -1,6 +1,6 @@
 <tbody>
 <?php
-include '../../model/connection.php';
+include '../model/connection.php';
 $limit = 15;
 $page = isset($_GET['page'])?$_GET['page'] : "1";
 $offset = ($page - 1) * $limit;
