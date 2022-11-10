@@ -2,7 +2,7 @@
     <?php
     include 'connection.php';
     $sr_no = 1;
-    $sql = "SELECT * FROM mover_cart WHERE is_selected=1";
+    $sql = "SELECT * FROM mover_cart WHERE is_selected=1 AND user_id = '".$user_id."' ";
     $result = $con->query($sql);
         if(mysqli_num_rows($result) > 0){ 
             while($res = mysqli_fetch_array($result)){

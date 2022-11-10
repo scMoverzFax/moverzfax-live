@@ -15,7 +15,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <th class=" text-center">Price</th>
                         </tr>
                     </thead>
-                    <?php include '../model/payment_app_model.php'; ?>
+                    <?php include '../model/payment_app_model.php'; ?> 
                 </table>
             </div>
             <div class="container-fluid text-center mt-4">
@@ -47,7 +47,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                                 var transaction = orderData.purchase_units[0].payments.captures[0];
                                 if(transaction.status == "COMPLETED"){
                                 var myJSON = JSON.stringify(orderData);
-                                window.location = "../model/mover_payment_data_model.php?x="+ myJSON ;
+                                window.location = "../model/payment_data_model.php?x="+ myJSON ;
                                 }
                             });
                         }

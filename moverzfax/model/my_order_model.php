@@ -2,7 +2,7 @@
 include 'connection.php';
 
 
-$sql = "SELECT * FROM ";
+//$sql = "SELECT * FROM ";
 
 
 

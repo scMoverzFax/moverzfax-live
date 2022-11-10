@@ -15,7 +15,7 @@
 
     include 'connection.php';
     $report = array();
-    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1";
+    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1 AND user_id = '".$user_id."' ";
     $result1 = $con->query($sql1);
                     if(mysqli_num_rows($result1) > 0){ 
                         while($res1 = mysqli_fetch_array($result1)){

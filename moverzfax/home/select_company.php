@@ -195,9 +195,7 @@ include 'myheader.php';
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
-                            <tbody id="table_cart">
-                                                                            
-                            </tbody>
+                            <tbody id="table_cart"></tbody>
                         </table>
                     </div>
                     <div class="text-center">
@@ -276,7 +274,7 @@ include 'myheader.php';
                     select: "no",
                     id: id
                 },
-                success: function(result) {}
+                success: function(result) {} 
             });
         }
         fetch_cart();

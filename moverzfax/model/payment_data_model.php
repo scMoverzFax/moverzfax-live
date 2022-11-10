@@ -15,7 +15,7 @@
 
     include 'connection.php';
     $report = array();
-    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1";
+    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1 AND user_id = '".$user_id."' ";  //query to select only the selected movers by usdot
     $result1 = $con->query($sql1);
                     if(mysqli_num_rows($result1) > 0){ 
                         while($res1 = mysqli_fetch_array($result1)){
@@ -40,12 +40,17 @@
     $tr_postal_code =$obj['purchase_units'][0]['shipping']['address']['postal_code'];
     $tr_country_code =$obj['purchase_units'][0]['shipping']['address']['country_code'];
     $tr_payer_id =$obj['payer']['payer_id'];
-    $tr_create_time =$obj['create_time'];
-    $tr_update_time =$obj['update_time'];
+    
+    //replace all char with spaces in the date value
+    $dateValue = $obj['create_time'];
+    $tr_create_time = preg_replace('/[A-Za-z]/', ' ', $dateValue);
+
+    $updatedTimeValue = $obj['update_time'];
+    $tr_update_time = preg_replace('/[A-Za-z]/', ' ', $updatedTimeValue);
     
     $sql = "INSERT INTO payment (user_id,tr_id,tr_status,tr_currency_code,tr_amount,tr_email_address,tr_merchant_id,tr_full_name,tr_address_line_1,tr_admin_area_1,tr_admin_area_2,tr_postal_code,tr_country_code,tr_payer_id,tr_create_time,tr_update_time,report_one,report_two,report_three,report_four,report_five)
      VALUES ('".$user_id."','".$tr_id."','".$tr_status."','".$tr_currency_code."','".$tr_amount."','".$tr_email_address."','".$tr_merchant_id."','".$tr_full_name."','".$tr_address_line_1."','".$tr_admin_area_1."','".$tr_admin_area_2."',".$tr_postal_code.",'".$tr_country_code."','".$tr_payer_id."','".$tr_create_time."','".$tr_update_time."','".$report_one."','".$report_two."','".$report_three."','".$report_four."','".$report_five."' )";    
-     
+
     if ($con->query($sql) === TRUE)
     {   
         
