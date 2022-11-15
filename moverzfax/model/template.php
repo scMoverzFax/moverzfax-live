@@ -19,14 +19,14 @@
 
 	<?php
 	require_once '../model/connection.php';
-
+	//get the movers information from the mover table
 	$search = $_GET['usdot'];
 	$sql = "SELECT  name, address, url, phone, contact_person, fax, usdot, mc, state_id FROM mover WHERE usdot = '" . $search . "';";
 	$result = mysqli_query($con, $sql);
 	$resultCheck = mysqli_num_rows($result);
 
 	if ($resultCheck > 0) {
-
+		$validMover = true;
 		while ($rows = mysqli_fetch_assoc($result)) {
 			$movername = $rows['name'];
 			$address = $rows['address'];
@@ -42,10 +42,10 @@
 				$movername = "Not Specified";
 			}
 			if ($address == null) {
-				$address = "Not Name";
+				$address = "No Address Listed";
 			}
 			if ($url == null) {
-				$url = "Not Specified";
+				$url = "No Website Listed";
 			}
 			if ($phone == null) {
 				$phone = "Not Specified";
@@ -72,20 +72,41 @@
 			$rows = mysqli_fetch_array($result1);
 			$state_code = $rows["code"];
 		} else {
-			$state_code = " ";
+			$state_code = " "; //this edge case has not been tested
 		}
 	} else {
-
-		echo "THERE IS NO SUCH DATA FROM THE MOVERSFAX " . $conn->error;
+		$validMover = false;
+		echo '
+		<div class="report_body" id="report_body">
+		<section>
+			<div class="d-flex">
+				<div class="heading-left">
+					<a href="https://moverzfax.com">Moverzfax.com</a>
+					<h2>Unrecognized Mover</h2>
+					<p>Sorry, the mover you have requested is not present in our database. Please notify <a href="http://moverzfax.com/home/support.php">customer support</a> and we will be sure to update our records with their information.</p>
+				</div>
+				<div class="logo">
+					<img class="logo_img" src="../img/MoverZfax.png" alt="">
+				</div>
+			</div>
+		</section>
+		</div>
+		'; //. $conn->error;
 	}
 	?>
 
-	<div class="report_body" id="report_body">
+	<div class="report_body" id="report_body" <?php if ($resultCheck < 1){ echo 'style="display:none;"'; } ?> >
+
+		<!--Report Card heading and logo-->
 		<section>
 			<div class="d-flex">
 				<div class="heading-left">
 					<a href="https://moverzfax.com">Moverzfax.com</a>
 					<h2>Report Card</h2>
+					<!--Need to display proper date information here. 
+					Try to access date variable from previous file, or make a new query to the payment table.
+					It might be best to make another query because there are multiple previous files that direct to
+					this template. -->
 					<p>This reputation data report is valid up until
 						Wednesday 9th of February 2022 06:01:28 PM
 					</p>
@@ -95,6 +116,8 @@
 				</div>
 			</div>
 		</section>
+
+		<!--Disclaimer-->
 		<section>
 			<div class="row">
 				<div class="col-md-12">
@@ -113,10 +136,7 @@
 							report to get
 							the latest facts and information about this company.
 						</p>
-						<p>
-							A link is provided in every section to verify the validity of the report
-							presented.
-						</p>
+						<p>A link is provided in every section to verify the validity of the report presented.</p>
 					</div>
 				</div>
 			</div>
@@ -129,7 +149,7 @@
 					<div class="companyDetails">
 						<h3 class=" mb-2"><?php echo " " . $movername; ?></h3>
 						<div id="address" class="mb-2"><?php echo "" . $address; ?></div>
-						<div class="mb-4">Wesbiste : <a href='<?php echo $url ?>'><?php echo $url; ?></a></div>
+						<div class="mb-4">Website : <a href='<?php echo $url ?>' target="_blank"><?php echo $url; ?></a></div>
 						<div class="row mb-2">
 							<table class="tbl_contact">
 								<tr>
@@ -181,7 +201,7 @@
 
 						<!-- SPECIAL MOVING TASK -->
 						<div class="movingtask mb-2">
-							<a href="http://www.moverzfax.com/special-moving-task-force-service.html">
+							<a href="../home/task_force.php" target="_blank">
 								<h5>SPECIAL MOVING TASK FORCE</h5>
 							</a>
 						</div>
@@ -193,8 +213,8 @@
 								Based on all reviews given accross all website on the net regarding your
 								chosen
 								mover, we summarized the grade based on honesty, professionalism,
-								Appearance,
-								and punctuality. Our grade is calculated based on complex algorythm to
+								appearance,
+								and punctuality. Our grade is calculated based on complex algorithm to
 								provide
 								you, our customer, this detailed evaluation on your service provider. Any
 								grades
@@ -206,16 +226,16 @@
 						<!-- CONSUMER RESOURCES -->
 						<div class="consumerresources mb-2 mt-3">
 							<h4>CONSUMER RESOURCES</h4>
-							<a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx">States
+							<a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx" target="_blank">States
 								Department of Transportation: <br>Investigations and Assessments</a>
-							<a href="https://nccdb.fmcsa.dot.gov/AddComplaint.asp?public=open">USDOT
+							<a href="https://nccdb.fmcsa.dot.gov/AddComplaint.asp?public=open" target="_blank">USDOT
 								complaint
 								Forum</a>
-							<a href="http://ai.fmcsa.dot.gov/hhg/search.asp">Complaint history on moving
+							<a href="http://ai.fmcsa.dot.gov/hhg/search.asp" target="_blank">Complaint history on moving
 								companies:<br> Per USDOT# and MC# (Only Long Distance Movers)</a>
-							<a href="http://safer.fmcsa.dot.gov/CompanySnapshot.aspx">Movers in a Glance:
+							<a href="http://safer.fmcsa.dot.gov/CompanySnapshot.aspx" target="_blank">Movers in a Glance:
 								Synopsis of your chosen mover</a>
-							<a href="http://ai.fmcsa.dot.gov/SMS/Default.aspx">Safety Summary on Moving
+							<a href="http://ai.fmcsa.dot.gov/SMS/Default.aspx" target="_blank">Safety Summary on Moving
 								companies</a>
 						</div>
 
@@ -227,15 +247,15 @@
 								information is not available, please contact us by providing us the Moving
 								company name, USDOT number and we will provide you with updated information
 								on
-								that mover. We constantly check every links for accuracy so we will make
+								that mover. We constantly check every link for accuracy so we will make
 								sure to
 								update you with any changes on the mover's status.
 							</p>
 						</div>
 						<br><br>
-						<!-- OVING AND STORAGE INDUSTRY TRENDS -->
+						<!-- MOVING AND STORAGE INDUSTRY TRENDS -->
 						<div class="owing mb-5">
-							<h5>OVING AND STORAGE INDUSTRY TRENDS</h5>
+							<h5>MOVING AND STORAGE INDUSTRY TRENDS</h5>
 							<a href="http://www.promover.org/content.asp?contentid=1118">Courtesy from AMSA "Moving America Professionally"</a>
 							<p class="mb-4">
 								Consists of 35,000 companies operating at 17,000 locations primarily
@@ -402,8 +422,8 @@
 
 				?>
 				<div class="col-md-7">
-
 					<div class="leagal_info_col">
+						<!--Legal Information Card-->
 						<div class="row mb-1">
 							<div class="col-md-12">
 								<div class="headings d-flex align-items-center p-1">
@@ -414,6 +434,7 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--ARE THEY STATE REGISTERED?-->
 									<tr class="row_dark" id="tr1">
 										<td class=""><label class="status_lable"><img src="../img/flags/<?php echo $state_code; ?>.png"></label></td>
 										<td>
@@ -422,16 +443,17 @@
 
 											if (!empty($state_registration_listed) && isset($state_registration_listed)) {
 												echo "<p id='register'>" . $state_registration_details . "</p>";
-												echo "<span>Check Logo Here <a href='" . $state_registration_listed . "'>details</a></p>";
+												echo "<span>Check <a href='" . $state_registration_link . "' target='_blank'>details</a></p>";
 												$pointers_logo = 10;
 											} else {
 												echo "<p id='register'>This company is not state registered</p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 												$pointers_logo = 0;
 											}
 											?>
 										</td>
 									</tr>
+									<!--ARE THEY FEDERALLY REGISTERED?-->
 									<tr>
 										<td>
 											<label class="status_lable">
@@ -447,19 +469,24 @@
 											</label>
 										</td>
 										<td>
+										<label class="section_heading">ARE THEY FEDERALLY REGISTERED?</label>
 											<?php
 											if ($safer_listed == "YES") {
 												echo "<p id='register'>" . $safer_details . "</p>";
-												echo "<span>Check <a href='" . $safer_link . "'>details</a></span>";
+												// echo "<span>Check <a href='" . $safer_link . "' target='_blank'>details</a></span>";
+												// temporary solution below
+												echo "<span>Check <a href='https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=" . $usdot . "' target='_blank'>details</a></span>";
+												//echo "<span target='_blank'>" . $safer_link . "</span>";
 												$pointers_licensing = 10;
 											} else {
 												echo "<p id='register'>This company is not a member of the American Moving and Storage Association.</p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 												$pointers_licensing = 0;
 											}
 											?>
 										</td>
 									</tr>
+									<!--DO THEY HAVE A PUBLIC LICENSE?-->
 									<tr class="row_dark">
 										<td>
 											<label class="status_lable">
@@ -473,22 +500,22 @@
 											</label>
 										</td>
 										<td>
+										<label class="section_heading">DO THEY HAVE A PUBLIC LICENSE?</label>
 											<?php
 											if ($safer_listed == "YES") {
 												echo "<p id='register'>" . $fmcsa_details . "</p>";
-												echo "<span>Check <a href='" . $fmcsa_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $fmcsa_link . "' target='_blank'>details</a></span>";
 											} else if ($safer_listed == "NO") {
 
 												echo "<p id='register'>This company is not a member of the American Moving and Storage Association.</p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											}
 											?></td>
 									</tr>
 								</tbody>
 							</table>
-
 						</div>
-
+						<!--Moving Association Card-->
 						<div class="row mb-1">
 							<div class="col-md-12">
 								<div class="headings d-flex align-items-center p-1">
@@ -499,16 +526,19 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--MEMBER OF BETTER BUSINESS BUREAU?-->
 									<tr class="row_dark" id="tr1">
 										<td class="">
 											<label class="status_lable">
 												<?php
-												if ($bbb_listed == "YES") {
-													echo "<strong style ='color: green'>" . $bbb_listed . "</strong>";
-													$bbb_listed = 10;
+												if ($bbb_listed != "NO") {
+													//Try this if you want to display the bbb icon grade. bbb_listed is a img tag value
+													//echo "<strong>" . $bbb_listed . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
+													$points = 10;
 												} else {
 													echo "<strong style ='color: red'>" . $bbb_listed . "</strong>";
-													$bbb_listed = 0;
+													$points = 0;
 												}
 												?>
 											</label>
@@ -516,13 +546,17 @@
 										<td>
 											<label class="section_heading">MEMBER OF BETTER BUSINESS BUREAU?</label>
 											<?php
-											if ($bbb_listed == "YES") {
+											if ($bbb_listed != "NO") {
 												echo "<p id='register'>" . $bbb_details . "</p>";
-												echo "<span>Check <a href='" . $bbb_link . "'>details</a></span>";
+												//echo "<span>Check <a href='" . $bbb_link . "' target='_blank'>details</a></span>";
+												//temporary solution below
+												echo "<span>" . $bbb_link . "</span>";
 											} else {
-
-												echo "<p id='register'>This company is not the member of BETTER BUSINESS BUREAU </p>";
-												echo "<span>No url avaliable</span>";
+												//Use the line below to display the details as they are in the mover table. 
+												//But, the data in this column seems to have some issues.
+												//echo "<p id='register'>" . $bbb_details . "</p>";
+												echo "<p id='register'>This company is not a member of BETTER BUSINESS BUREAU </p>";
+												echo "<span>No url available</span>";
 											}
 											$listing_value = substr($bbb_listed, 63, -6);
 
@@ -541,6 +575,7 @@
 											?>
 										</td>
 									</tr>
+									<!--MEMBER OF AMERICAN MOVING AND STORAGE ASSOCIATION?-->
 									<tr>
 										<td>
 											<label class="status_lable">
@@ -559,17 +594,18 @@
 											<label class="section_heading">MEMBER OF AMERICAN MOVING AND STORAGE ASSOCIATION?</label>
 											<?php
 											if ($amsa_listed == "YES") {
-												echo "";
-												echo "<p id='register'>" . $amsa_details . "</p>";
-												echo "<span>Check <a href='" . $amsa_link . "'>details</a></span>";
+												echo "<p id='register'>This company is a member of the American Moving and Storage Association.</p>";
+												//echo "<p id='register'>" . $amsa_details . "</p>";
+												echo "<span>Check <a href='" . $amsa_link . "' target='_blank'>details</a></span>";
 											} else if ($amsa_listed == "NO") {
-
 												echo "<p id='register'>This company is not a member of the American Moving and Storage Association.</p>";
-												echo "<span>No url avaliable</span>";
+												//echo "<p id='register'>" . $amsa_details . "</p>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
+									<!--MEMBER OF HHGFFAA (Household Good Forwarders of America)?-->
 									<tr class="row_dark">
 										<td>
 											<label class="status_lable">
@@ -588,13 +624,13 @@
 											<label class="section_heading">MEMBER OF HHGFFAA (Household Good Forwarders of America)?</label>
 											<?php
 											if ($hhgfaa_listed == "YES") {
-												echo "";
-												echo "<p id='register'>" . $hhgfaa_details . "</p>";
-												echo "<span>Check <a href='" . $hhgfaa_link . "'>details</a></span>";
+												echo "<p id='register'>This company is a member of the Household Good Forwarders of America.</p>";
+												//echo "<p id='register'>" . $hhgfaa_details . "</p>";
+												echo "<span>" . $hhgfaa_link . "</span>";
 											} else if ($hhgfaa_listed == "NO") {
-
-												echo "<p id='register'>" . $hhgfaa_details . " </p>";
-												echo "<span>No url avaliable</span>";
+												echo "<p id='register'>This company is not a member of the Household Good Forwarders of America.</p>";
+												//echo "<p id='register'>" . $hhgfaa_details . " </p>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
@@ -602,7 +638,7 @@
 								</tbody>
 							</table>
 						</div>
-
+						<!--Scam Alert Portal Card-->
 						<div class="row mb-1">
 							<div class="col-md-12">
 								<div class="headings d-flex align-items-center p-1">
@@ -613,14 +649,17 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--PRESENT ON RIPOFF REPORT?-->
 									<tr class="row_dark">
 										<td class="" style="width:0;">
 											<label class="status_lable">
 												<?php
-												if ($ripoffreport_listed == "YES") {
-													echo "<strong style ='color: blue'>" . $ripoffreport_listed . "</strong>";
-												} else if ($ripoffreport_listed == "NO") {
-													echo "<strong style ='color: red'>" . $ripoffreport_listed . "</strong>";
+												if ($ripoffreport_listed != "NO") {
+													//echo "<strong style ='color: blue'>" . $ripoffreport_listed . "</strong>";
+													echo "<strong style ='color: blue'>YES</strong>";
+												} else {
+													//echo "<strong style ='color: red'>" . $ripoffreport_listed . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 												?>
 
@@ -629,26 +668,29 @@
 										<td>
 											<label class="section_heading">PRESENT ON RIPOFF REPORT?</label>
 											<?php
-											if ($ripoffreport_listed == "YES") {
-												echo "<label>PRESENT ON RIPOFF REPORT?</label>";
-												echo "<p id='register'>" . $ripoffreport_details . "</p>";
+											if ($ripoffreport_listed != "NO") {
+												echo "<p id='register'>This company is listed on Ripoff Report.</p>";
+												//echo "<p id='register'>" . $ripoffreport_details . "</p>";
 												echo "<span>Check <a href='" . $ripoffreport_link . "'>details</a></span>";
-											} else if ($ripoffreport_listed == "NO") {
-
-												echo "<p id='register'>" . $ripoffreport_details . " </p>";
-												echo "<span>No url avaliable</span>";
+											} else {
+												echo "<p id='register'>This company is not listed on Ripoff Report.</p>";
+												//echo "<p id='register'>" . $ripoffreport_details . " </p>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
+									<!--BLACKLISTED ON MOVING SCAM?-->
 									<tr>
 										<td>
 											<label class="status_lable">
 												<?php
-												if ($ripoffreport_listed == "YES") {
-													echo "<strong style ='color: blue'>" . $ripoffreport_listed . "</strong>";
-												} else if ($ripoffreport_listed == "NO") {
-													echo "<strong style ='color: red'>" . $ripoffreport_listed . "</strong>";
+												if ($movingscam_listed != "NO") {
+													//echo "<strong style ='color: blue'>" . $movingscam_listed . "</strong>";
+													echo "<strong style ='color: blue'>YES</strong>";
+												} else if ($movingscam_listed == "NO") {
+													//echo "<strong style ='color: red'>" . $movingscam_listed . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 												?>
 											</label>
@@ -656,13 +698,14 @@
 										<td>
 											<label class="section_heading">BLACKLISTED ON MOVING SCAM?</label>
 											<?php
-											if ($ripoffreport_listed == "YES") {
-												echo "<p id='register'>" . $ripoffreport_details . "</p>";
-												echo "<span>Check <a href='" . $ripoffreport_link . "'>details</a></span>";
-											} else if ($ripoffreport_listed == "NO") {
-
-												echo "<p id='register'>" . $ripoffreport_details . "</p>";
-												echo "<span>No url avaliable</span>";
+											if ($movingscam_listed != "NO") {
+												echo "<p id='register'>This company is blacklisted on Moving Scam.</p>";
+												//echo "<p id='register'>" . $movingscam_details . "</p>";
+												echo "<span>Check <a href='" . $movingscam_link . "'>details</a></span>";
+											} else if ($movingscam_listed == "NO") {
+												echo "<p id='register'>This company is not blacklisted on Moving Scam.</p>";
+												//echo "<p id='register'>" . $movingscam_details . "</p>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
@@ -673,6 +716,9 @@
 
 						<div class="break_page"></div>
 
+						<!--The code below here is different approach to reading the table data. We are going to leave it this way for now.-->
+
+						<!--Recommended Portal Card-->
 						<div class="row mb-1 mt-2">
 							<div class="col-md-12">
 								<div class="headings d-flex align-items-center p-1">
@@ -683,14 +729,17 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--PRESENT ON MY MOVING REVIEWS?-->
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
 												<?php
-												if (strtoupper($mymovingreviews_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($mymovingreviews_rating) . "</strong>";
+												if (strtoupper($mymovingreviews_rating) != "NO" && $mymovingreviews_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($mymovingreviews_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($mymovingreviews_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($mymovingreviews_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($mymovingreviews_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($mymovingreviews_rating != NULL) {
 													echo $mymovingreviews_rating;
 												} else {
@@ -708,28 +757,31 @@
 										<td>
 											<label class="section_heading">PRESENT ON MY MOVING REVIEWS?</label>
 											<?php
-											if ($mymovingreviews_rating == "YES" || $mymovingreviews_rating != NULL) {
+											if ($mymovingreviews_rating != "NO" && $mymovingreviews_rating != NULL) {
 												echo "<p id='register'>" . $mymovingreviews_details . "</p>";
-												echo "<span>Check <a href='" . $mymovingreviews_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $mymovingreviews_link . "' target='_blank'>details</a></span>";
 											} else if ($mymovingreviews_rating == "NO") {
 												echo "<p id='register'>" . $mymovingreviews_details . "</p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
+									<!--PRESENT ON YELP?-->
 									<tr>
 										<td>
 											<label class="status_lable">
 												<?php
-												if (strtoupper($yelp_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($yelp_rating) . "</strong>";
+												if (strtoupper($yelp_rating) != "NO" && $yelp_rating != NULL) {
+													//echo "<strong style ='color: green'>" . $yelp_rating . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($yelp_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($yelp_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($yelp_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($yelp_rating != NULL) {
 													echo $yelp_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 												$star_rating2 = substr($yelp_rating, 48, -11);
 												if (!empty($star_rating2) && isset($star_rating2)) {
@@ -743,32 +795,33 @@
 										<td>
 											<label class="section_heading">PRESENT ON YELP?</label>
 											<?php
-											if ($yelp_rating == "YES" || $yelp_rating != NULL) {
+											if ($yelp_rating != "NO" && $yelp_rating != NULL) {
 												echo "<p id='register'>" . $yelp_details . "</p>";
-												echo "<span>Check <a href='" . $yelp_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $yelp_link . "' target='_blank'>details</a></span>";
 											} else if ($yelp_rating == "NO") {
-
 												echo "<p id='register'>" . $yelp_details . "</p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											} else if ($yelp_rating == null) {
-												echo "Nothing found <br> from yelp";
+												echo "<br><p>Nothing found from yelp</p>";
 											}
 											?>
 										</td>
 									</tr>
-
+									<!--PRESENT ON INSIDER PAGES?-->
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
 												<?php
-												if (strtoupper($insiderpages_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($insiderpages_rating) . "</strong>";
+												if (strtoupper($insiderpages_rating) != "NO" && strtoupper($insiderpages_rating) != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($insiderpages_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($insiderpages_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($insiderpages_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($insiderpages_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($insiderpages_rating != NULL) {
 													echo $insiderpages_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 												$star_rating3 = substr($insiderpages_rating, 48, -11);
 												if (!empty($star_rating3) && isset($star_rating3)) {
@@ -782,29 +835,32 @@
 										<td>
 											<label class="section_heading">PRESENT ON INSIDER PAGES?</label>
 											<?php
-											if ($insiderpages_rating == "YES" || $insiderpages_rating != NULL) {
+											if ($insiderpages_rating != "NO" && $insiderpages_rating != NULL) {
 												echo "<p id='register'>" . $insiderpages_details . "</p>";
-												echo "<span>Check <a href='" . $insiderpages_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $insiderpages_link . "' target='_blank'>details</a></span>";
 											} else if ($insiderpages_rating == "NO") {
 
 												echo "<p id='register'>" . $insiderpages_details . "</p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
+									<!--PRESENT ON KUDZU?-->
 									<tr>
 										<td>
 											<label class="status_lable">
 												<?php
-												if (strtoupper($kudzu_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($kudzu_rating) . "</strong>";
+												if (strtoupper($kudzu_rating) != "NO" && strtoupper($kudzu_rating) != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($kudzu_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($kudzu_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($kudzu_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($kudzu_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($kudzu_rating != NULL) {
 													echo $kudzu_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 												$star_rating4 = substr($kudzu_rating, 48, -11);
 												if (!empty($star_rating4) && isset($star_rating4)) {
@@ -818,30 +874,32 @@
 										<td>
 											<label class="section_heading">PRESENT ON KUDZU?</label>
 											<?php
-											if ($kudzu_rating == "YES" || $kudzu_rating != NULL) {
+											if ($kudzu_rating != "NO" && $kudzu_rating != NULL) {
 												echo "<p id='register'>" . $kudzu_details . "</p>";
-												echo "<span>Check <a href='" . $kudzu_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $kudzu_link . "' target='_blank'>details</a></span>";
 											} else if ($kudzu_rating == "NO") {
 
 												echo "<p id='register'>" . $kudzu_details . "<p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
-
+									<!--PRESENT ON MOVER REVIEWS?-->
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
 												<?php
-												if (strtoupper($moversreviewed_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($moversreviewed_rating) . "</strong>";
+												if (strtoupper($moversreviewed_rating) != "NO" && strtoupper($moversreviewed_rating) != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($moversreviewed_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($moversreviewed_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($moversreviewed_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($moversreviewed_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($moversreviewed_rating != NULL) {
 													echo $moversreviewed_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 
 												$star_rating5 = substr($moversreviewed_rating, 48, -11);
@@ -857,25 +915,28 @@
 										<td>
 											<label class="section_heading">PRESENT ON MOVER REVIEWS?</label>
 											<?php
-											if ($moversreviewed_rating == "YES" || $moversreviewed_rating != NULL) {
+											if ($moversreviewed_rating != "NO" && $moversreviewed_rating != NULL) {
 												echo "<p id='register'>" . $moversreviewed_details . "</p>";
-												echo "<span>Check <a href='" . $moversreviewed_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $moversreviewed_link . "' target='_blank'>details</a></span>";
 											} else if ($moversreviewed_rating == "NO") {
 
 												echo "<p id='register'>" . $moversreviewed_details . "<p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
+									<!--PRESENT ON REVIEW A MOVER?-->
 									<tr>
 										<td>
 											<label class="status_lable">
 												<?php
-												if (strtoupper($reviewamover_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($reviewamover_rating) . "</strong>";
+												if (strtoupper($reviewamover_rating) != "NO" && $reviewamover_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($reviewamover_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($reviewamover_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($reviewamover_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($reviewamover_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($reviewamover_rating != NULL) {
 													echo $reviewamover_rating;
 												} else {
@@ -893,30 +954,32 @@
 										<td>
 											<label class="section_heading">PRESENT ON REVIEW A MOVER?</label>
 											<?php
-											if ($reviewamover_rating == "YES" || $reviewamover_rating != NULL) {
+											if ($reviewamover_rating != "NO" && $reviewamover_rating != NULL) {
 												echo "<p id='register'>" . $reviewamover_details . "</p>";
-												echo "<span>Check <a href='" . $reviewamover_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $reviewamover_link . "' target='_blank'>details</a></span>";
 											} else if ($reviewamover_rating == "NO") {
 
 												echo "<p id='register'>" . $reviewamover_details . "<p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
 									</tr>
-
+									<!--PRESENT ON MOVERS SEARCH AND REVIEWS?-->
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
 												<?php
-												if (strtoupper($moverssearchandreviews_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($moverssearchandreviews_rating) . "</strong>";
+												if (strtoupper($moverssearchandreviews_rating) != "NO" && $moverssearchandreviews_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($moverssearchandreviews_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($moverssearchandreviews_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($moverssearchandreviews_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($moverssearchandreviews_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($moverssearchandreviews_rating != NULL) {
 													echo $moverssearchandreviews_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 												$star_rating7 = substr($moverssearchandreviews_rating, 48, -11);
 												if (!empty($star_rating7) && isset($star_rating7)) {
@@ -931,33 +994,37 @@
 											<label class="section_heading">PRESENT ON MOVERS SEARCH AND REVIEWS?</label>
 											<?php
 											// star needed
-											if ($moverssearchandreviews_rating == "YES" || $moverssearchandreviews_rating != NULL) {
+											if ($moverssearchandreviews_rating != "NO" && $moverssearchandreviews_rating != NULL) {
 												echo "<p id='register'>" . $moverssearchandreviews_details . "</p>";
-												echo "<span>Check <a href='" . $moverssearchandreviews_link . "'>details</a></span>";
+												//echo "<span>Check <a href='" . $moverssearchandreviews_link . "' target='_blank'>details</a></span>";
+												echo "<span>'" . $moverssearchandreviews_link . "'</span>";
 											} else if ($moverssearchandreviews_rating == "NO") {
 
 												echo "<p id='register'>" . $moverssearchandreviews_details . "<p>";
-												echo "<span>No url avaliable</span>";
+												echo "<span>No url available</span>";
 											} else if ($moverssearchandreviews_rating == null) {
 												// code...
-												echo "Dint found information <br> from mover search and reviews";
+												echo "<br><p>Nothing found from Mover Search and Reviews</p>";
 											}
 											?>
 										</td>
 									</tr>
+									<!--PRESENT ON TRANSPORT REVIEWS?-->
 									<tr>
 										<td>
 											<label class="status_lable">
 
 												<?php
-												if (strtoupper($transportreviews_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($transportreviews_rating) . "</strong>";
+												if (strtoupper($transportreviews_rating) != "NO" && $transportreviews_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($transportreviews_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($transportreviews_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($transportreviews_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($transportreviews_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($transportreviews_rating != NULL) {
 													echo $transportreviews_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 
 												$star_rating9 = substr($transportreviews_rating, 48, -11);
@@ -972,33 +1039,36 @@
 										<td>
 											<label class="section_heading">PRESENT ON TRANSPORT REVIEWS?</label>
 											<?php
-											if ($transportreviews_rating == "YES" || $transportreviews_rating != NULL) {
+											if ($transportreviews_rating != "NO" && $transportreviews_rating != NULL) {
 												echo "<p id='register'>" . $transportreviews_details . "</p>";
-												echo "<span>Check <a href='" . $transportreviews_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $transportreviews_link . "' target='_blank'>details</a></span>";
 											} else if ($transportreviews_rating == "NO") {
 
 												echo "<p id='register'>" . $transportreviews_details . "<p>";
-												echo "<span>" . $transportreviews_link . "</span>";
+												//echo "<span>" . $transportreviews_link . "</span>";
+												echo "<span>No url available</span>";
 											} else if ($transportreviews_rating ==  null) {
-												echo "Found no data from transport reviews";
+												echo "Nothing found from Transport Reviews";
 											}
 											?>
 										</td>
 									</tr>
-
+									<!--PRESENT ON TRANSPORT REPORTS?-->
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
 
 												<?php
-												if (strtoupper($transportreports_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($transportreports_rating) . "</strong>";
+												if (strtoupper($transportreports_rating) != "NO" && $transportreports_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($transportreports_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($transportreports_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($transportreports_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($transportreports_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($transportreports_rating != NULL) {
 													echo $transportreports_rating;
 												} else {
-													echo "<strong style ='color: red'>No Reviews</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												}
 
 												$star_rating10 = substr($transportreports_rating, 48, -11);
@@ -1015,27 +1085,31 @@
 											<label class="section_heading">PRESENT ON TRANSPORT REPORTS?</label>
 
 											<?php
-											if ($transportreports_rating == "YES" || $transportreports_rating != NULL) {
+											if ($transportreports_rating != "NO" && $transportreports_rating != NULL) {
 												echo "<p id='register'>" . $transportreports_details . "</p>";
-												echo "<span>Check <a href='" . $transportreports_link . "'>details</a></span>";
+												echo "<span>Check <a href='" . $transportreports_link . "' target='_blank'>details</a></span>";
 											} else if ($transportreports_rating == "NO") {
 
 												echo "<p id='register'>" . $transportreviews_details . "<p>";
-												echo "<span>" . $transportreports_link . "</span>";
+												//echo "<span>" . $transportreports_link . "</span>";
+												echo "<span>No url available</span>";
 											} else if ($transportreports_rating ==  null) {
-												echo "Found no data from transport reviews";
+												echo "Nothing found from Transport Reports";
 											}
 											?>
 										</td>
 									</tr>
+									<!--PRESENT ON MOVING GUARDIAN?-->
 									<tr>
 										<td>
 											<label class="status_lable">
 												<?php
-												if (strtoupper($movingguardian_rating) == "YES") {
-													echo "<strong style ='color: green'>" . strtoupper($movingguardian_rating) . "</strong>";
+												if (strtoupper($movingguardian_rating) != "NO" && $movingguardian_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($movingguardian_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
 												} else if (strtoupper($movingguardian_rating) == "NO") {
-													echo "<strong style ='color: red'>" . strtoupper($movingguardian_rating) . "</strong>";
+													//echo "<strong style ='color: red'>" . strtoupper($movingguardian_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
 												} else if ($movingguardian_rating != NULL) {
 													echo $movingguardian_rating;
 												} else {
@@ -1055,13 +1129,14 @@
 										<td>
 											<label class="section_heading">PRESENT ON MOVING GUARDIAN?</label>
 											<?php
-											if ($movingguardian_rating == "YES" || $movingguardian_rating != NULL) {
+											if ($movingguardian_rating != "NO" && $movingguardian_rating != NULL) {
 												echo "<p id='register'>" . $movingguardian_details . "</p>";
 												echo "<span>Check <a href='" . $movingguardian_link . "'>details</a></span>";
 											} else if ($movingguardian_rating == "NO") {
 
 												echo "<p id='register'>" . $movingguardian_details . "<p>";
-												echo "<span>" . $movingguardian_link . "</span>";
+												//echo "<span>" . $movingguardian_link . "</span>";
+												echo "<span>No url available</span>";
 											}
 											?>
 										</td>
@@ -1080,7 +1155,6 @@
 								Website</a>
 						</div>
 						<br>
-
 						<div class="copyright">
 							Copyright © 2021, MoverZfax.com.<br>
 							All Rights Reserved
@@ -1127,8 +1201,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 	<script>
-		var element = document.getElementById('report_body');
-		var opt = {
+		var validMoverCheck = <?php echo $validMover; ?>;
+		if (validMoverCheck = true){
+			var element = document.getElementById('report_body');
+			var opt = {
 			margin: [.5, 0],
 			filename: "Report Card " + <?= $usdot; ?> + '.pdf',
 			html2canvas: {
@@ -1144,8 +1220,9 @@
 				after: '.break_page',
 			}
 		};
-
 		window.onload = (e) => html2pdf(element, opt);
+		}
+
 	</script>
 	<script src="../js/html2pdf.js-master/dist/html2pdf.bundle.min.js"></script>
 </body>
