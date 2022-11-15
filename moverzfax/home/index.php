@@ -423,7 +423,7 @@
 
     }
 
-</style>	
+</style>
 
 
 <!-- Start of Document ----------------------------------------------->
@@ -485,7 +485,7 @@
                                     <p>Have you been cheated? Have you hired a rogue mover?</p>
                                 </div>
                                 <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="task_force.html">Read more</a>
+                                    <a class="uk-button uk-button-text" href="task_force.php">Read more</a>
                                 </div>
                             </div>
                         </div>

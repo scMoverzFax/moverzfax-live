@@ -108,7 +108,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
               <tr>
                 <th scope="col">Sr. no</th>
                 <th scope="col">Full Name</th>
-                <th scope="col">Transacyion ID</th>
+                <th scope="col">Transaction ID</th>
                 <th scope="col">Status</th>
                 <th scope="col">Currency Code</th>
                 <th scope="col">Amount</th>

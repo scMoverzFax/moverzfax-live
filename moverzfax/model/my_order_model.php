@@ -15,7 +15,7 @@ if (mysqli_num_rows($result) > 0) {
             <td><?= $i; ?></td>
             <td><?= $res['company_name']; ?></td>
             <td><?= $res['usdot']; ?></td>
-            <td><a href="../template.php?usdot=<?= $res['usdot']; ?>" target="_blank" class="btn btn-primary">Dowload Report</a></td>
+            <td><a href="../model/template.php?usdot=<?= $res['usdot']; ?>" target="_blank" class="btn btn-primary">Dowload Report</a></td> 
         </tr>
 <?php $i++;
     }

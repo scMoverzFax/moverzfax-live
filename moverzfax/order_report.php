@@ -33,7 +33,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                         <td><?= $sr_no; ?></td>
                         <td><?= $res['company_name']; ?></td>
                         <td><?= $usdot; ?></td>
-                        <td class="text-center"><a href="template.php?usdot=<?php echo $usdot; ?>" target="_blank" class="btn text-light font-weight-bold" style="background-color:green">Check And Download Report</a></td>
+                        <td class="text-center"><a href="model/template.php?usdot=<?php echo $usdot; ?>" target="_blank" class="btn text-light font-weight-bold" style="background-color:green">Check And Download Report</a></td>
                     </tr>
                     <?php $sr_no++; } } ?>
                 </tbody>

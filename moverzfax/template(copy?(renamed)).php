@@ -282,6 +282,7 @@
 			<!-- SPECIAL MOVING TASK -->
 			<div class="movingtask">
 				<h3>SPECIAL MOVING TASK FORCE</h3>
+				<!--wrong link here-->
 				<span><a href="http://www.moverzfax.com/special-moving-task-force-service.html">Click for details.</a></span>
 			</div>
 			<br><br>
