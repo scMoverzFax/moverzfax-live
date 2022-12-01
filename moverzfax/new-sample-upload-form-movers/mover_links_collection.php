@@ -1,13 +1,14 @@
+<?php //include "../home/myheader.php"; ?>
 <html>
     <head>
         <title>Moverz Link Collections</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="mlcstyle.css" type="text/css">
     </head>
     <body>
         <div class="container">
             <div class="in-container">
-                <div class="reportCard">
+                <!-- <div class="reportCard">
                     <p>
                         <br><br>
                         <a href="https://moverzfax.com">Moverzfax.com</a>
@@ -20,8 +21,8 @@
                     </p>
                 </div>
                 <div class="image"> 
-                    <img src="logo.png" id="logo">
-                </div><br><br><br><br><br><br>
+                    <img src="../img/logo.png" id="logo">
+                </div><br><br><br><br><br><br> -->
                 <style>
                     .business-validility{
                         text-align: center;
@@ -48,18 +49,31 @@
                     <p id="disclamer">
                         <h2>DISCLAIMER</h2>
                         Information contained in this Report Card is factual and is based on real data gathered from reputable sites and government agencies. The GRADE presented is computed based on the data gathered on the exact date this report was generated. Thus, the links provided may no longer be updated if the current date is too far from the date this report was generated. Therefore, we advise you to login to your MoverZfax.com account and re-run the report to get the latest facts and information about this company.<br><br>
-                        A link is provided in every section to verify the validity of the report presented.
+                        A link is provided in every section to verify the validity of the report presented. All information submitted here will be reviewed by the Moverzfax team for validity.
                     </p>
                 </div>
                 <!-- Form start -->
-                <form method="POST">
+                <form action="../model/mover_links_model.php" method="post" enctype="multipart/form-data">
                     <div class="company-details">
-                        <h3>COMPANY NAME <br> <input type="text" name="name" placeholder="Company Name"></h3>
-                        <span id="address"> ADDRESS <br> <input type="text" name="address" placeholder="Company Address"></span><br><br><br>
-                        <span>Wesbiste <br> <input type="text" name="website" placeholder="Company Website"> </span>
+                        <h2>COMPANY INFORMATION</h2>
+                        <!-- <h3>COMPANY NAME <br> <input type="text" name="name" placeholder="Company Name"></h3>
+                        <span id="address"> ADDRESS : <input type="text" name="address" placeholder="Company Address"></span><br>
+                        <span>Website : <input type="text" name="website" placeholder="Company Website"> </span>
                         <br>
-                        <br>
+                        <br> -->
                         <table id="company-details">
+                            <tr>
+                                <td id="header">Company Name</td>
+                                <td id="head"><input type="text" name="name" placeholder="Company Name"></td>
+                            </tr>
+                            <tr>
+                                <td id="header">Address</td>
+                                <td id="head"><input type="text" name="address" placeholder="Company Address"></td>
+                            </tr>
+                            <tr>
+                                <td id="header">Website</td>
+                                <td id="head"><input type="text" name="website" placeholder="Company Website"></td>
+                            </tr>
                             <tr>
                                 <td id="header">Contact Number</td>
                                 <td id="head"><input type="tel" name="contact_number" placeholder="Contact Number"></td>
@@ -89,25 +103,22 @@
                                     <!-- <div class="legal_info_img"><img src="legalinformation.png"></div> -->
                                     <style>
                                         .legal, .federal{
-                                            height: 200px;
+                                            height: 100%;
                                         }
                                         .legal_info_img{
                                         float: left
                                         }
                                     </style>
                                     <!-- <td> -->
-                                    <div class="inner">
+                                    <div class="inner" style="height: 100%;">
                                         <br>
-                                        <b><u>ARE THEY STATE REGISTERED?</u> </b> 
+                                        <b><u>ARE THEY STATE REGISTERED?</u></b>  
                                         
                                         <p>
-                                            Make sure that your company is State registered. Click on detail <br>
-                                            below to confirm the link. 
+                                            Make sure that your company is State registered. Review the link below to confirm.
+                                            <br>
+                                            Check <a href="http://sdat.resiusa.org/ucc-charter/Pages/CharterSearch/default.aspx" target="_blank">Details</a>
                                             <br><br>
-                                            <span>Please check a radio (Yes/No)</span>
-                                            <input type="radio" name="stateregistered" id="stateregistered" value="Yes"> Yes
-                                            <input type="radio" name="stateregistered" id="stateregistered" value="No"> No
-                                            <br>
                                             <style>
                                                 #link{
                                                     width: 95%;
@@ -117,24 +128,24 @@
                                                     border: 1px solid green;
                                                 }
                                             </style>
-                                            <span> Paste a link <br> <input type="text" id="link"name="state_registration_link" placeholder="State Registration Link"> </span> <br>
-                                            Check <a href="http://sdat.resiusa.org/ucc-charter/Pages/CharterSearch/default.aspx">Details</a>
+                                            <span>Paste the link to your company's state registration if applicable.</span>
+                                            <input type="text" id="link"name="state_registration_link" placeholder="State Registration Link">
+                                            <br>
                                             <br>
 
                                         </p>
                                     </div>
                                 </div>
-
                                 <div class="federal">
-                                    <div class="legal_info_img"></div>
-                                    <div class="inner">
-                                        <u><b>ARE THEY FEDERAL REGISTERED?</b></u> <br>
-                                            This company is federal registered 
-                                            <br><br><br>
-                                            <span>Please check a radio (Yes/No)</span>
-                                            <input type="radio" name="federalregistered" id="stateregistered" value="Yes"> Yes
-                                            <input type="radio" name="federalregistered" id="stateregistered" value="No"> No
-                                            <br> <br>
+                                    <!-- <div class="legal_info_img"></div> -->
+                                    <div class="inner" style="margin-left: 10px;">
+                                        <br>
+                                        <b><u>ARE THEY FEDERALLY REGISTERED?</u></b> 
+                                        <p>
+                                            Make sure that your company is Federally registered. Review the link below to confirm.
+                                            <br>
+                                            Check <a href="https://ai.fmcsa.dot.gov/hhg/search.asp">Details</a>
+                                            <br><br>
                                             <style>
                                                 #link{
                                                     width: 95%;
@@ -143,30 +154,30 @@
                                                     border-radius: 0px;
                                                     border: 1px solid green;
                                                 }
-                                                .paste-link{
+                                                /* .paste-link{
                                                     margin-left:80px;
-                                                }
+                                                } */
                                             </style>
-                                            <div class="paste-link">
-                                                <span> Paste a link <br> <input type="text" id="link"name="federal_registration_link" placeholder="Federal Registration Link"> </span> <br>
+                                            <!-- <div class="paste-link"> -->
+                                            <span>Paste the link to your company's federal registration if applicable.</span>
+                                            <input type="text" id="link"name="federal_registration_link" placeholder="Federal Registration Link">
                                                 <!-- Check <a href="http://sdat.resiusa.org/ucc-charter/Pages/CharterSearch/default.aspx">Details</a> -->
-                                                Check <a href="https://ai.fmcsa.dot.gov/hhg/search.asp">Details</a>
-                                            </div>
+                                                
+                                            <!-- </div> -->
+                                            <br>
                                             <br>
 
                                         </p>
                                     </div>
                                 </div>
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br>
                                 <div class="licensing">
                                     <style>
                                         .licensing{
                                             background-color: #fff; 
                                             width: 100%;
-                                            height: 200px;
+                                            height: 100%;
                                             text-align: center;
-                                            height: 200
-                                            px;
+                                            /* height: 200px; */
                                             box-shadow: 5px 10px #888888;
                                             border-radius: 5px;
                                             border: green solid 1px;
@@ -178,12 +189,9 @@
                                     <p>
                                         <b><u>LICENSING  AND INFORMATION</u></b>
                                         <br>
-                                        This company is federal registered 
-                                        <br><br>
-                                        <span>Please check a radio (Yes/No)</span>
-                                        <input type="radio" name="licesingandinformation" id="stateregistered" value="Yes"> Yes
-                                        <input type="radio" name="licesingandinformation" id="stateregistered" value="No"> No
-
+                                        DO THEY HAVE A PUBLIC LICENSE?
+                                        <br>
+                                        Check <a href="#">Details</a>
                                         <br>
                                         <style>
                                             #link{
@@ -198,14 +206,12 @@
                                             }
                                         </style>
                                         <div class="paste-link">
-                                            <span> Paste a link <br> <input type="text" id="link" name="licensing_and_information" placeholder="Licesing and Infomation Link"> </span> <br>
+                                            <span>Paste the link to your company's public liscense if applicable.</span>
+                                            <input required type="text" id="link" name="licensing_and_information" placeholder="Licesing and Infomation Link"><br>
                                             <!-- Didnt find the link -->
                                             <br>
-                                            Check <a href="#">Details</a>
+                                            
                                         </div>
-                                        
-                                        <br><br>
-
                                     </p>                            
                                 </div>
                             <!-- </table> -->
@@ -222,20 +228,16 @@
                                             
                                         }
                                         .member_of_bbb, .member_of_amca, .member_of_hhgffa{
-                                            height: 200px;
+                                            height: 100%;
                                         }
                                     </style>
                                     <div class="legal_info_img"><img src="aplus.PNG" alt=""></div>
-                                    <div class="inner">
+                                    <div class="inner" style="height: 100%;">
                                         <p>
                                             <br>
                                             <h5><u>MEMBER OF BETTER BUSINESS BUREAU?</u> </h5>
                                             Is this company a member of BBB?
-                                            <br><br>
-                                            <span>Please check a radio (Yes/No)</span>
-                                            <input type="radio" name="bbbregistered" id="stateregistered" value="Yes"> Yes
-                                            <input type="radio" name="bbbregistered" id="stateregistered" value="No"> No
-                                            <br><br>
+                                            <br>
                                             <style>
                                                 #link{
                                                     width: 95%;
@@ -249,11 +251,15 @@
                                                 }
                                             </style>
                                             <div class="paste-link">
-                                                <span> Paste a link <br> <input type="text" id="link" name="member_of_bbb" placeholder="Memeber of BBB Link"> </span> <br>
-                                                <!-- Didnt find the link -->
-                                                <br>
-                                                Check <a href="https://bbb.org">Details</a>
+                                                Check <a href="https://bbb.org">Details</a><br><br>
+                                                <span> Paste the link to your company's BBB page if applicable.</span>
+                                                <input type="text" id="link" name="member_of_bbb" placeholder="Memeber of BBB Link">
+                                                <br><br>
+                                                <div class="star_rating">
+                                                    <span> What is your star rating on BBB? <input name="bbb_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.00" />
+                                                </div>
                                             </div>
+                                            <br>
                                             
                                         </p>
                                     </div>
@@ -263,12 +269,7 @@
                                     <div class="inner">
                                         <p>
                                         <h5><u>MEMBER OF  AMERICAN MOVING  AND STORAGE  ASSOCIATION?</u> </h5><br>
-                                            Is this compamy a member of american moving and association?
-                                            <br><br>
-                                            <span>Please check a radio (Yes/No)</span>
-                                            <input type="radio" name="americanmovingassiciation" id="stateregistered" value="Yes"> Yes
-                                            <input type="radio" name="americanmovingassiciation" id="stateregistered" value="No"> No
-                                            <br>
+                                            
                                             <!-- Didnt find the link -->
                                             <style>
                                                 #link{
@@ -283,18 +284,18 @@
                                                 }
                                             </style>
                                             <div class="paste-link">
-                                                <span> Paste a link <br> <input type="text" id="link" name="member_of_amca" placeholder="Memeber of American Moving associations Link"> </span> <br>
+                                                Is this compamy a member of american moving and storage association?
+                                                <br>
+                                                Check <a href="http://www.moving.org/">Details</a><br><br>
+                                                <span> Paste the link to your company's AMSA membership if applicable.</span><br>
+                                                <input type="text" id="link" name="member_of_amca" placeholder="Memeber of American Moving associations Link"><br>
                                                 <!-- Didnt find the link -->
                                                 <br>
-                                                Check <a href="http://www.moving.org/">Details</a>
+                                                
                                             </div>
-                                            
-                                            <br><br>
-
                                         </p>
                                     </div>
                                 </div>
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                 <div class="member_of_hhgffa">
                                     <div class="legal_info_img"></div>
                                     <div class="inner">
@@ -302,10 +303,6 @@
                                             <h5> <u>MEMBER OF HHGFFAA  (Household Good  Forwarders of America?)</u></h5><br>
                                             Is this compamy a member of HHGFFAA ?
                                             <br><br>
-                                            <span>Please check a radio (Yes/No)</span>
-                                            <input type="radio" name="hhgffaa" id="stateregistered" value="Yes"> Yes
-                                            <input type="radio" name="hhgffaa" id="stateregistered" value="No"> N
-                                            <!-- Didnt find the link -->
                                             <style>
                                                 #link{
                                                     width: 95%;
@@ -319,14 +316,13 @@
                                                 }
                                             </style>
                                             <div class="paste-link">
-                                                <span> Paste a link <br> <input type="text" id="link" name="member_of_hhgffaa" placeholder="Memeber of HHGFFAA Link"> </span> <br>
+                                                Check <a href="http://www.moving.org/">Details</a><br><br>
+                                                <span>Paste the link to your HHGFFAA page if applicable.</span>
+                                                <input type="text" id="link" name="member_of_hhgffaa" placeholder="Memeber of HHGFFAA Link"><br>
                                                 <!-- Didnt find the link -->
                                                 <br>
-                                                Check <a href="http://www.moving.org/">Details</a>
+                                                
                                             </div>
-                                            
-                                            <br><br>
-
                                         </p>
                                     </div>
                                 </div>
@@ -340,7 +336,7 @@
                                             float: left;
                                             text-align: left;
                                             width: 49%;
-                                            height: 250px;
+                                            height: 100%;
                                             box-shadow: 5px 10px #888888;
                                             border-radius: 5px;
                                             border: green solid 1px;
@@ -396,7 +392,7 @@
                                                 float: right;
                                                 text-align: left;
                                                 width: 49%;
-                                                height: 250px;
+                                                height: 100%;
                                                 box-shadow: 5px 10px #888888;
                                                 border-radius: 5px;
                                                 border: green solid 1px;
@@ -439,11 +435,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                <br><br>
                                 <h2> RECOMMENDED PORTALS</h2>
                                 <div class="recommenadedportals">
                                     <div class="header">
-                                        
                                         <div class="present-on-moverzfax">
                                             <div class="legal_info_img"></div>
                                             <div class="inner">
@@ -488,8 +483,8 @@
                                                     <br><br>
                                                     <!-- Didnt find the link -->
                                                     <span>Please check a radio (Yes/No)</span>
-                                                    <input type="radio" name="moverzfax" id="stateregistered" value="Yes"> Yes
-                                                    <input type="radio" name="moverzfax" id="stateregistered" value="No"> No
+                                                    <input type="radio" name="mover_reviews" id="stateregistered" value="Yes"> Yes
+                                                    <input type="radio" name="mover_reviews" id="stateregistered" value="No"> No
                                                     <style>
                                                         #link{
                                                             width: 95%;
@@ -503,14 +498,14 @@
                                                         }
                                                     </style>
                                                     <div class="paste-link">
-                                                        <span> Paste a link <br> <input type="text" id="link" name="present_on_mover_reviews" placeholder=" Mover Reviews Link"> </span> <br>
+                                                        <span> Paste a link <br> <input type="text" id="link" name="present_on_moving_reviews" placeholder=" Mover Reviews Link"> </span> <br>
                                                         <!-- Didnt find the link -->
                                                         <br>
                                                         Check <a href="http://www.moverreviews.com/company/ProAce-Moving-and-Storage-LLC.asp">Details</a>  
                                                     </div>
-                                                    
-                                                    <br><br>
-
+                                                    <div class="star_rating">
+                                                        <span> What is your star rating on this site? <input name="moving_reviews_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
+                                                    </div>
                                                 </p>
                                             </div>
                                         </div>
@@ -542,6 +537,9 @@
                                                         <br>
                                                         Check <a href="http://www.yelp.com/dc">Details</a> 
                                                     </div>
+                                                    <div class="star_rating">
+                                                        <span> What is your star rating on this site? <input name="yelp_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
+                                                    </div>
                                                 </p>
                                             </div>
                                         </div>
@@ -554,8 +552,8 @@
                                                     <br><br>
                                                     <!-- Didnt find the link -->
                                                     <span>Please check a radio (Yes/No)</span>
-                                                    <input type="radio" name="yelp" id="stateregistered" value="Yes"> Yes
-                                                    <input type="radio" name="yelp" id="stateregistered" value="No"> No
+                                                    <input type="radio" name="insider_pages" id="stateregistered" value="Yes"> Yes
+                                                    <input type="radio" name="insider_pages" id="stateregistered" value="No"> No
 
                                                     <style>
                                                         #link{
@@ -570,15 +568,18 @@
                                                         }
                                                     </style>
                                                     <div class="paste-link">
-                                                        <span> Paste a link <br> <input type="text" id="link" name="present_on_yelp" placeholder=" Insider Pages Link"> </span> <br>
+                                                        <span> Paste a link <br> <input type="text" id="link" name="present_on_insider_pages" placeholder=" Insider Pages Link"> </span> <br>
                                                         <!-- Didnt find the link -->
                                                         <br>
                                                         Check <a href="http://www.yelp.com/dc">Details</a>
                                                     </div>
+                                                    <div class="star_rating">
+                                                        <span> What is your star rating on this site? <input name="insider_pages_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
+                                                    </div>
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="present-on-kudzu">
+                                        <div class="present-on-kudzu"> 
                                             <!-- <div class="legal_info_img"></div> -->
                                             <div class="inner">
                                                 <style>
@@ -608,14 +609,8 @@
                                                             Check <a href="http://www.kudzu.com/m/ProAce-International-Moving-and-Storage-16671090">Details</a>
                                                         </div>
                                                         <br>
-                                                        <span>Rate out of 5</span> <br>
                                                         <div class="star_rating">
-                                                            <button class="star" name="star1" value="1">&#9734;</button>
-                                                            <button class="star" name="star2" value="2">&#9734;</button>
-                                                            <button class="star" name="star3" value="3">&#9734;</button>
-                                                            <button class="star" name="star4" value="4">&#9734;</button>
-                                                            <button class="star" name="star4" value="5">&#9734;</button>
-                                                            
+                                                            <span> What is your star rating on this site? <input name="kudzu_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                         </div>
                                                     </p>
                                                 </div>
@@ -644,14 +639,8 @@
                                                                 <br>
                                                                 Check <a href="http://www.moverreviews.com/company/ProAce-Moving-and-Storage-LLC.asp">Details</a>
                                                             </div>
-                                                            <span>Rate out of 5</span> <br>
                                                             <div class="star_rating">
-                                                                <button class="star" name="star1" value="1">&#9734;</button>
-                                                                <button class="star" name="star2" value="2">&#9734;</button>
-                                                                <button class="star" name="star3" value="3">&#9734;</button>
-                                                                <button class="star" name="star4" value="4">&#9734;</button>
-                                                                <button class="star" name="star4" value="5">&#9734;</button>
-                                                                    
+                                                                <span> What is your star rating on this site? <input name="mover_reviews_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                             </div>
                                                         </p>
                                                     </div>
@@ -679,14 +668,8 @@
                                                             <br>
                                                             Check <a href="http://www.moverreviews.com/company/ProAce-Moving-and-Storage-LLC.asp">Details</a>
                                                         </div>
-                                                        <span>Rate out of 5</span> <br>
                                                         <div class="star_rating">
-                                                            <button class="star" name="star1" value="1">&#9734;</button>
-                                                            <button class="star" name="star2" value="2">&#9734;</button>
-                                                            <button class="star" name="star3" value="3">&#9734;</button>
-                                                            <button class="star" name="star4" value="4">&#9734;</button>
-                                                            <button class="star" name="star4" value="5">&#9734;</button>
-                                                                
+                                                            <span> What is your star rating on this site? <input name="review_a_mover_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                         </div>
                                                     </p>
                                                 </div>
@@ -713,14 +696,8 @@
                                                             <br>
                                                             Check <a href="http://www.moverssearchandreviews.com/ProAce-Movers-LLC-Reviews">Details</a>
                                                         </div>
-                                                        <span>Rate out of 5</span> <br>
                                                         <div class="star_rating">
-                                                            <button class="star" name="star1" value="1">&#9734;</button>
-                                                            <button class="star" name="star2" value="2">&#9734;</button>
-                                                            <button class="star" name="star3" value="3">&#9734;</button>
-                                                            <button class="star" name="star4" value="4">&#9734;</button>
-                                                            <button class="star" name="star4" value="5">&#9734;</button>
-                                                                
+                                                            <span> What is your star rating on this site? <input name="mover_search_and_reviews_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                         </div>
                                                     </p>
                                                 </div>
@@ -793,10 +770,13 @@
                                                         }
                                                     </style>
                                                     <div class="paste-link">
-                                                        <span> Paste a link <br> <input type="text" id="link" name="present_on_trasport_reviews" placeholder=" Transport Reviews Link"> </span> <br>
+                                                        <span> Paste a link <br> <input type="text" id="link" name="present_on_transport_reviews" placeholder=" Transport Reviews Link"> </span> <br>
                                                         <!-- Didnt find the link -->
                                                         <br>
                                                         Check <a href="http://transportreviews.com/">Details</a>
+                                                    </div>
+                                                    <div class="star_rating">
+                                                        <span> What is your star rating on this site? <input name="transport_reviews_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                     </div>
                                                 </p>
                                             </div>
@@ -857,14 +837,8 @@
                                                             <br>
                                                             Check <a href="http://movingguardian.org/moving-review-website/moving-reviews/Pro-Ace-Intl-Moving-Storage">Details</a>
                                                         </div>
-                                                        <span>Rate out of 5</span> <br>
                                                         <div class="star_rating">
-                                                            <button class="star" name="star1" value="1">&#9734;</button>
-                                                            <button class="star" name="star2" value="2">&#9734;</button>
-                                                            <button class="star" name="star3" value="3">&#9734;</button>
-                                                            <button class="star" name="star4" value="4">&#9734;</button>
-                                                            <button class="star" name="star4" value="5">&#9734;</button>
-                                                                
+                                                            <span> What is your star rating on this site? <input name="moving_guardian_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                         </div>
                                                     </p>
                                                 </div>
@@ -903,6 +877,9 @@
                                                         <!-- Didnt find the link -->
                                                         <br>
                                                         Check <a href="http://transportreports.com/">Details</a>
+                                                    </div>
+                                                    <div class="star_rating">
+                                                        <span> What is your star rating on this site? <input name="transport_reports_stars" type="number" pattern="\d+\.?\d?(?!\d)" placeholder="0.0" />
                                                     </div>
                                                 </p>
                                             </div>
@@ -950,7 +927,7 @@
                                 border: #888888 1px solid;
                                 background-color: green;
                                 height: 30px;
-                                width: 10%;
+                                width: 200px;
                                 margin-top: 20px;
                                 margin-bottom: 20px;
                                 color: #fff;
@@ -958,7 +935,7 @@
                             }
                         </style>
                         <div class="submit_information">
-                            <input type="submit" name="submit" value="Add Information" id="submit">
+                            <a href="../home/confirmation.php"><input type="submit" name="submit" value="Submit for Approval" id="submit"></a>
                         </div>
                     </div>
                 </form>
@@ -986,3 +963,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>
+<?php //include "../home/footer.php"; ?>
