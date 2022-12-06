@@ -97,25 +97,117 @@
 	/* smaller than mobile */
 	@media (max-width: 400px) {}
 </style>
-<?php if (isset($_GET['invalid']) && !empty($_GET['invalid'])) {
-    $msg = "USDOT number already registered!";
-} else {
-    $msg = "";
-}
-?>
+<?php 
+isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "USDOT number already registered!" : $msg = "";
 
-<?php
-function linkInput($siteName, $siteLink, $name, $placeholder){
+//isset($_REQUEST["usdot-check"]) ? checkDatabase() : null;
+
+function linkInput($siteName, $siteLink, $name, $value, $stars){
 	?>
 	<tr>
 		<td>
 			<label><?php echo $siteName ?><sup style="color: red">*</sup></label>
 			<a href=<?php echo $siteLink ?> target="_blank">Visit Site</a>
 		</td>
-		<td><input type="text" class="form-control" name=<?php echo $name ?> placeholder=<?php echo $placeholder ?> /></td>
+		<td>
+			
+			<input style="width: 100%;" type="text" class="form-control" name=<?php echo $name ?> value="<?php echo (isset($value)) ? $value : '';?>" placeholder="Paste your link here, or type N/A" required />
+			<a href=<?php echo $value ?> target="_blank">Test Link</a>
+		<?php if($stars) { ?>
+			<input type="number" class="form-control" name="bbb_stars" placeholder="Enter your star rating (e.g. 5.0)">
+		<?php } ?>
+		</td>
 	</tr>
 	<?php
 }
+
+// include 'state_link_function.php';
+// echo stateLinkFor("AL");
+
+$checkMsg = '';
+$checkSuccessMsg = '';
+
+//function checkDatabase(){
+if(isset($_REQUEST["usdot-check"])){
+	require_once '../model/connection.php';
+    $search = $_REQUEST["usdot-check"];
+	$sql = "SELECT  * FROM mover WHERE usdot = '" . $search . "';";
+	$result = mysqli_query($con, $sql);
+	$resultCheck = mysqli_num_rows($result);
+
+	if ($resultCheck > 0) {
+		//sets table values to variables
+		while ($rows = mysqli_fetch_assoc($result)) {
+			$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
+			$checkMsg = '';
+			$usdot = $rows['usdot'];
+			$company_name = $rows['name'];
+			$alt_company_name = $rows['alias'];
+			$website = $rows['url'];
+			$phone = $rows['phone'];
+			$fax = $rows['fax'];
+			$contact_person = $rows['contact_person'];
+			$mc = $rows['mc'];
+
+			$country_id = $rows['country_id'];
+			$_SESSION['country_id'] = $rows['country_id'];
+			$state_id = "Tennessee";//$rows['state_id'];
+			$_SESSION['state_id'] = $rows['state_id'];
+			$city_id = 'Clarksville';//$rows['city_id'];
+			$_SESSION['city_id'] = $rows['city_id'];
+
+			$zip = $rows['zipcode'];
+			$email = $rows['email'];
+			$logo = $rows['logo'];
+
+			//set all of the links that we will still use
+			//this list will change pending Dan's list of current sites to use.
+			$state_link = $rows['state_registration_link'];
+			$federal_link = "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=" . $usdot ;
+			$fmcsa_link = $rows['fmcsa_link'];
+			$bbb_link = $rows['bbb_link'];
+			$amsa_link = $rows['amsa_link'];
+			$hhgfaa_link = $rows['hhgfaa_link'];
+			$ripoffreport_link = $rows['ripoffreport_link'];
+			$movingscam_link = $rows['movingscam_link'];
+			$mymovingreviews_link = $rows['mymovingreviews_link'];
+			$yelp_link = $rows['yelp_link'];
+			$insiderpages_link = $rows['insiderpages_link'];
+			$kudzu_rate = $rows['kudzu_rate'];
+			$moversreviewed_link = $rows['moversreviewed_link'];
+			$reviewamover_link = $rows['reviewamover_link'];
+			$moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
+			$angies_link = $rows['angies_link'];
+			$transportreviews_link = $rows['transportreviews_link'];
+			$transportreports_link = $rows['transportreports_link'];
+			$movingguardian_link = $rows['movingguardian_link'];
+		}
+	} else {
+			$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
+			$checkSuccessMsg = '';
+			//set everything to empty string
+			$state_link = '';
+			$federal_link = '';
+			$fmcsa_link = '';
+			$bbb_link = '';
+			$amsa_link = '';
+			$hhgfaa_link = '';
+			$ripoffreport_link = '';
+			$movingscam_link = '';
+			$mymovingreviews_link = '';
+			$yelp_link = '';
+			$insiderpages_link = '';
+			$kudzu_rate = '';
+			$moversreviewed_link = '';
+			$reviewamover_link = '';
+			$moverssearchandreviews_link = '';
+			$angies_link = '';
+			$transportreviews_link = '';
+			$transportreports_link = '';
+			$movingguardian_link = '';
+	}
+}
+//}
 ?>
 
 <script type="text/javascript">
@@ -125,50 +217,72 @@ function linkInput($siteName, $siteLink, $name, $placeholder){
 		img.src = "captcha.php?rand_number=" + Math.random();
 	}
 </script>
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="b-container">
 	<div class="container in-container slide-in-bottom">
 		<div class="bg-form form-group">
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
-					<?php include 'state_link_function.php' ?>
-					<?php echo stateLinkFor("AL") ?>
 					<h5 class="text-danger text-center"><?= $msg ?></h5>
+
+					<form method="get" action="mover_register_and_links.php">
+						<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check my USDOT#" required><br>
+						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
+					</form>
+					<br>
 					<form action="../model/mover_model.php" method="post" enctype="multipart/form-data">
 						<table class="table">
 							<tbody>
-								<?php echo linkInput("Federally Registered", "https://www.youtube.com/", "federal_link", "federal-link-here"); ?>
 								<tr>
 									<td><label>USDOT#<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="usdot" placeholder="Enter USDOT#" required></td>
+									<td><input type="text" class="form-control" name="usdot" id="usdot" value="<?php echo (isset($usdot)) ? $usdot : '';?>" placeholder="Enter USDOT#" required></td>
 								</tr>
 								<tr>
 									<td><label>Company Name<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="company_name" placeholder="Enter Company Name" required></td>
+									<td><input type="text" class="form-control" name="company_name" id="company_name" value="<?php echo (isset($company_name)) ? $company_name : '';?>" placeholder="Enter Company Name" required></td>
 								</tr>
 								<tr>
 									<td><label>Alternative Business Name</label></td>
-									<td><input type="text" class="form-control" name="alternate_business" placeholder="Enter Alternative Business Name"></td>
+									<td><input type="text" class="form-control" name="alternate_business" value="<?php echo (isset($alt_company_name)) ? $alt_company_name : '';?>" placeholder="Enter Alternative Business Name"></td>
 								</tr>
 								<tr>
 									<td><label>Company's Website</label></td>
-									<td><input type="text" class="form-control" name="company_website" placeholder="example.com"></td>
+									<td><input type="text" class="form-control" name="company_website" value="<?php echo (isset($website)) ? $website : '';?>" placeholder="example.com"></td>
 								</tr>
 								<tr>
 									<td><label>Company's Contact Number<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="contact_number" placeholder="000-000-0000" required></td>
+									<td><input type="text" class="form-control" name="contact_number" value="<?php echo (isset($phone)) ? $phone : '';?>" placeholder="000-000-0000" required></td>
 								</tr>
 								<tr>
 									<td><label>Company's Fax Number</label></td>
-									<td><input type="text" class="form-control" name="fax_number" placeholder="Fax Number"></td>
+									<td><input type="text" class="form-control" name="fax_number" value="<?php echo (isset($fax)) ? $fax : '';?>" placeholder="Fax Number"></td>
 								</tr>
 								<tr>
 									<td><label>Contact Person</label></td>
-									<td><input type="text" class="form-control" name="contact_person" placeholder="Enter Full Name"></td>
+									<td><input type="text" class="form-control" name="contact_person" value="<?php echo (isset($contact_person)) ? $contact_person : '';?>" placeholder="Enter Full Name"></td>
 								</tr>
 								<tr>
 									<td><label>MC#</label></td>
-									<td><input type="text" class="form-control" name="mc" placeholder="Enter MC#"></td>
+									<td><input type="text" class="form-control" name="mc" value="<?php echo (isset($mc)) ? $mc : '';?>" placeholder="Enter MC#"></td>
 								</tr>
 								<tr>
 									<td><label>Country<sup style="color: red">*</sup></label></td>
@@ -182,7 +296,7 @@ function linkInput($siteName, $siteLink, $name, $placeholder){
 									<td><label>State<sup style="color: red">*</sup></label></td>
 									<td>
 										<select class="form-select" id="state_1" name="state" onchange="get_city_1()" required>
-											<!-- States -->
+											<!-- State -->
 										</select>
 									</td>
 								</tr>
@@ -196,18 +310,18 @@ function linkInput($siteName, $siteLink, $name, $placeholder){
 								</tr>
 								<tr>
 									<td><label>Zip Code<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="zip_code" placeholder="Enter Zip Code" required></td>
+									<td><input type="text" class="form-control" name="zip_code" value="<?php echo (isset($zip)) ? $zip : '';?>" placeholder="Enter Zip Code" required></td>
 								</tr>
 								<tr>
 									<td>Business Coverage</td>
 									<td><input type="checkbox" name="business_mover[]" value="local_mover" checked> Local Mover<br>
-										<input type="checkbox" name="business_mover[]" value="long_mover" checked> Long Distance Mover<br>
-										<input type="checkbox" name="business_mover[]" value="cross_mover" checked> Cross-Border to Cannada
+										<input type="checkbox" name="business_mover[]" value="long_mover"> Long Distance Mover<br>
+										<input type="checkbox" name="business_mover[]" value="cross_mover"> Cross-Border to Cannada
 									</td>
 								</tr>
 								<tr>
 									<td><label>E-mail Address<sup style="color: red">*</sup></label></td>
-									<td><input type="email" class="form-control" name="mover_email" placeholder="xxxxxx@example.com" required></td>
+									<td><input type="email" class="form-control" name="mover_email" value="<?php echo (isset($email)) ? $email : '';?>" placeholder="xxxxxx@example.com" required></td>
 								</tr>
 								<tr>
 									<td><label>Password<sup style="color: red">*</sup></label></td>
@@ -222,8 +336,21 @@ function linkInput($siteName, $siteLink, $name, $placeholder){
 								</tr>
 								<tr>
 									<td><label>Company Logo</label></td>
-									<td><input type="file" class="form-control" name="company_logo"></td>
+									<td><input type="file" class="form-control" name="company_logo" value="<?php echo (isset($logo)) ? $logo : '';?>"></td>
 								</tr>
+							</tbody>
+						</table>
+								<h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Links</h1>
+						<table class="table">
+							<tbody>
+								<?php echo linkInput("State Registered", $state_link, "state_registration_link", $state_link, false); ?>
+								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false); ?>
+								<?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false); ?>
+								<?php echo linkInput("BBB Member", "https://www.bbb.org/", "member_of_bbb", $bbb_link, true); ?>
+							</tbody>
+						</table>
+						<table class="table text-center">
+							<tbody>
 								<tr>
 									<td></td>
 									<td><input type="checkbox" name="" required> I agree to the <a href="t&c.php" target="_blank">terms of use</a></td>
@@ -240,7 +367,7 @@ function linkInput($siteName, $siteLink, $name, $placeholder){
 								</tr>
 							</tbody>
 						</table>
-						<div class="row ">
+						<div class="row text-center">
 							<div class="col-md-12 d-flex justify-content-center">
 								<button type="submit" class="btn button-mf me-5" name="" value="Signup">SIGN UP</button>
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
@@ -272,6 +399,27 @@ function linkInput($siteName, $siteLink, $name, $placeholder){
 		} else {
 			document.getElementById("message").innerHTML = "";
 		}
+	}
+	function refreshCaptcha() {
+		console.log("refreshed captcha");
+		img = document.getElementById("capt");
+		img.src = "captcha.php?rand_number=" + Math.random();
+	}
+
+	var select = document.getElementById('state_1');
+	var option;
+
+	for (var i = 0; i < select.options.length; i++) {
+		option = select.options[i];
+		console.log('checking')
+		if (option.value == 'TN') {
+		// or
+		// if (option.text == 'Malaysia') {
+			option.setAttribute('selected', true);
+
+			// For a single select, the job's done
+			//return; 
+		} 
 	}
 </script>
 

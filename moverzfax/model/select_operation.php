@@ -10,7 +10,7 @@
     $function = isset($_REQUEST['function']) && !empty($_REQUEST['function'])?$_REQUEST['function']:" ";
     if($function == "search")
     {
-            $usdot = isset($_REQUEST["usdot"])?$_REQUEST["usdot"]:NULL;
+            $usdot = isset($_REQUEST["usdot"])?$_REQUEST["usdot"]:NULL; 
             $sql = "SELECT usdot FROM mover_cart WHERE usdot = '".$usdot."' AND user_id = '".$user_id."'";    
             $result = $con->query($sql); 
             if(mysqli_num_rows($result) <= 0){
