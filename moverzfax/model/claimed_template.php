@@ -326,20 +326,22 @@
                         $moving_scam_link = $rows['moving_scam_link'];
 
                         //Recommended Portals
-                        $moverzfax_link = $rows['moverzfax_link'];
+                        //$moverzfax_link = $rows['moverzfax_link'];
                         $mover_reviews_link = $rows['mover_reviews_link'];
                         $yelp_link = $rows['yelp_link'];
                         $insider_pages_link = $rows['insider_pages_link'];
-                        $kudzu_link = $rows['kudzu_link'];
+                        //$kudzu_link = $rows['kudzu_link'];
                         $moverreviews_link = $rows['moverreviews_link'];
-                        $review_a_mover_link = $rows['review_a_mover_link'];
-                        $mover_search_and_review_link = $rows['mover_search_and_review_link'];
-                        $epinions_link = $rows['epinions_link'];
+                        //$review_a_mover_link = $rows['review_a_mover_link'];
+                        //$mover_search_and_review_link = $rows['mover_search_and_review_link'];
+                        //$epinions_link = $rows['epinions_link'];
                         $transport_reviews_link = $rows['transport_reviews_link'];
                         $angies_list_link = $rows['angies_list_link'];
-                        $moving_guardian_link = $rows['moving_guardian_link'];
-                        $transport_reports_link = $rows['transport_reports_link'];
-                        $mover_reviewed_link = $rows['mover_reviewed_link'];
+                        //$moving_guardian_link = $rows['moving_guardian_link'];
+                        //$transport_reports_link = $rows['transport_reports_link'];
+                        //$mover_reviewed_link = $rows['mover_reviewed_link'];
+
+						//$trust_pilot_link = $rows['trust_pilot_link']
 					}
 				} else {
 					echo "No data found " . $conn->error;
@@ -728,40 +730,8 @@
 											?>
 										</td>
 									</tr>
-									<!--PRESENT ON KUDZU?-->
-									<tr>
-										<td>
-											<label class="status_lable">
-												<?php
-												if ($kudzu_link) {
-													echo "<strong style ='color: green'>YES</strong>";
-												} else {
-													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating4 = substr($kudzu_link, 48, -11);
-												if (!empty($star_rating4) && isset($star_rating4)) {
-													$star_rating4 = $star_rating4;
-												} else {
-													$star_rating4 = 0;
-												}
-												?>
-											</label>
-										</td>
-										<td>
-											<label class="section_heading">PRESENT ON KUDZU?</label>
-											<?php
-											if ($kudzu_link) {
-												echo "<p id='register'>This company is present on Kudzu.</p>";
-												echo "<span>Check <a href='" . $kudzu_link . "' target='_blank'>details</a></span>";
-											} else {
-                                                echo "<p id='register'>This company is not present on Kudzu.</p>";
-												echo "<span>No url available</span>";
-											}
-											?>
-										</td>
-									</tr>
 									<!--PRESENT ON MOVER REVIEWS?-->
-									<tr class="row_dark">
+									<tr>
 										<td class="">
 											<label class="status_lable">
 												<?php
@@ -793,73 +763,8 @@
 											?>
 										</td>
 									</tr>
-									<!--PRESENT ON REVIEW A MOVER?-->
-									<tr>
-										<td>
-											<label class="status_lable">
-												<?php
-												if ($review_a_mover_link) {
-													echo "<strong style ='color: green'>YES</strong>";
-												} else {
-													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating6 = substr($review_a_mover_link, 48, -11);
-												if (!empty($star_rating6) && isset($star_rating6)) {
-													$star_rating6 = $star_rating6;
-												} else {
-													$star_rating6 = 0;
-												}
-												?>
-											</label>
-										</td>
-										<td>
-											<label class="section_heading">PRESENT ON REVIEW A MOVER?</label>
-											<?php
-											if ($review_a_mover_link) {
-												echo "<p id='register'>This company is listed on Review a Mover.<p>";
-												echo "<span>Check <a href='" . $review_a_mover_link . "' target='_blank'>details</a></span>";
-											} else {
-												echo "<p id='register'>This company is not listed on Review a Mover.<p>";
-												echo "<span>No url available</span>";
-											}
-											?>
-										</td>
-									</tr>
-									<!--PRESENT ON MOVERS SEARCH AND REVIEWS? HTML Link-->
-									<tr class="row_dark">
-										<td class="">
-											<label class="status_lable">
-												<?php
-												if ($mover_search_and_review_link) {
-													echo "<strong style ='color: green'>YES</strong>";
-												} else {
-													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating7 = substr($mover_search_and_review_link, 48, -11);
-												if (!empty($star_rating7) && isset($star_rating7)) {
-													$star_rating7 = $star_rating7;
-												} else {
-													$star_rating7 = 0;
-												}
-												?>
-											</label>
-										</td>
-										<td>
-											<label class="section_heading">PRESENT ON MOVERS SEARCH AND REVIEWS?</label>
-											<?php
-											// star needed
-											if ($mover_search_and_review_link) {
-												echo "<p id='register'>This company is present on Movers Search and Reviews.<p>";
-												echo "<span>" . $mover_search_and_review_link . "</span>";
-											} else {
-												echo "<p id='register'>This company is not present on Movers Search and Reviews.<p>";
-												echo "<span>No url available</span>";
-											}
-											?>
-										</td>
-									</tr>
 									<!--PRESENT ON TRANSPORT REVIEWS?-->
-									<tr>
+									<tr class="row_dark">
 										<td>
 											<label class="status_lable">
 
@@ -891,80 +796,69 @@
 											?>
 										</td>
 									</tr>
-									<!--PRESENT ON TRANSPORT REPORTS?-->
-									<tr class="row_dark">
-										<td class="">
-											<label class="status_lable">
-
-												<?php
-												if ($transport_reports_link) {
-													echo "<strong style ='color: green'>YES</strong>";
-												} else {
-													echo "<strong style ='color: red'>NO</strong>";
-												}
-
-												$star_rating10 = substr($transport_reports_link, 48, -11);
-												if (!empty($star_rating10) && isset($star_rating10)) {
-													$star_rating10 = $star_rating10;
-												} else {
-													$star_rating10 = 0;
-												}
-
-												?>
-											</label>
-										</td>
-										<td>
-											<label class="section_heading">PRESENT ON TRANSPORT REPORTS?</label>
-
-											<?php
-											if ($transport_reports_link) {
-												echo "<p id='register'>This company is listed on Transport Reports.</p>";
-												echo "<span>Check <a href='" . $transport_reports_link . "' target='_blank'>details</a></span>";
-											} else {
-												echo "<p id='register'>This company is not listed on Transport Reports</p>";
-												echo "<span>No url available</span>";
-											}
-											?>
-										</td>
-									</tr>
-									<!--PRESENT ON MOVING GUARDIAN?-->
+									<!--PRESENT ON ANGIES LIST?-->
 									<tr>
 										<td>
 											<label class="status_lable">
+
 												<?php
-												if ($moving_guardian_link) {
+												if (strtoupper($angies_rating) != "NO" && $angies_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($angies_rating) . "</strong>";
 													echo "<strong style ='color: green'>YES</strong>";
+												} else if (strtoupper($angies_rating) == "NO") {
+													//echo "<strong style ='color: red'>" . strtoupper($angies_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
+												} else if ($angies_rating != NULL) {
+													echo $angies_rating;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
 												}
 
-												$star_rating11 = substr($moving_guardian_link, 48, -11);
-												if (!empty($star_rating11) && isset($star_rating11)) {
-													$star_rating11 = $star_rating11;
+												$star_rating9 = substr($angies_rating, 48, -11);
+												if (!empty($star_rating9) && isset($star_rating9)) {
+													$star_rating9 = $star_rating9;
 												} else {
-													$star_rating11 = 0;
+													$star_rating9 = 0;
 												}
-
 												?>
 											</label>
 										</td>
 										<td>
-											<label class="section_heading">PRESENT ON MOVING GUARDIAN?</label>
+											<label class="section_heading">PRESENT ON ANGIES LIST?</label>
 											<?php
-											if ($moving_guardian_link) {
-												echo "<p id='register'>This company is listed on Moving Guardian.<p>";
-												echo "<span>Check <a href='" . $moving_guardian_link . "'>details</a></span>";
-											} else {
-												echo "<p id='register'>This company is not listed on Moving Guardian.<p>";
+											if ($angies_rating != "NO" && $angies_rating != NULL) {
+												//echo "<p id='register'>" . $angies_details . "</p>";
+												echo "<p id='register'>This company is present on Angies List</p>";
+												echo "<span>" . $angies_link . "</span>";
+											} else if ($angies_rating == "NO") {
+
+												//echo "<p id='register'>" . $angies_details . "<p>";
+												echo "<p id='register'>This company is not present on Angies List</p>";
+												//echo "<span>" . $angies_link . "</span>";
 												echo "<span>No url available</span>";
+											} else if ($angies_rating ==  null) {
+												echo "Nothing found from Angies List";
 											}
 											?>
 										</td>
 									</tr>
-									<!-- Angie link is HTML Link if I want to add it in the report -->
-									<!-- Movers Reviewed link looks good if I want to add it in the report -->
-									<!-- Rated Mover link looks good if I want to add it in the report -->
-									<!-- Top Mover Reviews link looks good if I want to add it in the report -->
+									<!--PRESENT ON TRUST PILOT?-->
+									<tr class="row_dark"><!-- Our default mover table does not include Trust Pilot, so this will always be NO data -->
+										<td>
+											<label class="status_lable">
+												<?php
+													echo "<strong style ='color: red'>NO</strong>";
+												?>
+											</label>
+										</td>
+										<td>
+											<label class="section_heading">PRESENT ON TRUST PILOT?</label>
+											<?php
+												echo "<p id='register'>This company is not present on Trust Pilot</p>";
+												echo "<span>No url available</span>";
+											?>
+										</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>

@@ -151,9 +151,9 @@ if(isset($_REQUEST["usdot-check"])){
 
 			$country_id = $rows['country_id'];
 			$_SESSION['country_id'] = $rows['country_id'];
-			$state_id = "Tennessee";//$rows['state_id'];
+			$state_id = $rows['state_id'];
 			$_SESSION['state_id'] = $rows['state_id'];
-			$city_id = 'Clarksville';//$rows['city_id'];
+			$city_id = $rows['city_id'];
 			$_SESSION['city_id'] = $rows['city_id'];
 
 			$zip = $rows['zipcode'];

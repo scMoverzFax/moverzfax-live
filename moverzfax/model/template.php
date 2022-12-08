@@ -306,8 +306,10 @@
 				<?php
 
 				// LEGAL INFORMATION
+				//$sql = "SELECT state_registration_listed, state_registration_details, state_registration_link, safer_listed, safer_details, safer_link,fmcsa_listed, safer_details, safer_link,fmcsa_listed,fmcsa_details,fmcsa_link, bbb_listed,bbb_details,bbb_link,amsa_listed,amsa_details,amsa_link,hhgfaa_listed,hhgfaa_details,hhgfaa_link,ripoffreport_listed,ripoffreport_details,ripoffreport_link,movingscam_listed,movingscam_details,movingscam_link,mymovingreviews_rating,mymovingreviews_details,mymovingreviews_link,yelp_rating,yelp_details,yelp_link,insiderpages_rating,insiderpages_details,insiderpages_link,kudzu_rating,kudzu_details,kudzu_link,kudzu_rate,moversreviewed_rating,moversreviewed_details,moversreviewed_link,reviewamover_rating,reviewamover_details,reviewamover_link,moverssearchandreviews_rating,moverssearchandreviews_details,moverssearchandreviews_link,angies_rating,angies_details,angies_link,transportreviews_rating,transportreviews_details,transportreviews_link,transportreports_rating,transportreports_details,transportreports_link,movingguardian_rating,movingguardian_details,movingguardian_link 
+				//		FROM mover WHERE usdot = '" . $search . "';";
 				$sql = "SELECT state_registration_listed, state_registration_details, state_registration_link, safer_listed, safer_details, safer_link,fmcsa_listed, safer_details, safer_link,fmcsa_listed,fmcsa_details,fmcsa_link, bbb_listed,bbb_details,bbb_link,amsa_listed,amsa_details,amsa_link,hhgfaa_listed,hhgfaa_details,hhgfaa_link,ripoffreport_listed,ripoffreport_details,ripoffreport_link,movingscam_listed,movingscam_details,movingscam_link,mymovingreviews_rating,mymovingreviews_details,mymovingreviews_link,yelp_rating,yelp_details,yelp_link,insiderpages_rating,insiderpages_details,insiderpages_link,kudzu_rating,kudzu_details,kudzu_link,kudzu_rate,moversreviewed_rating,moversreviewed_details,moversreviewed_link,reviewamover_rating,reviewamover_details,reviewamover_link,moverssearchandreviews_rating,moverssearchandreviews_details,moverssearchandreviews_link,angies_rating,angies_details,angies_link,transportreviews_rating,transportreviews_details,transportreviews_link,transportreports_rating,transportreports_details,transportreports_link,movingguardian_rating,movingguardian_details,movingguardian_link 
-						FROM mover WHERE usdot = '" . $search . "';";
+				FROM mover WHERE usdot = '" . $search . "';";
 
 				$result = mysqli_query($con, $sql);
 				$resultCheck = mysqli_num_rows($result);
@@ -378,28 +380,28 @@
 						$insiderpages_details = $rows['insiderpages_details'];
 						$insiderpages_link = $rows['insiderpages_link'];
 
-						// PRESENT ON KUDZU?
-						$kudzu_rating = $rows['kudzu_rating'];
-						$kudzu_details = $rows['kudzu_details'];
-						$kudzu_link = $rows['kudzu_link'];
-						$kudzu_rate = $rows['kudzu_rate'];
+						// PRESENT ON KUDZU? No longer a site
+						// $kudzu_rating = $rows['kudzu_rating'];
+						// $kudzu_details = $rows['kudzu_details'];
+						// $kudzu_link = $rows['kudzu_link'];
+						// $kudzu_rate = $rows['kudzu_rate'];
 
 						// PRESENT ON MOVER REVIEWS?
 						$moversreviewed_rating = $rows['moversreviewed_rating'];
 						$moversreviewed_details = $rows['moversreviewed_details'];
 						$moversreviewed_link = $rows['moversreviewed_link'];
 
-						// PRESENT ON REVIEW A MOVER?
-						$reviewamover_rating = $rows['reviewamover_rating'];
-						$reviewamover_details = $rows['reviewamover_details'];
-						$reviewamover_link = $rows['reviewamover_link'];
+						// PRESENT ON REVIEW A MOVER? No longer a site
+						// $reviewamover_rating = $rows['reviewamover_rating'];
+						// $reviewamover_details = $rows['reviewamover_details'];
+						// $reviewamover_link = $rows['reviewamover_link'];
 
-						// PRESENT ON MOVERS SEARCH AND REVIEWS?
-						$moverssearchandreviews_rating = $rows['moverssearchandreviews_rating'];
-						$moverssearchandreviews_details = $rows['moverssearchandreviews_details'];
-						$moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
+						// PRESENT ON MOVERS SEARCH AND REVIEWS? No longer a site
+						// $moverssearchandreviews_rating = $rows['moverssearchandreviews_rating'];
+						// $moverssearchandreviews_details = $rows['moverssearchandreviews_details'];
+						// $moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
 
-						// PRESENT ON EPINIONS?
+						// PRESENT ON EPINIONS? No longer a site
 						//epinions not found
 
 
@@ -413,148 +415,24 @@
 						$transportreviews_details = $rows['transportreviews_details'];
 						$transportreviews_link = $rows['transportreviews_link'];
 
-						// PRESENT ON TRANSPORT REPORTS? 
-						$transportreports_rating = $rows['transportreports_rating'];
-						$transportreports_details = $rows['transportreports_details'];
-						$transportreports_link = $rows['transportreports_link'];
+						// PRESENT ON TRANSPORT REPORTS?  No longer a site
+						// $transportreports_rating = $rows['transportreports_rating'];
+						// $transportreports_details = $rows['transportreports_details'];
+						// $transportreports_link = $rows['transportreports_link'];
 
-						// PRESENT ON MOVING GUARDIAN? 
-						$movingguardian_rating = $rows['movingguardian_rating'];
-						$movingguardian_details = $rows['movingguardian_details'];
-						$movingguardian_link = $rows['movingguardian_link'];
+						// PRESENT ON MOVING GUARDIAN?  No longer a site
+						// $movingguardian_rating = $rows['movingguardian_rating'];
+						// $movingguardian_details = $rows['movingguardian_details'];
+						// $movingguardian_link = $rows['movingguardian_link'];
 
-						// PRESENT ON MOVERS REVIEWED? 
+						// PRESENT ON MOVERS REVIEWED?  No longer a site
 						// movers reviewed not found
 					}
 					// echo "".$kudzu_rate;
 				} else {
 					echo "No data found " . $conn->error;
 				}
-
-
 				?>
-
-				<!--Setting variables directly for test purposes-->
-				<!-- <div>
-					<?php
-					/*
-					$listedValue = "YES";
-					$detailsValue = "This is for details";
-					$linkValue = "www.google.com";
-
-
-					// State registered
-					$state_registration_listed = $listedValue;
-					$state_registration_details = $detailsValue;
-					$state_registration_link = $linkValue;
-
-					// Federal registration 
-					$safer_listed = $listedValue;
-					$safer_details = $detailsValue;
-					$safer_link = $linkValue;
-
-					// licensing and inforamtion
-					$fmcsa_listed = $listedValue;
-					$fmcsa_details = $detailsValue;
-					$fmcsa_link = $linkValue;
-
-					// MOVING ASSOCIATION
-					// member of bbb
-					$bbb_listed = $listedValue;
-					$bbb_details = $detailsValue;
-					$bbb_link = $linkValue;
-
-					// member of american moving and storage association
-					$amsa_listed = $listedValue;
-					$amsa_details = $detailsValue;
-					$amsa_link = $linkValue;
-
-					// MEMBER OF HHGFFAA (Household Good Forwarders of America)?
-					$hhgfaa_listed = $listedValue;
-					$hhgfaa_details = $detailsValue;
-					$hhgfaa_link = $linkValue;
-
-					// Scam Alert Portal 
-					// PRESENT ON RIPOFF REPORT? 
-					$ripoffreport_listed = $listedValue;
-					$ripoffreport_details = $detailsValue;
-					$ripoffreport_link = $linkValue;
-
-					// BLACKLISTED ON MOVING SCAM? 
-					$movingscam_listed = $listedValue;
-					$movingscam_details = $detailsValue;
-					$movingscam_link = $linkValue;
-
-					// Recommendation Portal
-					// PRESENT ON MOVERZFAX?
-					//IT WILL HAVE TO BE SELECTED FROM OUR DATABASE
-
-					// PRESENT ON MY MOVING REVIEWS?
-					$mymovingreviews_rating = $listedValue;
-					$mymovingreviews_details = $detailsValue;
-					$mymovingreviews_link = $linkValue;
-
-					// PRESENT ON YELP?
-					$yelp_rating = $listedValue;
-					$yelp_details = $detailsValue;
-					$yelp_link = $linkValue;
-
-					//PRESENT ON INSIDER PAGES?
-					$insiderpages_rating = $listedValue;
-					$insiderpages_details = $detailsValue;
-					$insiderpages_link = $linkValue;
-
-					// PRESENT ON KUDZU?
-					$kudzu_rating = $listedValue;
-					$kudzu_details = $detailsValue;
-					$kudzu_link = $linkValue;
-					$kudzu_rate = $rows['kudzu_rate'];
-
-					// PRESENT ON MOVER REVIEWS?
-					$moversreviewed_rating = $listedValue;
-					$moversreviewed_details = $detailsValue;
-					$moversreviewed_link = $linkValue;
-
-					// PRESENT ON REVIEW A MOVER?
-					$reviewamover_rating = $listedValue;
-					$reviewamover_details = $detailsValue;
-					$reviewamover_link = $linkValue;
-
-					// PRESENT ON MOVERS SEARCH AND REVIEWS?
-					$moverssearchandreviews_rating = $listedValue;
-					$moverssearchandreviews_details = $detailsValue;
-					$moverssearchandreviews_link = $linkValue;
-
-					// PRESENT ON EPINIONS?
-					//epinions not found
-
-
-					// PRESENT ON ANGIE'S LIST? 
-					$angies_rating = $listedValue;
-					$angies_details = $detailsValue;
-					$angies_link = $linkValue;
-
-					// PRESENT ON TRANSPORT REVIEWS? 
-					$transportreviews_rating = $listedValue;
-					$transportreviews_details = $detailsValue;
-					$transportreviews_link = $linkValue;
-
-					// PRESENT ON TRANSPORT REPORTS? 
-					$transportreports_rating = $listedValue;
-					$transportreports_details = $detailsValue;
-					$transportreports_link = $linkValue;
-
-					// PRESENT ON MOVING GUARDIAN? 
-					$movingguardian_rating = $listedValue;
-					$movingguardian_details = $detailsValue;
-					$movingguardian_link = $linkValue;
-
-					// PRESENT ON MOVERS REVIEWED? 
-					// movers reviewed not found
-					*/
-				 	?>
-				</div> -->
-				<!--^^^^^^^^^-->
 
 				<div class="col-md-7">
 					<div class="leagal_info_col">
@@ -992,7 +870,7 @@
 											?>
 										</td>
 									</tr>
-									<!--PRESENT ON KUDZU?-->
+									<!--PRESENT ON KUDZU?
 									<tr>
 										<td>
 											<label class="status_lable">
@@ -1030,9 +908,9 @@
 											}
 											?>
 										</td>
-									</tr>
+									</tr>-->
 									<!--PRESENT ON MOVER REVIEWS?-->
-									<tr class="row_dark">
+									<tr>
 										<td class="">
 											<label class="status_lable">
 												<?php
@@ -1074,7 +952,7 @@
 											?>
 										</td>
 									</tr>
-									<!--PRESENT ON REVIEW A MOVER?-->
+									<!--PRESENT ON REVIEW A MOVER?
 									<tr>
 										<td>
 											<label class="status_lable">
@@ -1113,8 +991,8 @@
 											}
 											?>
 										</td>
-									</tr>
-									<!--PRESENT ON MOVERS SEARCH AND REVIEWS? HTML Link-->
+									</tr>-->
+									<!--PRESENT ON MOVERS SEARCH AND REVIEWS? HTML Link
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
@@ -1157,9 +1035,9 @@
 											}
 											?>
 										</td>
-									</tr>
+									</tr>-->
 									<!--PRESENT ON TRANSPORT REVIEWS?-->
-									<tr>
+									<tr class="row_dark">
 										<td>
 											<label class="status_lable">
 
@@ -1204,7 +1082,70 @@
 											?>
 										</td>
 									</tr>
-									<!--PRESENT ON TRANSPORT REPORTS?-->
+									<!--PRESENT ON ANGIES LIST?-->
+									<tr>
+										<td>
+											<label class="status_lable">
+
+												<?php
+												if (strtoupper($angies_rating) != "NO" && $angies_rating != NULL) {
+													//echo "<strong style ='color: green'>" . strtoupper($angies_rating) . "</strong>";
+													echo "<strong style ='color: green'>YES</strong>";
+												} else if (strtoupper($angies_rating) == "NO") {
+													//echo "<strong style ='color: red'>" . strtoupper($angies_rating) . "</strong>";
+													echo "<strong style ='color: red'>NO</strong>";
+												} else if ($angies_rating != NULL) {
+													echo $angies_rating;
+												} else {
+													echo "<strong style ='color: red'>NO</strong>";
+												}
+
+												$star_rating9 = substr($angies_rating, 48, -11);
+												if (!empty($star_rating9) && isset($star_rating9)) {
+													$star_rating9 = $star_rating9;
+												} else {
+													$star_rating9 = 0;
+												}
+												?>
+											</label>
+										</td>
+										<td>
+											<label class="section_heading">PRESENT ON ANGIES LIST?</label>
+											<?php
+											if ($angies_rating != "NO" && $angies_rating != NULL) {
+												//echo "<p id='register'>" . $angies_details . "</p>";
+												echo "<p id='register'>This company is present on Angies List</p>";
+												echo "<span>" . $angies_link . "</span>";
+											} else if ($angies_rating == "NO") {
+
+												//echo "<p id='register'>" . $angies_details . "<p>";
+												echo "<p id='register'>This company is not present on Angies List</p>";
+												//echo "<span>" . $angies_link . "</span>";
+												echo "<span>No url available</span>";
+											} else if ($angies_rating ==  null) {
+												echo "Nothing found from Angies List";
+											}
+											?>
+										</td>
+									</tr>
+									<!--PRESENT ON TRUST PILOT?-->
+									<tr class="row_dark"><!-- Our default mover table does not include Trust Pilot, so this will always be NO data -->
+										<td>
+											<label class="status_lable">
+												<?php
+													echo "<strong style ='color: red'>NO</strong>";
+												?>
+											</label>
+										</td>
+										<td>
+											<label class="section_heading">PRESENT ON TRUST PILOT?</label>
+											<?php
+												echo "<p id='register'>This company is not present on Trust Pilot</p>";
+												echo "<span>No url available</span>";
+											?>
+										</td>
+									</tr>
+									<!--PRESENT ON TRANSPORT REPORTS?
 									<tr class="row_dark">
 										<td class="">
 											<label class="status_lable">
@@ -1251,8 +1192,8 @@
 											}
 											?>
 										</td>
-									</tr>
-									<!--PRESENT ON MOVING GUARDIAN?-->
+									</tr>-->
+									<!--PRESENT ON MOVING GUARDIAN?
 									<tr>
 										<td>
 											<label class="status_lable">
@@ -1293,11 +1234,11 @@
 											}
 											?>
 										</td>
-									</tr>
+									</tr>-->
 									<!-- Angie link is HTML Link if I want to add it in the report -->
-									<!-- Movers Reviewed link looks good if I want to add it in the report -->
-									<!-- Rated Mover link looks good if I want to add it in the report -->
-									<!-- Top Mover Reviews link looks good if I want to add it in the report -->
+									<!-- Movers Reviewed link looks good if I want to add it in the report No-->
+									<!-- Rated Mover link looks good if I want to add it in the report No-->
+									<!-- Top Mover Reviews link looks good if I want to add it in the report No-->
 								</tbody>
 							</table>
 						</div>
