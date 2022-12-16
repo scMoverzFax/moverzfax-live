@@ -23,12 +23,12 @@
 	$search = $_GET['usdot'];
 
 	//check is mover usdot is in claimed_movers table. If it is, then redirect to claimed_template and exit this file
-	$check = "SELECT * FROM claimed_movers WHERE usdot = '" . $search . "';";
+	$check = "SELECT * FROM mover_register WHERE usdot = '" . $search . "';";
 	$checkResult = mysqli_query($con, $check);
 	$resultChecking = mysqli_num_rows($checkResult);
 	$rows2 = mysqli_fetch_assoc($checkResult);
 	if($resultChecking > 0 && $rows2['approved'] = 1){
-		header("Location: http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/model/claimed_template.php?usdot=".$search);
+		header("Location: http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/model/registered_template.php?usdot=".$search);
 	}
 
 
@@ -593,7 +593,7 @@
 											?>
 										</td>
 									</tr>
-									<!--MEMBER OF AMERICAN MOVING AND STORAGE ASSOCIATION?-->
+									<!--MEMBER OF MSC/PROMOVER?-->
 									<tr>
 										<td>
 											<label class="status_lable">
@@ -611,14 +611,14 @@
 											</label>
 										</td>
 										<td>
-											<label class="section_heading">MEMBER OF AMERICAN MOVING AND STORAGE ASSOCIATION?</label>
+											<label class="section_heading">MEMBER OF THE MOVING AND STORAGE CONFERENCE?</label>
 											<?php
 											if ($amsa_listed == "YES") {
-												echo "<p id='register'>This company is a member of the American Moving and Storage Association.</p>";
+												echo "<p id='register'>This company is a member of the Moving and Storage Conference.</p>";
 												//echo "<p id='register'>" . $amsa_details . "</p>";
 												echo "<span>Check <a href='" . $amsa_link . "' target='_blank'>details</a></span>";
 											} else if ($amsa_listed == "NO") {
-												echo "<p id='register'>This company is not a member of the American Moving and Storage Association.</p>";
+												echo "<p id='register'>This company is not a member of the Moving and Storage Conference.</p>";
 												//echo "<p id='register'>" . $amsa_details . "</p>";
 												echo "<span>No url available</span>";
 											}
@@ -751,6 +751,23 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--PRESENT ON GOOGLE?-->
+									<tr><!-- Our mover table does not have Google links, so this will always be NO data -->
+										<td>
+											<label class="status_lable">
+												<?php
+													echo "<strong style ='color: red'>NO</strong>";
+												?>
+											</label>
+										</td>
+										<td>
+											<label class="section_heading">PRESENT ON GOOGLE?</label>
+											<?php
+												echo "<p id='register'>This company is not present on Google</p>";
+												echo "<span>No url available</span>";
+											?>
+										</td>
+									</tr>
 									<!--PRESENT ON MY MOVING REVIEWS?-->
 									<tr class="row_dark">
 										<td class="">

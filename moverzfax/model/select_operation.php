@@ -32,7 +32,7 @@
                     $city_id = $res['city'];
                     $zipcode = $res['zip_code'];
                     $phone = $res['contact_number'];
-                    $contact_person = $res['contact_person'];  
+                    $contact_person = $res['contact_person'];
                         $sql1 = "INSERT INTO mover_cart (company_name,usdot,company_url,state_id,city_id,zipcode,phone,contact_person,user_id)
                                 VALUES ('".$company_name."',".$usdot.",'".$company_url."','".$state_id."','".$city_id."','".$zipcode."','".$phone."','".$contact_person."',".$user_id.")";
                         // echo $sql1; die();

@@ -35,23 +35,25 @@ $yelp_link = $_POST['present_on_yelp'];
 $yelp_stars = $_POST['yelp_stars'];
 $insider_pages_link = $_POST['present_on_insider_pages'];
 $insider_pages_stars = $_POST['insider_pages_stars'];
-$kudzu_link = $_POST['present_on_kudzu'];
-$kudzu_stars = $_POST['kudzu_stars'];
+//$kudzu_link = $_POST['present_on_kudzu'];
+//$kudzu_stars = $_POST['kudzu_stars'];
 $moverreviews_link = $_POST['present_on_mover_reviews'];
 $moverreviews_stars = $_POST['mover_reviews_stars'];
-$review_a_mover_link = $_POST['present_on_review_a_mover'];
-$review_a_mover_stars = $_POST['review_a_mover_stars'];
-$mover_search_and_review_link = $_POST['present_on_mover_search_and_review'];
-$mover_search_and_reviews_stars = $_POST['mover_search_and_reviews_stars'];
-$epinions_link = $_POST['present_on_movr_epinions'];
+//$review_a_mover_link = $_POST['present_on_review_a_mover'];
+//$review_a_mover_stars = $_POST['review_a_mover_stars'];
+//$mover_search_and_review_link = $_POST['present_on_mover_search_and_review'];
+//$mover_search_and_reviews_stars = $_POST['mover_search_and_reviews_stars'];
+//$epinions_link = $_POST['present_on_movr_epinions'];
 $transport_reviews_link = $_POST['present_on_transport_reviews'];
 $transport_reviews_stars = $_POST['transport_reviews_stars'];
 $angies_list_link = $_POST['present_on_angies_list'];
-$moving_guardian_link = $_POST['present_on_moving_guardian'];
-$moving_guardian_stars = $_POST['moving_guardian_stars'];
-$transport_reports_link = $_POST['present_on_transport_reports'];
-$transport_reports_stars = $_POST['transport_reports_stars'];
-$mover_reviewed_link = $_POST['present_movers_reviewed'];
+//$moving_guardian_link = $_POST['present_on_moving_guardian'];
+//$moving_guardian_stars = $_POST['moving_guardian_stars'];
+//$transport_reports_link = $_POST['present_on_transport_reports'];
+//$transport_reports_stars = $_POST['transport_reports_stars'];
+//$mover_reviewed_link = $_POST['present_movers_reviewed'];
+$trust_pilot_link = $_POST['present_on_trust_pilot'];
+$trust_pilot_stars = $_POST['trust_pilot_stars'];
 
 //to insert the information into a table for movers who have claimed their business
 
@@ -88,23 +90,23 @@ if (mysqli_num_rows($result) > 0) { //to check if mover is already in table
         yelp_stars,
         insider_pages_link,
         insider_pages_stars,
-        kudzu_link,
-        kudzu_stars,
+        
+
         moverreviews_link,
         moverreviews_stars,
-        review_a_mover_link,
-        review_a_mover_stars,
-        mover_search_and_review_link,
-        mover_search_and_review_stars,
-        epinions_link,
+        
+        
+        
+        
+        
         transport_reviews_link,
         transport_reviews_stars,
         angies_list_link,
-        moving_guardian_link,
-        moving_guardian_stars,
-        transport_reports_link,
-        transport_reports_stars,
-        mover_reviewed_link)
+        
+        
+        
+        
+        )
     VALUES (
         '" . $company_name . "',
         '" . $company_address . "',
@@ -130,23 +132,23 @@ if (mysqli_num_rows($result) > 0) { //to check if mover is already in table
         '" . $yelp_stars . "',
         '" . $insider_pages_link . "',
         '" . $insider_pages_stars . "',
-        '" . $kudzu_link . "',
-        '" . $kudzu_stars . "',
+        
+        
         '" . $moverreviews_link . "',
         '" . $moverreviews_stars . "',
-        '" . $review_a_mover_link . "',
-        '" . $review_a_mover_stars . "',
-        '" . $mover_search_and_review_link . "',
-        '" . $mover_search_and_reviews_stars . "',
-        '" . $epinions_link . "',
+        
+        
+        
+        
+        
         '" . $transport_reviews_link . "',
         '" . $transport_reviews_stars . "',
         '" . $angies_list_link . "',
-        '" . $moving_guardian_link . "',
-        '" . $moving_guardian_stars . "',
-        '" . $transport_reports_link . "',
-        '" . $transport_reports_stars . "',
-        '" . $mover_reviewed_link . "');";
+        
+        
+        
+        
+        );";
     if (mysqli_query($con, $sql1)) {
         //header("Location: ../home/index.php");//probably should have a message to say it worked
         echo '<script type="text/javascript">alert("You have successfully claimed your business!")window.location.replace("../home/index.php");</script>';

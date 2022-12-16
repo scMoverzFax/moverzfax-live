@@ -125,7 +125,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="list-group text-center">
-                            <a href="mover_register.php" class="list-group-item list-group-item-action"><i class="fas fa-truck me-2"></i>Register as a <strong class="text-success">Mover</strong></a>
+                            <a href="mover_register_and_links.php" class="list-group-item list-group-item-action"><i class="fas fa-truck me-2"></i>Register as a <strong class="text-success">Mover</strong></a>
                             <a href="customer_register.php" class="list-group-item list-group-item-action"><i class="fas fa-user me-2"></i>Register as a <strong class="text-success">Customer</strong></a>
                         </div>
                     </div>

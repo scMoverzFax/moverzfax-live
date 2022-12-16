@@ -12,9 +12,7 @@
 		position: relative;
 		padding: 50px;
 		max-width: 1440px;
-
 	}
-
 
 	.in-container {
 		background-color: white;
@@ -29,14 +27,11 @@
 		margin: 0;
 		width: 100%;
 		background-color: white;
-
 	}
 
 	.i-width {
-
 		width: 100%;
 	}
-
 
 	.row .button-mf {
 		font-size: 15px;
@@ -55,7 +50,6 @@
 		border-radius: 10px;
 		width: 200px;
 		transition: all .5s;
-
 	}
 
 	.row .button-mf-cancel {
@@ -75,10 +69,7 @@
 		transition: all .5s;
 		background-color: #c82333;
 		border-color: #bd2130;
-
 	}
-
-
 
 	/* Desktop-mobile approach --------------------------------------------------------------*/
 
@@ -102,30 +93,52 @@ isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "USDOT number alrea
 
 //isset($_REQUEST["usdot-check"]) ? checkDatabase() : null;
 
-function linkInput($siteName, $siteLink, $name, $value, $stars){
+function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
 	?>
 	<tr>
 		<td>
-			<label><?php echo $siteName ?><sup style="color: red">*</sup></label>
+			<label><?php echo $siteName ?></label>
 			<a href=<?php echo $siteLink ?> target="_blank">Visit Site</a>
 		</td>
 		<td>
 			
-			<input style="width: 100%;" type="text" class="form-control" name=<?php echo $name ?> value="<?php echo (isset($value)) ? $value : '';?>" placeholder="Paste your link here, or type N/A" required />
+			<input style="width: 100%;" type="text" class="form-control" name=<?php echo $name ?> value="<?php echo (isset($value)) ? $value : '';?>" placeholder="Paste your link here if applicable." />
 			<a href=<?php echo $value ?> target="_blank">Test Link</a>
 		<?php if($stars) { ?>
-			<input type="number" class="form-control" name="bbb_stars" placeholder="Enter your star rating (e.g. 5.0)">
+			<input type="number" step="any" min=”0″ max="5" class="form-control" name=<?php echo $starsName ?>  placeholder="Enter your star rating (e.g. 5.0)">
 		<?php } ?>
 		</td>
 	</tr>
 	<?php
 }
 
+//session_start();
+//$this_state_link = "https://www.llcuniversity.com/50-secretary-of-state-sos-business-entity-search/";
+$this_state_link = $_SESSION["state_link"];
+//global $this_state_link;$_SESSION["state_link"]
+//include '../model/city.php';
+echo "<script>console.log('Link: " . $this_state_link . "' );</script>";
+  
+
 // include 'state_link_function.php';
 // echo stateLinkFor("AL");
 
 $checkMsg = '';
 $checkSuccessMsg = '';
+
+$state_link = '';
+$federal_link = '';
+$bbb_link = '';
+$msc_link = '';
+$hhgfaa_link = '';
+$ripoffreport_link = '';
+$movingscam_link = '';
+$mymovingreviews_link = '';
+$yelp_link = '';
+$insiderpages_link = '';
+$moversreviewed_link = '';
+$angies_link = '';
+$transportreviews_link = '';
 
 //function checkDatabase(){
 if(isset($_REQUEST["usdot-check"])){
@@ -164,47 +177,28 @@ if(isset($_REQUEST["usdot-check"])){
 			//this list will change pending Dan's list of current sites to use.
 			$state_link = $rows['state_registration_link'];
 			$federal_link = "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=" . $usdot ;
-			$fmcsa_link = $rows['fmcsa_link'];
+			//$fmcsa_link = $rows['fmcsa_link'];
 			$bbb_link = $rows['bbb_link'];
-			$amsa_link = $rows['amsa_link'];
+			$msc_link = $rows['amsa_link'];
 			$hhgfaa_link = $rows['hhgfaa_link'];
 			$ripoffreport_link = $rows['ripoffreport_link'];
 			$movingscam_link = $rows['movingscam_link'];
 			$mymovingreviews_link = $rows['mymovingreviews_link'];
 			$yelp_link = $rows['yelp_link'];
 			$insiderpages_link = $rows['insiderpages_link'];
-			$kudzu_rate = $rows['kudzu_rate'];
+			//$kudzu_rate = $rows['kudzu_rate'];
 			$moversreviewed_link = $rows['moversreviewed_link'];
-			$reviewamover_link = $rows['reviewamover_link'];
-			$moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
+			//$reviewamover_link = $rows['reviewamover_link'];
+			//$moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
 			$angies_link = $rows['angies_link'];
 			$transportreviews_link = $rows['transportreviews_link'];
-			$transportreports_link = $rows['transportreports_link'];
-			$movingguardian_link = $rows['movingguardian_link'];
+			//$transportreports_link = $rows['transportreports_link'];
+			//$movingguardian_link = $rows['movingguardian_link'];
 		}
 	} else {
 			$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
 			$checkSuccessMsg = '';
-			//set everything to empty string
-			$state_link = '';
-			$federal_link = '';
-			$fmcsa_link = '';
-			$bbb_link = '';
-			$amsa_link = '';
-			$hhgfaa_link = '';
-			$ripoffreport_link = '';
-			$movingscam_link = '';
-			$mymovingreviews_link = '';
-			$yelp_link = '';
-			$insiderpages_link = '';
-			$kudzu_rate = '';
-			$moversreviewed_link = '';
-			$reviewamover_link = '';
-			$moverssearchandreviews_link = '';
-			$angies_link = '';
-			$transportreviews_link = '';
-			$transportreports_link = '';
-			$movingguardian_link = '';
+			
 	}
 }
 //}
@@ -217,25 +211,6 @@ if(isset($_REQUEST["usdot-check"])){
 		img.src = "captcha.php?rand_number=" + Math.random();
 	}
 </script>
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="b-container">
 	<div class="container in-container slide-in-bottom">
 		<div class="bg-form form-group">
@@ -258,7 +233,7 @@ if(isset($_REQUEST["usdot-check"])){
 								</tr>
 								<tr>
 									<td><label>Company Name<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="company_name" id="company_name" value="<?php echo (isset($company_name)) ? $company_name : '';?>" placeholder="Enter Company Name" required></td>
+									<td><input type="text" class="form-control" name="name" id="company_name" value="<?php echo (isset($company_name)) ? $company_name : '';?>" placeholder="Enter Company Name" required></td>
 								</tr>
 								<tr>
 									<td><label>Alternative Business Name</label></td>
@@ -266,7 +241,7 @@ if(isset($_REQUEST["usdot-check"])){
 								</tr>
 								<tr>
 									<td><label>Company's Website</label></td>
-									<td><input type="text" class="form-control" name="company_website" value="<?php echo (isset($website)) ? $website : '';?>" placeholder="example.com"></td>
+									<td><input type="text" class="form-control" name="website" value="<?php echo (isset($website)) ? $website : '';?>" placeholder="example.com"></td>
 								</tr>
 								<tr>
 									<td><label>Company's Contact Number<sup style="color: red">*</sup></label></td>
@@ -274,7 +249,7 @@ if(isset($_REQUEST["usdot-check"])){
 								</tr>
 								<tr>
 									<td><label>Company's Fax Number</label></td>
-									<td><input type="text" class="form-control" name="fax_number" value="<?php echo (isset($fax)) ? $fax : '';?>" placeholder="Fax Number"></td>
+									<td><input type="text" class="form-control" name="fax" value="<?php echo (isset($fax)) ? $fax : '';?>" placeholder="Fax Number"></td>
 								</tr>
 								<tr>
 									<td><label>Contact Person</label></td>
@@ -341,12 +316,39 @@ if(isset($_REQUEST["usdot-check"])){
 							</tbody>
 						</table>
 								<h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Links</h1>
+								<h5 class="text-center">Please paste the link to your business on each site. Leave the feild blank if not applicable.</h5>
 						<table class="table">
 							<tbody>
-								<?php echo linkInput("State Registered", $state_link, "state_registration_link", $state_link, false); ?>
-								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false); ?>
-								<?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false); ?>
-								<?php echo linkInput("BBB Member", "https://www.bbb.org/", "member_of_bbb", $bbb_link, true); ?>
+								<?php echo linkInput("State Registered", "/moverzfaxdevelop/MoverzFax/moverzfax/home/state_link_redirect.php", "state_registration_link", $state_link, false, ''); ?>
+								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, ''); ?>
+								<!-- <?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?> -->
+								
+								<!-- <?php echo linkInput("BBB Member", "https://www.bbb.org/", "member_of_bbb", $bbb_link, true, "bbb_grade"); ?> -->
+								<tr>
+									<td>
+										<label>BBB Member</label>
+										<a href="https://www.bbb.org/" target="_blank">Visit Site</a>
+									</td>
+									<td>
+										<input style="width: 100%;" type="text" class="form-control" name="member_of_bbb" value="<?php echo (isset($bbb_link)) ? $bbb_link : '';?>" placeholder="Paste your link here if applicable." />
+										<a href=<?php echo $bbb_link ?> target="_blank">Test Link</a>
+										<input type="text" class="form-control" name="bbb_grade" placeholder="Enter your BBB grade (e.g. A+, A, A-)">
+									</td>
+								</tr>
+								<?php echo linkInput("ProMover Member", "https://www.moving.org/", "member_of_msc", $msc_link, false, ""); ?>
+								<?php echo linkInput("HHGFAA Member", "https://www.iamovers.org/", "member_of_hhgffaa", $hhgfaa_link, false, ""); ?>
+
+								<?php echo linkInput("Ripoff Report", "https://www.ripoffreport.com/", "present_on_ripff_report", $ripoffreport_link, false, ""); ?>
+								<?php echo linkInput("Moving Scam", "http://www.movingscam.com", "present_on_moving_scam", $movingscam_link, false, ""); ?>
+
+								<?php echo linkInput("Google", "http://www.google.com/", "present_on_google", '', true, "google_stars"); ?>
+								<?php echo linkInput("My Moving Reviews", "https://www.mymovingreviews.com/", "present_on_moving_reviews", $movingscam_link, true, "moving_reviews_stars"); ?>
+								<?php echo linkInput("Yelp", "http://www.yelp.com/", "present_on_yelp", $yelp_link, true, "yelp_stars"); ?>
+								<?php echo linkInput("Insider Pages", "https://www.insiderpages.com/", "present_on_insider_pages", $insiderpages_link, true, "insider_pages_stars"); ?>
+								<?php echo linkInput("Mover Reviews", "https://www.moverreviews.com/", "present_on_mover_reviews", $moversreviewed_link, true, "mover_reviews_stars"); ?>
+								<?php echo linkInput("Transport Reviews", "https://www.transportreviews.com/", "present_on_transport_reviews", $transportreviews_link, true, "transport_reviews_stars"); ?>
+								<?php echo linkInput("Angies List", "http://www.angieslist.com/", "present_on_angies_list", $angies_link, true, "angie_stars"); ?>
+								<?php echo linkInput("Trust Pilot", "https://www.trustpilot.com/", "present_on_trust_pilot", '', true, "trust_pilot_stars"); ?>
 							</tbody>
 						</table>
 						<table class="table text-center">

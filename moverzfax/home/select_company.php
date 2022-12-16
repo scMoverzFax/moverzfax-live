@@ -156,7 +156,7 @@ include 'myheader.php';
                                     </div>
                                     <div class="d-flex">
                                         <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                                        <span for="" id="cart_label2"><?php
+                                        <span for="" id="cart_label2"><?php 
                                                                         if ($status == "as") {
                                                                             echo "is Added Successfully.";
                                                                         } elseif ($status == "nr") {
