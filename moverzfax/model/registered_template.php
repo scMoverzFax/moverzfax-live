@@ -337,7 +337,6 @@
 
 				if ($resultCheck > 0) {
 					while ($rows = mysqli_fetch_assoc($result)) {
-						// code...
 
                         //Legal Information
 						$state_link = $rows['state_link'];
@@ -400,11 +399,11 @@
 											if ($state_link) {
 												echo "<p id='register'>This company is state registered.</p>";
 												echo "<span>Check <a href='" . $state_link . "' target='_blank'>details</a></p>";
-												$pointers_logo = 10;
+												$state_points = 10;
 											} else {
 												echo "<p id='register'>This company is not state registered.</p>";
 												echo "<span>No url available</span>";
-												$pointers_logo = 0;
+												$state_points = 0;
 											}
 											?>
 										</td>
@@ -416,10 +415,10 @@
 												<?php
 												if ($federal_link) {
 													echo "<strong style ='color: green'>YES</strong>";
-													$pointers_registerd = 10;
+													$federal_points = 10;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-													$pointers_registerd = 0;
+													$federal_points = 0;
 												}
 												?>
 											</label>
@@ -430,11 +429,9 @@
 											if ($federal_link) {
 												echo "<p id='register'>This company is registered federally.</p>";
 												echo "<span>Check <a href='" . $federal_link . "' target='_blank'>details</a></p>";
-												$pointers_licensing = 10;
 											} else {
 												echo "<p id='register'>This company is not registered federally.</p>";
 												echo "<span>No url available</span>";
-												$pointers_licensing = 0;
 											}
 											?>
 										</td>
@@ -486,10 +483,8 @@
 												<?php
 												if ($bbb_link) {
 													echo "<strong style ='color: green'>YES</strong>";
-													$points = 10;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-													$points = 0;
 												}
 												?>
 											</label>
@@ -504,18 +499,56 @@
 												echo "<p id='register'>This company is not a member of Better Business Bureau.</p>";
 												echo "<span>No url available</span>";
 											}
-											$listing_value = substr($bbb_link, 63, -6);
 
-											if ($listing_value == 'a-plus' || $listing_value == 'a') {
-												$points = 45;
-											} else if ($listing_value == 'b-plus' || $listing_value == 'b') {
-												$points = 35;
-											} else if ($listing_value == 'c-plus' || $listing_value == 'c') {
-												$points = 25;
-											} else if ($listing_value == 'd-plus' || $listing_value == 'd' || $listing_value == 'e' || $listing_value == 'f') {
-												$points = 15;
-											} else {
-												$points = 5;
+											$bbb_points = 0;
+
+											switch ($bbb_grade) {
+												case 'A+':
+												case 'a+':
+												case '+A':
+												case '+a':
+													$bbb_points = 8;
+													break;
+												case 'A':
+												case 'a':
+													$bbb_points = 7;
+													break;
+												case 'A-':
+												case 'a-':
+												case '-A':
+												case '-a':
+													$bbb_points = 6;
+													break;
+												case 'B+':
+												case 'b+':
+												case '+B':
+												case '+b':
+													$bbb_points = 5;
+													break;
+												case 'B':
+												case 'b':
+													$bbb_points = 4;
+													break;
+												case 'B-':
+												case 'b-':
+												case '-B':
+												case '-b':
+													$bbb_points = 3;
+													break;
+												case 'C+':
+												case 'c+':
+												case '+C':
+												case '+c':
+													$bbb_points = 2;
+													break;
+												case 'C':
+												case 'c':
+												case 'C-':
+												case 'c-':
+												case '-C':
+												case '-c':
+													$bbb_points = 1;
+													break;
 											}
 
 											?>
@@ -528,10 +561,10 @@
 												<?php
 												if ($msc_link) {
 													echo "<strong style ='color: green'>YES</strong>";
-													$pointers_assosiation = 10;
+													$msc_points = 1;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-													$pointers_assosiation = 0;
+													$msc_points = 0;
 												}
 												?>
 											</label>
@@ -556,10 +589,10 @@
 												<?php
 												if ($hgfaa_link) {
 													echo "<strong style ='color: blue'>YES</strong>";
-													$pointers_member = 5;
+													$hgfaa_points = 1;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-													$pointers_member = 0;
+													$hgfaa_points = 0;
 												}
 												?>
 											</label>
@@ -598,8 +631,10 @@
 												<?php
 												if ($ripoff_link) {
 													echo "<strong style ='color: blue'>YES</strong>";
+													$ripoff_points = 0;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
+													$ripoff_points = 5;
 												}
 												?>
 
@@ -625,8 +660,10 @@
 												<?php
 												if ($moving_scam_link) {
 													echo "<strong style ='color: blue'>YES</strong>";
+													$moving_scam_points = 0;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
+													$moving_scam_points = 5;
 												}
 												?>
 											</label>
@@ -670,15 +707,11 @@
 												<?php
 												if ($google_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$google_points = $google_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
+													$google_points = 0;
 												}
-												// $star_rating1 = substr($mover_reviews_link, 48, -11);
-												// if (!empty($star_rating1) && isset($star_rating1)) {
-												// 	$star_rating1 = $star_rating1;
-												// } else {
-												// 	$star_rating1 = 0;
-												// }
 												?>
 											</label>
 										</td>
@@ -702,14 +735,10 @@
 												<?php
 												if ($mover_reviews_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$my_moving_points = $mover_reviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating1 = substr($mover_reviews_link, 48, -11);
-												if (!empty($star_rating1) && isset($star_rating1)) {
-													$star_rating1 = $star_rating1;
-												} else {
-													$star_rating1 = 0;
+													$my_moving_points = 0;
 												}
 												?>
 											</label>
@@ -734,14 +763,10 @@
 												<?php
 												if ($yelp_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$yelp_points = $yelp_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												} 
-												$star_rating2 = substr($yelp_link, 48, -11);
-												if (!empty($star_rating2) && isset($star_rating2)) {
-													$star_rating2 = $star_rating2;
-												} else {
-													$star_rating2 = 0;
+													$yelp_points = 0;
 												}
 												?>
 											</label>
@@ -766,14 +791,10 @@
 												<?php
 												if ($insider_pages_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$insider_pages_points = $insider_pages_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating3 = substr($insider_pages_link, 48, -11);
-												if (!empty($star_rating3) && isset($star_rating3)) {
-													$star_rating3 = $star_rating3;
-												} else {
-													$star_rating3 = 0;
+													$insider_pages_points = 0;
 												}
 												?>
 											</label>
@@ -798,14 +819,10 @@
 												<?php
 												if ($moverreviews_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$mover_reviews_points = $moverreviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating5 = substr($moverreviews_link, 48, -11);
-												if (!empty($star_rating5) && isset($star_rating5)) {
-													$star_rating5 = $star_rating5;
-												} else {
-													$star_rating5 = 0;
+													$mover_reviews_points = 0;
 												}
 												?>
 
@@ -832,14 +849,10 @@
 												<?php
 												if ($transport_reviews_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$transport_reviews_points = $transport_reviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating9 = substr($transport_reviews_link, 48, -11);
-												if (!empty($star_rating9) && isset($star_rating9)) {
-													$star_rating9 = $star_rating9;
-												} else {
-													$star_rating9 = 0;
+													$transport_reviews_points = 0;
 												}
 												?>
 											</label>
@@ -861,20 +874,14 @@
 									<tr>
 										<td>
 											<label class="status_lable">
-
 												<?php
 												if ($angies_link) {
 													echo "<strong style ='color: green'>YES</strong>";
+													$angies_points = $angies_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
+													$angies_points = 0;
 												}
-
-												// $star_rating9 = substr($angies_rating, 48, -11);
-												// if (!empty($star_rating9) && isset($star_rating9)) {
-												// 	$star_rating9 = $star_rating9;
-												// } else {
-												// 	$star_rating9 = 0;
-												// }
 												?>
 											</label>
 										</td>
@@ -898,8 +905,10 @@
 												<?php
 													if ($trust_pilot_link) {
 														echo "<strong style ='color: green'>YES</strong>";
+														$trust_pilot_points = $trust_pilot_stars * 2;
 													} else {
 														echo "<strong style ='color: red'>NO</strong>";
+														$trust_pilot_points = 0;
 													}
 												?>
 											</label>
@@ -938,19 +947,20 @@
 
 
 						<?php
-						// stars average
-						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating4 + $star_rating5 + $star_rating6 + $star_rating7 + $star_rating9 + $star_rating10 + $star_rating11;
-						$percentage_star = ($total_star / 55) * 100;
-						$average_star = $percentage_star / 2.5;
-
 						//Legal section
-						$Legal_section = $pointers_logo + $pointers_registerd + $pointers_licensing;
+						$Legal_section = $state_points + $federal_points;
 
 						//Moving Association section percentage
-						$Moving_Association_section = $points + $pointers_assosiation + $pointers_member;
+						$Moving_Association_section = $bbb_points + $msc_points + $hgfaa_points;
+
+						//Scam Section
+						$Scam_Alert_section = $ripoff_points + $moving_scam_points;
+
+						//Reviews Portal
+						$Reviews_section = $google_points + $my_moving_points + $yelp_points + $insider_pages_points + $mover_reviews_points + $transport_reviews_points + $angies_points + $trust_pilot_points;
 
 						// Overall Percentage
-						$Overall_Percentage = $Legal_section + $Moving_Association_section + $average_star;
+						$Overall_Percentage = (($Legal_section + $Moving_Association_section + $average_star) / 110) * 100;
 
 						?>
 						<script>

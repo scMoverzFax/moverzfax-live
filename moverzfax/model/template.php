@@ -433,7 +433,7 @@
 					echo "No data found " . $conn->error;
 				}
 				?>
-
+ 
 				<div class="col-md-7">
 					<div class="leagal_info_col">
 						<!--Legal Information Card-->
@@ -493,11 +493,9 @@
 												// echo "<span>Check <a href='" . $safer_link . "' target='_blank'>details</a></span>";
 												echo "<span>Check <a href='https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=" . $usdot . "' target='_blank'>details</a></span>";
 												//echo "<span target='_blank'>" . $safer_link . "</span>";
-												$pointers_licensing = 10;
 											} else {
 												echo "<p id='register'>This company is not registered federally</p>";
 												echo "<span>No url available</span>";
-												$pointers_licensing = 0;
 											}
 											?>
 										</td>
@@ -510,9 +508,11 @@
 												if ($fmcsa_listed == "YES") {
 													//echo "<strong style ='color: green'>" . $fmcsa_listed . "</strong>";
 													echo "<strong style ='color: green'>YES</strong>";
+													$pointers_licensing = 10;
 												} else if ($fmcsa_listed == "NO") {
 													//echo "<strong style ='color: red'>" . $fmcsa_listed . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
+													$pointers_licensing = 0;
 												}
 												?>
 											</label>
@@ -1277,9 +1277,9 @@
 
 
 						<?php
-						// stars average
-						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating4 + $star_rating5 + $star_rating6 + $star_rating7 + $star_rating9 + $star_rating10 + $star_rating11;
-						$percentage_star = ($total_star / 55) * 100;
+						// stars average         -------missing 4, 6, 7, 10, 11
+						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating5 + $star_rating9;
+						$percentage_star = ($total_star / 25) * 100;
 						$average_star = $percentage_star / 2.5;
 
 						//Legal section
