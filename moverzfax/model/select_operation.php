@@ -11,8 +11,9 @@
     if($function == "search")
     {
             $usdot = isset($_REQUEST["usdot"])?$_REQUEST["usdot"]:NULL; 
-            $sql = "SELECT usdot FROM mover_cart WHERE usdot = '".$usdot."' AND user_id = '".$user_id."'";    
+            $sql = "SELECT usdot FROM mover_cart WHERE usdot = '".$usdot."' AND user_id = '".$user_id."'";
             $result = $con->query($sql); 
+            //if the usdot is not in the mover cart, search for it in mover register
             if(mysqli_num_rows($result) <= 0){
                 $sql1 = "SELECT * FROM mover_register WHERE usdot = '".$usdot."'";
                 // echo $sql1;die();
@@ -38,18 +39,20 @@
                         // echo $sql1; die();
                             if($con->query($sql1) === TRUE)
                             {
-                                header('Location: ../home/select_company.php?usdot='.$usdot.'&status=as');
+                                header('Location: ../home/select_company.php?usdot='.$usdot.'&status=as');//added sucessfully
                             }
                             else{ 
-                                header('Location: ../home/select_company.php?usdot='.$usdot.'&status=rf');
+                                header('Location: ../home/select_company.php?usdot='.$usdot.'&status=rf');//request failed
                             }
                 }
                 else{
-                    header('Location: ../home/select_company.php?usdot='.$usdot.'&status=nr');
+                    header('Location: ../home/select_company.php?usdot='.$usdot.'&status=nr');//not registered with mf
+                    //this is where we want to check for the mover in the mover table and return stuff
+                    
                 }
             }
             else{
-                header('Location: ../home/select_company.php?usdot='.$usdot.'&status=ae');
+                header('Location: ../home/select_company.php?usdot='.$usdot.'&status=ae');//already exists
             }
                 
     }

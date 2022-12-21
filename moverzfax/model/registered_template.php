@@ -101,6 +101,64 @@
 		'; //. $conn->error;
 	}
 	?>
+	<!-- styles for the stars -->
+	<style>
+		/* body {
+		height: 100vh;
+		margin: 0;
+		display: grid;
+		place-items: center;
+		} */
+		/* .star-container {
+			width: 50px;
+		} */
+		.stars {
+		position: relative;
+		padding: 0rem;
+		white-space: nowrap;
+		}
+
+		.stars svg {
+			width: 25px;
+		}
+
+		.cover {
+		background: white;
+		height: 100%;
+		overflow: hidden;
+		mix-blend-mode: color;
+		position: absolute;
+		top: 0;
+		right: 0;
+		}
+
+		svg {
+		fill: gold;
+		}
+	</style>
+	<?php 
+	function showStars($starRating){ 
+		$coverWidth = ((5 - $starRating) / 5) * 100;
+		?>
+		<div class="star-container">
+		<div class="stars">
+		  <svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg>
+	  
+		  <div class="cover" style="width: <?php echo $coverWidth ?>%;"></div>
+		</div>
+	  </div><?php
+	}
+	?>
 
 	<div class="report_body" id="report_body" <?php if ($resultCheck < 1){ echo 'style="display:none;"'; } ?> >
 
@@ -116,6 +174,10 @@
 					this template. -->
 					<p>This reputation data report is valid up until
 						Wednesday 9th of February 2022 06:01:28 PM
+						<!-- If our reports knew the userid, we could get the date the report was purchased by 
+						looking at the payment table where userid matchs and report exists in one of the five report columns. 
+						But have to be careful because user may purchase the same report multiple times. So handle this chance in the search in the table-->
+						<?php echo $user_id ?>
 					</p>
 				</div>
 				<div class="logo">
@@ -142,7 +204,12 @@
 							Therefore, we advise you to login to your MoverZfax.com account and re-run the
 							report to get
 							the latest facts and information about this company.
+							<!--  -->
 						</p>
+						<p>This mover have been prompted to claim this business as theirs and added crucial information to make the final grade accurate. 
+							It is important to understand that unlicensed movers may misinformed you about their experience and years in the industry. 
+							The Moverzfax team reviews every mover registered at United States Department of Transportation and looks for every anomaly with information provided to our platform. 
+							Rest assured we double check every mover to insure that your move is serviced by a licensed professional.</p>
 						<p>A link is provided in every section to verify the validity of the report presented.</p>
 					</div>
 				</div>
@@ -233,17 +300,27 @@
 						<!-- CONSUMER RESOURCES -->
 						<div class="consumerresources mb-2 mt-3">
 							<h4>CONSUMER RESOURCES</h4>
-							<a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx" target="_blank">States
-								Department of Transportation: <br>Investigations and Assessments</a>
-							<a href="https://nccdb.fmcsa.dot.gov/AddComplaint.asp?public=open" target="_blank">USDOT
+							<!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx" target="_blank">States
+								Department of Transportation: <br>Investigations and Assessments</a> -->
+							<!-- <a href="https://nccdb.fmcsa.dot.gov/AddComplaint.asp?public=open" target="_blank">USDOT
 								complaint
-								Forum</a>
+								Forum</a> -->
 							<a href="http://ai.fmcsa.dot.gov/hhg/search.asp" target="_blank">Complaint history on moving
 								companies:<br> Per USDOT# and MC# (Only Long Distance Movers)</a>
 							<a href="http://safer.fmcsa.dot.gov/CompanySnapshot.aspx" target="_blank">Movers in a Glance:
 								Synopsis of your chosen mover</a>
-							<a href="http://ai.fmcsa.dot.gov/SMS/Default.aspx" target="_blank">Safety Summary on Moving
-								companies</a>
+							<!-- <a href="http://ai.fmcsa.dot.gov/SMS/Default.aspx" target="_blank">Safety Summary on Moving
+								companies</a> -->
+
+							<!-- New links to add/replace -->
+							<a href="https://www.fmcsa.dot.gov/protect-your-move/moving-checklist" target="_blank">
+								FMCSA Moving Checklist</a>
+							<a href="https://nccdb.fmcsa.dot.gov/nccdb/ComplaintEntry.aspx?choice=CONSUMER" target="_blank">
+								National Consumer Complaint Database</a>
+							<a href="https://www.oig.dot.gov/investigations/household-goods-moving-fraud" target="_blank">
+								Household Goods Moving Fraud</a>
+							<a href="https://www.fmcsa.dot.gov/consumer-protection/household-goods/protect-your-move" target="_blank">
+								FMCSA Protect Your Move</a>
 						</div>
 
 						<!-- REIMBURSEMENT POLICY: -->
@@ -263,7 +340,7 @@
 						<!-- MOVING AND STORAGE INDUSTRY TRENDS -->
 						<div class="owing mb-5">
 							<h5>MOVING AND STORAGE INDUSTRY TRENDS</h5>
-							<a href="http://www.promover.org/content.asp?contentid=1118" target="_blank">Courtesy from AMSA "Moving America Professionally"</a>
+							<a href="http://www.promover.org/content.asp?contentid=1118" target="_blank">Courtesy from MSC "Moving America Professionally"</a>
 							<p class="mb-4">
 								Consists of 35,000 companies operating at 17,000 locations primarily
 								providing
@@ -281,7 +358,7 @@
 								<li>Only 8.5% of industry companies employ 100 or more people.</li>
 							</ul>
 							<p class="mb-2">
-								AMSA members report operating a fleet of 50,000 trucks 32,000 tractor units
+								MSC members report operating a fleet of 50,000 trucks 32,000 tractor units
 								for
 								pulling semi-trailers
 								and 18,000 straight trucks) regulated by the U.S. Department of
@@ -480,9 +557,78 @@
 									<tr class="row_dark" id="tr1">
 										<td class="">
 											<label class="status_lable">
+												<style>
+													#bbbGrade {
+														font-family: proxima-nova,Helvetica,Arial,sans-serif;
+														color: #005f86;
+														font-size: 70px;
+													}
+												</style>
 												<?php
+
+												$bbb_points = 0;
+
+												switch ($bbb_grade) {
+													case 'A+':
+													case 'a+':
+													case '+A':
+													case '+a':
+														$bbb_grade = "A+";
+														$bbb_points = 8;
+														break;
+													case 'A':
+													case 'a':
+														$bbb_grade = "A";
+														$bbb_points = 7;
+														break;
+													case 'A-':
+													case 'a-':
+													case '-A':
+													case '-a':
+														$bbb_grade = "A-";
+														$bbb_points = 6;
+														break;
+													case 'B+':
+													case 'b+':
+													case '+B':
+													case '+b':
+														$bbb_grade = "B+";
+														$bbb_points = 5;
+														break;
+													case 'B':
+													case 'b':
+														$bbb_grade = "B";
+														$bbb_points = 4;
+														break;
+													case 'B-':
+													case 'b-':
+													case '-B':
+													case '-b':
+														$bbb_grade = "B-";
+														$bbb_points = 3;
+														break;
+													case 'C+':
+													case 'c+':
+													case '+C':
+													case '+c':
+														$bbb_grade = "C+";
+														$bbb_points = 2;
+														break;
+													case 'C':
+													case 'c':
+														$bbb_grade = "C";
+														$bbb_points = 1;
+														break;
+													case 'C-':
+													case 'c-':
+													case '-C':
+													case '-c':
+														$bbb_grade = "C-";
+														$bbb_points = 1;
+														break;
+												}
 												if ($bbb_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													echo "<p id='bbbGrade'>" . $bbb_grade . "</p>";
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
 												}
@@ -499,58 +645,6 @@
 												echo "<p id='register'>This company is not a member of Better Business Bureau.</p>";
 												echo "<span>No url available</span>";
 											}
-
-											$bbb_points = 0;
-
-											switch ($bbb_grade) {
-												case 'A+':
-												case 'a+':
-												case '+A':
-												case '+a':
-													$bbb_points = 8;
-													break;
-												case 'A':
-												case 'a':
-													$bbb_points = 7;
-													break;
-												case 'A-':
-												case 'a-':
-												case '-A':
-												case '-a':
-													$bbb_points = 6;
-													break;
-												case 'B+':
-												case 'b+':
-												case '+B':
-												case '+b':
-													$bbb_points = 5;
-													break;
-												case 'B':
-												case 'b':
-													$bbb_points = 4;
-													break;
-												case 'B-':
-												case 'b-':
-												case '-B':
-												case '-b':
-													$bbb_points = 3;
-													break;
-												case 'C+':
-												case 'c+':
-												case '+C':
-												case '+c':
-													$bbb_points = 2;
-													break;
-												case 'C':
-												case 'c':
-												case 'C-':
-												case 'c-':
-												case '-C':
-												case '-c':
-													$bbb_points = 1;
-													break;
-											}
-
 											?>
 										</td>
 									</tr>
@@ -630,10 +724,10 @@
 											<label class="status_lable">
 												<?php
 												if ($ripoff_link) {
-													echo "<strong style ='color: blue'>YES</strong>";
+													echo "<strong style ='color: red'>YES</strong>";
 													$ripoff_points = 0;
 												} else {
-													echo "<strong style ='color: red'>NO</strong>";
+													echo "<strong style ='color: blue'>NO</strong>";
 													$ripoff_points = 5;
 												}
 												?>
@@ -659,10 +753,10 @@
 											<label class="status_lable">
 												<?php
 												if ($moving_scam_link) {
-													echo "<strong style ='color: blue'>YES</strong>";
+													echo "<strong style ='color: red'>YES</strong>";
 													$moving_scam_points = 0;
 												} else {
-													echo "<strong style ='color: red'>NO</strong>";
+													echo "<strong style ='color: blue'>NO</strong>";
 													$moving_scam_points = 5;
 												}
 												?>
@@ -687,8 +781,6 @@
 
 						<div class="break_page"></div>
 
-						<!--The code below here is different approach to reading the table data. We are going to leave it this way for now.-->
-
 						<!--Recommended Portal Card-->
 						<div class="row mb-1 mt-2">
 							<div class="col-md-12">
@@ -706,7 +798,7 @@
 											<label class="status_lable">
 												<?php
 												if ($google_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($google_stars);
 													$google_points = $google_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -734,7 +826,7 @@
 											<label class="status_lable">
 												<?php
 												if ($mover_reviews_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($mover_reviews_stars);
 													$my_moving_points = $mover_reviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -762,7 +854,7 @@
 											<label class="status_lable">
 												<?php
 												if ($yelp_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($yelp_stars);
 													$yelp_points = $yelp_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -790,7 +882,7 @@
 											<label class="status_lable">
 												<?php
 												if ($insider_pages_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($insider_pages_stars);
 													$insider_pages_points = $insider_pages_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -818,7 +910,7 @@
 											<label class="status_lable">
 												<?php
 												if ($moverreviews_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($moverreviews_stars);
 													$mover_reviews_points = $moverreviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -848,7 +940,7 @@
 
 												<?php
 												if ($transport_reviews_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($transport_reviews_stars);
 													$transport_reviews_points = $transport_reviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -876,7 +968,7 @@
 											<label class="status_lable">
 												<?php
 												if ($angies_link) {
-													echo "<strong style ='color: green'>YES</strong>";
+													showStars($angies_stars);
 													$angies_points = $angies_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -904,7 +996,7 @@
 											<label class="status_lable">
 												<?php
 													if ($trust_pilot_link) {
-														echo "<strong style ='color: green'>YES</strong>";
+														showStars($trust_pilot_stars);
 														$trust_pilot_points = $trust_pilot_stars * 2;
 													} else {
 														echo "<strong style ='color: red'>NO</strong>";
@@ -936,7 +1028,7 @@
 								the
 								U.S. Economy" from
 							</p>
-							<a href="http://www.promover.org/content.asp?contentid=1118" target="_blank">AMSA's Official
+							<a href="https://www.moving.org/" target="_blank">MSC's Official
 								Website</a>
 						</div>
 						<br>
@@ -960,7 +1052,7 @@
 						$Reviews_section = $google_points + $my_moving_points + $yelp_points + $insider_pages_points + $mover_reviews_points + $transport_reviews_points + $angies_points + $trust_pilot_points;
 
 						// Overall Percentage
-						$Overall_Percentage = (($Legal_section + $Moving_Association_section + $average_star) / 110) * 100;
+						$Overall_Percentage = (($Legal_section + $Moving_Association_section + $Scam_Alert_section + $Reviews_section) / 110) * 100;
 
 						?>
 						<script>

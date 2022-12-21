@@ -105,6 +105,64 @@
 		'; //. $conn->error;
 	}
 	?>
+	<!-- styles for the stars -->
+	<style>
+		/* body {
+		height: 100vh;
+		margin: 0;
+		display: grid;
+		place-items: center;
+		} */
+		/* .star-container {
+			width: 50px;
+		} */
+		.stars {
+		position: relative;
+		padding: 0rem;
+		white-space: nowrap;
+		}
+
+		.stars svg {
+			width: 25px;
+		}
+
+		.cover {
+		background: white;
+		height: 100%;
+		overflow: hidden;
+		mix-blend-mode: color;
+		position: absolute;
+		top: 0;
+		right: 0;
+		}
+
+		svg {
+		fill: gold;
+		}
+	</style>
+	<?php 
+	function showStars($starRating){ 
+		$coverWidth = ((5 - $starRating) / 5) * 100;
+		?>
+		<div class="star-container">
+		<div class="stars">
+		  <svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
+			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+		  </svg>
+	  
+		  <div class="cover" style="width: <?php echo $coverWidth ?>%;"></div>
+		</div>
+	  </div><?php
+	}
+	?>
 
 	<div class="report_body" id="report_body" <?php if ($resultCheck < 1){ echo 'style="display:none;"'; } ?> >
 
@@ -120,6 +178,7 @@
 					this template. -->
 					<p>This reputation data report is valid up until
 						Wednesday 9th of February 2022 06:01:28 PM
+						<?php echo $user_id ?>
 					</p>
 				</div>
 				<div class="logo">
@@ -146,7 +205,12 @@
 							Therefore, we advise you to login to your MoverZfax.com account and re-run the
 							report to get
 							the latest facts and information about this company.
+							<!--  -->
 						</p>
+						<p>This mover have been prompted to claim this business as theirs and added crucial information to make the final grade accurate. 
+							It is important to understand that unlicensed movers may misinformed you about their experience and years in the industry. 
+							The Moverzfax team reviews every mover registered at United States Department of Transportation and looks for every anomaly with information provided to our platform. 
+							Rest assured we double check every mover to insure that your move is serviced by a licensed professional.</p>
 						<p>A link is provided in every section to verify the validity of the report presented.</p>
 					</div>
 				</div>
@@ -237,17 +301,27 @@
 						<!-- CONSUMER RESOURCES -->
 						<div class="consumerresources mb-2 mt-3">
 							<h4>CONSUMER RESOURCES</h4>
-							<a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx" target="_blank">States
-								Department of Transportation: <br>Investigations and Assessments</a>
-							<a href="https://nccdb.fmcsa.dot.gov/AddComplaint.asp?public=open" target="_blank">USDOT
+							<!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx" target="_blank">States
+								Department of Transportation: <br>Investigations and Assessments</a> -->
+							<!-- <a href="https://nccdb.fmcsa.dot.gov/AddComplaint.asp?public=open" target="_blank">USDOT
 								complaint
-								Forum</a>
+								Forum</a> -->
 							<a href="http://ai.fmcsa.dot.gov/hhg/search.asp" target="_blank">Complaint history on moving
 								companies:<br> Per USDOT# and MC# (Only Long Distance Movers)</a>
 							<a href="http://safer.fmcsa.dot.gov/CompanySnapshot.aspx" target="_blank">Movers in a Glance:
 								Synopsis of your chosen mover</a>
-							<a href="http://ai.fmcsa.dot.gov/SMS/Default.aspx" target="_blank">Safety Summary on Moving
-								companies</a>
+							<!-- <a href="http://ai.fmcsa.dot.gov/SMS/Default.aspx" target="_blank">Safety Summary on Moving
+								companies</a> -->
+
+							<!-- New links to add/replace -->
+							<a href="https://www.fmcsa.dot.gov/protect-your-move/moving-checklist" target="_blank">
+								FMCSA Moving Checklist</a>
+							<a href="https://nccdb.fmcsa.dot.gov/nccdb/ComplaintEntry.aspx?choice=CONSUMER" target="_blank">
+								National Consumer Complaint Database</a>
+							<a href="https://www.oig.dot.gov/investigations/household-goods-moving-fraud" target="_blank">
+								Household Goods Moving Fraud</a>
+							<a href="https://www.fmcsa.dot.gov/consumer-protection/household-goods/protect-your-move" target="_blank">
+								FMCSA Protect Your Move</a>
 						</div>
 
 						<!-- REIMBURSEMENT POLICY: -->
@@ -267,7 +341,7 @@
 						<!-- MOVING AND STORAGE INDUSTRY TRENDS -->
 						<div class="owing mb-5">
 							<h5>MOVING AND STORAGE INDUSTRY TRENDS</h5>
-							<a href="http://www.promover.org/content.asp?contentid=1118" target="_blank">Courtesy from AMSA "Moving America Professionally"</a>
+							<a href="http://www.promover.org/content.asp?contentid=1118" target="_blank">Courtesy from MSC "Moving America Professionally"</a>
 							<p class="mb-4">
 								Consists of 35,000 companies operating at 17,000 locations primarily
 								providing
@@ -285,7 +359,7 @@
 								<li>Only 8.5% of industry companies employ 100 or more people.</li>
 							</ul>
 							<p class="mb-2">
-								AMSA members report operating a fleet of 50,000 trucks 32,000 tractor units
+								MSC members report operating a fleet of 50,000 trucks 32,000 tractor units
 								for
 								pulling semi-trailers
 								and 18,000 straight trucks) regulated by the U.S. Department of
@@ -548,10 +622,77 @@
 									<tr class="row_dark" id="tr1">
 										<td class="">
 											<label class="status_lable">
+												<style>
+													#bbbGrade {
+														font-family: proxima-nova,Helvetica,Arial,sans-serif;
+														color: #005f86;
+														font-size: 70px;
+													}
+												</style>
 												<?php
+												$listing_value = substr($bbb_listed, 63, -6);
+
+												if ($listing_value == 'a-plus' || $listing_value == 'a') {
+													$points = 45;
+												} else if ($listing_value == 'b-plus' || $listing_value == 'b') {
+													$points = 35;
+												} else if ($listing_value == 'c-plus' || $listing_value == 'c') {
+													$points = 25;
+												} else if ($listing_value == 'd-plus' || $listing_value == 'd' || $listing_value == 'e' || $listing_value == 'f') {
+													$points = 15;
+												} else {
+													$points = 5;
+												}
+												switch ($listing_value) {
+													case 'a-plus':
+														$bbb_grade = "A+";
+														break;
+													case 'a':
+														$bbb_grade = "A";
+														break;
+													case 'a-minus':
+														$bbb_grade = "A-";
+														break;
+													case 'b-plus':
+														$bbb_grade = "B+";
+														break;
+													case 'b':
+														$bbb_grade = "B";
+														break;
+													case 'b-minus':
+														$bbb_grade = "B-";
+														break;
+													case 'c-plus':
+														$bbb_grade = "C+";
+														break;
+													case 'c':
+														$bbb_grade = "C";
+														break;
+													case 'c-minus':
+														$bbb_grade = "C-";
+														break;
+													case 'd-plus':
+														$bbb_grade = "D+";
+														break;
+													case 'd':
+														$bbb_grade = "D";
+														break;
+													case 'd-minus':
+														$bbb_grade = "D-";
+														break;
+													case 'e':
+														$bbb_grade = "D-";
+														break;
+													case 'f':
+														$bbb_grade = "F";
+														break;
+													default:
+														$bbb_grade = "n/a";
+												}
 												if ($bbb_listed != "NO") {
 													//Try this if you want to display the bbb icon grade. bbb_listed is a img tag value
-													echo "<strong>" . $bbb_listed . "</strong>";
+													//echo "<strong>" . $bbb_listed . "</strong>";
+													echo "<p id='bbbGrade'>" . $bbb_grade . "</p>";
 													//echo "<strong style ='color: green'>YES</strong>";
 													$points = 10;
 												} else {
@@ -576,20 +717,6 @@
 												echo "<p id='register'>This company is not a member of Better Business Bureau</p>";
 												echo "<span>No url available</span>";
 											}
-											$listing_value = substr($bbb_listed, 63, -6);
-
-											if ($listing_value == 'a-plus' || $listing_value == 'a') {
-												$points = 45;
-											} else if ($listing_value == 'b-plus' || $listing_value == 'b') {
-												$points = 35;
-											} else if ($listing_value == 'c-plus' || $listing_value == 'c') {
-												$points = 25;
-											} else if ($listing_value == 'd-plus' || $listing_value == 'd' || $listing_value == 'e' || $listing_value == 'f') {
-												$points = 15;
-											} else {
-												$points = 5;
-											}
-
 											?>
 										</td>
 									</tr>
@@ -678,10 +805,10 @@
 												<?php
 												if ($ripoffreport_listed != "NO") {
 													//echo "<strong style ='color: blue'>" . $ripoffreport_listed . "</strong>";
-													echo "<strong style ='color: blue'>YES</strong>";
+													echo "<strong style ='color: red'>YES</strong>";
 												} else {
 													//echo "<strong style ='color: red'>" . $ripoffreport_listed . "</strong>";
-													echo "<strong style ='color: red'>NO</strong>";
+													echo "<strong style ='color: blue'>NO</strong>";
 												}
 												?>
 
@@ -709,10 +836,10 @@
 												<?php
 												if ($movingscam_listed != "NO") {
 													//echo "<strong style ='color: blue'>" . $movingscam_listed . "</strong>";
-													echo "<strong style ='color: blue'>YES</strong>";
+													echo "<strong style ='color: red'>YES</strong>";
 												} else if ($movingscam_listed == "NO") {
 													//echo "<strong style ='color: red'>" . $movingscam_listed . "</strong>";
-													echo "<strong style ='color: red'>NO</strong>";
+													echo "<strong style ='color: blue'>NO</strong>";
 												}
 												?>
 											</label>
@@ -773,9 +900,16 @@
 										<td class="">
 											<label class="status_lable">
 												<?php
+												$star_rating1 = substr($mymovingreviews_rating, 48, -11);
+												if (!empty($star_rating1) && isset($star_rating1)) {
+													$star_rating1 = $star_rating1;
+												} else {
+													$star_rating1 = 0;
+												}
 												if (strtoupper($mymovingreviews_rating) != "NO" && $mymovingreviews_rating != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($mymovingreviews_rating) . "</strong>";
-													echo "<strong style ='color: green'>YES</strong>";
+													//echo "<strong style ='color: green'>YES</strong>";
+													showStars($star_rating1);
 												} else if (strtoupper($mymovingreviews_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($mymovingreviews_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -783,12 +917,6 @@
 													echo $mymovingreviews_rating;
 												} else {
 													echo "<strong style ='color: red'>No Reviews</strong>";
-												}
-												$star_rating1 = substr($mymovingreviews_rating, 48, -11);
-												if (!empty($star_rating1) && isset($star_rating1)) {
-													$star_rating1 = $star_rating1;
-												} else {
-													$star_rating1 = 0;
 												}
 												?>
 											</label>
@@ -813,9 +941,16 @@
 										<td>
 											<label class="status_lable">
 												<?php
+												$star_rating2 = substr($yelp_rating, 48, -11);
+												if (!empty($star_rating2) && isset($star_rating2)) {
+													$star_rating2 = $star_rating2;
+												} else {
+													$star_rating2 = 0;
+												}
 												if (strtoupper($yelp_rating) != "NO" && $yelp_rating != NULL) {
 													//echo "<strong style ='color: green'>" . $yelp_rating . "</strong>";
-													echo "<strong>" . $yelp_rating . "</strong>";
+													//echo "<strong>" . $star_rating2 . "</strong>";
+													showStars($yelp_rating);
 												} else if (strtoupper($yelp_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($yelp_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -823,12 +958,6 @@
 													echo "<strong>" . $yelp_rating . "</strong>";
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating2 = substr($yelp_rating, 48, -11);
-												if (!empty($star_rating2) && isset($star_rating2)) {
-													$star_rating2 = $star_rating2;
-												} else {
-													$star_rating2 = 0;
 												}
 												?>
 											</label>
@@ -853,9 +982,16 @@
 										<td class="">
 											<label class="status_lable">
 												<?php
+												$star_rating3 = substr($insiderpages_rating, 48, -11);
+												if (!empty($star_rating3) && isset($star_rating3)) {
+													$star_rating3 = $star_rating3;
+												} else {
+													$star_rating3 = 0;
+												}
 												if (strtoupper($insiderpages_rating) != "NO" && strtoupper($insiderpages_rating) != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($insiderpages_rating) . "</strong>";
-													echo "<strong style ='color: green'>" . $insiderpages_rating . "</strong>";
+													//echo "<strong style ='color: green'>" . $insiderpages_rating . "</strong>";
+													showStars($star_rating3);
 												} else if (strtoupper($insiderpages_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($insiderpages_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -863,12 +999,6 @@
 													echo $insiderpages_rating;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-												$star_rating3 = substr($insiderpages_rating, 48, -11);
-												if (!empty($star_rating3) && isset($star_rating3)) {
-													$star_rating3 = $star_rating3;
-												} else {
-													$star_rating3 = 0;
 												}
 												?>
 											</label>
@@ -931,9 +1061,16 @@
 										<td class="">
 											<label class="status_lable">
 												<?php
+												$star_rating5 = substr($moversreviewed_rating, 48, -11);
+												if (!empty($star_rating5) && isset($star_rating5)) {
+													$star_rating5 = $star_rating5;
+												} else {
+													$star_rating5 = 0;
+												}
 												if (strtoupper($moversreviewed_rating) != "NO" && strtoupper($moversreviewed_rating) != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($moversreviewed_rating) . "</strong>";
-													echo "<strong>" . $moversreviewed_rating . "</strong>";
+													//echo "<strong>" . $moversreviewed_rating . "</strong>";
+													showStars($star_rating5);
 												} else if (strtoupper($moversreviewed_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($moversreviewed_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -941,13 +1078,6 @@
 													echo $moversreviewed_rating;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-
-												$star_rating5 = substr($moversreviewed_rating, 48, -11);
-												if (!empty($star_rating5) && isset($star_rating5)) {
-													$star_rating5 = $star_rating5;
-												} else {
-													$star_rating5 = 0;
 												}
 												?>
 
@@ -1059,9 +1189,16 @@
 											<label class="status_lable">
 
 												<?php
+												$star_rating9 = substr($transportreviews_rating, 48, -11);
+												if (!empty($star_rating9) && isset($star_rating9)) {
+													$star_rating9 = $star_rating9;
+												} else {
+													$star_rating9 = 0;
+												}
 												if (strtoupper($transportreviews_rating) != "NO" && $transportreviews_rating != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($transportreviews_rating) . "</strong>";
-													echo "<strong style ='color: green'>YES</strong>";
+													//echo "<strong style ='color: green'>YES</strong>";
+													showStars($star_rating9);
 												} else if (strtoupper($transportreviews_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($transportreviews_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1069,13 +1206,6 @@
 													echo $transportreviews_rating;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-
-												$star_rating9 = substr($transportreviews_rating, 48, -11);
-												if (!empty($star_rating9) && isset($star_rating9)) {
-													$star_rating9 = $star_rating9;
-												} else {
-													$star_rating9 = 0;
 												}
 												?>
 											</label>
@@ -1105,9 +1235,16 @@
 											<label class="status_lable">
 
 												<?php
+												$star_rating10 = substr($angies_rating, 48, -11);
+												if (!empty($star_rating10) && isset($star_rating10)) {
+													$star_rating10 = $star_rating10;
+												} else {
+													$star_rating10 = 0;
+												}
 												if (strtoupper($angies_rating) != "NO" && $angies_rating != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($angies_rating) . "</strong>";
-													echo "<strong style ='color: green'>YES</strong>";
+													//echo "<strong style ='color: green'>YES</strong>";
+													showStars($star_rating10);
 												} else if (strtoupper($angies_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($angies_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1115,13 +1252,6 @@
 													echo $angies_rating;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
-												}
-
-												$star_rating9 = substr($angies_rating, 48, -11);
-												if (!empty($star_rating9) && isset($star_rating9)) {
-													$star_rating9 = $star_rating9;
-												} else {
-													$star_rating9 = 0;
 												}
 												?>
 											</label>
@@ -1266,7 +1396,7 @@
 								the
 								U.S. Economy" from
 							</p>
-							<a href="http://www.promover.org/content.asp?contentid=1118" target="_blank">AMSA's Official
+							<a href="https://www.moving.org/" target="_blank">MSC's Official
 								Website</a>
 						</div>
 						<br>
@@ -1278,9 +1408,9 @@
 
 						<?php
 						// stars average         -------missing 4, 6, 7, 10, 11
-						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating5 + $star_rating9;
-						$percentage_star = ($total_star / 25) * 100;
-						$average_star = $percentage_star / 2.5;
+						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating5 + $star_rating9 + $star_rating10;
+						$percentage_star = ($total_star / 30) * 100;
+						$average_star = $percentage_star / 5;
 
 						//Legal section
 						$Legal_section = $pointers_logo + $pointers_registerd + $pointers_licensing;
