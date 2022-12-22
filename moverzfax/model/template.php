@@ -172,13 +172,7 @@
 				<div class="heading-left">
 					<a href="https://moverzfax.com">Moverzfax.com</a>
 					<h2>Report Card</h2>
-					<!--Need to display proper date information here. 
-					Try to access date variable from previous file, or make a new query to the payment table.
-					It might be best to make another query because there are multiple previous files that direct to
-					this template. -->
-					<p>This reputation data report is valid up until
-						Wednesday 9th of February 2022 06:01:28 PM
-						<?php echo $user_id ?>
+					<p>This reputation data report is valid up until <?php session_start(); echo $_SESSION["exp_date"]; ?>
 					</p>
 				</div>
 				<div class="logo">

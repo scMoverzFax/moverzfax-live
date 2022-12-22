@@ -129,6 +129,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <th>Sr.no</th>
                             <th>Company Name</th>
                             <th>Usdot</th>
+                            <th>Expiration Date</th>
                             <th>Report</th>
                         </thead>
                         <tbody>

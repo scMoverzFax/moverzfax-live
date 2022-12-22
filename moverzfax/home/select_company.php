@@ -127,8 +127,8 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 
 <!--conditional rendering for if the user is not logged in--> 
-
-MAYBE I CAN JUST GET RID OF THIS? AND GIVE GUEST OPTION IF THEY PROCEED TO CART TYPE THING??
+<!-- 
+MAYBE I CAN JUST GET RID OF THIS? AND GIVE GUEST OPTION IF THEY PROCEED TO CART TYPE THING?? -->
 
 
 

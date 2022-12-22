@@ -19,7 +19,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                 <th>USDOT</th>
                 <th class="text-center">Report</th>
             </thead>  
-                <?php include '../model/order_report_model.php'; ?> 
+                <?php include '../model/order_report_model.php'; ?>  
         </table>
         <span style="color:red;font-size:16px;">This report is valid for the next two week.</span>  
         <h2 class="text-center">Thank You so much...</h2>
