@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
         }
         //add two weeks in seconds to the date created
         date_default_timezone_set('America/New_York');
-        $expDateInSeconds = strtotime($mostRecent) + 1209600;
+        $expDateInSeconds = strtotime($mostRecent) + 2628288; //1209600 seconds in 14 days
         $expDate = date('m/d/Y', $expDateInSeconds);
         $expDateToCompare = date('Y/m/d', $expDateInSeconds);
         $currentDate = date('m/d/Y');

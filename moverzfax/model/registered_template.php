@@ -18,6 +18,7 @@
 <body>
 
 	<?php
+	$mover_is_scammer = false;
 	require_once '../model/connection.php';
 	//get the movers information from the mover table
 	$search = $_GET['usdot'];
@@ -111,6 +112,7 @@
 		} */
 		/* .star-container {
 			width: 50px;
+			border: black 2px solid;
 		} */
 		.stars {
 		position: relative;
@@ -119,21 +121,21 @@
 		}
 
 		.stars svg {
-			width: 25px;
+			width: 22px;
+			height: 22px;
 		}
 
 		.cover {
-		background: white;
-		height: 100%;
-		overflow: hidden;
-		mix-blend-mode: color;
-		position: absolute;
-		top: 0;
-		right: 0;
+			background: white;
+			height: 100%;
+			overflow: hidden;
+			mix-blend-mode: color;
+			position: absolute;
+			top: 0;
+			right: 0;
 		}
-
 		svg {
-		fill: gold;
+			fill: gold;
 		}
 	</style>
 	<?php 
@@ -141,26 +143,39 @@
 		$coverWidth = ((5 - $starRating) / 5) * 100;
 		?>
 		<div class="star-container">
-		<div class="stars">
-		  <svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg>
-	  
-		  <div class="cover" style="width: <?php echo $coverWidth ?>%;"></div>
+			<div class="stars">
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+			<div class="cover" style="width: <?php echo $coverWidth ?>%;"></div>
+			</div>
 		</div>
-	  </div><?php
+	  <?php
 	}
 	?>
 
 	<div class="report_body" id="report_body" <?php if ($resultCheck < 1){ echo 'style="display:none;"'; } ?> >
+
+		<!-- Conditional Scam Alert Watermark -->
+		<?php 
+		if($mover_is_scammer){ ?>
+			<div class="scammer-watermark">
+				<img class="scam_img" src="../img/scam_alert.jpeg" alt="Mover Scam Alert Image">
+			</div>
+		<?php }
+		?>
 
 		<!--Report Card heading and logo-->
 		<section>
@@ -172,7 +187,7 @@
 					</p>
 				</div>
 				<div class="logo">
-					<img class="logo_img" src="../img/MoverZfax.png" alt="">
+					<img class="logo_img" src="../img/MoverZfaxLogo.jpeg" alt="">
 				</div>
 			</div>
 		</section>
@@ -214,7 +229,13 @@
 					<div class="companyDetails">
 						<h3 class=" mb-2"><?php echo " " . $movername; ?></h3>
 						<div id="address" class="mb-2"><?php echo $state . ", " . $country; ?></div>
+						<?php 
+						if($mover_is_scammer){ ?>
+							<div style="color: red;">MoverzFax found this mover to be a scammer.</div>
+						<?php } else {
+						?>
 						<div class="mb-4">Website : <a href='<?php echo $url ?>' target="_blank"><?php echo $url; ?></a></div>
+						<?php } ?>
 						<div class="row mb-2">
 							<table class="tbl_contact">
 								<tr>
@@ -252,7 +273,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="row">
+							<!-- <div class="row">
 								<div class="recommand-continue">
 									<p>
 										We advise you to check the links provided on each of the report items on
@@ -261,7 +282,7 @@
 										company.
 									</p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 
 						<!-- SPECIAL MOVING TASK -->
@@ -783,23 +804,37 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--PRESENT ON MOVERZFAX?-->
+									<tr class="row_dark">
+										<td>
+											<label class="status_lable">
+												<strong style ='color: red'>NO</strong>
+											</label>
+										</td>
+										<td>
+											<label class="section_heading">PRESENT ON MOVERZFAX?</label>
+											<p id='register'>MoverzFax reviews COMING SOON!</p>
+										</td>
+									</tr>
 									<!--PRESENT ON GOOGLE?-->
 									<tr>
 										<td class="">
 											<label class="status_lable">
 												<?php
-												if ($google_link) {
-													showStars($google_stars);
-													$google_points = $google_stars * 2;
-												} else {
-													echo "<strong style ='color: red'>NO</strong>";
-													$google_points = 0;
-												}
+												showStars(3.6);
+												$google_points = 0;
+												// if ($google_link) {
+												// 	showStars($google_stars);
+												// 	$google_points = $google_stars * 2;
+												// } else {
+												// 	echo "<strong style ='color: red'>NO</strong>";
+												// 	$google_points = 0;
+												// }
 												?>
 											</label>
 										</td>
 										<td>
-											<label class="section_heading">PRESENT ON GOOGLE?</label>
+											<label class="section_heading">PRESENT ON GOOGLE MY BUSINESS?</label>
 											<?php
 											if ($google_link) {
 												echo "<p id='register'>This company is listed on Google.</p>";
@@ -1024,7 +1059,7 @@
 						</div>
 						<br>
 						<div class="copyright">
-							Copyright © 2021, MoverZfax.com.<br>
+							Copyright © 2023, MoverZfax.com.<br>
 							All Rights Reserved
 						</div>
 

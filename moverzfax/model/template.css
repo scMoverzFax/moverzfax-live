@@ -27,7 +27,19 @@ body {
     width: 300px;
     position: relative;
 }
-
+.scammer-watermark {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-color: white;
+}
+.scam_img {
+    opacity: 0.2;
+    width: 500px;
+    mix-blend-mode: multiply;
+}
 .disclaimer,
 .company {
     text-align: justify;
@@ -98,7 +110,7 @@ body {
 .movingtask h5 {
     background-color: rgb(151, 151, 151);
     text-align: center;
-    padding: 20px 10px;
+    padding: 10px 10px;
     color: #fff;
     font-weight: 700;
     border-radius: 15px;
@@ -191,6 +203,7 @@ body {
 .companyDetails #address {
     color: grey;
 }
+
 
 
 #info {

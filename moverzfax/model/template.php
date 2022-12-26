@@ -22,7 +22,7 @@
 	//get the movers information from the mover table
 	$search = $_GET['usdot'];
 
-	//check is mover usdot is in claimed_movers table. If it is, then redirect to claimed_template and exit this file
+	//check is mover usdot is in mover_register table. If it is, then redirect to claimed_template and exit this file
 	$check = "SELECT * FROM mover_register WHERE usdot = '" . $search . "';";
 	$checkResult = mysqli_query($con, $check);
 	$resultChecking = mysqli_num_rows($checkResult);
@@ -176,7 +176,7 @@
 					</p>
 				</div>
 				<div class="logo">
-					<img class="logo_img" src="../img/MoverZfax.png" alt="">
+					<img class="logo_img" src="../img/MoverZfaxLogo.jpeg" alt="">
 				</div>
 			</div>
 		</section>
@@ -256,7 +256,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="row">
+							<!-- <div class="row">
 								<div class="recommand-continue">
 									<p>
 										We advise you to check the links provided on each of the report items on
@@ -265,13 +265,13 @@
 										company.
 									</p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 
 						<!-- SPECIAL MOVING TASK -->
-						<div class="movingtask mb-2">
+						<div class="movingtask mb-1">
 							<a href="../home/task_force.php" target="_blank">
-								<h5>SPECIAL MOVING TASK FORCE</h5>
+								<h6>SPECIAL MOVING TASK FORCE</h6>
 							</a>
 						</div>
 
@@ -872,6 +872,18 @@
 						<div class="leagal_info_table mb-4">
 							<table>
 								<tbody>
+									<!--PRESENT ON MOVERZFAX?-->
+									<tr class="row_dark">
+										<td>
+											<label class="status_lable">
+												<strong style ='color: red'>NO</strong>
+											</label>
+										</td>
+										<td>
+											<label class="section_heading">PRESENT ON MOVERZFAX?</label>
+											<p id='register'>MoverzFax reviews COMING SOON!</p>
+										</td>
+									</tr>
 									<!--PRESENT ON GOOGLE?-->
 									<tr><!-- Our mover table does not have Google links, so this will always be NO data -->
 										<td>
@@ -882,7 +894,7 @@
 											</label>
 										</td>
 										<td>
-											<label class="section_heading">PRESENT ON GOOGLE?</label>
+											<label class="section_heading">PRESENT ON GOOGLE MY BUSINESS?</label>
 											<?php
 												echo "<p id='register'>This company is not present on Google</p>";
 												echo "<span>No url available</span>";
@@ -1395,7 +1407,7 @@
 						</div>
 						<br>
 						<div class="copyright">
-							Copyright © 2021, MoverZfax.com.<br>
+							Copyright © 2023, MoverZfax.com.<br>
 							All Rights Reserved
 						</div>
 
