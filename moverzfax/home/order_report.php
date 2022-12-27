@@ -17,11 +17,13 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                 <th>Sr. No.</th>
                 <th>Company Name</th>
                 <th>USDOT</th>
-                <th class="text-center">Report</th>
+                <th>Expiration Date</th>
+                <th>Report</th>
             </thead>  
-                <?php include '../model/order_report_model.php'; ?>  
+                <!-- <?php include '../model/order_report_model.php'; ?> this is the use of the old model. -->
+                <?php include '../model/my_order_model.php'; ?>
         </table>
-        <span style="color:red;font-size:16px;">This report is valid for the next two week.</span>  
+        <span style="color:red;font-size:16px;">This report is valid for the next month.</span>  
         <h2 class="text-center">Thank You so much...</h2>
     </div>
 </body>

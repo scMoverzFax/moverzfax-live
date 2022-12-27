@@ -1,3 +1,4 @@
+<!--  File no longer in use. basically the same as my_order_model so we will use it instead. -->
 <tbody>
     <?php
     include 'connection.php';
