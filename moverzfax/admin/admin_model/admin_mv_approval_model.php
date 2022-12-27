@@ -10,12 +10,12 @@ $sr_no = ($page * $limit) - ($limit - 1);
 $sql = "SELECT cr.*,st.name AS user_state ,ci.name AS user_city FROM `mover_register` AS cr 
         LEFT JOIN `state` AS st ON st.code = cr.states 
         LEFT JOIN `city` AS ci ON ci.id = cr.city
-        ORDER BY id ASC LIMIT {$offset} , {$limit} "; 
+        ORDER BY id ASC LIMIT {$offset} , {$limit} ";
 $result = mysqli_query($con , $sql);
 if(mysqli_num_rows($result) > 0){
-    while($res = mysqli_fetch_assoc($result)) { ?>
+    while($res = mysqli_fetch_assoc($result)) { 
+        if($res['approved'] === NULL) {?>
         <tr>
-            <td><?= $sr_no; ?></td>
             <td><?= $res['usdot']; ?></td>
             <td><?= $res['company_name']; ?></td>
             <td><?= $res['mover_email']; ?></td>
@@ -23,15 +23,14 @@ if(mysqli_num_rows($result) > 0){
             <td><?= $res['country']; ?></td>
             <td><?= $res['user_state']; ?></td>
             <td><?= $res['user_city']; ?></td>
-            <td><?= $res['zip_code']; ?></td> 
-            <td><a href="admin_model/admin_operation.php?action=delete_mover&id=<?= $res['id']; ?>"><i class="fas fa-trash-alt text-danger"></i></a></td>
-            <?php if($res['is_active'] == 1) { ?>
-            <td><a href="admin_model/admin_operation.php?action=block_mover&id=<?= $res['id']; ?>" ><i class="fas fa-ban text-dark"></i></i></a></td>
-            <?php } else { ?>
-            <td><a href="admin_model/admin_operation.php?action=unblock_mover&id=<?= $res['id']; ?>" ><i class="fas fa-undo text-dark"></i></i></a></td>
-            <?php } ?>
+            <td><?= $res['zip_code']; ?></td>
+            <td><a href="mover_approval_page.php?id=<?= $res['id']; ?>">Review Links</a></td>
         </tr>
-    <?php $sr_no++; } } ?>
+        <?php $sr_no++; 
+        }
+    }
+} 
+    ?>
     </tbody>
 </table>
 <?php 
@@ -66,9 +65,3 @@ else{
     echo "<div><h3 class='text-center'>Sorry No Record Found!</h3></div>";
 }
 ?>
-
-
-
-
-
-

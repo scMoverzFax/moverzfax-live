@@ -36,7 +36,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/bb12bcec8e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bootstrap_4/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap_4/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/bb12bcec8e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -87,7 +87,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <!-- <link href="https://www.moversfax.com/frontend/pages/css/components.css" rel="stylesheet"> -->
     <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
+    <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
 
     <!-- formwidzard css -->
@@ -290,6 +290,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                                     <div class="nav-dropdown-links">
                                         <a href="admin_cs_user.php" class="sub-link">Customer Users</a>
                                         <a href="admin_mv_user.php" class="sub-link">Mover Users</a>
+                                        <a href="admin_mv_approval.php" class="sub-link">Mover Approval</a>
                                     </div>
                                 </div>
                             </div>

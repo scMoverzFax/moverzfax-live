@@ -21,6 +21,15 @@
             header("Location: admin_cs_user.php");
         }
     }
+    elseif($action == 'unblock_user'){
+        $sql1 = "UPDATE customer_register SET is_active = 1 WHERE id = '".$id."'";
+        if(mysqli_query($con ,$sql1)){
+            header("Location: admin_cs_user.php");
+        }
+        else{
+            header("Location: admin_cs_user.php");
+        }
+    }
     elseif($action == 'delete_mover'){
         $sql = "DELETE FROM mover_register WHERE id = '".$id."'";
         if(mysqli_query($con ,$sql)){
@@ -32,6 +41,15 @@
     }
     elseif($action == 'block_mover'){
         $sql1 = "UPDATE mover_register SET is_active = 0 WHERE id = '".$id."'";
+        if(mysqli_query($con ,$sql1)){
+            header("Location: ../admin_mv_user.php");
+        }
+        else{
+            header("Location: ../admin_mv_user.php");
+        }
+    }
+    elseif($action == 'unblock_mover'){
+        $sql1 = "UPDATE mover_register SET is_active = 1 WHERE id = '".$id."'";
         if(mysqli_query($con ,$sql1)){
             header("Location: ../admin_mv_user.php");
         }
@@ -64,6 +82,15 @@
         }
         else{
             header("Location: ../admin_review.php");
+        }
+    }
+    elseif($action == 'approve_mover'){
+        $sql1 = "UPDATE mover_register SET approved = 1 WHERE id = '".$id."'";
+        if(mysqli_query($con ,$sql1)){
+            header("Location: ../admin_mv_approval.php");
+        }
+        else{
+            header("Location: ../admin_mv_approval.php");
         }
     }
 ?>

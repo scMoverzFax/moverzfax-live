@@ -27,7 +27,7 @@
 	$checkResult = mysqli_query($con, $check);
 	$resultChecking = mysqli_num_rows($checkResult);
 	$rows2 = mysqli_fetch_assoc($checkResult);
-	if($resultChecking > 0 && $rows2['approved'] = 1){
+	if($resultChecking > 0 && $rows2['approved'] == 1){
 		header("Location: http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/model/registered_template.php?usdot=".$search);
 	}
 

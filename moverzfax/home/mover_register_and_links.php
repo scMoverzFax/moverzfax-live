@@ -114,7 +114,7 @@ function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
 
 //session_start();
 //$this_state_link = "https://www.llcuniversity.com/50-secretary-of-state-sos-business-entity-search/";
-$this_state_link = $_SESSION["state_link"] ? $_SESSION["state_link"] : "https://arc-sos.state.al.us/CGI/CORPNAME.MBR/INPUT";
+$this_state_link = (isset($_SESSION["state_link"])) ? $_SESSION["state_link"] : "https://arc-sos.state.al.us/CGI/CORPNAME.MBR/INPUT";
 //global $this_state_link;$_SESSION["state_link"]
 //include '../model/city.php';
 echo "<script>console.log('Link: " . $this_state_link . "' );</script>";
