@@ -127,12 +127,8 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 
 <!--conditional rendering for if the user is not logged in--> 
-<!-- 
-MAYBE I CAN JUST GET RID OF THIS? AND GIVE GUEST OPTION IF THEY PROCEED TO CART TYPE THING?? -->
- 
+<?php if (!defined('LOGIN')) { echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>';} ?>
 
-
-<?php if (!defined('LOGIN')) { echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>';} ?> 
 <div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
