@@ -22,13 +22,20 @@
 	require_once '../model/connection.php';
 	//get the movers information from the mover table
 	$search = $_GET['usdot'];
-	$sql = "SELECT  company_name, company_website, contact_number, contact_person, fax_number, usdot, mc, country, states, city FROM mover_register WHERE usdot = '" . $search . "';";
+	$sql = "SELECT strike_one, strike_two, strike_three, company_name, company_website, contact_number, contact_person, fax_number, usdot, mc, country, states, city FROM mover_register WHERE usdot = '" . $search . "';";
 	$result = mysqli_query($con, $sql);
 	$resultCheck = mysqli_num_rows($result);
 
 	if ($resultCheck > 0) {
 		$validMover = true;
 		while ($rows = mysqli_fetch_assoc($result)) {
+			$strikeOne = $rows['strike_one'];
+			$strikeTwo = $rows['strike_two'];
+			$strikeThree = $rows['strike_three'];
+			if($strikeOne == 1 && $strikeTwo == 1 && $strikeThree == 1){
+				$mover_is_scammer = true;
+			}
+
 			$movername = $rows['company_name'];
 			$url = $rows['company_website'];
 			$phone = $rows['contact_number'];
@@ -718,7 +725,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>
+						</div> 
 						<!--Scam Alert Portal Card-->
 						<div class="row mb-1">
 							<div class="col-md-12">
