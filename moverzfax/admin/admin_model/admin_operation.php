@@ -1,7 +1,14 @@
 <?php
 
     $action = $_GET['action'];
-    $id = $_GET['id'];
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    }
+    if (isset($_GET['usdot'])) {
+    $usdot = (int)$_GET['usdot'];
+    $strikeValue = (int)$_GET['val'];
+    $strikeNumber = $_GET['num'];
+    }
     include '../../model/connection.php';
     if($action == 'delete_user'){
         $sql = "DELETE FROM customer_register WHERE id = '".$id."'";
@@ -91,6 +98,19 @@
         }
         else{
             header("Location: ../admin_mv_approval.php");
+        }
+    }
+    elseif($action == 'update_strike'){
+        if($strikeValue == 0){
+            $sql1 = "UPDATE mover_register SET ".$strikeNumber." = 1 WHERE usdot = ".$usdot."";
+        } else {
+            $sql1 = "UPDATE mover_register SET ".$strikeNumber." = 0 WHERE usdot = ".$usdot."";
+        }
+        if(mysqli_query($con,$sql1)){
+            header("Location: ../admin_mv_scammer.php");
+        }
+        else{
+            header("Location: ../admin_mv_scammer.php");
         }
     }
 ?>

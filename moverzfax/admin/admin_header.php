@@ -291,6 +291,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                                         <a href="admin_cs_user.php" class="sub-link">Customer Users</a>
                                         <a href="admin_mv_user.php" class="sub-link">Mover Users</a>
                                         <a href="admin_mv_approval.php" class="sub-link">Mover Approval</a>
+                                        <a href="admin_mv_scammer.php" class="sub-link">Mover Scam System</a>
                                     </div>
                                 </div>
                             </div>

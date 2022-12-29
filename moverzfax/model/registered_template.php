@@ -821,15 +821,13 @@
 										<td class="">
 											<label class="status_lable">
 												<?php
-												showStars(3.6);
-												$google_points = 0;
-												// if ($google_link) {
-												// 	showStars($google_stars);
-												// 	$google_points = $google_stars * 2;
-												// } else {
-												// 	echo "<strong style ='color: red'>NO</strong>";
-												// 	$google_points = 0;
-												// }
+												if ($google_link) {
+													showStars($google_stars);
+													$google_points = $google_stars * 2;
+												} else {
+													echo "<strong style ='color: red'>NO</strong>";
+													$google_points = 0;
+												}
 												?>
 											</label>
 										</td>

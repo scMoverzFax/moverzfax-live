@@ -23,7 +23,7 @@ if(mysqli_num_rows($result) > 0){
             <td><?= $res['country']; ?></td>
             <td><?= $res['user_state']; ?></td>
             <td><?= $res['user_city']; ?></td>
-            <td><?= $res['zip_code']; ?></td> 
+            <td><?= $res['zip_code']; ?></td>
             <td><a href="admin_model/admin_operation.php?action=delete_mover&id=<?= $res['id']; ?>"><i class="fas fa-trash-alt text-danger"></i></a></td>
             <?php if($res['is_active'] == 1) { ?>
             <td><a href="admin_model/admin_operation.php?action=block_mover&id=<?= $res['id']; ?>" ><i class="fas fa-ban text-dark"></i></i></a></td>
