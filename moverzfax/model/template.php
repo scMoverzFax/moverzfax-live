@@ -632,6 +632,7 @@
 													}
 												</style>
 												<?php
+												//$bbb_listed = '<img src="http://www.moverzfax.com/images/bbbicons/cbbb-accred-a.png">';
 												$listing_value = substr($bbb_listed, 63, -6);
 
 												if ($listing_value == 'a-plus' || $listing_value == 'a') {
@@ -1421,10 +1422,6 @@
 
 
 						<?php
-						// stars average         -------missing 4, 6, 7, 10, 11
-						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating5 + $star_rating9 + $star_rating10;
-						$percentage_star = ($total_star / 30) * 100;
-						$average_star = $percentage_star / 5;
 
 						//Legal section
 						$Legal_section = $pointers_logo + $pointers_registerd + $pointers_licensing;
@@ -1432,8 +1429,11 @@
 						//Moving Association section percentage
 						$Moving_Association_section = $points + $pointers_assosiation + $pointers_member;
 
-						// Overall Percentage
-						$Overall_Percentage = $Legal_section + $Moving_Association_section + $average_star;
+						// stars total
+						$total_star = $star_rating1 + $star_rating2 + $star_rating3 + $star_rating5 + $star_rating9 + $star_rating10;
+
+						// Overall Percentage (out of 120 total points)
+						$Overall_Percentage = (($Legal_section + $Moving_Association_section + $total_star) / 120) * 100;
 
 						?>
 						<script>
