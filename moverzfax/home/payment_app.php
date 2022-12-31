@@ -15,7 +15,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <th class=" text-center">Price</th>
                         </tr>
                     </thead>
-                    <?php include '../model/payment_app_model.php'; ?> 
+                    <?php include '../model/payment_app_model.php'; ?>
                 </table>
             </div>
             <div class="container-fluid text-center mt-4">

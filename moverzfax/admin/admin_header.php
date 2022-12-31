@@ -270,6 +270,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                 <!-- ------------------------  Main menu Start  -------------------------- -->
                 <div class="nav-menu">
                     <a href="admin_dashboard.php" class="nav-link nav-dropdown">Dashboard</a>
+                    <a href="admin_reports.php" class="nav-link nav-dropdown">Generate Reports</a>
                     <div class="nav-dropdown" data-dropdown>
                     <button class="nav-link" data-dropdown-button>All Transactions</button>
                             <div class="nav-dropdown-menu infomation-grid">

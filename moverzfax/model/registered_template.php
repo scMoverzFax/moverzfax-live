@@ -190,7 +190,15 @@
 				<div class="heading-left">
 					<a href="https://moverzfax.com">Moverzfax.com</a>
 					<h2>Report Card</h2>
-					<p>This reputation data report is valid up until <?php session_start(); echo $_SESSION["exp_date"]; ?>
+					<p>This reputation data report is valid up until 
+						<?php 
+						session_start();
+						if(isset($_SESSION["exp_date"])){
+							echo $_SESSION["exp_date"]; 
+						} else {
+							echo date("m/d/Y", time() + 2628288);
+						}
+						?>
 					</p>
 				</div>
 				<div class="logo">
