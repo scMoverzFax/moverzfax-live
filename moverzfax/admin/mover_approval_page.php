@@ -118,6 +118,7 @@
                                 <th>Section Name</th>
                                 <th>Link Provided</th>
                                 <th>Rating Provided</th>
+                                <th>Flag For Mover To Correct</th>
                             </thead>
 
                             <?php include 'admin_model/mover_approval_page_model.php'; ?>

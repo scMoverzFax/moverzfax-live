@@ -146,7 +146,7 @@
 		}
 	</style>
 	<?php 
-	function showStars($starRating){ 
+	function showStars($starRating, $coverColor){ 
 		$coverWidth = ((5 - $starRating) / 5) * 100;
 		?>
 		<div class="star-container">
@@ -166,7 +166,7 @@
 				<svg viewBox="0 0 576 512" width="25" title="star">
 					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
 				</svg>
-			<div class="cover" style="width: <?php echo $coverWidth ?>%;"></div>
+				<div class="cover" style="width: <?php echo $coverWidth ?>%; background-color: <?php echo $coverColor ?>;"></div>
 			</div>
 		</div>
 	  <?php
@@ -837,7 +837,7 @@
 											<label class="status_lable">
 												<?php
 												if ($google_link) {
-													showStars($google_stars);
+													showStars($google_stars, 'white');
 													$google_points = $google_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -865,7 +865,7 @@
 											<label class="status_lable">
 												<?php
 												if ($mover_reviews_link) {
-													showStars($mover_reviews_stars);
+													showStars($mover_reviews_stars, '#eeeeee');
 													$my_moving_points = $mover_reviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -893,7 +893,7 @@
 											<label class="status_lable">
 												<?php
 												if ($yelp_link) {
-													showStars($yelp_stars);
+													showStars($yelp_stars, 'white');
 													$yelp_points = $yelp_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -921,7 +921,7 @@
 											<label class="status_lable">
 												<?php
 												if ($insider_pages_link) {
-													showStars($insider_pages_stars);
+													showStars($insider_pages_stars, '#eeeeee');
 													$insider_pages_points = $insider_pages_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -949,7 +949,7 @@
 											<label class="status_lable">
 												<?php
 												if ($moverreviews_link) {
-													showStars($moverreviews_stars);
+													showStars($moverreviews_stars, 'white');
 													$mover_reviews_points = $moverreviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -979,7 +979,7 @@
 
 												<?php
 												if ($transport_reviews_link) {
-													showStars($transport_reviews_stars);
+													showStars($transport_reviews_stars, '#eeeeee');
 													$transport_reviews_points = $transport_reviews_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1007,7 +1007,7 @@
 											<label class="status_lable">
 												<?php
 												if ($angies_link) {
-													showStars($angies_stars);
+													showStars($angies_stars, 'white');
 													$angies_points = $angies_stars * 2;
 												} else {
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1035,7 +1035,7 @@
 											<label class="status_lable">
 												<?php
 													if ($trust_pilot_link) {
-														showStars($trust_pilot_stars);
+														showStars($trust_pilot_stars, '#eeeeee');
 														$trust_pilot_points = $trust_pilot_stars * 2;
 													} else {
 														echo "<strong style ='color: red'>NO</strong>";

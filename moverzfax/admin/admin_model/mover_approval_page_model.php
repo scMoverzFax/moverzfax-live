@@ -1,12 +1,22 @@
+<style>
+.text-danger:hover {
+    cursor: pointer;
+}
+</style>
 <?php 
 function linkDisplay($siteName, $linkName, $starsName){
+    $id = $_GET['id'];
         // (!$linkName) ? ($linkName = 'n/a') : ($linkName = $linkName);
         // (!$starsName) ? ($starsName = 'n/a') : ($starsName = $starsName);
 	?>
 	<tr>
         <td><?= $siteName ?></td>
         <td><a href=<?= $linkName ?> target="_blank"><?= $linkName ?></a></td>
-        <td><?= $starsName ?></td>
+        <td class="text-center"><?= $starsName ?></td>
+        <td class="text-center">
+            <input class="form-check-input" type="checkbox" value="" id="flagThisLink" 
+                onclick='window.location.assign("admin_model/admin_operation.php?action=flag_link&val=0&link=<?php echo $linkName ?>&id=<?php echo $id ?>")'/>
+        </td>
 	</tr>
 	<?php
 }

@@ -3,6 +3,8 @@
     $action = $_GET['action'];
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
+        $currentValue = $_GET['val'];
+        $linkName = $_GET['link'];
     }
     if (isset($_GET['usdot'])) {
     $usdot = (int)$_GET['usdot'];
@@ -111,6 +113,19 @@
         }
         else{
             header("Location: ../admin_mv_scammer.php");
+        }
+    }
+    elseif($action == 'flag_link'){
+        if($currentValue == 0){
+            // $sql1 = "UPDATE mover_register SET ".$linkName." = 1 WHERE id = ".$id."";  Change these to update applicable link flag
+        } else {
+            // $sql1 = "UPDATE mover_register SET ".$linkName." = 0 WHERE id = ".$id."";
+        }
+        if(mysqli_query($con,$sql1)){
+            header("Location: ../admin_mv_approval.php");
+        }
+        else{
+            header("Location: ../admin_mv_approval.php");
         }
     }
 ?>

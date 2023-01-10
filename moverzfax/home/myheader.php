@@ -281,7 +281,8 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                                         <a href="show_transaction.php" class="sub-link">Payment Transactions</a>
                                     <?php }elseif(isset($_SESSION["email"]) && $role == "mover"){ ?>
                                         <a href="mover_transaction.php" class="sub-link">Payment Transactions</a>
-                                        <a href="../new-sample-upload-form-movers/mover_links_collection.php" class="sub-link">Mover Links Collection Form</a>
+                                        <!-- <a href="../new-sample-upload-form-movers/mover_links_collection.php" class="sub-link">Mover Links Collection Form</a> -->
+                                        <a href="../home/mover_edit_links.php" class="sub-link">Edit My Company Information</a>
                                     <?php } ?>
                                     <a href="my_order.php" class="sub-link" <?php if (isset($_SESSION["email"]) && $role == "customer") {
                                                                                 echo "";

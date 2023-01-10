@@ -123,11 +123,12 @@
 		}
 
 		.stars svg {
-			width: 25px;
+			width: 22px;
+			height: 22px;
 		}
 
 		.cover {
-		background: white;
+			background: white;
 		height: 100%;
 		overflow: hidden;
 		mix-blend-mode: color;
@@ -141,26 +142,30 @@
 		}
 	</style>
 	<?php 
-	function showStars($starRating){ 
+	function showStars($starRating, $coverColor){
 		$coverWidth = ((5 - $starRating) / 5) * 100;
 		?>
 		<div class="star-container">
-		<div class="stars">
-		  <svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg><svg viewBox="0 0 576 512" width="100" title="star">
-			<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-		  </svg>
-	  
-		  <div class="cover" style="width: <?php echo $coverWidth ?>%;"></div>
+			<div class="stars">
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<svg viewBox="0 0 576 512" width="25" title="star">
+					<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+				</svg>
+				<div class="cover" style="width: <?php echo $coverWidth ?>%; background-color: <?php echo $coverColor ?>;"></div>
+			</div>
 		</div>
-	  </div><?php
+	  <?php
 	}
 	?>
 
@@ -697,11 +702,11 @@
 													//echo "<strong>" . $bbb_listed . "</strong>";
 													echo "<p id='bbbGrade'>" . $bbb_grade . "</p>";
 													//echo "<strong style ='color: green'>YES</strong>";
-													$points = 10;
+													//$points = 10;
 												} else {
 													//echo "<strong style ='color: red'>" . $bbb_listed . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
-													$points = 0;
+													//$points = 0;
 												}
 												?>
 											</label>
@@ -866,7 +871,7 @@
 							</table>
 						</div>
 
-						<div class="break_page"></div>
+						<!-- <div class="break_page"></div> -->
 
 						<!--The code below here is different approach to reading the table data. We are going to leave it this way for now.-->
 
@@ -924,7 +929,7 @@
 												if (strtoupper($mymovingreviews_rating) != "NO" && $mymovingreviews_rating != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($mymovingreviews_rating) . "</strong>";
 													//echo "<strong style ='color: green'>YES</strong>";
-													showStars($star_rating1);
+													showStars($star_rating1, '#eeeeee');
 												} else if (strtoupper($mymovingreviews_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($mymovingreviews_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -965,7 +970,7 @@
 												if (strtoupper($yelp_rating) != "NO" && $yelp_rating != NULL) {
 													//echo "<strong style ='color: green'>" . $yelp_rating . "</strong>";
 													//echo "<strong>" . $star_rating2 . "</strong>";
-													showStars($yelp_rating);
+													showStars($yelp_rating, 'white');
 												} else if (strtoupper($yelp_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($yelp_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1006,7 +1011,7 @@
 												if (strtoupper($insiderpages_rating) != "NO" && strtoupper($insiderpages_rating) != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($insiderpages_rating) . "</strong>";
 													//echo "<strong style ='color: green'>" . $insiderpages_rating . "</strong>";
-													showStars($star_rating3);
+													showStars($star_rating3, '#eeeeee');
 												} else if (strtoupper($insiderpages_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($insiderpages_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1085,7 +1090,7 @@
 												if (strtoupper($moversreviewed_rating) != "NO" && strtoupper($moversreviewed_rating) != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($moversreviewed_rating) . "</strong>";
 													//echo "<strong>" . $moversreviewed_rating . "</strong>";
-													showStars($star_rating5);
+													showStars($star_rating5, 'white');
 												} else if (strtoupper($moversreviewed_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($moversreviewed_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1213,7 +1218,7 @@
 												if (strtoupper($transportreviews_rating) != "NO" && $transportreviews_rating != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($transportreviews_rating) . "</strong>";
 													//echo "<strong style ='color: green'>YES</strong>";
-													showStars($star_rating9);
+													showStars($star_rating9, '#eeeeee');
 												} else if (strtoupper($transportreviews_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($transportreviews_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1259,7 +1264,7 @@
 												if (strtoupper($angies_rating) != "NO" && $angies_rating != NULL) {
 													//echo "<strong style ='color: green'>" . strtoupper($angies_rating) . "</strong>";
 													//echo "<strong style ='color: green'>YES</strong>";
-													showStars($star_rating10);
+													showStars($star_rating10, 'white');
 												} else if (strtoupper($angies_rating) == "NO") {
 													//echo "<strong style ='color: red'>" . strtoupper($angies_rating) . "</strong>";
 													echo "<strong style ='color: red'>NO</strong>";
@@ -1435,6 +1440,38 @@
 						// Overall Percentage (out of 120 total points)
 						$Overall_Percentage = (($Legal_section + $Moving_Association_section + $total_star) / 120) * 100;
 
+						//apply the curve for this template
+						$num = $Overall_Percentage;
+						switch ($num) {
+							case $num > 67:
+								$result = $num + 13;
+								break;
+							case $num <= 67 && $num > 60:
+								$result = $num + 14;
+								break;
+							case $num <= 60 && $num > 53.5:
+								$result = $num + 15;
+								break;
+							case $num <= 53.5 && $num > 47:
+								$result = $num + 16;
+								break;
+							case $num <= 47 && $num > 40:
+								$result = $num + 17;
+								break;
+							case $num <= 40 && $num > 33:
+								$result = $num + 18;
+								break;
+							case $num <= 33 && $num > 27:
+								$result = $num + 19;
+								break;
+							case $num <= 27 && $num > 20:
+								$result = $num + 20;
+								break;
+							default:
+								$result = $num;
+						}
+						$Overall_Percentage = $result;
+						//////
 						?>
 						<script>
 							var temp = <?php echo $Overall_Percentage; ?>;

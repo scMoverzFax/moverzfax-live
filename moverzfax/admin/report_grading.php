@@ -3,6 +3,7 @@
 include '../model/connection.php';
 $scoresArray = array();
 
+    //calculating and adding all scores from mover
     $sql = "SELECT usdot FROM mover ";
 	$result = mysqli_query($con, $sql);
 	$resultCheck = mysqli_num_rows($result);
@@ -188,13 +189,55 @@ $scoresArray = array();
 
 						// Overall Percentage (out of 120 total points)
 						$Overall_Percentage = (($Legal_section + $Moving_Association_section + $total_star) / 120) * 100;
+
+                        $num = $Overall_Percentage;
+                        
+                        
+                        //apply curve logic
+						switch ($num) {
+							case $num > 67:
+								$result23 = $num + 13;
+								break;
+							case $num <= 67 && $num > 60:
+								$result23 = $num + 14;
+								break;
+							case $num <= 60 && $num > 53.5:
+								$result23 = $num + 15;
+								break;
+							case $num <= 53.5 && $num > 47:
+								$result23 = $num + 16;
+								break;
+							case $num <= 47 && $num > 40:
+								$result23 = $num + 17;
+								break;
+							case $num <= 40 && $num > 33:
+								$result23 = $num + 18;
+								break;
+							case $num <= 33 && $num > 27:
+								$result23 = $num + 19;
+								break;
+							case $num <= 27 && $num > 20:
+								$result23 = $num + 20;
+								break;
+							default:
+								$result23 = $num;
+						}
+
+						$Overall_Percentage = $result23;
+
                         array_push($scoresArray, $Overall_Percentage);
+
+                        // if($Overall_Percentage > 74){
+                        //     echo $search . ' scored a ' . $Overall_Percentage . '<br/>';
+                        // }
+
             }
         }
     } else {
         echo "No data found " . $conn->error;
     }
 
+    //calculating and adding all scores from mover_register
     $sql2 = "SELECT usdot FROM mover_register ";
 	$result2 = mysqli_query($con, $sql2);
 	$resultCheck2 = mysqli_num_rows($result2);
@@ -441,12 +484,38 @@ $scoresArray = array();
                         // Overall Percentage
                         $Overall_Percentage = (($Legal_section + $Moving_Association_section + $Scam_Alert_section + $Reviews_section) / 110) * 100;
                         array_push($scoresArray, $Overall_Percentage);
+                        // if($Overall_Percentage > 70){
+                        //     echo 'this usdot scored 79: ' . $rows2['usdot'];
+                        // }
             }
         }
     } else {
         echo "No data found " . $conn->error;
     }
-rsort($scoresArray);
-echo '<pre>'; print_r($scoresArray); echo '</pre>';
+// rsort($scoresArray);
+// echo '<pre>'; print_r($scoresArray); echo '</pre>';
+
+function Stand_Deviation($arr)
+    {
+        $num_of_elements = count($arr);
+          
+        $variance = 0.0;
+          
+                // calculating mean using array_sum() method
+        $average = array_sum($arr)/$num_of_elements;
+          
+        foreach($arr as $i)
+        {
+            // sum of squares of differences between 
+                        // all numbers and means.
+            $variance += pow(($i - $average), 2);
+        }
+
+        echo "The average is " . $average . "<br>";
+          
+        return (float)sqrt($variance/$num_of_elements);
+    }
+
+    print_r(Stand_Deviation($scoresArray));
 
 ?>
