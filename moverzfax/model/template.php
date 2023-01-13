@@ -97,7 +97,7 @@
 					<p>Sorry, the mover you have requested is not present in our database. Please notify <a href="http://moverzfax.com/home/support.php">customer support</a> and we will be sure to update our records with their information.</p>
 				</div>
 				<div class="logo">
-					<img class="logo_img" src="../img/MoverZfax.png" alt="">
+					<img class="logo_img" src="../img/MoverZfaxLogo.jpeg" alt="">
 				</div>
 			</div>
 		</section>
@@ -1481,7 +1481,11 @@
 							var Status_image = document.getElementById('Status_image');
 							if (avg > 70) {
 								percentage.style.color = "green";
-								Status_image.src = "../img/pass.jpeg";
+								if(avg > 85){
+									Status_image.src = "../img/pass.jpeg";
+								} else {
+									Status_image.src = "../img/pass.jpeg";
+								}
 							} else {
 								percentage.style.color = "red";
 								Status_image.src = "../img/fail.jpeg";

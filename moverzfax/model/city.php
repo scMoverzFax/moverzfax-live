@@ -65,7 +65,7 @@ else{
   //session_reset();
   $this_state_link = $state_links->$state_code;
   $_SESSION["state_link"] = $this_state_link;
-  echo "<script>console.log('Selected Link: " . $this_state_link . "' );</script>";
+  //echo "<script>console.log('Selected Link: " . $this_state_link . "' );</script>";
   
 
   $sql = "SELECT * FROM `city` where state_code='".$state_code."'";

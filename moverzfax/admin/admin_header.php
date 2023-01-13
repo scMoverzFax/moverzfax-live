@@ -259,7 +259,8 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             </div>
             <div class="row-two">
                 <div class="logo">
-                    <a href="admin_dashboard.php"><img src="../img/MoverZfax.png" alt="logo"></a>
+                    <!-- <a href="admin_dashboard.php"><img src="../img/MoverZfax.png" alt="logo"></a> -->
+                    <a href="admin_dashboard.php"><img src="../img/MoverZfaxLogo.jpeg" alt="logo"></a>
                 </div>
                 <!-- ------------------------ side menu button start  -------------------------- -->
 

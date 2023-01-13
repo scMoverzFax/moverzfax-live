@@ -249,7 +249,10 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             </div>
             <div class="row-two">
                 <div class="logo">
-                    <a href="index.php"><img src="../img/MoverZfax.png" alt="logo"></a>
+                    <a href="index.php">
+                        <!-- <img src="../img/MoverZfax.png" alt="logo"> -->
+                        <img src="../img/MoverZfaxLogo.jpeg" alt="logo">
+                    </a>
                 </div>
                 <!-- ------------------------ side menu button start  -------------------------- -->
 

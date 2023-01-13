@@ -123,6 +123,9 @@
 
                             <?php include 'admin_model/mover_approval_page_model.php'; ?>
                     </div>
+                    <a href="admin_mv_approval.php">
+                        <button class="btn btn-secondary">Back to Approval Page</button>
+                    </a>
                     <a href="admin_model/admin_operation.php?action=approve_mover&id=<?= $id ?>" >
                         <button class="btn btn-primary">Approve This Mover</button>
                     </a>

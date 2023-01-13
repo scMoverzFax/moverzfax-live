@@ -91,7 +91,8 @@
 					</p>
 				</div>
 				<div class="logo">
-					<img class="logo_img" src="../img/MoverZfax.png" alt="">
+					<!-- <img class="logo_img" src="../img/MoverZfax.png" alt=""> -->
+					<img class="logo_img" src="../img/MoverZfaxLogo.jpeg" alt="">
 				</div>
 			</div>
 		</section>

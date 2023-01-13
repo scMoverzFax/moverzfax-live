@@ -1102,7 +1102,11 @@
 							var Status_image = document.getElementById('Status_image');
 							if (avg > 70) {
 								percentage.style.color = "green";
-								Status_image.src = "../img/pass.jpeg";
+								if(avg > 85){
+									Status_image.src = "../img/pass.jpeg";
+								} else {
+									Status_image.src = "../img/pass.jpeg";
+								}
 							} else {
 								percentage.style.color = "red";
 								Status_image.src = "../img/fail.jpeg";

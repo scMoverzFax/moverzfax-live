@@ -4,7 +4,7 @@
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $currentValue = $_GET['val'];
-        $linkName = $_GET['link'];
+        $flagName = $_GET['flag'];
     }
     if (isset($_GET['usdot'])) {
     $usdot = (int)$_GET['usdot'];
@@ -117,15 +117,15 @@
     }
     elseif($action == 'flag_link'){
         if($currentValue == 0){
-            // $sql1 = "UPDATE mover_register SET ".$linkName." = 1 WHERE id = ".$id."";  Change these to update applicable link flag
+            $sql1 = "UPDATE mover_register SET ".$flagName." = 1 WHERE id = ".$id."";
         } else {
-            // $sql1 = "UPDATE mover_register SET ".$linkName." = 0 WHERE id = ".$id."";
+            $sql1 = "UPDATE mover_register SET ".$flagName." = 0 WHERE id = ".$id."";
         }
         if(mysqli_query($con,$sql1)){
-            header("Location: ../admin_mv_approval.php");
+            header("Location: ../mover_approval_page.php?id=".$id);
         }
         else{
-            header("Location: ../admin_mv_approval.php");
+            header("Location: ../mover_approval_page.php");
         }
     }
 ?>

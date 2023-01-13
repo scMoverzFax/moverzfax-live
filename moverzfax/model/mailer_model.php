@@ -185,7 +185,7 @@ $body = '
     <div class="container">
         <div class="wrapper">
             <div class="header">
-                <div class="logo"><img src="https://www.moverzfax.com/img/MoverZfax.png" alt="MoverZFax"></div>
+                <div class="logo"><img src="https://www.moverzfax.com/img/MoverZfaxLogo.jpeg" alt="MoverZFax"></div>
                 <div class="date_time">Jan 19, 2022</div>
             </div>
             <div class="main">

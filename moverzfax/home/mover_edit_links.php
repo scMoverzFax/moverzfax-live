@@ -89,11 +89,65 @@
 	@media (max-width: 400px) {}
 </style>
 <?php 
+$state_links = (object) [
+	"AL" => "https://arc-sos.state.al.us/CGI/CORPNAME.MBR/INPUT",
+	"AK" => "https://www.commerce.alaska.gov/cbp/main/search/entities",
+	"AZ" => "https://ecorp.azcc.gov/EntitySearch/Index",
+	"AR" => "https://www.sos.arkansas.gov/corps/search_all.php",
+	"CA" => "https://bizfileonline.sos.ca.gov/search/business",
+	"CO" => "https://www.sos.state.co.us/biz/BusinessEntityCriteriaExt.do?resetTransTyp=Y",
+	"CT" => "https://service.ct.gov/business/s/onlinebusinesssearch",
+	"DE" => "https://icis.corp.delaware.gov/Ecorp/EntitySearch/NameSearch.aspx",
+	"DC" => "https://corponline.dcra.dc.gov/Home.aspx",
+	"FL" => "http://search.sunbiz.org/Inquiry/CorporationSearch/ByName",
+	"GA" => "https://ecorp.sos.ga.gov/BusinessSearch",
+	"HI" => "https://hbe.ehawaii.gov/documents/search.html",
+	"ID" => "https://sosbiz.idaho.gov/search/business",
+	"IL" => "https://apps.ilsos.gov/corporatellc/",
+	"IN" => "https://bsd.sos.in.gov/publicbusinesssearch",
+	"IA" => "https://sos.iowa.gov/search/business/search.aspx",
+	"KS" => "https://www.kansas.gov/bess/flow/main?execution=e1s1",
+	"KY" => "https://web.sos.ky.gov/ftsearch/",
+	"LA" => "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearch.aspx",
+	"ME" => "https://icrs.informe.org/nei-sos-icrs/ICRS?MainPage=x",
+	"MD" => "https://egov.maryland.gov/BusinessExpress/EntitySearch",
+	"MA" => "https://corp.sec.state.ma.us/corpweb/CorpSearch/CorpSearch.aspx",
+	"MI" => "https://cofs.lara.state.mi.us/SearchApi/Search/Search",
+	"MN" => "https://mblsportal.sos.state.mn.us/Business/Search",
+	"MS" => "https://corp.sos.ms.gov/corp/portal/c/page/corpBusinessIdSearch/portal.aspx?#clear=1",
+	"MO" => "https://bsd.sos.mo.gov/BusinessEntity/BESearch.aspx?SearchType=0",
+	"MT" => "https://biz.sosmt.gov/search/business",
+	"NE" => "https://www.nebraska.gov/sos/corp/corpsearch.cgi?nav=search",
+	"NV" => "https://esos.nv.gov/EntitySearch/OnlineEntitySearch",
+	"NH" => "https://quickstart.sos.nh.gov/online/BusinessInquire",
+	"NJ" => "https://www.njportal.com/DOR/BusinessNameSearch/Search/BusinessName",
+	"NM" => "https://portal.sos.state.nm.us/BFS/online/CorporationBusinessSearch",
+	"NY" => "https://apps.dos.ny.gov/publicInquiry/EntityDisplay",
+	"NC" => "https://www.sosnc.gov/search/index/corp",
+	"ND" => "https://firststop.sos.nd.gov/search/business",
+	"OH" => "https://businesssearch.ohiosos.gov/",
+	"OK" => "https://www.sos.ok.gov/corp/corpinquiryfind.aspx",
+	"OR" => "http://egov.sos.state.or.us/br/pkg_web_name_srch_inq.login",
+	"PA" => "https://file.dos.pa.gov/search/business",
+	"PR" => "https://prcorpfiling.f1hst.com/CorporationSearch.aspx",
+	"RI" => "http://business.sos.ri.gov/CorpWeb/CorpSearch/CorpSearch.aspx",
+	"SC" => "https://businessfilings.sc.gov/BusinessFiling/Entity/Search",
+	"SD" => "https://sosenterprise.sd.gov/BusinessServices/Business/FilingSearch.aspx",
+	"TN" => "https://tnbear.tn.gov/Ecommerce/FilingSearch.aspx",
+	"TX" => "https://mycpa.cpa.state.tx.us/coa/",
+	"UT" => "https://secure.utah.gov/bes/",
+	"VT" => "https://bizfilings.vermont.gov/online/BusinessInquire/",
+	"VA" => "https://cis.scc.virginia.gov/EntitySearch/Index",
+	"WA" => "https://ccfs.sos.wa.gov/#/AdvancedSearch",
+	"WV" => "https://apps.wv.gov/SOS/BusinessEntitySearch/",
+	"WI" => "https://www.wdfi.org/apps/CorpSearch/Search.aspx",
+	"WY" => "https://wyobiz.wyo.gov/Business/FilingSearch.aspx"
+  ];
 //isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "USDOT number already registered!" : $msg = "";
 
 //isset($_REQUEST["usdot-check"]) ? checkDatabase() : null;
 
-function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
+function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName, $starValue, $flagged){
 	?>
 	<tr>
 		<td>
@@ -101,11 +155,12 @@ function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
 			<a href=<?php echo $siteLink ?> target="_blank">Visit Site</a>
 		</td>
 		<td>
-			
-			<input style="width: 100%;" type="text" class="form-control" name=<?php echo $name ?> value="<?php echo (isset($value)) ? $value : '';?>" placeholder="Paste your link here if applicable." />
+			<input style="width: 100%; <?php if($flagged==1) { echo "border: solid red 1px;"; } ?>"
+				type="text" class="form-control" name=<?php echo $name ?> value="<?php echo (isset($value)) ? $value : '';?>" placeholder="Paste your link here if applicable." />
 			<a href=<?php echo $value ?> target="_blank">Test Link</a>
 		<?php if($stars) { ?>
-			<input type="number" step="any" min=”0″ max="5" class="form-control" name=<?php echo $starsName ?>  placeholder="Enter your star rating (e.g. 5.0)">
+			<input style="width: 100%; <?php if($flagged==1) { echo "border: solid red 1px;"; } ?>" 
+				type="number" step="any" min=”0″ max="5" class="form-control" name=<?php echo $starsName ?> value="<?php echo (isset($starValue)) ? $starValue : '';?>" placeholder="Enter your star rating (e.g. 5.0)">
 		<?php } ?>
 		</td>
 	</tr>
@@ -147,22 +202,51 @@ $transportreviews_link = '';
 	if ($resultCheck > 0) {
 		//sets table values to variables
 		while ($rows = mysqli_fetch_assoc($result)) {
+			$state_code = $rows['states'];
 			$state_link = $rows['state_link'];
+			$state_flag = $rows['state_flag'];
 			$federal_link = $rows['federal_link'];
+			$federal_flag = $rows['federal_flag'];
 			$bbb_link = $rows['bbb_link'];
+			$bbb_grade = $rows['bbb_grade'];
+			$bbb_flag = $rows['bbb_flag'];
 			$msc_link = $rows['msc_link'];
+			$msc_flag = $rows['msc_flag'];
 			$hhgfaa_link = $rows['hhgfaa_link'];
+			$hhgfaa_flag = $rows['hhgfaa_flag'];
 			$ripoffreport_link = $rows['ripoff_link'];
+			$ripoffreport_flag = $rows['ripoff_flag'];
 			$movingscam_link = $rows['moving_scam_link'];
+			$movingscam_flag = $rows['moving_scam_flag'];
+
             $google_link = $rows['google_link'];
+			$google_stars = $rows['google_stars'];
+			$google_flag = $rows['google_flag'];
 			$mymovingreviews_link = $rows['my_moving_reviews_link'];
+			$mymovingreviews_stars = $rows['moving_reviews_stars'];
+			$mymovingreviews_flag = $rows['my_moving_reviews_flag'];
 			$yelp_link = $rows['yelp_link'];
+			$yelp_stars = $rows['yelp_stars'];
+			$yelp_flag = $rows['yelp_flag'];
 			$insiderpages_link = $rows['insider_pages_link'];
+			$insiderpages_stars = $rows['insider_pages_stars'];
+			$insiderpages_flag = $rows['insider_pages_flag'];
 			$moversreviewed_link = $rows['mover_reviews_link'];
+			$moversreviewed_stars = $rows['mover_reviews_stars'];
+			$moversreviewed_flag = $rows['mover_reviews_flag'];
+			$transportreviews_link = $rows['transport_reviews_link'];
+			$transportreviews_stars = $rows['transport_reviews_stars'];
+			$transportreviews_flag = $rows['transport_reviews_flag'];
 			$angies_link = $rows['angies_link'];
+			$angies_stars = $rows['angies_stars'];
+			$angies_flag = $rows['angies_flag'];
 			$trust_pilot_link = $rows['trust_pilot_link'];
+			$trust_pilot_stars = $rows['trust_pilot_stars'];
+			$trust_pilot_flag = $rows['trust_pilot_flag'];
 		}
-	} 
+	}
+
+	$this_state_link = $state_links->$state_code;
 ?>
 
 <div class="b-container">
@@ -171,39 +255,39 @@ $transportreviews_link = '';
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Edit my Links and Ratings</h1>
-					<!-- <h5 class="text-danger text-center"><?php //$msg ?></h5> -->
+					<h5 class="text-danger text-center">Please review any areas outlined in red, these sections have been flagged by the MoverzFax admin.</h5>
 					<br>
 					<form action="../model/mover_edit_links_model.php?usdot=<?php echo $search; ?>" method="post" enctype="multipart/form-data">
 						<table class="table">
 							<tbody>
-								<?php echo linkInput("State Registered", "/moverzfaxdevelop/MoverzFax/moverzfax/home/state_link_redirect.php", "state_registration_link", $state_link, false, ''); ?>
-								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, ''); ?>
-								<!-- <?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?> -->
-								
-								<!-- <?php echo linkInput("BBB Member", "https://www.bbb.org/", "member_of_bbb", $bbb_link, true, "bbb_grade"); ?> -->
+								<?php echo linkInput("State Registered", $this_state_link, "state_registration_link", $state_link, false, '', 0, $state_flag); ?>
+								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, '', 0, $federal_flag); ?>
+								<?php //echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?>
 								<tr>
 									<td>
 										<label>BBB Member</label>
 										<a href="https://www.bbb.org/" target="_blank">Visit Site</a>
 									</td>
 									<td>
-										<input style="width: 100%;" type="text" class="form-control" name="member_of_bbb" value="<?php echo (isset($bbb_link)) ? $bbb_link : '';?>" placeholder="Paste your link here if applicable." />
+										<input style="width: 100%;<?php if($bbb_flag==1) { echo "border: solid red 1px;"; } ?>" type="text" class="form-control" name="member_of_bbb" value="<?php echo (isset($bbb_link)) ? $bbb_link : '';?>" placeholder="Paste your link here if applicable." />
 										<a href=<?php echo $bbb_link ?> target="_blank">Test Link</a>
-										<input type="text" class="form-control" name="bbb_grade" placeholder="Enter your BBB grade (e.g. A+, A, A-)">
+										<input style="width: 100%;<?php if($bbb_flag==1) { echo "border: solid red 1px;"; } ?>" type="text" class="form-control" name="bbb_grade" value="<?php echo (isset($bbb_grade)) ? $bbb_grade : '';?>" placeholder="Enter your BBB grade (e.g. A+, A, A-)">
 									</td>
 								</tr>
-								<?php echo linkInput("ProMover Member", "https://www.moving.org/", "member_of_msc", $msc_link, false, ""); ?>
-								<?php echo linkInput("HHGFAA Member", "https://www.iamovers.org/", "member_of_hhgffaa", $hhgfaa_link, false, ""); ?>
-								<?php echo linkInput("Ripoff Report", "https://www.ripoffreport.com/", "present_on_ripff_report", $ripoffreport_link, false, ""); ?>
-								<?php echo linkInput("Moving Scam", "http://www.movingscam.com", "present_on_moving_scam", $movingscam_link, false, ""); ?>
-								<?php echo linkInput("Google", "http://www.google.com/", "present_on_google", $google_link, true, "google_stars"); ?>
-								<?php echo linkInput("My Moving Reviews", "https://www.mymovingreviews.com/", "present_on_moving_reviews", $movingscam_link, true, "moving_reviews_stars"); ?>
-								<?php echo linkInput("Yelp", "http://www.yelp.com/", "present_on_yelp", $yelp_link, true, "yelp_stars"); ?>
-								<?php echo linkInput("Insider Pages", "https://www.insiderpages.com/", "present_on_insider_pages", $insiderpages_link, true, "insider_pages_stars"); ?>
-								<?php echo linkInput("Mover Reviews", "https://www.moverreviews.com/", "present_on_mover_reviews", $moversreviewed_link, true, "mover_reviews_stars"); ?>
-								<?php echo linkInput("Transport Reviews", "https://www.transportreviews.com/", "present_on_transport_reviews", $transportreviews_link, true, "transport_reviews_stars"); ?>
-								<?php echo linkInput("Angies List", "http://www.angieslist.com/", "present_on_angies_list", $angies_link, true, "angie_stars"); ?>
-								<?php echo linkInput("Trust Pilot", "https://www.trustpilot.com/", "present_on_trust_pilot", $trust_pilot_link, true, "trust_pilot_stars"); ?>
+								<?php echo linkInput("ProMover Member", "https://www.moving.org/", "member_of_msc", $msc_link, false, "", 0, $msc_flag); ?>
+								<?php echo linkInput("HHGFAA Member", "https://www.iamovers.org/", "member_of_hhgffaa", $hhgfaa_link, false, "", 0, $hhgfaa_flag); ?>
+
+								<?php echo linkInput("Ripoff Report", "https://www.ripoffreport.com/", "present_on_ripff_report", $ripoffreport_link, false, "", 0, $ripoffreport_flag); ?>
+								<?php echo linkInput("Moving Scam", "http://www.movingscam.com", "present_on_moving_scam", $movingscam_link, false, "", 0, $movingscam_flag); ?>
+
+								<?php echo linkInput("Google", "http://www.google.com/", "present_on_google", $google_link, true, "google_stars", $google_stars, $google_flag); ?>
+								<?php echo linkInput("My Moving Reviews", "https://www.mymovingreviews.com/", "present_on_moving_reviews", $mymovingreviews_link, true, "moving_reviews_stars", $mymovingreviews_stars, $mymovingreviews_flag); ?>
+								<?php echo linkInput("Yelp", "http://www.yelp.com/", "present_on_yelp", $yelp_link, true, "yelp_stars", $yelp_stars, $yelp_flag); ?>
+								<?php echo linkInput("Insider Pages", "https://www.insiderpages.com/", "present_on_insider_pages", $insiderpages_link, true, "insider_pages_stars", $insiderpages_stars, $insiderpages_flag); ?>
+								<?php echo linkInput("Mover Reviews", "https://www.moverreviews.com/", "present_on_mover_reviews", $moversreviewed_link, true, "mover_reviews_stars", $moversreviewed_stars, $moversreviewed_flag); ?>
+								<?php echo linkInput("Transport Reviews", "https://www.transportreviews.com/", "present_on_transport_reviews", $transportreviews_link, true, "transport_reviews_stars", $transportreviews_stars, $transportreviews_flag); ?>
+								<?php echo linkInput("Angies List", "http://www.angieslist.com/", "present_on_angies_list", $angies_link, true, "angie_stars", $angies_stars, $angies_flag); ?>
+								<?php echo linkInput("Trust Pilot", "https://www.trustpilot.com/", "present_on_trust_pilot", $trust_pilot_link, true, "trust_pilot_stars", $trust_pilot_stars, $trust_pilot_flag); ?>
 							</tbody>
 						</table>
 						<div class="row text-center">
