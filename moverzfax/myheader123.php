@@ -154,8 +154,7 @@
 		  <span class="icon-bar"></span>                        
 		</button>
 		<a class="navbar-brand w3-red w3-center w3-allerta" href="#">
-			<!-- <img src="MoverZfax.png" id="logo"> -->
-			<img src="MoverZfaxLogo.jpeg" id="logo">
+			<img src="logo2023.jpeg" id="logo">
 		</a>
 	  </div>
 	  <div class="collapse navbar-collapse" id="myNavbar">

@@ -251,7 +251,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                 <div class="logo">
                     <a href="index.php">
                         <!-- <img src="../img/MoverZfax.png" alt="logo"> -->
-                        <img src="../img/MoverZfaxLogo.jpeg" alt="logo">
+                        <img src="../img/logo2023.jpeg" alt="logo">
                     </a>
                 </div>
                 <!-- ------------------------ side menu button start  -------------------------- -->

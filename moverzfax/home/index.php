@@ -618,7 +618,7 @@
                             </div>
                             <div class="col-md-9 col-sm-9">
                                 <p class="margin-bottom-10">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
-                                <p><a class="more" href="javascript:;">Read more <i class="icon-angle-right"></i></a></p>
+                                <p><a class="more" href="about.php">Read more <i class="icon-angle-right"></i></a></p>
                             </div>
                         </div>
                         <div class="tab-pane row fade" id="tab-2">
@@ -790,12 +790,10 @@
                 </div>
             </div>
         </div>
-        <!--
         <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
             <img src="../img/up.png" style="width:40px; height:40px">
         </div>
--->
-    </>
+</main>
 
     
 <div class="row margin-bottom-40"></div>

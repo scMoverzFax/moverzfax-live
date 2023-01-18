@@ -120,8 +120,7 @@
 	<!--naviagtion-->
 	<div class="navigation">
 		<!--logo-->
-		<!-- <img src="img/MoverZfax.png" id="logo"> -->
-		<img src="img/MoverZfaxLogo.jpeg" id="logo">
+		<img src="img/logo2023.jpeg" id="logo">
 		<!--navigation link-->
 		<div class="links">
 			

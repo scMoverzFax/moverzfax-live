@@ -45,12 +45,12 @@
 				<h1 class="text-center" style="font-weight: 500">Link to Us</h1>
 				<hr>
 				<ul>
-					<li style="list-style-type:disc;"><a href="http://movemewithcare.com/">Accredited and Certified moving network for USA and CANADA</a></li><br>
-					<li style="list-style-type:disc;"><a href="http://movinguwithcare.com/">Licensed movers for USA and CANADA</a></li><br>
-					<li style="list-style-type:disc;"><a href="http://moving.proaceintl.com/">Professional and Certified mover in Washington DC, Maryland, Virginia, Nationwide and International: ProAce International Moving and Storage</a></li><br>
-					<li style="list-style-type:disc;"><a href="http://relocatorsnetwork.com/">Professional and Ethical moving companies in America</a></li><br>
-					<li style="list-style-type:disc;"><a href="http://www.kejandelivery.com">Miami Movers</a></li><br>
-					<li style="list-style-type:disc;"><a href="http://www.bigredsmoving.com">Tallahassee Movers</a></li>
+					<li style="list-style-type:disc;"><a href="http://movemewithcare.com/" target="_blank">Accredited and Certified moving network for USA and CANADA</a></li><br>
+					<li style="list-style-type:disc;"><a href="http://movinguwithcare.com/" target="_blank">Licensed movers for USA and CANADA</a></li><br>
+					<li style="list-style-type:disc;"><a href="http://moving.proaceintl.com/" target="_blank">Professional and Certified mover in Washington DC, Maryland, Virginia, Nationwide and International: ProAce International Moving and Storage</a></li><br>
+					<li style="list-style-type:disc;"><a href="http://relocatorsnetwork.com/" target="_blank">Professional and Ethical moving companies in America</a></li><br>
+					<li style="list-style-type:disc;"><a href="http://www.kejandelivery.com" target="_blank">Miami Movers</a></li><br>
+					<li style="list-style-type:disc;"><a href="http://www.bigredsmoving.com" target="_blank">Tallahassee Movers</a></li>
 				</ul>
 			</div>
 		</div>

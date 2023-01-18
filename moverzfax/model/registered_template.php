@@ -1060,6 +1060,16 @@
 								</tbody>
 							</table>
 						</div>
+						<!-- Discrepancy Disclaimer -->
+						<div>
+							<p>
+						As accuracy in our reports is our #1 priority, it is important for us to be notified if any of the 
+						star ratings showing on the report display inaccurate data. We strive to provide you with information 
+						you can trust prior to selecting your mover. If in any instances, you come across errors related to 
+						star grades, email us at support@moverzfax.com so we can update the information in our system and 
+						resend you a more accurate report.
+							</p>
+						</div>
 						<!-- check out -->
 						<div class="checkout">
 							<p>
@@ -1076,7 +1086,7 @@
 							All Rights Reserved
 						</div>
 
-
+ 
 						<?php
 						//Legal section
 						$Legal_section = $state_points + $federal_points;
@@ -1100,10 +1110,12 @@
 							var percentage = document.getElementById('overall_average');
 							percentage.innerHTML = avg;
 							var Status_image = document.getElementById('Status_image');
-							if (avg > 70) {
+							if (temp.toFixed(2) > 70) {
 								percentage.style.color = "green";
-								if(avg > 85){
-									Status_image.src = "../img/pass.jpeg";
+								if(temp.toFixed(2) > 85){
+									Status_image.src = "../img/goldBadge.png";
+									//Mover who proved to conduct itself with professionalism and plenty 
+									//of experience in the industry where quality and Customer service is it's #1 priority
 								} else {
 									Status_image.src = "../img/pass.jpeg";
 								}
