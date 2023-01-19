@@ -105,8 +105,32 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-20">
+            <div class="col-sm-6">
+                <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle">
+                            <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/golden_star_100.png" width="40"></div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Correct Mover Star Ratings</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Correct the ratings for movers if a customer reports a discrepancy in the current mover report.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a class="uk-button uk-button-text" href="admin_mv_stars.php">Visit Page</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                
+            </div>
+        </div>
+    <br>
+    <br>
     </div>
-    
 
 <?php
     include '../home/footer.php';

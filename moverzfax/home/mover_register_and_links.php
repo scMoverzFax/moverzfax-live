@@ -224,7 +224,7 @@ if(isset($_REQUEST["usdot-check"])){
 						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
 					</form>
 					<br>
-					<form action="../model/mover_model.php" method="post" enctype="multipart/form-data">
+					<form action="../model/mover_model.php" method="post" enctype="multipart/form-data"> 
 						<table class="table">
 							<tbody>
 								<tr>
