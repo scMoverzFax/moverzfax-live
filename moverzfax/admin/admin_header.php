@@ -141,9 +141,9 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
         }
     </style>
     <!-- Loader CSS -->
-    <style>
+    <!-- <style>
 
-    </style>
+    </style> -->
 
 </head>
 
@@ -168,12 +168,12 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <script>
         function loaderHideFunction() {
             var loader = document.getElementById('loader-wrapper');
-            loader.style.display = 'none';
+            // loader.style.display = 'none';
         }
 
         function loaderShowFunction() {
             var loader = document.getElementById('loader-wrapper');
-            loader.style.display = 'block';
+            // loader.style.display = 'block';
         }
         // function onloadFunctions() {
         // // // // loaderFunction();
