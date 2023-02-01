@@ -131,7 +131,9 @@
                     <a href="admin_model/admin_operation.php?action=approve_mover&id=<?= $id ?>" >
                         <button class="btn btn-primary">Approve This Mover</button>
                     </a>
-                    
+                    <a href="email_mv_o_flag.php?email=<?php $moverEmail ?>&name=<?php $moverName ?>">
+                        <button class="btn btn-secondary">Notify This Mover of Their Flags</button>
+                    </a>
             </div>
         </div>
     </div>

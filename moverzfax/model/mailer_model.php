@@ -266,7 +266,7 @@ $body = '
                     </tbody>
                 </table>
                 <div>
-                    <p>Please call on 180XXXXXX161 or drop a mail on support@moversfax.com to report if this transaction
+                    <p>Please call on 180XXXXXX161 or drop a mail on support@moverzfax.com to report if this transaction
                         was not authorized by you.</p>
                     </p>
                     <p> Warm Regards,</p>

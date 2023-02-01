@@ -1,11 +1,10 @@
 <?php 
-    
-        $sql1 = "SELECT * FROM payment WHERE tr_id='".$tr_id."' AND user_id='".$user_id."'  ";
-        $result1 = $con->query($sql1);
-        $res1 = mysqli_fetch_array($result1);
 
-        $to_mail = $user_email;
-        $subject = "Payment Successful";
+    $email = $_GET['email'];
+    $name = $_GET['name'];
+
+        $to_mail = $email;
+        $subject = "Your MoverzFax information has been flagged for correction";
         $body = '
         <html lang="en">
         <head>
@@ -22,10 +21,11 @@
 
         <body style="box-sizing: border-box;">
             <div style="box-sizing: border-box;border:2px solid green;border-radius: 20px;margin:10px;padding:10px;">
-                <p>Dear '.$res1['tr_full_name'].',</p>
-                <h2 style="font-weight: bold">Thank you for joining MoverzFax.</h2>
-                <p>Thank you for your order with MoverzFax!</p>
-                <p>Your Transaction is Complete. Your Transaction Details is as follows</p>
+                <p>Dear '.$name.',</p>
+                <h2 style="font-weight: bold">Thank you for your information.</h2>
+                <p>Upon review of the information you provided to MoverzFax, our admin has discovered some inaccuracies.</p>
+                <p>Please visit the link correction page below and provide the most accurate information you can.</p>
+                <a href="https://www.moverzfax.com/moverzfaxdevelop/MoverzFax/moverzfax/home/mover_edit_links.php">Correct My Information</a>
             </div>
         </body
         </html>';
@@ -39,6 +39,6 @@
         else{
             echo "Failed";
         }
-        header('Location: ../admin_mv_approval.php');
+        header('Location: ../admin/admin_mv_approval.php');
     
 ?>
