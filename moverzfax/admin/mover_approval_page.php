@@ -8,6 +8,7 @@
     if(mysqli_num_rows($result) > 0){
         $res = mysqli_fetch_assoc($result);
         $moverName = $res['company_name'];
+        $moverEmail = $res['mover_email'];
     }
 ?>
 
@@ -112,6 +113,7 @@
         <div class="row">
             <div class="col-12">
                 <h3><?php echo $moverName ?></h3>
+                <h5><a href="mailto:<?php echo $moverEmail ?>"><?php echo $moverEmail ?></a></h5>
                     <div id="mv_user_search_table">
                         <table class="table table-striped">
                             <thead class="bg-dark">
@@ -129,6 +131,7 @@
                     <a href="admin_model/admin_operation.php?action=approve_mover&id=<?= $id ?>" >
                         <button class="btn btn-primary">Approve This Mover</button>
                     </a>
+                    
             </div>
         </div>
     </div>

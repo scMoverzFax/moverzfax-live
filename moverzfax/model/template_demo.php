@@ -76,7 +76,7 @@
 		}
 	} else {
 
-		echo "THERE IS NO SUCH DATA FROM THE MOVERSFAX " . $conn->error;
+		echo "THERE IS NO SUCH DATA FROM THE MOVERZFAX" . $conn->error;
 	}
 	?>
 

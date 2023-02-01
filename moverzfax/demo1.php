@@ -35,7 +35,7 @@
 }
 </style>
 <div class="container-fluid">
-  <div class="title h3 text-center">MoversFax Reviews</div>
+  <div class="title h3 text-center">MoverzFax Reviews</div>
   <!-- Card Start -->
   <div class="card">
     <div class="row ">

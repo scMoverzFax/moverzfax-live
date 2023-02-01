@@ -273,7 +273,7 @@ $body = '
                     <p>Team MoverZFax</p>
                 </div>
             </div>
-            <div class="footer"><label for="">Go to our Site :</label><a href="#">MoversFax.com</a></div>
+            <div class="footer"><label for="">Go to our Site :</label><a href="#">MoverzFax.com</a></div>
         </div>
     </div>
 </body>

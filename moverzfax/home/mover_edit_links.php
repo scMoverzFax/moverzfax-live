@@ -149,7 +149,7 @@ $state_links = (object) [
 
 function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName, $starValue, $flagged){
 	?>
-	<tr>
+	<tr style="<?php if($flagged==0) { echo "display: none;"; } ?>" >
 		<td>
 			<label><?php echo $siteName ?></label>
 			<a href=<?php echo $siteLink ?> target="_blank">Visit Site</a>
@@ -263,7 +263,7 @@ $transportreviews_link = '';
 								<?php echo linkInput("State Registered", $this_state_link, "state_registration_link", $state_link, false, '', 0, $state_flag); ?>
 								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, '', 0, $federal_flag); ?>
 								<?php //echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?>
-								<tr>
+								<tr style="<?php if($bbb_flag==0) { echo "display: none;"; } ?>">
 									<td>
 										<label>BBB Member</label>
 										<a href="https://www.bbb.org/" target="_blank">Visit Site</a>

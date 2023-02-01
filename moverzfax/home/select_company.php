@@ -161,7 +161,7 @@ include 'myheader.php';
                                                                         if ($status == "as") {
                                                                             echo "is Added Successfully.";
                                                                         } elseif ($status == "nr") {
-                                                                            echo "is not registered with MoversFax.";
+                                                                            echo "is not registered with MoverzFax.";
                                                                         } elseif ($status == "ae") {
                                                                             echo "Already Exist.";
                                                                         } elseif ($status == "rf") {

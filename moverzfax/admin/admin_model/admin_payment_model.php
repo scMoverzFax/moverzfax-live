@@ -22,11 +22,11 @@
                            array_push($report,$res1['usdot']);
                         }
                     }
-    $report_one = isset($report[0])?$report[0]:0;
-    $report_two = isset($report[1])?$report[1]:0;
-    $report_three = isset($report[2])?$report[2]:0;
-    $report_four = isset($report[3])?$report[3]:0;
-    $report_five = isset($report[4])?$report[4]:0;
+    $report_one = 0;//isset($report[0])?$report[0]:0;
+    $report_two = 0;//isset($report[1])?$report[1]:0;
+    $report_three = 0;//isset($report[2])?$report[2]:0;
+    $report_four = 0;//isset($report[3])?$report[3]:0;
+    $report_five = 0;//isset($report[4])?$report[4]:0;
     $tr_id = $obj['id'];
     $tr_status =$obj['status'];
     $tr_currency_code =$obj['purchase_units'][0]['amount']['currency_code'];
@@ -86,8 +86,8 @@
         <body style="box-sizing: border-box;">
             <div style="box-sizing: border-box;border:2px solid green;border-radius: 20px;margin:10px;padding:10px;">
                 <p>Dear '.$res1['tr_full_name'].',</p>
-                <h2 style="font-weight: bold">Welcome To MoversFax Family.</h2>
-                <p>Thank you for your order with MoversFax!</p>
+                <h2 style="font-weight: bold">Welcome To MoverzFax Family.</h2>
+                <p>Thank you for your order with MoverzFax!</p>
                 <p>Your Transaction is Complete. Your Transaction Details is as follows</p>
                 <table style="max-width:400px;">
                     <tbody>

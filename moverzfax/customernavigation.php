@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Moversfax</title>
+	<title>MoverzFax</title>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link rel="shortcut icon" href="img/m_icon.png" />

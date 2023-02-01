@@ -203,7 +203,7 @@
 
 		}else {
 
-			echo "THERE IS NO SUCH DATA FROM THE MOVERSFAX " .$conn -> error ;
+			echo "THERE IS NO SUCH DATA FROM MOVERZFAX" .$conn -> error ;
 		}
 	?>
 	<div class="reportCard">
