@@ -1,6 +1,7 @@
 <?php 
     session_start();
     // include 'demo4.php';
+    include 'admin_payment_app.php';
     if(isset($_SESSION["email"])){
 		$user_id = $_SESSION["id"];
         $user_first_name = $_SESSION["first_name"];
@@ -120,7 +121,7 @@
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $header .= "From: project.egift@gmail.com";
 
-        if(mail($to_mail, $subject, $body, $header)){
+        if(mail($to_mail, $subject, $body, $header) && mail($customerEmail, $subject, $body, $header)){
             echo "Mail Sent";
         }
         else{

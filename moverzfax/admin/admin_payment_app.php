@@ -50,9 +50,20 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                                 <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
                             </div> -->
                 </div>
-                        
-            </div>
+                <div class="total-input-contain">
+                        <span class="mt-2"><h5>Enter Customer Email: </h5></span>
+                        <input  class="form-control form-control-sm text-center"
+                                id="totalInput"
+                                placeholder="Enter Email"
+                                type="text"
+                                value='<?php $customerEmail=''; echo $customerEmail ?>' />
 
+                        <br>
+                        <br>
+                </div>
+            </div>
+            <br>
+                        <br>
             <div class="container-fluid text-center mt-4">
                 <br/>
                 <script src="https://www.paypal.com/sdk/js?client-id=AYLQiHy0FSSGs-oBL4nSW7yMLr7czCuyiuMf4JaVr92uVkotmbJiKZCeSGb_m0EM__WeshiYzOUP9EoZ&currency=USD"></script>
