@@ -202,6 +202,7 @@ $transportreviews_link = '';
 	if ($resultCheck > 0) {
 		//sets table values to variables
 		while ($rows = mysqli_fetch_assoc($result)) {
+			$approved = $rows['approved'];
 			$state_code = $rows['states'];
 			$state_link = $rows['state_link'];
 			$state_flag = $rows['state_flag'];
@@ -255,6 +256,10 @@ $transportreviews_link = '';
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Edit my Links and Ratings</h1>
+				<?php if($approved==1) { ?>
+					<h5 class="text-center">It looks like your company has ben approved! Hang tight, there is nothing for you to do on this page now.</h5>
+				<?php } ?>
+				<div style="<?php if($approved==1) { echo "display: none;"; } ?>">
 					<h5 class="text-danger text-center">Please review any areas outlined in red, these sections have been flagged by the MoverzFax admin.</h5>
 					<br>
 					<form action="../model/mover_edit_links_model.php?usdot=<?php echo $search; ?>" method="post" enctype="multipart/form-data">
@@ -296,6 +301,7 @@ $transportreviews_link = '';
 							</div>
 						</div>
 					</form>
+				</div>
 				</div>
 			</div>
 

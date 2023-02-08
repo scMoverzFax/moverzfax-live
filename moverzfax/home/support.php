@@ -163,7 +163,7 @@
 								<td><input class="form-control" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="example@gmail.com" placeholder="xxxxx.example.com" required></td>
 							</tr>
 							<tr>
-								<td><label>Subjcet<sup style="color: red">*</sup></label></td>
+								<td><label>Subject<sup style="color: red">*</sup></label></td>
 								<td><select class="form-select" required name="subject">
 										<option value="">--- Select ---</option>
 										<option value="Technical Support">Technical Support</option>

@@ -110,7 +110,7 @@
             <br>
 
             <h2 class="text-center mb-5" style="font-weight: 500">Blog Coming Soon</h2>
-            <p>The blog portion of MoverzFax.com is currently under construction. In the mean time, please visit the link below for valuable Moving related blog posts.</p>
+            <p>The blog portion of MoverzFax.com is currently under construction. In the mean time, please visit the link below for valuable moving related blog posts.</p>
             <p><a href="https://moving.proaceintl.com/blog/" target="_blank">ProACE International Blog</a></p>
 
             <!-- <h2 class="text-center mb-5" style="font-weight: 500">Blog Articles</h2>

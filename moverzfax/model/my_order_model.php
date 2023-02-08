@@ -46,5 +46,5 @@ if (mysqli_num_rows($result) > 0) {
 <?php $i++; 
     }
 } else {
-    echo "<tr><td colspan='4'><h3 class='text-center'>Sorry No Record Found!</h3></td></tr>";
+    echo "<tr><td colspan='5'><h3 class='text-center'>Sorry No Record Found!</h3></td></tr>";
 } ?>
