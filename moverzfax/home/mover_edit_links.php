@@ -248,6 +248,26 @@ $transportreviews_link = '';
 	}
 
 	$this_state_link = $state_links->$state_code;
+	$noflags=false;
+	if(
+		$state_flag==0 &&
+		$federal_flag==0 &&
+		$bbb_flag==0 &&
+		$msc_flag==0 &&
+		$hhgfaa_flag==0 &&
+		$ripoffreport_flag==0 &&
+		$movingscam_flag==0 &&
+		$google_flag==0 &&
+		$mymovingreviews_flag==0 &&
+		$yelp_flag==0 &&
+		$insiderpages_flag==0 &&
+		$moversreviewed_flag==0 &&
+		$transportreviews_flag==0 &&
+		$angies_flag==0 &&
+		$trust_pilot_flag==0
+	) {
+		$noflags=true;
+	}
 ?>
 
 <div class="b-container">
@@ -257,9 +277,11 @@ $transportreviews_link = '';
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Edit my Links and Ratings</h1>
 				<?php if($approved==1) { ?>
-					<h5 class="text-center">It looks like your company has ben approved! Hang tight, there is nothing for you to do on this page now.</h5>
+					<h5 class="text-center">It looks like your company has been approved! Hang tight, there is nothing for you to do on this page now.</h5>
+				<?php } else if($noflags===true){ ?>
+					<h5 class="text-center">MoverzFax is currently reveiwing your information. Hang tight, there is nothing for you to do on this page now.</h5>
 				<?php } ?>
-				<div style="<?php if($approved==1) { echo "display: none;"; } ?>">
+				<div style="<?php if($approved==1 || $noflags===true) { echo "display: none;"; } ?>">
 					<h5 class="text-danger text-center">Please review any areas outlined in red, these sections have been flagged by the MoverzFax admin.</h5>
 					<br>
 					<form action="../model/mover_edit_links_model.php?usdot=<?php echo $search; ?>" method="post" enctype="multipart/form-data">
