@@ -463,67 +463,27 @@
                     <div class="row mt-20">
                         <div class="col-sm-12 text-center">
                             <h2 class="section-title">Features and Services</h2>
-                            <span class="">Tons of websites out there provide online recommendations about moving companies. However, they are all dispersed which can make the research dreadful for many, hence,ending up choosing the wrong mover.</span>
+                            <span class="">Tons of websites out there provide online recommendations about moving companies. However, they are all dispersed which can make the research dreadful for many, hence, ending up choosing the wrong mover.</span>
                         </div>
                     </div>
 
                     
                     <div class="row mt-20">
                         <div class="col-sm-6">
-                            <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m ">
-                                <div class="wo-card-height">
-                                    <div class="uk-grid-small uk-flex-middle ">
-                                        <div class="uk-width-auto ">
-                                            <img class="uk-border-square" src="https://www.moversfax.com/frontend/img/stf.png">
-                                        </div>
-                                        <div class="uk-width-expand">
-                                            <h2 class="uk-card-title uk-margin-remove-bottom">Special Moving Task Force</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="uk-card-body">
-                                    <p>Have you been cheated? Have you hired a rogue mover?</p>
-                                </div>
-                                <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="task_force.php">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
                                         <div class="uk-width-auto"><img class="uk-border-square" height="40" src="https://www.moversfax.com/frontend/img/truck.png" width="40"></div>
                                         <div class="uk-width-expand">
-                                            <h2 class="uk-card-title uk-margin-remove-bottom">Post a Moving Job</h2>
+                                            <h2 class="uk-card-title uk-margin-remove-bottom">Order a Report</h2>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="uk-card-body">
-                                    <p>Post your moving job here and ONLY top reputable mover will reply.</p>
+                                    <p>Order a detailed report card on any mover with a valid USDOT</p>
                                 </div>
                                 <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="post_a_moving_job.html">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-20">
-                        <div class="col-sm-6">
-                            <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
-                                <div class="uk-card-header">
-                                    <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="https://www.moversfax.com/frontend/img/navigate.png" width="40"></div>
-                                        <div class="uk-width-expand">
-                                            <h3 class="uk-card-title uk-margin-remove-bottom">How to Navigate Website</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="uk-card-body">
-                                    <p>Click READ MORE to check for a easy to navigate guide and read all the steps.</p>
-                                </div>
-                                <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="#">Read more</a>
+                                    <a class="uk-button uk-button-text" href="select_company.php">Read more</a>
                                 </div>
                             </div>
                         </div>
@@ -560,8 +520,48 @@
                                 <div class="uk-card-body">
                                     <p>This seal is ONLY available to the moving companies with 85% grade and above.</p><br>
                                 </div>
-                                <div class="uk-card-footer">
+                                <!-- <div class="uk-card-footer">
                                     <a class="uk-button uk-button-text" href="certified_seal.html">Read more</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m ">
+                                <div class="wo-card-height">
+                                    <div class="uk-grid-small uk-flex-middle ">
+                                        <div class="uk-width-auto ">
+                                            <img class="uk-border-square" src="https://www.moversfax.com/frontend/img/stf.png">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h2 class="uk-card-title uk-margin-remove-bottom">Special Moving Task Force</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-card-body">
+                                    <p>Have you been cheated? Have you hired a rogue mover?</p>
+                                </div>
+                                <div class="uk-card-footer">
+                                    <a class="uk-button uk-button-text" href="task_force.php">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-20">
+                        <div class="col-sm-6">
+                            <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
+                                <div class="uk-card-header">
+                                    <div class="uk-grid-small uk-flex-middle">
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/m_icon.png" width="40"></div>
+                                        <div class="uk-width-expand">
+                                            <h3 class="uk-card-title uk-margin-remove-bottom">What is MoverzFax all about?</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-card-body">
+                                    <p>Click READ MORE to learn more about our mission and how we are changing the moving industry forever.</p>
+                                </div>
+                                <div class="uk-card-footer">
+                                    <a class="uk-button uk-button-text" href="about.php">Read more</a>
                                 </div>
                             </div>
                         </div>
@@ -579,14 +579,11 @@
                                     <p>We're here to provide it. Let us help you navigate through this labyrinth of what we call the Internet.</p>
                                 </div>
                                 <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="get_informed.html">Read more</a>
+                                    <a class="uk-button uk-button-text" href="faq.php">Read more</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="uk-card-footer mt-2 float-right">
-                            <a class="btn btn-info" href="get_informed.php">Read more</a>
-                        </div>
                 </div>
             </div>
         </div>
@@ -790,7 +787,7 @@
                 </div>
             </div>
         </div>
-        <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
+        <div id="topcontrol" title="Scroll Back to Top" style="display: none; position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
             <img src="../img/up.png" style="width:40px; height:40px">
         </div>
 </main>

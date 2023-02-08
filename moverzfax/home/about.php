@@ -1,5 +1,5 @@
- <?php include_once 'myheader.php'; 
- 
+<?php include_once 'myheader.php'; 
+
  ?>
  
  <title>About Us</title>
@@ -128,7 +128,7 @@
              <hr>
 
              <div class="row text-center">
-                 <div class="col-sm-12"><img style="width:100%;" src="img/CAPTURE2.png"></div>
+                 <div class="col-sm-12"><img style="width:100%;" src="../img/CAPTURE2.png"></div>
              </div>
          </div>
 
