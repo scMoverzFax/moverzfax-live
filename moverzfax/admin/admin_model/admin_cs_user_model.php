@@ -1,6 +1,6 @@
 <tbody>
 <?php
-include 'connection.php';
+include '../model/connection.php';
 $limit = 15;
 $page = isset($_GET['page'])?$_GET['page'] : "1";
 $offset = ($page - 1) * $limit;
@@ -24,8 +24,12 @@ if(mysqli_num_rows($result) > 0){
             <td><?= $res['user_state']; ?></td>
             <td><?= $res['user_city']; ?></td>
             <td><?= $res['zip_code']; ?></td>
-            <td><a href="admin_operation.php?action='delete_user'&id='<?= $res['id']; ?>'"><i class="fas fa-trash-alt text-danger"></i></a></td>
-            <td><a href="admin_operation.php?action='block_user'&id='<?= $res['id']; ?>'"><i class="fas fa-ban text-dark"></i></a></td>
+            <td><a href="admin_model/admin_operation.php?action=delete_user&id=<?= $res['id']; ?>"><i class="fas fa-trash-alt text-danger"></i></a></td>
+            <?php if($res['is_active'] == 1) { ?>
+            <td><a href="admin_model/admin_operation.php?action=block_user&id=<?= $res['id']; ?>"><i class="fas fa-ban text-dark"></i></a></td>
+            <?php } else { ?>
+            <td><a href="admin_model/admin_operation.php?action=unblock_user&id=<?= $res['id']; ?>"><i class="fas fa-undo text-dark"></i></a></td>
+            <?php } ?>
         </tr>
     <?php $sr_no++; } } ?>
     </tbody>

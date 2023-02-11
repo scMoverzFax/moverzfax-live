@@ -9,7 +9,7 @@ if ($con->connect_error) {
             LEFT JOIN `state` AS st ON st.code = ad.origin_state
             LEFT JOIN `city` AS c ON  c.id = ad.destination_city
             LEFT JOIN `state` AS s ON s.code = ad.destination_state
-            where  ad.is_active = '1' AND ad.origin_state = '".$states."' AND ad.usdot_count < 8";
+            where  ad.is_active = '1' AND ad.origin_state = '".$states."' AND ad.usdot_count < 8"; 
             // echo $sql;die;
     $result = $con->query($sql);
     $count = 0;
@@ -142,7 +142,7 @@ if ($con->connect_error) {
                                 <div class="col-md-12">
                                     <div class="bottom-bar-left px-3 col-md-10 shadow-sm py-2 d-flex">
                                         <?php if($res["usdot1"] == $usdot || $res["usdot2"] == $usdot || $res["usdot3"] == $usdot || $res["usdot4"] == $usdot || $res["usdot5"] == $usdot || $res["usdot6"] == $usdot || $res["usdot7"] == $usdot || $res["usdot8"] == $usdot){
-                                                echo  " Congrates. You have lead for this job." ; }else{ ?>
+                                                echo  " Congrats. You have lead for this job." ; }else{ ?>
                                             <a href="../home/mover_payment_app.php?id=<?php echo $res['id'] ?>" class="btn custom-btn-2 bg-success shadow text-light"><span>Generate Lead</span></a>
                                             <span class="ml-3 mt-2"> Generate Lead to get all information. </span>
                                         <?php } ?>

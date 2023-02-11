@@ -18,6 +18,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
 } else {
     $user_id = NULL;
     $user_email = "email@email.com";
+    $role = NULL;
 }
 ?>
 <!DOCTYPE html>
@@ -29,12 +30,12 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/bb12bcec8e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bootstrap_4/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap_4/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/bb12bcec8e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.con.font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -80,7 +81,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <!-- <link href="https://www.moversfax.com/frontend/pages/css/components.css" rel="stylesheet"> -->
     <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
+    <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
 
     <!-- formwidzard css -->
@@ -248,7 +249,10 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             </div>
             <div class="row-two">
                 <div class="logo">
-                    <a href="index.php"><img src="../img/MoverZfax.png" alt="logo"></a>
+                    <a href="index.php">
+                        <!-- <img src="../img/MoverZfax.png" alt="logo"> -->
+                        <img src="../img/logo2023.jpeg" alt="logo">
+                    </a>
                 </div>
                 <!-- ------------------------ side menu button start  -------------------------- -->
 
@@ -280,6 +284,8 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                                         <a href="show_transaction.php" class="sub-link">Payment Transactions</a>
                                     <?php }elseif(isset($_SESSION["email"]) && $role == "mover"){ ?>
                                         <a href="mover_transaction.php" class="sub-link">Payment Transactions</a>
+                                        <!-- <a href="../new-sample-upload-form-movers/mover_links_collection.php" class="sub-link">Mover Links Collection Form</a> -->
+                                        <a href="../home/mover_edit_links.php" class="sub-link">Edit My Company Information</a>
                                     <?php } ?>
                                     <a href="my_order.php" class="sub-link" <?php if (isset($_SESSION["email"]) && $role == "customer") {
                                                                                 echo "";

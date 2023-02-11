@@ -15,9 +15,16 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     $role = $_SESSION['catagory'];
     $states = $_SESSION['states'];
     define("LOGIN", "Login true");
+} elseif (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "admin") {
+    $user_id = $_SESSION["id"];
+    $adminName = $_SESSION["name"];
+    $user_email = $_SESSION["email"];
+    $role = $_SESSION['catagory'];
+    define("LOGIN", "Login true");
 } else {
     $user_id = NULL;
     $user_email = "email@email.com";
+    $role = "role";
 }
 ?>
 <!DOCTYPE html>
@@ -29,12 +36,12 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/bb12bcec8e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bootstrap_4/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap_4/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/bb12bcec8e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.con.font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -80,7 +87,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <!-- <link href="https://www.moversfax.com/frontend/pages/css/components.css" rel="stylesheet"> -->
     <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
+    <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
 
     <!-- formwidzard css -->
@@ -134,9 +141,9 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
         }
     </style>
     <!-- Loader CSS -->
-    <style>
+    <!-- <style>
 
-    </style>
+    </style> -->
 
 </head>
 
@@ -161,12 +168,12 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <script>
         function loaderHideFunction() {
             var loader = document.getElementById('loader-wrapper');
-            loader.style.display = 'none';
+            // loader.style.display = 'none';
         }
 
         function loaderShowFunction() {
             var loader = document.getElementById('loader-wrapper');
-            loader.style.display = 'block';
+            // loader.style.display = 'block';
         }
         // function onloadFunctions() {
         // // // // loaderFunction();
@@ -224,7 +231,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                     <div class="signing anim" <?php if (isset($_SESSION["email"])) {
                                                     echo 'style="display:none"';
                                                 } ?>>
-                        <a href="signin.php">Login</a><span>|</span><a href="register.php">Register</a>
+                        <a href="../home/signin.php">Login</a><span>|</span><a href="register.php">Register</a>
                     </div>
 
                     <div class="signing" <?php if (isset($_SESSION["email"])) {
@@ -236,10 +243,12 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                                             echo '<b>' . $_SESSION["first_name"] . " " . $_SESSION["last_name"] . '</b>';
                                         } elseif ($role == "mover") {
                                             echo '<b>' . strtoupper($_SESSION["company_name"]) . '</b>';
+                                        } elseif ($role == "admin") {
+                                            echo '<b>' . strtoupper($_SESSION["name"]) . '</b>';
                                         }
                                         ?></span>
                         <?php if ($role == "customer") { ?><a class="me-3" style="color:green;" href="profile.php"><i class="fas fa-user-circle me-1 fs-5"></i>Edit Profile</a> <?php } ?>
-                        <a href="logout.php" style="color:red;text-decoration:none;"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                        <a href="../home/logout.php" style="color:red;text-decoration:none;"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
                         <div class="cart-logo shadow" style="<?php if (isset($_SESSION["email"]) && $role == "customer") {
                                                                     echo "";
                                                                 } else {
@@ -250,7 +259,8 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             </div>
             <div class="row-two">
                 <div class="logo">
-                    <a href="index.php"><img src="../img/MoverZfax.png" alt="logo"></a>
+                    <!-- <a href="admin_dashboard.php"><img src="../img/MoverZfax.png" alt="logo"></a> -->
+                    <a href="admin_dashboard.php"><img src="../img/logo2023.jpeg" alt="logo"></a>
                 </div>
                 <!-- ------------------------ side menu button start  -------------------------- -->
 
@@ -260,88 +270,35 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
 
                 <!-- ------------------------  Main menu Start  -------------------------- -->
                 <div class="nav-menu">
-                <a href="#" class="nav-link nav-dropdown" >Dashboard </a>
-                    <div class="nav-dropdown" data-dropdown >
-                    <button class="nav-link" data-dropdown-button>All Transaction</button>
-                            <div class="nav-dropdown-menu infomation-grid">
-                                <div>
-                                    <div class="dropdown-heading"></div>
-                                    <div class="nav-dropdown-links">
-                                        <a href="admin_cs_transaction.php" class="sub-link">Customer Transaction</a>
-                                        <a href="admin_mv_transaction.php" class="sub-link">Mover Transaction</a>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <a href="my_review.php" class="nav-link nav-dropdown" <?php if (isset($_SESSION["usdot"]) && $role == "mover") {
-                                                                                echo "";
-                                                                            } else {
-                                                                                echo 'style="display:none"';
-                                                                            } ?>>My Reviews</a>
-                    <?php if (isset($_SESSION["usdot"]) && $role == "mover") { ?>
-                        <div class="nav-dropdown" data-dropdown>
-                            <button class="nav-link" data-dropdown-button>Leads</button>
-                            <div class="nav-dropdown-menu infomation-grid">
-                                <div>
-                                    <div class="dropdown-heading"></div>
-                                    <div class="nav-dropdown-links">
-                                        <a href="my_lead.php" class="sub-link">My Leads</a>
-                                        <a href="find_lead.php" class="sub-link">Find Leads</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-
-                    <?php if (isset($_SESSION["email"]) && $role == "customer") { ?>
-                        <div class="nav-dropdown" data-dropdown>
-                            <button class="nav-link" data-dropdown-button>Review</button>
-                            <div class="nav-dropdown-menu infomation-grid">
-                                <div>
-                                    <div class="dropdown-heading"></div>
-                                    <div class="nav-dropdown-links">
-                                        <a href="my_review.php" class="sub-link">My Review</a>
-                                        <a href="all_mover_review.php" class="sub-link">All Review</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                    <a href="my_jobs.php" class="nav-link nav-dropdown" <?php if (isset($_SESSION["email"]) && $role == "customer") {
-                                                                            echo "";
-                                                                        } else {
-                                                                            echo 'style="display:none"';
-                                                                        } ?>>My Jobs</a>
-
+                    <a href="admin_dashboard.php" class="nav-link nav-dropdown">Dashboard</a>
+                    <a href="admin_reports.php" class="nav-link nav-dropdown">Generate Reports</a>
                     <div class="nav-dropdown" data-dropdown>
-                        <button class="nav-link" data-dropdown-button>Support</button>
-                        <div class="nav-dropdown-menu infomation-grid">
-                            <div>
-
-                                <div class="dropdown-heading"></div>
-                                <div class="nav-dropdown-links">
-                                    <a href="contact.php" class="sub-link">Contact Us</a>
-                                    <a href="support.php" class="sub-link">Send a Message</a>
+                    <button class="nav-link" data-dropdown-button>All Transactions</button>
+                            <div class="nav-dropdown-menu infomation-grid">
+                                <div>
+                                    <div class="dropdown-heading"></div>
+                                    <div class="nav-dropdown-links">
+                                        <a href="admin_cs_transaction.php" class="sub-link">Customer Transactions</a>
+                                        <a href="admin_mv_transaction.php" class="sub-link">Mover Transactions</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <div class="nav-dropdown" data-dropdown>
-                        <button class="nav-link" data-dropdown-button>More Links</button>
-                        <div class="nav-dropdown-menu infomation-grid">
-                            <div>
-
-                                <div class="dropdown-heading"></div>
-                                <div class="nav-dropdown-links">
-                                    <a href="blog.php" class="sub-link">Blog</a>
-                                    <a href="link_to_us.php" class="sub-link">Link to us</a>
-                                    <a href="pro.php" class="sub-link">Promotional Video</a>
-                                    <a href="video.php" class="sub-link">Video Testimonials</a>
-                                    <a href="faq.php" class="sub-link">(FAQ)</a>
+                    <button class="nav-link" data-dropdown-button>All Users</button>
+                            <div class="nav-dropdown-menu infomation-grid">
+                                <div>
+                                    <div class="dropdown-heading"></div>
+                                    <div class="nav-dropdown-links">
+                                        <a href="admin_cs_user.php" class="sub-link">Customer Users</a>
+                                        <a href="admin_mv_user.php" class="sub-link">Mover Users</a>
+                                        <a href="admin_mv_approval.php" class="sub-link">Mover Approval</a>
+                                        <a href="admin_mv_scammer.php" class="sub-link">Mover Scam System</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
+                    <a href="admin_review.php" class="nav-link nav-dropdown">Reviews</a>
                 </div>
             </div>
         </div>

@@ -203,7 +203,7 @@
 
 		}else {
 
-			echo "THERE IS NO SUCH DATA FROM THE MOVERSFAX " .$conn -> error ;
+			echo "THERE IS NO SUCH DATA FROM MOVERZFAX" .$conn -> error ;
 		}
 	?>
 	<div class="reportCard">
@@ -282,6 +282,7 @@
 			<!-- SPECIAL MOVING TASK -->
 			<div class="movingtask">
 				<h3>SPECIAL MOVING TASK FORCE</h3>
+				<!--wrong link here-->
 				<span><a href="http://www.moverzfax.com/special-moving-task-force-service.html">Click for details.</a></span>
 			</div>
 			<br><br>

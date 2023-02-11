@@ -4,9 +4,13 @@ $email = $_REQUEST['email'];
 $passwords = md5($_REQUEST['passwords']);
 
 include 'connection.php';
-
-  $baseURL = "http://localhost:8080/2022/moverzfax/";
-  $homeURL = "http://localhost:8080/2022/moverzfax/home/";
+  //These URL's may be correct for production purposes. But they should be tested.
+      //$baseURL = "http://localhost:8080/2022/moverzfax/";
+      //$homeURL = "http://localhost:8080/2022/moverzfax/home/";
+  //The URLs below are for development
+  $baseURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/";
+  $homeURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/home/";
+  $adminURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/admin/";
   // prepare and bind
   if($user_type == 'customer'){
     $sql = "SELECT * FROM `customer_register` WHERE is_active = 1 AND email='".$email."' AND passwords='".$passwords."'";
@@ -33,7 +37,7 @@ include 'connection.php';
         // echo "";
     }
   }
-  elseif($type == 'mover'){
+  elseif($user_type == 'mover'){
     $sql = "SELECT * FROM `mover_register` WHERE is_active = 1 AND usdot = '".$email."' AND mover_password = '".$passwords."'";
     $result = $con->query($sql);
     if ($result->num_rows > 0) {
@@ -55,10 +59,25 @@ include 'connection.php';
       // return false;
     }
   }
-  elseif($type == 'admin'){
-      return false;
+  elseif($user_type == 'admin'){
+    $sql = "SELECT * FROM `admin` WHERE email = '".$email."' AND password = '".$passwords."'";
+    $result = $con->query($sql);
+    if ($result->num_rows > 0) {
+      // output data of each row
+          $row = $result->fetch_assoc();
+          session_start();
+          $_SESSION["id"] = $row["id"];
+          $_SESSION["name"] = $row["name"];
+          $_SESSION["email"] = $row["email"];
+          $_SESSION["catagory"] = "admin";
+          header('Location: '.$adminURL.'admin_dashboard.php');
+          // echo $baseURL.$homeURL;
+    } else {
+      header('Location:'.$homeURL.'signin.php?invalid=1');
+    }
   }
   $con->close();
+
 
 
 ?>

@@ -13,67 +13,67 @@
 			<div class="col-8 col-sm-6 col-md-4 col-lg-2 col-xl-2 anim">
 				<h4>Legal Status</h4>
 				<ul>
-					<li><a href="https://moverzfax.com/state-registration.html">State Registration</a></li>
-					<li><a href="http://ai.fmcsa.dot.gov/hhg/search.asp">Federal Registration</a></li>
-					<li><a href="http://ai.fmcsa.dot.gov/">Analysis and Information: sFederal Movers</a></li>
-					<li><a href="http://www.movingscam.com/superlist">MovingScam Status</a>	</li>							
-					<li><a href="http://li-public.fmcsa.dot.gov/LIVIEW/pkg_carrquery.prc_carrlist">Licensing and Information</a></li>
+					<li><a href="https://www.llcuniversity.com/50-secretary-of-state-sos-business-entity-search/" target="_blank">State Registration</a></li>
+					<li><a href="http://ai.fmcsa.dot.gov/hhg/search.asp" target="_blank">Federal Registration</a></li>
+					<li><a href="http://ai.fmcsa.dot.gov/" target="_blank">Analysis and Information: Federal Movers</a></li>
+					<li><a href="http://www.movingscam.com/superlist" target="_blank">MovingScam Status</a>	</li>							
+					<li><a href="http://li-public.fmcsa.dot.gov/LIVIEW/pkg_carrquery.prc_carrlist" target="_blank">Licensing and Information</a></li>
 				</ul>
 			</div>
 			<div class="col-10 col-sm-6 col-md-4 col-lg-2 col-xl-2 anim">
 				<h4>MoverZfax.com</h4>
 				<ul>
-					<li><a href="faq.php">Frequently Asked Questions</a></li>
-					<li><a href="privacy_policy.php">Privacy Policy</a></li>
-					<li><a href="contact_us.php">Contact Us</a></li>
-					<li><a href="t&c.php">Terms of Use</a></li>
+					<li><a href="faq.php" target="_blank">Frequently Asked Questions</a></li>
+					<!-- <li><a href="privacy_policy.php" target="_blank">Privacy Policy</a></li> -->
+					<li><a href="contact.php" target="_blank">Contact Us</a></li>
+					<!-- <li><a href="t&c.php" target="_blank">Terms of Use</a></li> -->
 				</ul>
 			</div>
 			<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 anim">
 				<h4>Moving Associations</h4>
 			<ul>
-					<li><a href="http://www.bbb.org/">Better Business Bureau</a></li>
-					<li><a href="http://www.mover.net/">Canadian Association of Movers</a></li>
-					<li><a href="http://www.moving.org/">American Moving &amp; Storage Assoc.</a></li>
-					<li><a href="http://promover.org/">Promover.org</a></li>
-					<li><a href="http://www.iamovers.org/">International Association of Movers</a></li>
+					<li><a href="http://www.bbb.org/" target="_blank">Better Business Bureau</a></li>
+					<li><a href="http://www.mover.net/" target="_blank">Canadian Association of Movers</a></li>
+					<li><a href="http://www.moving.org/" target="_blank">American Moving &amp; Storage Assoc.</a></li>
+					<!-- <li><a href="http://promover.org/" target="_blank">Promover.org</a></li> -->
+					<li><a href="http://www.iamovers.org/" target="_blank">International Association of Movers</a></li>
 			</ul>
 			</div>
 			<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 anim">
 				<h4>Recommendation Portals</h4>
 				<ul>
-					<li><a href="http://mymovingreviews.com/">My Moving Reviews</a></li>
-					<li><a href="http://www.yelp.com/dc">Yelp</a></li>
-					<li><a href="http://www.insiderpages.com/">Insider Pages</a></li>
-					<li><a href="http://www.kudzu.com/">Kudzu</a></li>
-					<li><a href="http://www.moverreviews.com/">Mover Reviews</a></li>
-					<li><a href="http://www.ripoffreport.com/">Ripoff Report</a></li>
-					<li><a href="http://www.reviewamover.com/">Review a Mover</a></li>
-					<li><a href="http://www.moverssearchandreviews.com/">Movers Search and Reviews</a></li>
+					<li><a href="http://mymovingreviews.com/" target="_blank">My Moving Reviews</a></li>
+					<li><a href="http://www.yelp.com/dc" target="_blank">Yelp</a></li>
+					<li><a href="http://www.insiderpages.com/" target="_blank">Insider Pages</a></li>
+					<!-- <li><a href="http://www.kudzu.com/" target="_blank">Kudzu</a></li> -->
+					<li><a href="http://www.moverreviews.com/" target="_blank">Mover Reviews</a></li>
+					<li><a href="http://www.ripoffreport.com/" target="_blank">Ripoff Report</a></li>
+					<!-- <li><a href="http://www.reviewamover.com/" target="_blank">Review a Mover</a></li> -->
+					<!-- <li><a href="http://www.moverssearchandreviews.com/" target="_blank">Movers Search and Reviews</a></li> -->
 					<!--<li><a href="http://epinions.com/Moving_Companies">Epinions</a></li>-->
-					<li><a href="http://bestmovingcompaniesreviews.com/category/movers-reviews/">Best Moving Companies</a></li>
-					<li><a href="http://www.angieslist.com/moving/">Angies List</a></li>
-					<li><a href="http://transportreviews.com/">Transport Reviews</a></li>
-					<li><a href="http://transportreports.com/">Transport Reports</a></li>
-					<li><a href="http://movingguardian.org/">Moving Guardian</a></li>
-					<li><a href="http://www.bestmoverspackers.com/moving-reviews.html">Best Movers Packers</a></li>
-			        <li><a href="http://www.movers.com/moving-reviews.html">Movers Reviews</a></li>
-			        <li><a href="http://www.moverrankings.com/latest-moving-company-reviews.php">Mover Rankings</a></li>
-			        <li><a href="http://www.movingcompanyreviews.com/">Moving Company Reviews</a></li>
-					<li><a href="https://moverzfax.com/add-a-review.html">MoverZfax Reviews</a></li>
+					<!-- <li><a href="http://bestmovingcompaniesreviews.com/category/movers-reviews/" target="_blank">Best Moving Companies</a></li> -->
+					<li><a href="http://www.angieslist.com/moving/" target="_blank">Angies List</a></li>
+					<li><a href="http://transportreviews.com/" target="_blank">Transport Reviews</a></li>
+					<!-- <li><a href="http://transportreports.com/" target="_blank">Transport Reports</a></li> -->
+					<!-- <li><a href="http://movingguardian.org/" target="_blank">Moving Guardian</a></li> -->
+					<!-- <li><a href="http://www.bestmoverspackers.com/moving-reviews.html" target="_blank">Best Movers Packers</a></li> -->
+			        <!-- <li><a href="http://www.movers.com/moving-reviews.html" target="_blank">Movers Reviews</a></li> -->
+			        <li><a href="http://www.moverrankings.com/latest-moving-company-reviews.php" target="_blank">Mover Rankings</a></li>
+			        <li><a href="http://www.movingcompanyreviews.com/" target="_blank">Moving Company Reviews</a></li>
+					<!-- <li><a href="https://moverzfax.com/add-a-review.html" target="_blank">MoverZfax Reviews</a></li> -->
 				</ul>
 			</div>
 			<div class="col-12 col-sm-6 col-md-6 col-lg-2 col-xl-2 anim adjust-top">
 				<h4>Protect Yourself</h4>
 				<ul>
-					<li><a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx">Customer Resource (PER STATE)</a></li>
-					<li><a href="https://nccdb.fmcsa.dot.gov/NCCDB/ComplaintEntry.aspx?choice=CONSUMER">Write a Complaints to USDOT</a></li>
-					<li><a href="http://ai.fmcsa.dot.gov/hhg/search.asp">Search For Complaints</a></li>
-					<li><a href="http://safer.fmcsa.dot.gov/CompanySnapshot.aspx">Federal Motor Carrier Snapshot</a></li>
-					<li><a href="https://ai.fmcsa.dot.gov/SMS/Search/Index.aspx">Safety Data For Movers</a></li>
-					<li><a href="https://www.pissedconsumer.com/post-complaint.html">Pissed Consumer</a></li>
-					<li><a href="http://www.consumeraffairs.com/movers/">Consumer Affairs</a></li>
-					<li><a href="http://www.complaintsboard.com/?search=Moving+companies&amp;complaints=Complaints">Complaints Board</a></li>
+					<li><a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx" target="_blank">Customer Resource (PER STATE)</a></li>
+					<li><a href="https://nccdb.fmcsa.dot.gov/NCCDB/ComplaintEntry.aspx?choice=CONSUMER" target="_blank">Write a Complaints to USDOT</a></li>
+					<li><a href="http://ai.fmcsa.dot.gov/hhg/search.asp" target="_blank">Search For Complaints</a></li>
+					<li><a href="http://safer.fmcsa.dot.gov/CompanySnapshot.aspx" target="_blank">Federal Motor Carrier Snapshot</a></li>
+					<li><a href="https://ai.fmcsa.dot.gov/SMS/Search/Index.aspx" target="_blank">Safety Data For Movers</a></li>
+					<li><a href="https://www.pissedconsumer.com/" target="_blank">Pissed Consumer</a></li>
+					<li><a href="http://www.consumeraffairs.com/movers/" target="_blank">Consumer Affairs</a></li>
+					<li><a href="http://www.complaintsboard.com/?search=Moving+companies&amp;complaints=Complaints" target="_blank">Complaints Board</a></li>
 				</ul>
 			</div>
 		</div>

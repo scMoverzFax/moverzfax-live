@@ -43,7 +43,7 @@ function validUser(){
 }
 function validPass(){
     var password = $('#password').val();
-    if(password.length < 8)
+    if(password.length < 5)
         valid_pass = false;
     else
         valid_pass = true;
@@ -51,7 +51,6 @@ function validPass(){
 }
 
 function test(){
-    console.log(valid_user);
     if(valid_user && valid_pass)
         $('#sub_btn').prop('disabled', false);
     else

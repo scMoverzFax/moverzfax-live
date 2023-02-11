@@ -76,7 +76,7 @@
 		}
 	} else {
 
-		echo "THERE IS NO SUCH DATA FROM THE MOVERSFAX " . $conn->error;
+		echo "THERE IS NO SUCH DATA FROM THE MOVERZFAX" . $conn->error;
 	}
 	?>
 
@@ -91,7 +91,8 @@
 					</p>
 				</div>
 				<div class="logo">
-					<img class="logo_img" src="../img/MoverZfax.png" alt="">
+					<!-- <img class="logo_img" src="../img/MoverZfax.png" alt=""> -->
+					<img class="logo_img" src="../img/MoverZfaxLogo.jpeg" alt="">
 				</div>
 			</div>
 		</section>
@@ -181,6 +182,7 @@
 
 						<!-- SPECIAL MOVING TASK -->
 						<div class="movingtask mb-2">
+							<!--wrong link here-->
 							<a href="http://www.moverzfax.com/special-moving-task-force-service.html">
 								<h5>SPECIAL MOVING TASK FORCE</h5>
 							</a>

@@ -185,7 +185,7 @@ $body = '
     <div class="container">
         <div class="wrapper">
             <div class="header">
-                <div class="logo"><img src="https://www.moverzfax.com/img/MoverZfax.png" alt="MoverZFax"></div>
+                <div class="logo"><img src="https://www.moverzfax.com/img/logo2023.jpeg" alt="MoverZFax"></div>
                 <div class="date_time">Jan 19, 2022</div>
             </div>
             <div class="main">
@@ -266,14 +266,14 @@ $body = '
                     </tbody>
                 </table>
                 <div>
-                    <p>Please call on 180XXXXXX161 or drop a mail on support@moversfax.com to report if this transaction
+                    <p>Please call on 180XXXXXX161 or drop a mail on support@moverzfax.com to report if this transaction
                         was not authorized by you.</p>
                     </p>
                     <p> Warm Regards,</p>
                     <p>Team MoverZFax</p>
                 </div>
             </div>
-            <div class="footer"><label for="">Go to our Site :</label><a href="#">MoversFax.com</a></div>
+            <div class="footer"><label for="">Go to our Site :</label><a href="#">MoverzFax.com</a></div>
         </div>
     </div>
 </body>

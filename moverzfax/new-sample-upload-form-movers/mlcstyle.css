@@ -137,6 +137,11 @@ body{
     margin-top: 20px;
     font-size: 60px;
 }
+.legalInfo .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
 .legalInfo .header table {
     border: solid black 1px;
     width: 100%;
@@ -300,13 +305,13 @@ body{
 .federal{
     float: right;
     text-align: left;
-    width: 50%;
-    height: 200px;
+    width: 49%;
+    height: 100%;
     margin-top: 20px;
     box-shadow: 5px 10px #888888;
     border-radius: 5px;
     border: green solid 1px;
-    margin-left: 2px;
+    margin-left: 20px; 
 }
 
 .legal .legal_info_img{
@@ -318,7 +323,7 @@ body{
 .legal .inner{
     float: right;
     width: 90%;
-    height: 200px;
+    height: 100%;
 }
 /* Licensing  */
 .licensing{

@@ -15,7 +15,7 @@
 
     include 'connection.php';
     $report = array();
-    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1";
+    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1 AND user_id = '".$user_id."' ";
     $result1 = $con->query($sql1);
                     if(mysqli_num_rows($result1) > 0){ 
                         while($res1 = mysqli_fetch_array($result1)){
@@ -81,8 +81,8 @@
         <body style="box-sizing: border-box;">
             <div style="box-sizing: border-box;border:2px solid green;border-radius: 20px;margin:10px;padding:10px;">
                 <p>Dear '.$res1['tr_full_name'].',</p>
-                <h2 style="font-weight: bold">Welcome To MoversFax Family.</h2>
-                <p>Thank you for your order with MoversFax!</p>
+                <h2 style="font-weight: bold">Welcome To MoverzFax Family.</h2>
+                <p>Thank you for your order with MoverzFax!</p>
                 <p>Your Transaction is Complete. Your Transaction Details is as follows</p>
                 <table style="max-width:400px;">
                     <tbody>

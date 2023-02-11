@@ -16,7 +16,7 @@
 
 <!-- CSS
   ––––––––––––––––––––––––––––––––––––––––––––––––––-->
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.con.font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     * {
@@ -178,7 +178,7 @@
                                 <td><input class="form-control" type="email" name="ea" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="example@gmail.com" placeholder="xxxxx.example.com" required></td>
                             </tr>
                             <tr>
-                                <td><label>Subjcet<sup style="color: red">*</sup></label></td>
+                                <td><label>Subject<sup style="color: red">*</sup></label></td>
                                 <td><input type="text" class="form-control" name="sa" placeholder="Enter Subject" required></td>
                             </tr>
                             <tr>

@@ -1,7 +1,7 @@
 <?php
 
 include "connection.php";
-
+session_start();
 $country_id = isset($_REQUEST['country_id']) && $_REQUEST['country_id']?$_REQUEST['country_id']:"1";
 
 if ($con->connect_error) {
@@ -13,6 +13,9 @@ else{
   $result = $con->query($sql);
     while($res = mysqli_fetch_array($result)){
         // $select = isset($_SESSION['states']) && $_SESSION['states'] == $res["code"]?"selected":" ";
+        if($res['id'] === $_SESSION['state_id']){
+          echo '<option value="'.$res['code'].'" selected>'.$res['name'].'</option>';
+        }
         echo '<option value="'.$res['code'].'">'.$res['name'].'</option>';
     }
    $con->close();

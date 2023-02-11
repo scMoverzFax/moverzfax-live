@@ -105,6 +105,7 @@
 ?>
 <script type="text/javascript">
 	function refreshCaptcha() {
+		console.log("refreshed captcha");
 		img = document.getElementById("capt");
 		img.src = "captcha.php?rand_number=" + Math.random();
 	}
@@ -137,7 +138,7 @@
 								</tr>
 								<tr>
 									<td><label>Company's Contact Number<sup style="color: red">*</sup></label></td>
-									<td><input type="number" class="form-control" name="contact_number" placeholder="000-000-0000" required></td>
+									<td><input type="text" class="form-control" name="contact_number" placeholder="000-000-0000" required></td>
 								</tr>
 								<tr>
 									<td><label>Company's Fax Number</label></td>
@@ -177,7 +178,7 @@
 								</tr>
 								<tr>
 									<td><label>Zip Code<sup style="color: red">*</sup></label></td>
-									<td><input type="number" class="form-control" name="zip_code" placeholder="Enter Zip Code" required></td>
+									<td><input type="text" class="form-control" name="zip_code" placeholder="Enter Zip Code" required></td>
 								</tr>
 								<tr>
 									<td>Business Coverage</td>
@@ -203,7 +204,7 @@
 								</tr>
 								<tr>
 									<td><label>Company Logo</label></td>
-									<td><input type="file" class="form-control" name="company_logo" required></td>
+									<td><input type="file" class="form-control" name="company_logo"></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -211,7 +212,7 @@
 								</tr>
 								<tr>
 									<td></td>
-									<td><img name="HELPER-captcha_image" id="capt" src="captcha.php" border="0">
+									<td><img name="HELPER-captcha_image" id="capt" src="captcha.php">
 										<a href="javascript://" onclick="refreshCaptcha('captcha.php');">Refresh</a>
 									</td>
 								</tr>
@@ -248,7 +249,7 @@
 		if (a.length < 5) {
 			document.getElementById("message").innerHTML = "**Password Length Must Be greater than 5 digit**";
 		} else if (a != b) {
-			document.getElementById("message").innerHTML = "**Password And Confirm password are Not Mathing**";
+			document.getElementById("message").innerHTML = "**Password And Confirm password are Not Matching**";
 			return false;
 		} else {
 			document.getElementById("message").innerHTML = "";

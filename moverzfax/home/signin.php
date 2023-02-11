@@ -101,7 +101,7 @@
         <div class="bg-form form-group">
             <h2 class="text-center mb-5">LOGIN</h2>
             <h5 class="text-danger text-center" id="msg"><?php echo $msg ;?></h5>
-            <form method="post" action="../model/signin_model.php">
+            <form method="post" action="../model/signin_model.php"> <!--this form submits to signin_model.php-->
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <label class="fw-bold" for="user_type">SELECT USER TYPE</label>

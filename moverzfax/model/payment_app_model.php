@@ -6,8 +6,8 @@
                     include "connection.php";
                     $sql = "SELECT mo.*,ci.name as ciname,st.name as stname FROM mover_cart AS mo
                             LEFT JOIN `city` as ci ON  ci.id = mo.city_id
-                            LEFT JOIN `state` as st ON st.code = mo.state_id WHERE is_selected=1 AND mo.user_id = '".$user_id."' ";
-                    // echo $sql; die();
+                            LEFT JOIN `state` as st ON st.id = mo.state_id WHERE is_selected=1 AND mo.user_id = '".$user_id."' ";
+                    // echo $sql; die(); 
                     $result = $con->query($sql);
                     if(mysqli_num_rows($result) > 0){ 
                         while($res = mysqli_fetch_array($result)){

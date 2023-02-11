@@ -767,5 +767,9 @@
     <!-- END PAGE LEVEL JAVASCRIPTS -->
 
 <!-- END BODY -->
-
-<div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 0;"><img src="frontend/corporate/img/up.png" style="width:40px; height:40px"></div></body></html>
+<!--
+    <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 0;">
+        <img src="img/up.png" style="width:40px; height:40px"><p>Hi</p>
+    </div>-->
+</body>
+</html>

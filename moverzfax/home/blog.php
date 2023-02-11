@@ -9,7 +9,7 @@
 
 <!-- CSS
   ––––––––––––––––––––––––––––––––––––––––––––––––––-->
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.con.font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     * {
@@ -109,7 +109,11 @@
         <div class="bg-form">
             <br>
 
-            <h2 class="text-center mb-5" style="font-weight: 500">Blog Articles</h2>
+            <h2 class="text-center mb-5" style="font-weight: 500">Blog Coming Soon</h2>
+            <p>The blog portion of MoverzFax.com is currently under construction. In the mean time, please visit the link below for valuable moving related blog posts.</p>
+            <p><a href="https://moving.proaceintl.com/blog/" target="_blank">ProACE International Blog</a></p>
+
+            <!-- <h2 class="text-center mb-5" style="font-weight: 500">Blog Articles</h2>
             <p>We have a bunch of articles to guide and help you find the right moving company for your needs. Some movers often pose as legitimate businesses with quality services, but in the end you'll end up paying more than what is needed, or worse, get scammed. No worries, Moverzfax is here to help you find the right movers for you. With our report you will be able to identify which movers have a higher percentage of trust than others.</p>
             <p>So, keep coming back to this section for the latest articles as this will be updated regularly.</p>
             <p style="color: #721c24; font-weight: 500; font-style: italic;">PLEASE NOTE:<br>If you want to submit articles about the moving industry, feel free to contact us at blog@moverzfax.com and email it to us. Our board will review the article and post it on our site.</p>
@@ -130,7 +134,7 @@
 
             <div class="row text-center">
                 <div class="col-sm-12"><img style="width:100%;" src="img/CAPTURE2.png"></div>
-            </div>
+            </div> -->
         </div>
 
     </div>

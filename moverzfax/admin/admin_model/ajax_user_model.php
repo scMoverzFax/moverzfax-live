@@ -1,6 +1,6 @@
 
 <?php
- include 'connection.php';
+ include '../../model/connection.php';
  $type = isset($_REQUEST['type'])?$_REQUEST['type'] : NULL;
  $value = isset($_REQUEST['value'])?$_REQUEST['value'] : NULL;
  $sr_no = 1;

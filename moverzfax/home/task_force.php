@@ -114,7 +114,7 @@
 					<table class="table">
 						<tr>
 							<td>Pickup Date</td>
-							<td><input type="date" class="form-control" name=""</td>
+							<td><input type="date" class="form-control" name=""></td>
 						</tr>
 						<tr>
 							<td>Country</td>
@@ -148,7 +148,7 @@
 					<table class="table">
 						<tr>
 							<td>Delivery Date</td>
-							<td><input type="date" class="form-control" name=""</td>
+							<td><input type="date" class="form-control" name=""></td>
 						</tr>
 						<tr>
 							<td>Country</td>
@@ -202,7 +202,7 @@
 			</div>
 		</div><hr>
 		<div class="row text-center">
-			<div class="col-sm-12"><img src="img/CAPTURE2.png"></div>
+			<div class="col-sm-12"><img src="../img/CAPTURE2.png"></div>
 		</div><br>
 	</div>
 	<?php include 'footer.php'; ?>
