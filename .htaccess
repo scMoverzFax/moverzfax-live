@@ -1,3 +1,2 @@
 
 RewriteEngine on
-RewriteRule ^(.*)$ http://www.moverzfax.com/home/index.php/$1 [R=301,L]
