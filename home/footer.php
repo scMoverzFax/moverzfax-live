@@ -87,15 +87,15 @@
 		<div class="row">
 			<div class="col-md-12 col-lg-4 col-xl-4 anim text-left"><a href="#">Privacy Policy </a> <span>|</span><a href="#">Terms of Service</a></div>
 			<div class="col-md-12 col-lg-4 col-xl-4 anim center-text">
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-google-plus"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-dribbble"></i></a>
-                <a href="jhttps://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-linkedin"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-skype"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-github"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-youtube"></i></a>
-                <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-dropbox"></i></a>
+                <a href="https://www.facebook.com/MoverZfaxLLC" target="_blank"><i class="fa fa-facebook"></i></a>
+                <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-google-plus"></i></a> -->
+                <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-dribbble"></i></a> -->
+                <a href="https://www.linkedin.com/company/moverzfax/about/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://twitter.com/moverzfax" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/moverzfax/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-github"></i></a> -->
+                <a href="https://www.youtube.com/watch?v=b5pjq-Wr82k&t=19s" target="_blank"><i class="fa fa-youtube"></i></a>
+                <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-dropbox"></i></a> -->
 			   
             </div>
 			<div class="col-md-12 col-lg-4 col-xl-4 anim poweredby">
