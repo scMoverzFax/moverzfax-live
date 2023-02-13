@@ -2,15 +2,16 @@
 $user_type = $_REQUEST['catagory'];
 $email = $_REQUEST['email'];
 $passwords = md5($_REQUEST['passwords']);
-
+echo "in the right file";
 include 'connection.php';
   //These URL's may be correct for production purposes. But they should be tested.
-      //$baseURL = "http://localhost:8080/2022/moverzfax/";
-      //$homeURL = "http://localhost:8080/2022/moverzfax/home/";
+      $baseURL = "http://localhost:8080/2022/moverzfax/";
+      $homeURL = "http://localhost:8080/2022/moverzfax/home/";
+      $adminURL = "http://localhost:8080/2022/moverzfax/admin/";
   //The URLs below are for development
-  $baseURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/";
-  $homeURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/home/";
-  $adminURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/admin/";
+  // $baseURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/";
+  // $homeURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/home/";
+  // $adminURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/admin/";
   // prepare and bind
   if($user_type == 'customer'){
     $sql = "SELECT * FROM `customer_register` WHERE is_active = 1 AND email='".$email."' AND passwords='".$passwords."'";
