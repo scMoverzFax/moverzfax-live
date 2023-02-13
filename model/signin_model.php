@@ -16,9 +16,9 @@ include 'connection.php';
   if($user_type == 'customer'){
     $sql = "SELECT * FROM `customer_register` WHERE is_active = 1 AND email='".$email."' AND passwords='".$passwords."'";
     // echo $sql;exit;
-    echo "before";
+    
     $result = $con->query($sql);
-    echo "after";
+    
 
     if ($result->num_rows > 0) {
     // output data of each row
@@ -64,7 +64,9 @@ include 'connection.php';
   }
   elseif($user_type == 'admin'){
     $sql = "SELECT * FROM `admin` WHERE email = '".$email."' AND password = '".$passwords."'";
+    echo "before";
     $result = $con->query($sql);
+    echo "after";
     if ($result->num_rows > 0) {
       // output data of each row
           $row = $result->fetch_assoc();
