@@ -64,11 +64,12 @@ include 'connection.php';
   }
   elseif($user_type == 'admin'){
     $sql = "SELECT * FROM `admin` WHERE email = '".$email."' AND password = '".$passwords."'";
-    echo "before";
+    
     $result = $con->query($sql);
-    echo "after";
+    
     if ($result->num_rows > 0) {
       // output data of each row
+      echo "before";
           $row = $result->fetch_assoc();
           session_start();
           $_SESSION["id"] = $row["id"];
@@ -77,7 +78,7 @@ include 'connection.php';
           $_SESSION["catagory"] = "admin";
           header('Location: '.$adminURL.'admin_dashboard.php');
           // echo $baseURL.$homeURL;
-    } else {
+    } else {echo "after";
       header('Location:'.$homeURL.'signin.php?invalid=1');
     }
   }
