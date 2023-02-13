@@ -208,7 +208,7 @@
 				</form>-->
 			</div>
 			
-		</div><hr><!--
+		</div><!--<hr>
 		<div class="row text-center">
 			<div class="col-sm-12"><img src="../img/CAPTURE2.png"></div>
 		</div><br> -->
