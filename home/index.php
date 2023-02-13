@@ -614,13 +614,22 @@
                                 </a>
                             </div>
                             <div class="col-md-9 col-sm-9">
-                                <p class="margin-bottom-10">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
+                                <p class="margin-bottom-10">
+                                    Finally, a platform that can provide each of you with accurate data about movers registered with the 
+                                    United States Department of Transportation. We are the Carfax of the Moving industry. No more guessing 
+                                    when searching for movers. Always ask for your Moverzfax report before hiring any mover. Be smart 
+                                    before you trust anyone with all your belongings as there are many rogues movers out there.
+                                </p>
                                 <p><a class="more" href="about.php">Read more <i class="icon-angle-right"></i></a></p>
                             </div>
                         </div>
                         <div class="tab-pane row fade" id="tab-2">
                             <div class="col-md-9 col-sm-9">
-                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia..</p>
+                                <p>
+                                    Use the box above, "SEARCH FOR USDOT" and this form will assist you in finding all movers in our database. 
+                                    Make sure they provide you with their USDOT license number. Just like Carfax uses VIN number to generate their 
+                                    report, we use USDOT license number. Make sure to always ask for it prior to your research.
+                                </p>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <a href="https://www.moversfax.com/frontend/temp/photos/img10.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
@@ -629,10 +638,18 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tab-3">
-                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                            <p>
+                                Keeping a watchful eye on movers by grading and reporting their performance to the general public, thereby, 
+                                increasing overall performance and ethics in the North American moving industry. This mission, as we do 
+                                accept it, is to eliminate all rogue and untrusting movers from providing services to consumers.
+                            </p>
                         </div>
                         <div class="tab-pane fade" id="tab-4">
-                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                            <p>
+                                To access our moving blog, please click on the link below for articles written about the moving industry 
+                                and the many tips and advice we offer to customers just like you. Our sister site: <a href="https://moving.proaceintl.com/blog">https://moving.proaceintl.com/blog</a> 
+                                shares valuable information to consider prior to your move.
+                            </p>
                         </div>
                     </div>
                 </div>
