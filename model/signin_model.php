@@ -5,9 +5,12 @@ $passwords = md5($_REQUEST['passwords']);
 
 include 'connection.php';
   //These URL's may be correct for production purposes. But they should be tested.
-      $baseURL = "http://localhost:8080/2022/moverzfax/";
-      $homeURL = "http://localhost:8080/2022/moverzfax/home/";
-      $adminURL = "http://localhost:8080/2022/moverzfax/admin/";
+      // $baseURL = "http://localhost:8080/2022/moverzfax/";
+      // $homeURL = "http://localhost:8080/2022/moverzfax/home/";
+      // $adminURL = "http://localhost:8080/2022/moverzfax/admin/";
+      $baseURL = "http://www.moverzfax.com/";
+      $homeURL = "http://www.moverzfax.com/home/";
+      $adminURL = "http://www.moverzfax.com/admin/";
   //The URLs below are for development
   // $baseURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/";
   // $homeURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/home/";
@@ -78,7 +81,7 @@ include 'connection.php';
           $_SESSION["catagory"] = "admin";
           header('Location: '.$adminURL.'admin_dashboard.php');
           // echo $baseURL.$homeURL;
-    } else {echo "after";
+    } else {
       header('Location:'.$homeURL.'signin.php?invalid=1');
     }
   }
