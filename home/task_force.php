@@ -17,7 +17,7 @@
 			<div class="col-sm-8">
 				<h1 class="text-center" style="font-weight: 500">Special Moving Task Force Coming Soon</h1>
 				<p>
-				In the meantime, you can send us an email at smtf@moverzfax.com and share with us your experience with a recently hired moving company that serviced you. 
+				In the meantime, you can send us an email at <a href="mailto:smtf@moverzfax.com">smtf@moverzfax.com</a> and share with us your experience with a recently hired moving company that serviced you. 
 				If you have dealt with a dishonest, unprofessional, unethical mover, we need to be aware and take affirmative actions towards that company. 
 				Your feedback is crucial. Send us an email with Company name and USDOT number, phone number, address, state, company representative, date of move 
 				and details about your experience. This way, we can contact the moving company and determine if their actions were malicious or otherwise.
