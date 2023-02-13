@@ -82,7 +82,11 @@ include 'connection.php';
           header('Location: '.$adminURL.'admin_dashboard.php');
           // echo $baseURL.$homeURL;
     } else {
-      header('Location:'.$homeURL.'signin.php?invalid=1');
+      if(header('Location:'.$homeURL.'signin.php?invalid=1')){
+        echo "said it worked, weird";
+      } else {
+        echo 'Location:'.$homeURL.'signin.php?invalid=1';
+      }
     }
   }
   $con->close();
