@@ -81,7 +81,7 @@
         <hr>
 
 		<div class="Rights" >
-			<p> 2019 © BestStronger IT Talents. ALL Rights Reserved.</p>
+			<!-- <p> 2019 © BestStronger IT Talents. ALL Rights Reserved.</p> -->
 		</div>
 
 		<div class="row">
@@ -94,12 +94,12 @@
                 <a href="https://twitter.com/moverzfax" target="_blank"><i class="fa fa-twitter"></i></a>
                 <a href="https://www.instagram.com/moverzfax/" target="_blank"><i class="fa fa-instagram"></i></a>
                 <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-github"></i></a> -->
-                <a href="https://www.youtube.com/watch?v=b5pjq-Wr82k&t=19s" target="_blank"><i class="fa fa-youtube"></i></a>
+                <a href="https://youtu.be/b5pjq-Wr82k" target="_blank"><i class="fa fa-youtube"></i></a>
                 <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-dropbox"></i></a> -->
 			   
             </div>
 			<div class="col-md-12 col-lg-4 col-xl-4 anim poweredby">
-				<p>Powered by :  <a href="http://www.keenthemes.com/">Best Stronger Team </a></p>
+				<!-- <p>Powered by :  <a href="http://www.keenthemes.com/">Best Stronger Team </a></p> -->
 			</div>
 		</div>
 		
