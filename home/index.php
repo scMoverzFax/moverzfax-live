@@ -609,9 +609,9 @@
                     <div class="tab-content">
                         <div class="tab-pane row fade active in" id="tab-1">
                             <div class="col-md-3 col-sm-3">
-                                <a href="https://www.moversfax.com/frontend/temp/photos/img7.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                                    <img class="img-responsive" src="https://www.moversfax.com/frontend/pages/img/photos/img7.jpg" alt="">
-                                </a>
+                                <!-- <a href="https://www.moversfax.com/frontend/temp/photos/img7.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button"> -->
+                                    <img src="https://www.moversfax.com/frontend/pages/img/photos/img7.jpg" alt="">
+                                <!-- </a> -->
                             </div>
                             <div class="col-md-9 col-sm-9">
                                 <p class="margin-bottom-10">
@@ -632,9 +632,9 @@
                                 </p>
                             </div>
                             <div class="col-md-3 col-sm-3">
-                                <a href="https://www.moversfax.com/frontend/temp/photos/img10.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                                    <img class="img-responsive" src="https://www.moversfax.com/frontend/pages/img/photos/img10.jpg" alt="">
-                                </a>
+                                <!-- <a href="https://www.moversfax.com/frontend/temp/photos/img10.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button"> -->
+                                    <img src="https://www.moversfax.com/frontend/pages/img/photos/img10.jpg" alt="">
+                                <!-- </a> -->
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tab-3">
