@@ -15,7 +15,14 @@
 		<div class="row text-justify">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
-				<h1 class="text-center" style="font-weight: 500">Special Moving Task Force</h1>
+				<h1 class="text-center" style="font-weight: 500">Special Moving Task Force Coming Soon</h1>
+				<p>
+				In the meantime, you can send us an email at smtf@moverzfax.com and share with us your experience with a recently hired moving company that serviced you. 
+				If you have dealt with a dishonest, unprofessional, unethical mover, we need to be aware and take affirmative actions towards that company. 
+				Your feedback is crucial. Send us an email with Company name and USDOT number, phone number, address, state, company representative, date of move 
+				and details about your experience. This way, we can contact the moving company and determine if their actions were malicious or otherwise.
+				</p>
+				<!-- <h1 class="text-center" style="font-weight: 500">Special Moving Task Force</h1>
 				<p>Have you hired a rogue mover? Have you been cheated? HAVE your household goods been taken hostage? Is the moving company asking for 3 to 5 times more then the original estimate?</p><p>We first, on behalf of Moverzfax, wanted to say how sorry we are that you are going through this predicament and our Special Moving Task force will do everything in our power, with government authorities, to get your household items back in your hands without too much trouble.</p><p>This special task force can help you in many ways. First, if the mover was chosen within our network, it will be easier to track them down and take action on your behalf. Since we have most of their information, it will be easier for us to get your items back without too much negotiation on your part. It will of course, go through investigation and we will need to hear both sides of the story. It is only fair that we adopt this approach. The mover is NOT always wrong.</p><p>If the mover was selected from another source, such as the internet, newspaper, online directory etc., we will need to get most of your information with the company names as well. If you ordered the report of Moverzfax about the company and if the information provided wasn't accurate, we will work on your behalf to go after the moving company and file all the complaints to consumer affairs, rip-off report, U.S. Department of Transportation, to hopefully get the right authority to assist us in this important matter. For a fraction of the price of what law firms charge, our legal affiliates will get involved from the time of the complaint until we get favorable answers to you. We will not stop, we will not let go of the issue until we have done EVERYTHING we can to make you happy. Some assistance is available out there but not always to the benefit of the customer. We will make sure to continue contacting whoever is out there to lend a hand and get your possessions back.</p><p>Please fill in the form below. If you have chosen a company within our network, we gave you a confirmation number for your move, make sure to add that to the Confirmation # box on the form.</p><p>If you selected the mover from an outside source, add the company name in the Company name box and submit your information. We will process it and get back to you shortly.Thanks again.</p><br>
 				<p style="color: #721c24; font-weight: 700">Important Notice:</p>Prior to filling the form, please contact our office at at the toll free number so we can determine if its a case that we can pursue together to resolution. If we feel it is, you can then relogin and submit the request and pay the fees.
 				<form>
@@ -198,12 +205,13 @@
 								<td><input type="submit" class="btn btn-success" name="" value="Checkout With Paypal"></td>
 							</tr>
 					</table>
-				</form>
+				</form>-->
 			</div>
+			<!--
 		</div><hr>
 		<div class="row text-center">
 			<div class="col-sm-12"><img src="../img/CAPTURE2.png"></div>
-		</div><br>
+		</div><br> -->
 	</div>
 	<?php include 'footer.php'; ?>
 </body>
