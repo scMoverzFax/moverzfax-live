@@ -1,6 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/moverz20180615/public_html/home
-    - /bin/cp index.html $DEPLOYPATH
-    # - /bin/cp style.css $DEPLOYPATH
+    - export DEPLOYPATH=/home1/moverz20180615/public_html/
