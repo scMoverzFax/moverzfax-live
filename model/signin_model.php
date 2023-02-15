@@ -83,7 +83,7 @@ include 'connection.php';
           // echo $baseURL.$homeURL;
     } else {
       ///testing
-      if(header('http://www.moverzfax.com/home/signin.php?invalid=1')){
+      if(header('Location: http://www.moverzfax.com/home/signin.php?invalid=1')){
         echo "said it worked, weird";
       } else {
         echo 'Location:'.$homeURL.'signin.php?invalid=1';
