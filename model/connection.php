@@ -32,7 +32,7 @@ $dbname="moverz20_move";
 
 $con=mysqli_connect($servername,$username,$password,$dbname);
 
-if (!$con){
+if ($con){
 	echo "works actually";
 } else {
 	echo "does not actually woah";
