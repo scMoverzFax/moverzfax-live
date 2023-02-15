@@ -1,6 +1,6 @@
 
-<?php
-// $host="localhost";
+
+<!-- // $host="localhost";
 // $user="id17415443_root";
 // $password="(9AP_5gbp{|@63<-";
 // $dbname="id17415443_move";
@@ -10,9 +10,9 @@
 // $password="";
 // $dbname="move";
 
-// $con=mysqli_connect($servername,$username,$password,$dbname);
+// $con=mysqli_connect($servername,$username,$password,$dbname); -->
 
-?>
+
 
 <?php
 // $servername="localhost";
@@ -31,12 +31,6 @@ $dbname="moverz20_move";
 // $dbname="moverz20_move";
 
 $con=mysqli_connect($servername,$username,$password,$dbname);
-
-if ($con){
-	echo "works actually";
-} else {
-	echo "does not actually woah";
-}
 
 	if (!$con){
 		die ("Connection failed : " .mysqli_connect_error());
