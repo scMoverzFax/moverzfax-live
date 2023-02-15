@@ -69,7 +69,7 @@ include 'connection.php';
     $sql = "SELECT * FROM `admin` WHERE email = '".$email."' AND password = '".$passwords."'";
     
     $result = $con->query($sql);
-    
+    echo $result->num_rows;
     if ($result->num_rows > 0) {
       // output data of each row
       echo "before";
@@ -82,14 +82,14 @@ include 'connection.php';
           header('Location: '.$adminURL.'admin_dashboard.php');
           // echo $baseURL.$homeURL;
     } else {
+      header('Location:'.$homeURL.'signin.php?invalid=1');
       ///testing
-      if(header('Location: http://www.moverzfax.com/home/signin.php?invalid=1')){
-        echo "said it worked, weird";
-      } else {
-        echo 'Location:'.$homeURL.'signin.php?invalid=1';
-      }
+      // if(header('Location: http://www.moverzfax.com/home/signin.php?invalid=1')){
+      //   echo "said it worked, weird";
+      // } else {
+      //   echo 'Location:'.$homeURL.'signin.php?invalid=1';
+      // }
       ///
-      //header('Location: '.$homeURL.'signin.php?invalid=1');
     }
   }
   $con->close();
