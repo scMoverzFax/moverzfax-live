@@ -103,7 +103,7 @@ function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
 		<td>
 			
 			<input style="width: 100%;" type="text" class="form-control" name=<?php echo $name ?> value="<?php echo (isset($value)) ? $value : '';?>" placeholder="Paste your link here if applicable." />
-			<a href=<?php echo $value ?> target="_blank">Test Link</a>
+			<a href="<?php echo $value ?>" target="_blank">Test Link</a>
 		<?php if($stars) { ?>
 			<input type="number" step="any" min=”0″ max="5" class="form-control" name=<?php echo $starsName ?>  placeholder="Enter your star rating (e.g. 5.0)">
 		<?php } ?>
