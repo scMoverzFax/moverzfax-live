@@ -66,13 +66,12 @@ include 'connection.php';
     }
   }
   elseif($user_type == 'admin'){
-    $sql = "SELECT * FROM `admin`";// WHERE email = '".$email."' AND password = '".$passwords."'";
+    $sql = "SELECT * FROM `admin` WHERE email = '".$email."' AND password = '".$passwords."'";
     
     $result = $con->query($sql);
-    echo $result->num_rows;
+    
     if ($result->num_rows > 0) {
       // output data of each row
-      echo "before";
           $row = $result->fetch_assoc();
           session_start();
           $_SESSION["id"] = $row["id"];
