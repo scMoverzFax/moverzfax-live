@@ -319,7 +319,7 @@ if(isset($_REQUEST["usdot-check"])){
 								<h5 class="text-center">Please paste the link to your business on each site. Leave the feild blank if not applicable.</h5>
 						<table class="table">
 							<tbody>
-								<?php echo linkInput("State Registered", "/moverzfaxdevelop/MoverzFax/moverzfax/home/state_link_redirect.php", "state_registration_link", $state_link, false, ''); ?>
+								<?php echo linkInput("State Registered", "/home/state_link_redirect.php", "state_registration_link", $state_link, false, ''); ?>
 								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, ''); ?>
 								<!-- <?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?> -->
 								
