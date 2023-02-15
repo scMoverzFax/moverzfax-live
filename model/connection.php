@@ -20,7 +20,7 @@
 // $password="wesi84265";
 // $dbname="moverz20_move";
 
-$servername="focus";
+$servername="localhost";
 $username="moverz20_moverz_sc";
 $password="WgLgvmjLCQ4jPt6";
 $dbname="moverz20_move";
