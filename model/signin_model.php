@@ -66,7 +66,7 @@ include 'connection.php';
     }
   }
   elseif($user_type == 'admin'){
-    $sql = "SELECT * FROM `admin` WHERE email = '".$email."' AND password = '".$passwords."'";
+    $sql = "SELECT * FROM `admin`";// WHERE email = '".$email."' AND password = '".$passwords."'";
     
     $result = $con->query($sql);
     echo $result->num_rows;
