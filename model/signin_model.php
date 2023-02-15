@@ -82,11 +82,14 @@ include 'connection.php';
           header('Location: '.$adminURL.'admin_dashboard.php');
           // echo $baseURL.$homeURL;
     } else {
-      if(header('Location: '.$homeURL.'signin.php?invalid=1')){
+      ///testing
+      if(header('http://www.moverzfax.com/home/signin.php?invalid=1')){
         echo "said it worked, weird";
       } else {
         echo 'Location:'.$homeURL.'signin.php?invalid=1';
       }
+      ///
+      //header('Location: '.$homeURL.'signin.php?invalid=1');
     }
   }
   $con->close();
