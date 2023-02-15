@@ -20,7 +20,7 @@
 // $password="wesi84265";
 // $dbname="moverz20_move";
 
-$servername="localhost";
+$servername="focus";
 $username="moverz20_moverz_sc";
 $password="WgLgvmjLCQ4jPt6";
 $dbname="moverz20_move";
@@ -32,6 +32,11 @@ $dbname="moverz20_move";
 
 $con=mysqli_connect($servername,$username,$password,$dbname);
 
+if (!$con){
+	echo "works actually";
+} else {
+	echo "does not actually woah";
+}
 
 	if (!$con){
 		die ("Connection failed : " .mysqli_connect_error());
