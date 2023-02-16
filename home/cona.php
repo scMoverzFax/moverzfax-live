@@ -28,7 +28,7 @@
     
     <b>
 <?php
-
+ 
 
 
 $name = $_POST["na"];
