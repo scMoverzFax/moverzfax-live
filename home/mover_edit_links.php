@@ -275,7 +275,7 @@ $transportreviews_link = '';
 		<div class="bg-form form-group">
 			<div class="row">
 				<div class="col-md-12">
-					<?php defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>'); ?>
+					<?php if(!defined('LOGIN')){ ?> <h3 class="text-center my-5 py-5 ">Please Login First...</h3>';<?php } ?>
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Edit my Links and Ratings</h1>
 				<?php if($approved==1) { ?>
 					<h5 class="text-center">It looks like your company has been approved! Hang tight, there is nothing for you to do on this page now.</h5>
