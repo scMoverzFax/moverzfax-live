@@ -272,10 +272,8 @@ $transportreviews_link = '';
 
 <div class="b-container">
 	<div class="container in-container slide-in-bottom">
-	<?php if(!defined('LOGIN')){ ?> <h3 class="text-center my-5 py-5 ">Please Login First...</h3>';
-		<div class="bg-form form-group" style="display:none">
-		<?php } ?>
-		<div class="bg-form form-group">
+	<?php if(!defined('LOGIN')){ ?> <h3 class="text-center my-5 py-5 ">Please Login First...</h3>';<?php } ?>
+		<div class="bg-form form-group" <?php if(!defined('LOGIN')){ ?>style="display:none"<?php } ?>>
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Edit my Links and Ratings</h1>
