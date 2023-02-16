@@ -25,7 +25,7 @@
                 <h2 style="font-weight: bold">Thank you for your information.</h2>
                 <p>Upon review of the information you provided to MoverzFax, our admin has discovered some inaccuracies.</p>
                 <p>Please visit the link correction page below and provide the most accurate information you can.</p>
-                <a href="https://www.moverzfax.com/moverzfaxdevelop/MoverzFax/moverzfax/home/mover_edit_links.php">Correct My Information</a>
+                <a href="https://www.moverzfax.com/home/mover_edit_links.php">Correct My Information</a>
             </div>
         </body
         </html>';
