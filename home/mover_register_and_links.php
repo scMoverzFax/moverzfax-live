@@ -1,4 +1,8 @@
 <?php include_once 'myheader.php'; ?>
+<head>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
 <style>
 	* {
 		font-family: sans-serif;
@@ -300,14 +304,14 @@ if(isset($_REQUEST["usdot-check"])){
 								</tr>
 								<tr>
 									<td><label>Password<sup style="color: red">*</sup></label></td>
-									<td><input type="password" class="form-control" name="passwords" id="passwords" placeholder="********" required></td>
+									<td><input type="password" class="form-control" name="passwords" id="passwords" placeholder="Please Enter Your Password" required></td>
 								</tr>
 								<tr>
 									<td colspan="2"><span id="message" style="color:red; font-size:15px;"></span></td>
 								</tr>
 								<tr>
 									<td><label>Confirm Password<sup style="color: red">*</sup></label></td>
-									<td><input type="password" class="form-control" oninput="myfun1()" id="confirm_passwords" name="confirm_password" placeholder="********" required></td>
+									<td><input type="password" class="form-control" oninput="myfun1()" id="confirm_passwords" name="confirm_password" placeholder="Confirm Your Password" required></td>
 								</tr>
 								<tr>
 									<td><label>Company Logo</label></td>
@@ -365,13 +369,16 @@ if(isset($_REQUEST["usdot-check"])){
 								</tr>
 								<tr>
 									<td></td>
-									<td><input type="text" name="" placeholder="Enter Captcha Code"></td>
+									<td>
+										<!-- <input type="text" name="" placeholder="Enter Captcha Code"> -->
+										<div class="g-recaptcha" data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></div>
+								</td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="row text-center">
 							<div class="col-md-12 d-flex justify-content-center">
-								<button type="submit" class="btn button-mf me-5" name="" value="Signup">SIGN UP</button>
+								<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register This Business</button>
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
 							</div>
 						</div>

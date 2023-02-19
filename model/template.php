@@ -879,7 +879,7 @@
 						<div class="row mb-1 mt-2">
 							<div class="col-md-12">
 								<div class="headings d-flex align-items-center p-1">
-									<label>Recommended Portal</label>
+									<label>Review Portal</label>
 								</div>
 							</div>
 						</div>

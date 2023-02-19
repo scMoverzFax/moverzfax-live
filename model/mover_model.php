@@ -1,5 +1,33 @@
 <?php
 
+$secret = '6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo';
+$response = $_POST['g-recaptcha-response'];
+$remoteip = $_SERVER['REMOTE_ADDR'];
+
+$url = 'https://www.google.com/recaptcha/api/siteverify';
+$data = array(
+    'secret' => $secret,
+    'response' => $response,
+    'remoteip' => $remoteip
+);
+
+$options = array(
+    'http' => array(
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => http_build_query($data)
+    )
+);
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+$response_data = json_decode($result, true);
+
+if ($response_data['success'] == true) {
+    // reCAPTCHA verification passed, process the form submission
+    // ...
+
+
 include 'connection.php';
 
 $usdot = $_POST['usdot'];
@@ -18,7 +46,8 @@ $business_mover = $_POST['business_mover'];
 $mover_email = $_POST['mover_email'];
 $password = md5($_POST['passwords']);
 // echo $password; die();
-$logo_name = $_FILES['company_logo']['name'];
+//$logo_name = $_FILES['company_logo']['name'];
+$logo_name = uniqid() . '.jpg'; //giving the file a random name so hackers can not execute the file even if they are able to upload
 $logo_type = $_FILES['company_logo']['type'];
 $logo_path = "upload/logo/" . $logo_name;
 $logo_size = $_FILES['company_logo']['size'];
@@ -134,7 +163,14 @@ if (mysqli_num_rows($result) > 0) {
         // move_uploaded_file($logo_tmp_name, "upload/logo/".$logo_name);
         header("Location: ../home/signin.php");
     } else {
-        header("Location: ../home/mover_register.php");
+        header("Location: ../home/mover_register_and_links.php");
     }
 }
 $con->close();
+
+} else {
+    // reCAPTCHA verification failed, display an error message
+    // ...
+    header("Location: ../home/mover_register.php?invalid=1");
+}
+/////
