@@ -379,15 +379,18 @@ if(isset($_REQUEST["usdot-check"])){
 										<a href="javascript://" onclick="refreshCaptcha('captcha.php');">Refresh</a>
 									</td>
 								</tr> -->
-								<tr>
+								<!-- <tr>
 									<td></td>
 									<td>
-										<!-- <input type="text" name="" placeholder="Enter Captcha Code"> -->
+										//old captcha 
+										<input type="text" name="" placeholder="Enter Captcha Code">
+
+										//reCAPTCHA v2 if want to use
 										<div class="col-md-12 d-flex justify-content-center">
 											<div class="g-recaptcha" data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></div>
 										</div>
-								</td>
-								</tr>
+									</td>
+								</tr> -->
 							</tbody>
 						</table>
 						<div class="row text-center">
