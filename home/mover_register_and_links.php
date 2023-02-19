@@ -1,7 +1,4 @@
 <?php include_once 'myheader.php'; ?>
-<head>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
 
 <style>
 	* {
@@ -394,6 +391,8 @@ if(isset($_REQUEST["usdot-check"])){
 	</div>
 </div>
 <script src="../js/csc_sort_1.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
