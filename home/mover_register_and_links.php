@@ -361,17 +361,19 @@ if(isset($_REQUEST["usdot-check"])){
 									<td></td>
 									<td><input type="checkbox" name="" required> I agree to the <a href="t&c.php" target="_blank">terms of use</a></td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td></td>
 									<td><img name="HELPER-captcha_image" id="capt" src="captcha.php">
 										<a href="javascript://" onclick="refreshCaptcha('captcha.php');">Refresh</a>
 									</td>
-								</tr>
+								</tr> -->
 								<tr>
 									<td></td>
 									<td>
 										<!-- <input type="text" name="" placeholder="Enter Captcha Code"> -->
-										<div class="g-recaptcha" data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></div>
+										<div class="col-md-12 d-flex justify-content-center">
+											<div class="g-recaptcha" data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></div>
+										</div>
 								</td>
 								</tr>
 							</tbody>
