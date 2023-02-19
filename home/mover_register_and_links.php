@@ -228,7 +228,7 @@ if(isset($_REQUEST["usdot-check"])){
 						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
 					</form>
 					<br>
-					<form action="../model/mover_model.php" method="post" enctype="multipart/form-data"> 
+					<form action="../model/mover_model.php" method="post" id="mv-reg-form" enctype="multipart/form-data"> 
 						<table class="table">
 							<tbody>
 								<tr>
@@ -380,7 +380,13 @@ if(isset($_REQUEST["usdot-check"])){
 						</table>
 						<div class="row text-center">
 							<div class="col-md-12 d-flex justify-content-center">
-								<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register This Business</button>
+								<!-- <button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button> -->
+
+								<button class="g-recaptcha"
+										data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"
+										data-callback='onSubmit'
+										data-action='submit'>Submit</button>
+
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
 							</div>
 						</div>
@@ -397,6 +403,11 @@ if(isset($_REQUEST["usdot-check"])){
 </div>
 <script src="../js/csc_sort_1.js"></script>
 
+<script>
+   function onSubmit(token) {
+     document.getElementById("mv-reg-form").submit();
+   }
+ </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
