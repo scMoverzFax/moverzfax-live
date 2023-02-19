@@ -1,5 +1,19 @@
 <?php include_once 'myheader.php'; ?>
 
+<head>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
+	<script>
+        function onSubmit(token) {
+            document.getElementById("mv-reg-form").submit();
+        }
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
+                document.getElementById("token").value = token;
+            });
+        });
+    </script>
+</head>
+
 <style>
 	* {
 		font-family: sans-serif;
@@ -213,8 +227,6 @@ if(isset($_REQUEST["usdot-check"])){
 	}
 </script>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <div class="b-container">
 	<div class="container in-container slide-in-bottom">
 		<div class="bg-form form-group">
@@ -380,13 +392,7 @@ if(isset($_REQUEST["usdot-check"])){
 						</table>
 						<div class="row text-center">
 							<div class="col-md-12 d-flex justify-content-center">
-								<!-- <button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button> -->
-
-								<button class="g-recaptcha"
-										data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"
-										data-callback='onSubmit'
-										data-action='submit'>Submit</button>
-
+								<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button>
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
 							</div>
 						</div>

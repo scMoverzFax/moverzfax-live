@@ -1,31 +1,13 @@
 <?php
 
-$secret = '6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo';
-$response = $_POST['g-recaptcha-response'];
-$remoteip = $_SERVER['REMOTE_ADDR'];
+$recaptcha_secret = "YOUR_SECRET_KEY";
+$token = $_POST['token'];
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$token}");
+$response_data = json_decode($response);
+if ($response_data->success) {
+    // The reCAPTCHA verification was successful
+    // Process the form data here
 
-$url = 'https://www.google.com/recaptcha/api/siteverify';
-$data = array(
-    'secret' => $secret,
-    'response' => $response,
-    'remoteip' => $remoteip
-);
-
-$options = array(
-    'http' => array(
-        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method' => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-$response_data = json_decode($result, true);
-
-if ($response_data['success'] == true) {
-    // reCAPTCHA verification passed, process the form submission
-    // ...
 
 
 include 'connection.php';
@@ -169,8 +151,8 @@ if (mysqli_num_rows($result) > 0) {
 $con->close();
 
 } else {
-    // reCAPTCHA verification failed, display an error message
-    // ...
+    // The reCAPTCHA verification failed
+    // Show an error message or take other action
     header("Location: ../home/mover_register.php?invalid=1");
 }
 /////
