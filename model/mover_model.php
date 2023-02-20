@@ -154,6 +154,6 @@ if ($response_data->success) {   //find out why this is evaluating to false
 } else {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
-    echo $response_data->success;
+    echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"});
     //header("Location: ../home/mover_register_and_links.php?invalid=31");
 }
