@@ -1,4 +1,3 @@
-
 <?php
 
 $recaptcha_secret = "6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo";
