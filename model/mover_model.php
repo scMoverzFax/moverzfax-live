@@ -154,7 +154,9 @@ if ($response_data->success) {
 } else {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
-    echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
-    echo "Token is: " . $token;
-    // header("Location: ../home/mover_register_and_links.php?captcha=1");
+    //use next two lines to debug
+    // echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
+    // echo "Token is: " . $token;
+    
+    header("Location: ../home/mover_register_and_links.php?captcha=1");
 }

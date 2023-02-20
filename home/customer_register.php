@@ -1,4 +1,22 @@
 <?php include_once 'myheader.php'; ?>
+
+<head>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
+	<script>
+        function onSubmit(token) {
+			console.log("form submitted");
+            document.getElementById("mv-reg-form").submit();
+        }
+        grecaptcha.ready(function() {
+			console.log("grecaptcha function called");
+            grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
+                document.getElementById("token").value = token;
+				console.log(token);
+            });
+        });
+    </script>
+</head>
+
 <style>
 	* {
 		font-family: sans-serif;
@@ -102,6 +120,7 @@
 } else {
     $msg = "";
 }
+isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $msg = "";
 ?>
 <script type="text/javascript">
 	function refreshCaptcha() {
@@ -179,7 +198,7 @@
 									<td></td>
 									<td><input type="checkbox" name="" required> I agree to the <a href="t&c.php" target="_blank">terms of use</a></td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td></td>
 									<td><img name="HELPER-captcha_image" id="capt" src="captcha.php" border="0">
 										<a href="javascript://" onclick="refreshCaptcha('captcha.php');">Refresh</a>
@@ -188,11 +207,12 @@
 								<tr>
 									<td></td>
 									<td><input type="text" name="" placeholder="Enter Captcha Code"></td>
-								</tr>
+								</tr> -->
 
 							</tbody>
 						</table>
 						<div class="row ">
+							<input id="token" name="token" style="display: none;">
 							<div class="col-md-12 d-flex justify-content-center">
 								<button type="submit" class="btn button-mf me-5">Save</button>
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
