@@ -33,8 +33,8 @@ if ($response_data->success) {
       $result = $con->query($sql);
 
       if (mysqli_num_rows($result) > 0) {
-        echo "bad email";
-        //header("Location: ../home/customer_register.php?invalid=1");
+        //echo "bad email";
+        header("Location: ../home/customer_register.php?invalid=1");
       } else {
         $newURL = "../home/signin.php";
 
