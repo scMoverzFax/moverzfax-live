@@ -5,7 +5,7 @@ $token = $_POST['token'];
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$token}");
 $response_data = json_decode($response);
 //if captcha successful, process the from data
-if ($response_data->success) {   //find out why this is evaluating to false
+if ($response_data->success) {
 
     // The reCAPTCHA verification was successful
     // Process the form data here
@@ -154,6 +154,7 @@ if ($response_data->success) {   //find out why this is evaluating to false
 } else {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
-    echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"});
+    echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
+    echo $token;
     //header("Location: ../home/mover_register_and_links.php?invalid=31");
 }
