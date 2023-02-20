@@ -265,11 +265,11 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 		<div class="row text-justify">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
-				<h1 class="text-center" style="font-weight: 500">Coming Soon</h1>
+				<h1 class="text-center" style="font-weight: 500">Reviews Coming Soon</h1>
 				<p>
                     This feature is not yet available on Moverzfax but we are working on implementing it soon. 
                     Since the section of Moverzfax internal review system isn't available, all customers will 
-                    base their decision to hire you on all other reviews listed on the Moverzfax report. 
+                    base their decision to hire a mover on all other reviews listed on the Moverzfax report. 
                     Stay tuned for updates.
 				</p>
         </div>	

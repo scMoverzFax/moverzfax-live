@@ -199,11 +199,26 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
     @media (max-width: 400px) {}
 </style>
 
-<div class="b-container">
+<!-- <div class="b-container">
     
-    <?php include '../model/my_jobs_model.php'; ?>
+    <?php //include '../model/my_jobs_model.php'; ?>
     
    
 
+</div> -->
+
+<div class="container" style="margin-top:10px; max-width: 100%">
+		<div class="row text-justify">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<h1 class="text-center" style="font-weight: 500">My Jobs Coming Soon</h1>
+				<p>
+                    This feature is not yet available on Moverzfax but we are working on implementing it soon. 
+                    Thanks for your patience. In the meantime, just request the USDOT number from any movers to 
+                    process the Moverzfax report and determine if the mover is ethical and honest.
+				</p>
+        </div>	
+    </div>
 </div>
+
 <?php include 'footer.php'; ?>

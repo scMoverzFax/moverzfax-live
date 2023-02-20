@@ -1,7 +1,7 @@
 <?php include 'myheader.php';
 defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
 ?>
-<title>Registration</title>
+<title>Post A Job</title>
 <style>
     * {
         font-family: sans-serif;
@@ -109,7 +109,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 
 <!-- Start of Document ----------------------------------------------->
 
-<div class="b-container">
+<!-- <div class="b-container">
     <div class="container in-container">
         <div class="bg-form form-group">
             <div class="row">
@@ -126,13 +126,13 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <div class="col-md-6">
                                 <label for="inputlg form-label">Origin Country<sup style="color: red">*</sup><br></label>
                                 <select class="form-select" name="origin_country" id="country_1" onchange="get_state_1()" required>
-                                    <!-- Country -->
+                                    
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="sel1">Origin State<sup style="color: red">*</sup><br></label>
                                 <select class="form-select" name="origin_state" id="state_1" onchange="get_city_1()" required>
-                                    <!-- State -->
+                                    
                                 </select>
                             </div>
                         </div>
@@ -140,7 +140,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <div class="col-md-6">
                                 <label for="sel1">Origin City<sup style="color: red">*</sup></label>
                                 <select class="form-select" name="origin_city" id="city_1" required>
-                                     <!-- City -->
+                                     
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -164,13 +164,13 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <div class="col-md-6">
                                 <label for="inputlg">Destination Country<sup style="color: red">*</sup><br></label>
                                 <select class="form-select" name="destination_country" id="country_2" onchange="get_state_2()" required>
-                                    <!-- Country -->
+                                    
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="sel2">Destination State<sup style="color: red">*</sup><br></label>
                                 <select class="form-select" name="destination_state" id="state_2" onchange="get_city_2()" required>
-                                    <!-- State -->
+                                    
                                 </select>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <div class="col-md-6">
                                 <label for="sel1">Destination City<sup style="color: red">*</sup></label>
                                 <select class="form-select" name="destination_city" id="city_2" required>
-                                        <!-- City -->
+                                        
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -244,7 +244,23 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="container" style="margin-top:10px; max-width: 100%">
+		<div class="row text-justify">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<h1 class="text-center" style="font-weight: 500">Post A Job Coming Soon</h1>
+				<p>
+                    This feature is not yet available on Moverzfax but we are working on implementing it soon. 
+                    Thanks for your patience. In the meantime, contact our office at our toll free number 
+                    888-828-9688 and request a list of local movers in your area to provide you a professional 
+                    service, scam free.
+				</p>
+        </div>	
+    </div>
 </div>
+
 <script src="../js/csc_sort_1.js"></script>
 <script src="../js/csc_sort_2.js"></script>
 <?php include_once 'footer.php'; ?>
