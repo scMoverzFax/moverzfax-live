@@ -1,5 +1,4 @@
 <?php
-
 $recaptcha_secret = "6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo";
 $token = $_POST['token'];
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$token}");
@@ -64,4 +63,3 @@ if ($response_data->success) {
     
     header("Location: ../home/customer_register.php?captcha=1");
 }
-?>
