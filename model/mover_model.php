@@ -69,7 +69,7 @@ if ($response_data->success) {
     $result = $con->query($sql);
 
     if (mysqli_num_rows($result) > 0) {
-        header("Location: ../home/mover_register.php?invalid=1");
+        header("Location: ../home/mover_register_and_links.php?invalid=21");
     } else {
         $sql1 = "INSERT INTO mover_register( 
             usdot, company_name, alternate_business, 
@@ -153,5 +153,5 @@ if ($response_data->success) {
 } else {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
-    header("Location: ../home/mover_register.php?invalid=1");
+    header("Location: ../home/mover_register_and_links.php?invalid=1");
 }
