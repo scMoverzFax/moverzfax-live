@@ -398,6 +398,7 @@ if(isset($_REQUEST["usdot-check"])){
 							</tbody>
 						</table>
 						<div class="row text-center">
+							<input id="token" style="display: none;">
 							<div class="col-md-12 d-flex justify-content-center">
 								<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button>
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
