@@ -114,7 +114,7 @@
 
 <?php
 // isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "Email already registered!. Please login." : $msg = "";
-echo $msg;
+echo "Message is: " . $msg;
 // if (isset($_GET['invalid']) && !empty($_GET['invalid'])) {
 //     $msg = "Email already registered!. Please login.";
 // } else {
