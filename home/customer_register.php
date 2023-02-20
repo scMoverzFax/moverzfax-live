@@ -114,14 +114,12 @@
 
 <?php
 isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "Email already registered!. Please login." : $msg = "";
-echo "Message is: " . $msg;
 // if (isset($_GET['invalid']) && !empty($_GET['invalid'])) {
 //     $msg = "Email already registered!. Please login.";
 // } else {
 //     $msg = "";
 // }
-isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $msg = "";
-echo "Message is: " . $msg;
+isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $cmsg = "";
 ?>
 <!-- <script type="text/javascript">
 	function refreshCaptcha() {
@@ -136,7 +134,7 @@ echo "Message is: " . $msg;
 			<div class="row">
 				<div class="col-md-12">
 					<h2 class="text-center mb-5"><i class="fas fa-user me-2"></i>Customer Registration</h2>
-					<h5 class="text-danger text-center"><?= $msg ?></h5>
+					<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
 					<form name="myform" action="../model/customer_model.php" method="post">
 						<table class="table">
 							<tbody>

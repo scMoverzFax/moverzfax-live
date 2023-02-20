@@ -105,7 +105,7 @@
 </style>
 <?php 
 isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "USDOT number already registered!" : $msg = "";
-isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $msg = "";
+isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $cmsg = "";
 
 //isset($_REQUEST["usdot-check"]) ? checkDatabase() : null;
 
@@ -234,7 +234,7 @@ if(isset($_REQUEST["usdot-check"])){
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
-					<h5 class="text-danger text-center"><?= $msg ?></h5>
+					<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
 
 					<form method="get" action="mover_register_and_links.php">
 						<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check my USDOT#" required><br>
