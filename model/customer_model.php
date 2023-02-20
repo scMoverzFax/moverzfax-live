@@ -11,7 +11,6 @@ if ($response_data->success) {
     // The reCAPTCHA verification was successful
     // Process the form data here
 
-
     include 'connection.php';
 
     $first_name = $_POST['first_name'];
@@ -36,7 +35,8 @@ if ($response_data->success) {
       $result = $con->query($sql);
 
       if (mysqli_num_rows($result) > 0) {
-        header("Location: ../home/customer_register.php?invalid=1");
+        echo "bad email";
+        //header("Location: ../home/customer_register.php?invalid=1");
       } else {
         $newURL = "../home/signin.php";
 

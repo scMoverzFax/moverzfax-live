@@ -115,19 +115,16 @@
 	@media (max-width: 400px) {}
 </style>
 
-<?php if (isset($_GET['invalid']) && !empty($_GET['invalid'])) {
-    $msg = "Email already registered!. Please login.";
-} else {
-    $msg = "";
-}
+<?php
+isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "Email already registered!. Please login." : $msg = "";
 isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $msg = "";
 ?>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	function refreshCaptcha() {
 		img = document.getElementById("capt");
 		img.src = "captcha.php?rand_number=" + Math.random();
 	}
-</script>
+</script> -->
 
 <div class="b-container">
 	<div class="container in-container slide-in-bottom">
@@ -214,7 +211,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA 
 						<div class="row ">
 							<input id="token" name="token" style="display: none;">
 							<div class="col-md-12 d-flex justify-content-center">
-								<button type="submit" class="btn button-mf me-5">Save</button>
+								<button type="submit" class="btn button-mf me-5">Register</button>
 								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
 							</div>
 						</div>
