@@ -108,6 +108,7 @@
 </style>
 <?php 
 isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "USDOT number already registered!" : $msg = "";
+isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $msg = "";
 
 //isset($_REQUEST["usdot-check"]) ? checkDatabase() : null;
 
@@ -134,8 +135,8 @@ function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
 //$this_state_link = "https://www.llcuniversity.com/50-secretary-of-state-sos-business-entity-search/";
 $this_state_link = (isset($_SESSION["state_link"])) ? $_SESSION["state_link"] : "https://arc-sos.state.al.us/CGI/CORPNAME.MBR/INPUT";
 //global $this_state_link;$_SESSION["state_link"]
-//include '../model/city.php';
-echo "<script>console.log('Link: " . $this_state_link . "' );</script>";
+// //include '../model/city.php';
+// echo "<script>console.log('Link: " . $this_state_link . "' );</script>";
   
 
 // include 'state_link_function.php';
