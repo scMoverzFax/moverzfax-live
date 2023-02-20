@@ -155,6 +155,6 @@ if ($response_data->success) {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
     echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
-    echo $token;
+    echo $token; //the token is empty, its not being posted
     //header("Location: ../home/mover_register_and_links.php?invalid=31");
 }

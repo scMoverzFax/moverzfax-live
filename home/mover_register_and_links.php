@@ -4,11 +4,14 @@
     <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
 	<script>
         function onSubmit(token) {
+			console.log("form submitted");
             document.getElementById("mv-reg-form").submit();
         }
         grecaptcha.ready(function() {
+			console.log("grecaptcha function called");
             grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
                 document.getElementById("token").value = token;
+				console.log(token);
             });
         });
     </script>
