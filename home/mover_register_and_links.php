@@ -415,13 +415,6 @@ if(isset($_REQUEST["usdot-check"])){
 	</div>
 </div>
 <script src="../js/csc_sort_1.js"></script>
-
-<script>
-   function onSubmit(token) {
-     document.getElementById("mv-reg-form").submit();
-   }
- </script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	function myfun1() {
@@ -436,11 +429,11 @@ if(isset($_REQUEST["usdot-check"])){
 			document.getElementById("message").innerHTML = "";
 		}
 	}
-	function refreshCaptcha() {
-		console.log("refreshed captcha");
-		img = document.getElementById("capt");
-		img.src = "captcha.php?rand_number=" + Math.random();
-	}
+	// function refreshCaptcha() {
+	// 	console.log("refreshed captcha");
+	// 	img = document.getElementById("capt");
+	// 	img.src = "captcha.php?rand_number=" + Math.random();
+	// }
 
 	var select = document.getElementById('state_1');
 	var option;
