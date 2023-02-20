@@ -113,7 +113,7 @@
 </style>
 
 <?php
-// isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "Email already registered!. Please login." : $msg = "";
+isset($_GET['invalid']) && !empty($_GET['invalid']) ? $msg = "Email already registered!. Please login." : $msg = "";
 echo "Message is: " . $msg;
 // if (isset($_GET['invalid']) && !empty($_GET['invalid'])) {
 //     $msg = "Email already registered!. Please login.";
@@ -121,7 +121,7 @@ echo "Message is: " . $msg;
 //     $msg = "";
 // }
 isset($_GET['captcha']) && !empty($_GET['captcha']) ? $msg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $msg = "";
-echo $msg;
+echo "Message is: " . $msg;
 ?>
 <!-- <script type="text/javascript">
 	function refreshCaptcha() {
