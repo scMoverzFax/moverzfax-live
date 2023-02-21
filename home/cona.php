@@ -34,41 +34,20 @@ if ($response_data->success) {
     // The reCAPTCHA verification was successful
     // Process the form data here
 
+    include '../model/connection.php';
 
-$name = $_POST["na"];
-$email = $_POST["ea"];
-$subject = $_POST["sa"];
-$message = $_POST["wa"];
-// $answer = $_SESSION["answer"];
-// $user_answer = $_POST["answer"];
+    $name = $_POST["na"];
+    $email = $_POST["ea"];
+    $subject = $_POST["sa"];
+    $message = $_POST["wa"];
 
-// if($answer != $user_answer){
-//     // include_once 'myheader.php';
-//     $message = "You are not a human";
-//     echo "<h1>".$message."</h2>";
-//     // include_once 'footer.php';
-// }
-
-
-$host="localhost";
-$user="root";
-$password="";
-$dbname="move";
-
-
-$con=mysqli_connect($host,$user,$password,$dbname);
-
-if ($con->connect_error){
-    echo("Connection Failed".$con->connect_error);
-    exit();
-}
-else{
     $st = $con->prepare("insert into contact(name,email,subject,message)values(?,?,?,?)");
     $st->bind_param("ssss",$name,$email,$subject,$message);
     $st->execute();
     echo "Thanks for Contacting us!!";
     $st->close();
-}
+
+
 } else {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
