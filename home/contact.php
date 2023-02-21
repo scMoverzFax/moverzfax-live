@@ -1,7 +1,11 @@
 <?php include_once 'myheader.php'; ?>
 <title>Contact Us</title>
 
-<?php include_once 'mycaptcah.php' ?>
+<?php 
+//include_once 'mycaptcah.php' 
+isset($_GET['sent']) && !empty($_GET['sent']) ? $msg = "Thank you for contacting us!" : $msg = "";
+isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $cmsg = "";
+?>
 
 <script type="text/javascript">
     function refreshCaptcha() {
@@ -9,6 +13,20 @@
         img.src = "captcha.php?rand_number=" + Math.random();
     }
 </script>
+
+<head>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
+	<script>
+        function onSubmit(token) {
+            document.getElementById("mv-reg-form").submit();
+        }
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
+                document.getElementById("token").value = token;
+            });
+        });
+    </script>
+</head>
 
 <!-- Mobile Specific Metas
   ––––––––––––––––––––––––––––––––––––––––––––––––––-->
@@ -147,6 +165,7 @@
     <div class="container in-container slide-in-bottom">
         <div class="bg-form">
             <h2 class="text-center mb-5">Contact Us</h2>
+            <h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
             <p>If you have any questions or suggestions regarding our site services, please contact us through the given information below or you can send us your inquiries or questions directly by using our contact form.</p>
             <p class="mb-5">Please include your name, mailing address, email address, message subject and the content of your inquiry.</p>
             <hr>
@@ -190,7 +209,7 @@
                                 <td colspan="2"><input type="checkbox" name="" required> I agree to the <a href="t&c.php" target="_blank">terms of use</a></td>
                             </tr>
 
-                            <tr>
+                            <!-- <tr>
                                 <td><label>Captcha<sup style="color: red">*</sup></label></td>
                                 <td>
                                     <style type="text/css">
@@ -201,7 +220,7 @@
                                     </style>
                                     <span id="answer">
                                         <?php
-                                        echo $first_number . " " . $operator . " " . $second_number . " =";
+                                        //echo $first_number . " " . $operator . " " . $second_number . " =";
                                         ?>
                                     </span>
                                     <style type="text/css">
@@ -213,9 +232,10 @@
                                     </style>
                                     <input type="number" name="answer" id="user_answer">
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td></td>
+                                <input id="token" name="token" style="display: none;">
                                 <td><input type="submit" class="btn button-mf float-right" name="" value="Contact Us"></td>
                             </tr>
                         </table>

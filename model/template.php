@@ -94,7 +94,7 @@
 				<div class="heading-left">
 					<a href="https://moverzfax.com">Moverzfax.com</a>
 					<h2>Unrecognized Mover</h2>
-					<p>Sorry, the mover you have requested is not present in our database. Please notify <a href="http://moverzfax.com/home/support.php">customer support</a> and we will be sure to update our records with their information.</p>
+					<p>Sorry, the mover you have requested is not present in our database. Please notify <a href="http://moverzfax.com/home/contact.php">customer support</a> and we will be sure to update our records with their information.</p>
 				</div>
 				<div class="logo">
 					<img class="logo_img" src="../img/MoverZfaxLogo.jpeg" alt="">

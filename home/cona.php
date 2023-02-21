@@ -20,7 +20,8 @@
           padding:25px;
         }
     </style>
-    </head>
+
+</head>
 <body>
     
 <div class="ma">
@@ -28,7 +29,15 @@
     
     <b>
 <?php
- 
+$recaptcha_secret = "6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo";
+$token = $_POST['token'];
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$token}");
+$response_data = json_decode($response);
+//if captcha successful, process the from data
+if ($response_data->success) {
+
+    // The reCAPTCHA verification was successful
+    // Process the form data here
 
 
 $name = $_POST["na"];
@@ -64,6 +73,15 @@ else{
     $st->execute();
     echo "Thanks for Contacting us!!";
     $st->close();
+}
+} else {
+    // The reCAPTCHA verification failed
+    // Show an error message or take other action
+    //use next two lines to debug
+    // echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
+    // echo "Token is: " . $token;
+    
+    header("Location: ../home/contact.php?captcha=1");
 }
 
 ?>

@@ -204,7 +204,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                 <button class="collapsible">Support</button>
                 <div class="content1">
                     <a href="contact.php">Contact Us</a>
-                    <a href="support.php">Send a Message</a>
+                    <!-- <a href="support.php">Send a Message</a> -->
                 </div>
                 <button class="collapsible">More Links</button>
                 <div class="content1">
