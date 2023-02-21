@@ -40,17 +40,30 @@ if ($response_data->success) {
     $email = $_POST["ea"];
     $subject = $_POST["sa"];
     $message = $_POST["wa"];
-    echo "1";
-    $st = $con->prepare("insert into contact(name,email,subject,message)values(?,?,?,?)");
-    echo "2";
-    $st->bind_param("ssss",$name,$email,$subject,$message);
-    echo "3";
-    $st->execute();
-    echo "4";
-    echo "Thanks for Contacting us!!";
-    echo "5";
-    $st->close();
-    echo "6";
+    // echo "1";
+    // $st = $con->prepare("insert into contact(name,email,subject,message)values(?,?,?,?)");
+    // echo "2";
+    // $st->bind_param("ssss",$name,$email,$subject,$message);
+    // echo "3";
+    // $st->execute();
+    // echo "4";
+    // echo "Thanks for Contacting us!!";
+    // echo "5";
+    // $st->close();
+    // echo "6";
+
+    $sql = "INSERT INTO contact(name,email,subject,message)
+            VALUES ('" . $name . "',
+                    '" . $email . "',
+                    '" . $subject . "',
+                    '" . $message . "'
+                    );";
+    // echo $sql; die();
+    if (mysqli_query($con, $sql)) {
+        header("Location: contact.php?sent=1");
+    } else {
+        header("Location: contact.php?failed=1");
+    }
 
 
 } else {
@@ -60,7 +73,7 @@ if ($response_data->success) {
     // echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
     // echo "Token is: " . $token;
     
-    header("Location: ../home/contact.php?captcha=1");
+    header("Location: contact.php?captcha=1");
 }
 
 ?>
