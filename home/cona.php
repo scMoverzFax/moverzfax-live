@@ -40,20 +40,25 @@ if ($response_data->success) {
     $email = $_POST["ea"];
     $subject = $_POST["sa"];
     $message = $_POST["wa"];
-
+    echo "1";
     $st = $con->prepare("insert into contact(name,email,subject,message)values(?,?,?,?)");
+    echo "2";
     $st->bind_param("ssss",$name,$email,$subject,$message);
+    echo "3";
     $st->execute();
+    echo "4";
     echo "Thanks for Contacting us!!";
+    echo "5";
     $st->close();
+    echo "6";
 
 
 } else {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
     //use next two lines to debug
-    echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
-    echo "Token is: " . $token;
+    // echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
+    // echo "Token is: " . $token;
     
     header("Location: ../home/contact.php?captcha=1");
 }
