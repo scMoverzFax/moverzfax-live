@@ -18,7 +18,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
     <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
 	<script>
         function onSubmit(token) {
-            document.getElementById("mv-reg-form").submit();
+            document.getElementById("contact-form").submit();
         }
         grecaptcha.ready(function() {
             grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
@@ -186,7 +186,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
                 </div>
 
                 <div class="form-group col-md-7">
-                    <form action="cona.php" method="post">
+                    <form action="cona.php" method="post" id="contact-form">
                         <table>
                             <tr>
                                 <td><label>Name<sup style="color: red">*</sup></label></td>

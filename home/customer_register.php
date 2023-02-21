@@ -4,7 +4,7 @@
     <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
 	<script>
         function onSubmit(token) {
-            document.getElementById("mv-reg-form").submit();
+            document.getElementById("c-reg-form").submit();
         }
         grecaptcha.ready(function() {
             grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
@@ -135,7 +135,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
 				<div class="col-md-12">
 					<h2 class="text-center mb-5"><i class="fas fa-user me-2"></i>Customer Registration</h2>
 					<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
-					<form name="myform" action="../model/customer_model.php" method="post">
+					<form name="myform" id="c-reg-form" action="../model/customer_model.php" method="post">
 						<table class="table">
 							<tbody>
 								<tr>
