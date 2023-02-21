@@ -169,7 +169,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
             <h5 class="text-success text-center"><?= $msg ?></h5>
             <h5 class="text-danger text-center"><?= $fmsg ?><?= $cmsg ?></h5>
             <p>If you have any questions or suggestions regarding our site services, please contact us through the given information below or you can send us your inquiries or questions directly by using our contact form.</p>
-            <p class="mb-5">Please include your name, mailing address, email address, message subject and the content of your inquiry.</p>
+            <p class="mb-5">Please include your name, email address, subject, and the content of your inquiry.</p>
             <hr>
 
             <div class="row">
