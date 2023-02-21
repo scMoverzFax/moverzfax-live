@@ -429,12 +429,12 @@ if(isset($_REQUEST["usdot-check"])){
 		location.reload();
 
 		// Scroll to the top of the page
-		window.scrollTo(0, 0);
+		// window.scrollTo(0, 0);
 
-		// window.scrollTo({
-		// 	top: document.getElementById('mv-reg-form').offsetTop,
-		// 	behavior: 'smooth'
-		// });
+		window.scrollTo({
+			top: document.getElementById('mv-reg-form').offsetTop,
+			behavior: 'smooth'
+		});
 	}
 	function myfun1() {
 		var a = document.getElementById("passwords").value;
