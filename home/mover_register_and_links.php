@@ -428,9 +428,12 @@ if(isset($_REQUEST["usdot-check"])){
 		// Reload the page
 		location.reload();
 
+		// Scroll to the top of the page
+		window.scrollTo(0, 0);
+
 		// window.scrollTo({
-		// top: document.getElementById('mv-reg-form').offsetTop,
-		// behavior: 'smooth'
+		// 	top: document.getElementById('mv-reg-form').offsetTop,
+		// 	behavior: 'smooth'
 		// });
 	}
 	function myfun1() {
