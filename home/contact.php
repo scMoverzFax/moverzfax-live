@@ -4,6 +4,7 @@
 <?php 
 //include_once 'mycaptcah.php' 
 isset($_GET['sent']) && !empty($_GET['sent']) ? $msg = "Thank you for contacting us!" : $msg = "";
+isset($_GET['fail']) && !empty($_GET['fail']) ? $fmsg = "Message failed to send" : $fmsg = "";
 isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA response! Please refresh the page and try again." : $cmsg = "";
 ?>
 
@@ -165,7 +166,8 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
     <div class="container in-container slide-in-bottom">
         <div class="bg-form">
             <h2 class="text-center mb-5">Contact Us</h2>
-            <h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
+            <h5 class="text-success text-center"><?= $msg ?></h5>
+            <h5 class="text-danger text-center"><?= $fmsg ?><?= $cmsg ?></h5>
             <p>If you have any questions or suggestions regarding our site services, please contact us through the given information below or you can send us your inquiries or questions directly by using our contact form.</p>
             <p class="mb-5">Please include your name, mailing address, email address, message subject and the content of your inquiry.</p>
             <hr>
