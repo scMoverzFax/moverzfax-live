@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>  
-    <title>MoverZfax</title>
-    <?php include 'myheader.php'; ?>
-    <style>
-            .ma{
-            color:grey;
-            font-family:serif;
-            text-align:center;
-            margin-top:200px;
-            font-size:30px;
-        }
-        .box{
-          margin-left:450px;
-          margin-top:200px;
-          width:400px;
-          height:40px;
-          border:4px solid grey;
-          padding:25px;
-        }
-    </style>
-
-</head>
-<body>
-    
-<div class="ma">
-<div class=box>
-    
-    <b>
 <?php
 $recaptcha_secret = "6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo";
 $token = $_POST['token'];
@@ -85,9 +55,39 @@ else{
 }
 
 ?>
-</b>
+<!-- <!DOCTYPE html>
+<html>
+<head>  
+    <title>MoverZfax</title>
+    <?php //include 'myheader.php'; ?>
+    <style>
+            .ma{
+            color:grey;
+            font-family:serif;
+            text-align:center;
+            margin-top:200px;
+            font-size:30px;
+        }
+        .box{
+          margin-left:450px;
+          margin-top:200px;
+          width:400px;
+          height:40px;
+          border:4px solid grey;
+          padding:25px;
+        }
+    </style>
+
+</head>
+<body> -->
+    
+<!-- <div class="ma">
+<div class=box>
+    
+    <b> -->
+<!-- </b>
 </c>
 </div>
 <div>
 </body>
-</html>
+</html> -->
