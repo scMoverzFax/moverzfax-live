@@ -424,14 +424,14 @@ if(isset($_REQUEST["usdot-check"])){
 
 		// Modify the current URL without reloading the page
 		window.history.pushState({}, document.title, newUrl);
+		
+		// Reload the page
+		location.reload();
 
 		window.scrollTo({
 		top: document.getElementById('mv-reg-form').offsetTop,
 		behavior: 'smooth'
 		});
-
-		// Reload the page
-		location.reload();
 	}
 	function myfun1() {
 		var a = document.getElementById("passwords").value;
