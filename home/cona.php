@@ -52,8 +52,8 @@ if ($response_data->success) {
     // The reCAPTCHA verification failed
     // Show an error message or take other action
     //use next two lines to debug
-    // echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
-    // echo "Token is: " . $token;
+    echo "reCAPTCHA verification failed. Error codes: " . implode(", ", $response_data->{"error-codes"}) . "<br>";
+    echo "Token is: " . $token;
     
     header("Location: ../home/contact.php?captcha=1");
 }
