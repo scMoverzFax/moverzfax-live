@@ -22,8 +22,6 @@ if ($response_data->success) {
     $passwords = md5($_POST['passwords']);
     $catagory = "customer";
 
-
-
     if ($con->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     } else {
@@ -50,7 +48,8 @@ if ($response_data->success) {
         $stmt->close();
         $con->close();
 
-        header('Location: ' . $newURL);
+        // header('Location: ' . $newURL);
+        header("Location: ../home/signin.php");
       }
     }
 
