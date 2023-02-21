@@ -398,7 +398,7 @@ if(isset($_REQUEST["usdot-check"])){
 							<input id="token" name="token" style="display: none;">
 							<div class="col-md-12 d-flex justify-content-center">
 								<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button>
-								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc()">Reset</button>
+								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc(); resetToTop();">Reset</button>
 							</div>
 						</div>
 					</form>
@@ -415,6 +415,21 @@ if(isset($_REQUEST["usdot-check"])){
 <script src="../js/csc_sort_1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+	function resetToTop() {
+		// Get the current URL
+		let url = window.location.href;
+
+		// Remove the parameters from the URL
+		let newUrl = url.split('?')[0];
+
+		// Modify the current URL without reloading the page
+		window.history.pushState({}, document.title, newUrl);
+		
+		window.scrollTo({
+		top: document.getElementById('mv-reg-form').offsetTop,
+		behavior: 'smooth'
+		});
+	}
 	function myfun1() {
 		var a = document.getElementById("passwords").value;
 		var b = document.getElementById("confirm_passwords").value;
