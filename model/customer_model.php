@@ -43,7 +43,7 @@ if ($response_data->success) {
         // set parameters and execute
         $stmt->execute();
 
-        echo "New records created successfully";
+        // echo "New records created successfully";
 
         $stmt->close();
         $con->close();
