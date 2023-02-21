@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>MoverZfax</title>
+    <?php //include 'myheader.php'; ?>
+    <style>
+        .ma{
+            color:grey;
+            font-family:serif;
+            text-align:center;
+            margin-top:200px;
+            font-size:30px;
+        }
+        .box{
+            margin-left:450px;
+            margin-top:200px;
+            width:400px;
+            height:40px;
+            border:4px solid grey;
+            padding:25px;
+        }
+    </style>
+
+</head>
+<body>
 <?php
 $recaptcha_secret = "6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo";
 $token = $_POST['token'];
@@ -14,15 +39,15 @@ $name = $_POST["na"];
 $email = $_POST["ea"];
 $subject = $_POST["sa"];
 $message = $_POST["wa"];
-$answer = $_SESSION["answer"];
-$user_answer = $_POST["answer"];
+// $answer = $_SESSION["answer"];
+// $user_answer = $_POST["answer"];
 
-if($answer != $user_answer){
-    // include_once 'myheader.php';
-    $message = "You are not a human";
-    echo "<h1>".$message."</h2>";
-    // include_once 'footer.php';
-}
+// if($answer != $user_answer){
+//     // include_once 'myheader.php';
+//     $message = "You are not a human";
+//     echo "<h1>".$message."</h2>";
+//     // include_once 'footer.php';
+// }
 
 
 $host="localhost";
@@ -55,39 +80,13 @@ else{
 }
 
 ?>
-<!-- <!DOCTYPE html>
-<html>
-<head>  
-    <title>MoverZfax</title>
-    <?php //include 'myheader.php'; ?>
-    <style>
-            .ma{
-            color:grey;
-            font-family:serif;
-            text-align:center;
-            margin-top:200px;
-            font-size:30px;
-        }
-        .box{
-          margin-left:450px;
-          margin-top:200px;
-          width:400px;
-          height:40px;
-          border:4px solid grey;
-          padding:25px;
-        }
-    </style>
-
-</head>
-<body> -->
-    
-<!-- <div class="ma">
+<div class="ma">
 <div class=box>
     
-    <b> -->
-<!-- </b>
+<b>
+</b>
 </c>
 </div>
 <div>
 </body>
-</html> -->
+</html>
