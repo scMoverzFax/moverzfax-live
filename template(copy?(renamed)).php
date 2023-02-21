@@ -283,7 +283,7 @@
 			<div class="movingtask">
 				<h3>SPECIAL MOVING TASK FORCE</h3>
 				<!--wrong link here-->
-				<span><a href="http://www.moverzfax.com/special-moving-task-force-service.html">Click for details.</a></span>
+				<span><a href="https://www.moverzfax.com/special-moving-task-force-service.html">Click for details.</a></span>
 			</div>
 			<br><br>
 			<!-- Important notice -->
@@ -791,7 +791,7 @@
 									<?php 
 /*										if($decision == "Yes"){
 											echo "<span id='register'>This company has not been rated yet.</span><br><br>";
-											echo "<span>Check <a href='http://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963'>details</a></span>";
+											echo "<span>Check <a href='https://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963'>details</a></span>";
 										}else if ($decision == "No"){
 
 											echo "<span id='register'>This company is not part of MoverZfax<span><br><br>";

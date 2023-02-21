@@ -183,7 +183,7 @@
 						<!-- SPECIAL MOVING TASK -->
 						<div class="movingtask mb-2">
 							<!--wrong link here-->
-							<a href="http://www.moverzfax.com/special-moving-task-force-service.html">
+							<a href="https://www.moverzfax.com/special-moving-task-force-service.html">
 								<h5>SPECIAL MOVING TASK FORCE</h5>
 							</a>
 						</div>

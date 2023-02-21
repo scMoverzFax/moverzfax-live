@@ -637,7 +637,7 @@
 													}
 												</style>
 												<?php
-												//$bbb_listed = '<img src="http://www.moverzfax.com/images/bbbicons/cbbb-accred-a.png">';
+												//$bbb_listed = '<img src="https://www.moverzfax.com/images/bbbicons/cbbb-accred-a.png">';
 												$listing_value = substr($bbb_listed, 63, -6);
 
 												if ($listing_value == 'a-plus' || $listing_value == 'a') {

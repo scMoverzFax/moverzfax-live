@@ -4,9 +4,9 @@ $email = $_REQUEST['email'];
 $passwords = md5($_REQUEST['passwords']);
 
 include 'connection.php';
-    $baseURL = "http://www.moverzfax.com/";
-    $homeURL = "http://www.moverzfax.com/home/";
-    $adminURL = "http://www.moverzfax.com/admin/";
+    $baseURL = "https://www.moverzfax.com/";
+    $homeURL = "https://www.moverzfax.com/home/";
+    $adminURL = "https://www.moverzfax.com/admin/";
   //The URLs below are for development
   // $baseURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/";
   // $homeURL = "http://localhost/moverzfaxdevelop/MoverzFax/moverzfax/home/";

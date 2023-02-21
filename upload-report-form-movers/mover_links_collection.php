@@ -399,7 +399,7 @@
                 <div class="col-md-6 border">
                     <label for="">PRESENT ON MOVERZFAX</label>
                     <p>Is this compamy present on moverzfax?</p>
-                    <p><a href="http://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963">Check Details</a></p>
+                    <p><a href="https://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963">Check Details</a></p>
                     <span>Please check a radio (Yes/No)</span>
                     <input type="radio" name="moverzfax" id="stateregistered" value="Yes"> Yes
                     <input type="radio" name="moverzfax" id="stateregistered" value="No"> No
@@ -596,7 +596,7 @@
                                     Is this compamy present on moverzfax?
                                     <br><br>
                                     Didnt find the link
-                                    Check <a href="http://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963">Details</a>
+                                    Check <a href="https://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963">Details</a>
                                     <br><br>
                                     <span>Please check a radio (Yes/No)</span>
                                     <input type="radio" name="moverzfax" id="stateregistered" value="Yes"> Yes

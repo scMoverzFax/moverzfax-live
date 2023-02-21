@@ -451,7 +451,7 @@
                                                         }
                                                     </style>
                                                     <div class="paste-link">
-                                                        Check <a href="http://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963">Details</a>
+                                                        Check <a href="https://www.moverzfax.com/mover-get-detail/proace-moving-and-storage-llc-7963">Details</a>
                                                         <br>
                                                         <br>
                                                         <span>Paste the link to your company on Moverzfax if applicable</span>

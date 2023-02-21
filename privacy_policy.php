@@ -40,7 +40,7 @@
 				<p>Online Privacy Policy Only</p>
 				<p>This online privacy policy applies only to information collected through our website and not to information collected offline.</p>
 				<p>Terms and Conditions</p>
-				<p>Please also visit our Terms and Conditions section establishing the use, disclaimers, and limitations of liability governing the use of our website at http://www.moverzfax.com/privacy_policy.php</p>
+				<p>Please also visit our Terms and Conditions section establishing the use, disclaimers, and limitations of liability governing the use of our website at https://www.moverzfax.com/privacy_policy.php</p>
 				<p>Your Consent</p>
 				<p>By using our site, you consent to our web site privacy policy.</p>
 				<p>Changes to our Privacy Policy</p>
