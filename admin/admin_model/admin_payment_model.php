@@ -130,20 +130,14 @@
         $header .= "From: project.egift@gmail.com";
 
         if(mail($to_mail, $subject, $body, $header) && mail($tr_email_address, $subject, $body, $header)){
-            echo "Mail Sent";
+            // echo "Mail Sent";
+            header('Location: ../confirmation.php');
         }
         else{
-            // echo "Mail Failed To Send";
-            echo "to mail is: " . $to_mail;
-            echo "customerEmail is: " . $tr_email_address;
-            // Get last error
-            $lastError = error_get_last();
-            if ($lastError) {
-                echo "Error message: " . $lastError['message'];
-            }
+            echo "Mail Failed To Send";
         }
 
-        header('Location: ../confirmation.php');
+        // header('Location: ../confirmation.php');
     }
     else{
 
