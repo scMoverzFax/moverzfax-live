@@ -129,13 +129,13 @@
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $header .= "From: project.egift@gmail.com";
 
-        if(mail($to_mail, $subject, $body, $header) && mail($customerEmail, $subject, $body, $header)){
+        if(mail($to_mail, $subject, $body, $header) && mail($tr_email_address, $subject, $body, $header)){
             echo "Mail Sent";
         }
         else{
             // echo "Mail Failed To Send";
             echo "to mail is: " . $to_mail;
-            echo "customerEmail is: " . $customerEmail;
+            echo "customerEmail is: " . $tr_email_address;
             // Get last error
             $lastError = error_get_last();
             if ($lastError) {
