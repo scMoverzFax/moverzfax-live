@@ -7,6 +7,7 @@
         $user_first_name = $_SESSION["first_name"];
         $user_last_name = $_SESSION["last_name"];
         $user_email = $_SESSION["email"];
+        echo $user_email;
     }else{
         $user_id = 0;
         $user_email = "email@email.com";
@@ -60,6 +61,13 @@
         $res1 = mysqli_fetch_array($result1);
 
         $to_mail = $user_email;
+        if(!empty($user_email)){
+            $to_mail = $user_email;
+            // rest of your code here
+        } else {
+            // handle the case where $user_email is null or empty
+            $to_mail = "admin@moverzfax.com";
+        }
         $subject = "Payment Successful";
         $body = '
         <html lang="en">
