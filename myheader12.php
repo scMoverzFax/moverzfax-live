@@ -216,7 +216,7 @@
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
                                         <div class="uk-width-auto">
-                                            <img class="uk-border-square" src="https://www.moversfax.com/frontend/img/stf.png">
+                                            <img class="uk-border-square" src="img/moversfax/stf.png">
                                         </div>
                                         <div class="uk-width-expand">
                                             <h2 class="uk-card-title uk-margin-remove-bottom">Special Moving Task Force</h2>
