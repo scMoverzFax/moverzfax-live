@@ -7,7 +7,6 @@
         $user_first_name = $_SESSION["first_name"];
         $user_last_name = $_SESSION["last_name"];
         $user_email = $_SESSION["email"];
-        echo $user_email;
     }else{
         $user_id = 0;
         $user_email = "email@email.com";
