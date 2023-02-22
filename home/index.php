@@ -383,7 +383,7 @@
     .container-partners{
         /* width:90%; */
         height:fit-content;
-        margin:2% auto;
+        /* margin:2% auto; */
         display: flex;
         justify-content: center;
         align-items: center;
