@@ -428,10 +428,10 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-      }
+        flex-wrap: wrap;
+    }
       
     .image {
-        border: solid 1px black;
         flex: 1;
         margin: 0 10px;
         max-width: calc(100% / 7 - 20px);
