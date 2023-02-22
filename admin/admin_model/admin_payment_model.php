@@ -7,12 +7,16 @@
         $user_first_name = $_SESSION["first_name"];
         $user_last_name = $_SESSION["last_name"];
         $user_email = $_SESSION["email"];
+        echo "1";
     }else{
         $user_id = 0;
         $user_email = "email@email.com";
+        echo "2";
     }
 
     $obj = json_decode($_GET["x"], true);
+
+    echo "3";
 
     include 'connection.php';
     $report = array();
@@ -55,6 +59,7 @@
     if ($con->query($sql) === TRUE)
     {   
         
+        echo "4";
         $sql1 = "SELECT * FROM payment WHERE tr_id='".$tr_id."' AND user_id='".$user_id."'  ";
         $result1 = $con->query($sql1);
         $res1 = mysqli_fetch_array($result1);
@@ -127,9 +132,12 @@
         else{
             echo "Failed";
         }
+
+        echo "8";
         header('Location: ../confirmation.php');
     }
     else{
+
         echo "UnSuccessfull";
     }
     
