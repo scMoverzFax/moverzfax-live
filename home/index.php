@@ -709,7 +709,7 @@
 
         <!-- END STEPS -->
         <div class="container-partners" id="partners">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-12 text-center">
                     <h1 style="font-weight: 500">Partners and Collaborators</h1>
                 </div>
