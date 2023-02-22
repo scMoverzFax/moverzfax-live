@@ -200,24 +200,6 @@
         padding-left: 26px;
     }
 
-    #partners {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .client-item {
-    display: inline-block;
-    text-align: center;
-    margin: 10px;
-    }
-
-    .client-item img {
-    max-width: 100%;
-    height: auto;
-    }
-
     @media screen and (max-width: 992px) {
         .b-search form .inner-form .input-field {
         height: 50px;
@@ -381,12 +363,9 @@
     }
     
     .container-partners{
-        /* width:90%; */
+        width:90%;
         height:fit-content;
-        /* margin:2% auto; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin:2% auto;
     }
     .front-step{
         height:200px;
@@ -734,6 +713,7 @@
                 <div class="col-md-12 text-center">
                     <h1 style="font-weight: 500">Partners and Collaborators</h1>
                 </div>
+
                 <div class="col-md-12 m-b15 text-center">
                     <span class="client-item " style="width: 23%">
                         <!-- <a href="javascript:;"> -->
@@ -753,79 +733,41 @@
                         <!-- <img src="../img/moversfax/03-g.png" class="color-img img-responsive" style="display: block; border: solid;" alt=""> -->
                         <!-- </a> -->
                     </span>
-                    <!-- <span class="client-item" style="width: 14%">
-                        <a href="javascript:;">
-                        <img src="https://www.moversfax.com/frontend/img/04.png" class="img-responsive first-item" style="display: block;" alt="">
-                        <img src="https://www.moversfax.com/frontend/img/04-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                        </a>
-                    </span>
-                    <span class="client-item" style="width: 10%">
-                        <a href="javascript:;">
-                        <img src="https://www.moversfax.com/frontend/img/05.png" class="img-responsive first-item" style="display: block;" alt="">
-                        <img src="https://www.moversfax.com/frontend/img/05-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                        </a>
-                    </span>
-                    <span class="client-item last-item" style="width: 13%">
-                        <a href="javascript:;">
-                        <img src="https://www.moversfax.com/frontend/img/06.png" class="img-responsive first-item" style="display: block;" alt="">
-                        <img src="https://www.moversfax.com/frontend/img/06-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                        </a>
-                    </span> -->
                 </div>
+
                 <div class="col-md-12 m-b15 text-center">
-                <span class="client-item" style="width: 24%">
-                    <!-- <a href="javascript:;"> -->
-                    <img src="../img/moversfax/07.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                    <!-- <img src="../img/moversfax/07-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
-                    <!-- </a> -->
-                </span>
-                <!-- <span class="client-item" style="width:36%">
-                    <a href="javascript:;">
-                    <img src="https://www.moversfax.com/frontend/img/08.png" class="img-responsive first-item" style="display: block;" alt="">
-                    <img src="https://www.moversfax.com/frontend/img/08-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                    </a>
-                </span> -->
-                <span class="client-item " style="width: 25%">
-                    <!-- <a href="javascript:;"> -->
-                    <img src="../img/moversfax/09.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                    <!-- <img src="../img/moversfax/09-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
-                    <!-- </a> -->
-                </span>
-                <!-- <span class="client-item " style="width: 15%">
-                    <a href="javascript:;">
-                    <img src="https://www.moversfax.com/frontend/img/10.png" class="img-responsive first-item" style="display: block;" alt="">
-                    <img src="https://www.moversfax.com/frontend/img/10-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                    </a>
-                </span> -->
+                    <span class="client-item" style="width: 24%">
+                        <!-- <a href="javascript:;"> -->
+                        <img src="../img/moversfax/07.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
+                        <!-- <img src="../img/moversfax/07-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
+                        <!-- </a> -->
+                    </span>
+                    <span class="client-item " style="width: 25%">
+                        <!-- <a href="javascript:;"> -->
+                        <img src="../img/moversfax/09.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
+                        <!-- <img src="../img/moversfax/09-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
+                        <!-- </a> -->
+                    </span>
                 </div>
+
                 <div class="col-md-12 m-b15 text-center">
-                <span class="client-item " style="width: 38%">
-                    <!-- <a href="javascript:;"> -->
-                    <img src="../img/moversfax/11.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                    <!-- <img src="../img/moversfax/11-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
-                    <!-- </a> -->
-                </span>
-                    <span class="client-item" style="width: 11%">
-                    <!-- <a href="javascript:;"> -->
-                    <img src="../img/moversfax/12.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                    <!-- <img src="../img/moversfax/12-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
-                    <!-- </a> -->
-                </span>
-                    <!-- <span class="client-item " style="width: 18%">
-                    <a href="javascript:;">
-                    <img src="https://www.moversfax.com/frontend/img/13.png" class="img-responsive first-item" style="display: block;" alt="">
-                    <img src="https://www.moversfax.com/frontend/img/13-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                    </a>
-                </span>
-                    <span class="client-item " style="width: 33%">
-                    <a href="javascript:;">
-                    <img src="https://www.moversfax.com/frontend/img/14.png" class="img-responsive first-item" style="display: block;" alt="">
-                    <img src="https://www.moversfax.com/frontend/img/14-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt="">
-                    </a>
-                </span> -->
+                    <span class="client-item " style="width: 38%">
+                        <!-- <a href="javascript:;"> -->
+                        <img src="../img/moversfax/11.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
+                        <!-- <img src="../img/moversfax/11-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
+                        <!-- </a> -->
+                    </span>
+                        <span class="client-item" style="width: 11%">
+                        <!-- <a href="javascript:;"> -->
+                        <img src="../img/moversfax/12.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
+                        <!-- <img src="../img/moversfax/12-g.png" class="color-img img-responsive" style="display: none; border: solid;" alt=""> -->
+                        <!-- </a> -->
+                    </span>
                 </div>
+                
             </div>
         </div>
+
         <div id="topcontrol" title="Scroll Back to Top" style="display: none; position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
             <img src="../img/up.png" style="width:40px; height:40px">
         </div>
@@ -836,5 +778,3 @@
 <!-- End Document –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <?php include "footer.php" ?>
-
-
