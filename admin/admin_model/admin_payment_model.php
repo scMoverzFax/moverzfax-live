@@ -7,16 +7,12 @@
         $user_first_name = $_SESSION["first_name"];
         $user_last_name = $_SESSION["last_name"];
         $user_email = $_SESSION["email"];
-        echo "1";
     }else{
         $user_id = 0;
         $user_email = "email@email.com";
-        echo "2";
     }
 
     $obj = json_decode($_GET["x"], true);
-
-    echo "3";
 
     include 'connection.php';
     // $report = array();
@@ -27,7 +23,6 @@
     //                        array_push($report,$res1['usdot']);
     //                     }
     //                 }
-    echo "Here is the name: " . $obj['purchase_units'][0]['shipping']['name']['full_name'];
     $report_one = 0;//isset($report[0])?$report[0]:0;
     $report_two = 0;//isset($report[1])?$report[1]:0;
     $report_three = 0;//isset($report[2])?$report[2]:0;
@@ -47,24 +42,19 @@
     $tr_country_code =$obj['purchase_units'][0]['shipping']['address']['country_code'];
     $tr_payer_id =$obj['payer']['payer_id'];
     
-    echo "3.1";
     //replace all char with spaces in the date value
     $dateValue = $obj['create_time'];
     $tr_create_time = preg_replace('/[A-Za-z]/', ' ', $dateValue);
 
-    echo "3.2";
     $updatedTimeValue = $obj['update_time'];
     $tr_update_time = preg_replace('/[A-Za-z]/', ' ', $updatedTimeValue);
     
-    echo "3.3";
     $sql = "INSERT INTO payment (user_id,tr_id,tr_status,tr_currency_code,tr_amount,tr_email_address,tr_merchant_id,tr_full_name,tr_address_line_1,tr_admin_area_1,tr_admin_area_2,tr_postal_code,tr_country_code,tr_payer_id,tr_create_time,tr_update_time,report_one,report_two,report_three,report_four,report_five)
      VALUES ('".$user_id."','".$tr_id."','".$tr_status."','".$tr_currency_code."','".$tr_amount."','".$tr_email_address."','".$tr_merchant_id."','".$tr_full_name."','".$tr_address_line_1."','".$tr_admin_area_1."','".$tr_admin_area_2."',".$tr_postal_code.",'".$tr_country_code."','".$tr_payer_id."','".$tr_create_time."','".$tr_update_time."','".$report_one."','".$report_two."','".$report_three."','".$report_four."','".$report_five."' )";    
 
-echo "3.4";
     if ($con->query($sql) === TRUE)
     {   
         
-        echo "4";
         $sql1 = "SELECT * FROM payment WHERE tr_id='".$tr_id."' AND user_id='".$user_id."'  ";
         $result1 = $con->query($sql1);
         $res1 = mysqli_fetch_array($result1);
@@ -135,15 +125,18 @@ echo "3.4";
             echo "Mail Sent";
         }
         else{
-            echo "Failed";
+            echo "Mail Failed To Send";
+            // Get last error
+            $lastError = error_get_last();
+            if ($lastError) {
+                echo "Error message: " . $lastError['message'];
+            }
         }
 
-        echo "8";
         header('Location: ../confirmation.php');
     }
     else{
 
-        echo "4.4";
         echo "UnSuccessfull";
     }
     
