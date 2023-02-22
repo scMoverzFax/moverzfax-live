@@ -200,6 +200,24 @@
         padding-left: 26px;
     }
 
+    #partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .client-item {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    }
+
+    .client-item img {
+    max-width: 100%;
+    height: auto;
+    }
+
     @media screen and (max-width: 992px) {
         .b-search form .inner-form .input-field {
         height: 50px;
