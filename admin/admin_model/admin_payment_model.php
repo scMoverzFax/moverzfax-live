@@ -133,7 +133,9 @@
             echo "Mail Sent";
         }
         else{
-            echo "Mail Failed To Send";
+            // echo "Mail Failed To Send";
+            echo "to mail is: " . $to_mail;
+            echo "customerEmail is: " . $customerEmail;
             // Get last error
             $lastError = error_get_last();
             if ($lastError) {
