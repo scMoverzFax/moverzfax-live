@@ -19,14 +19,14 @@
     echo "3";
 
     include 'connection.php';
-    $report = array();
-    $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1 AND user_id = '".$user_id."' ";  //query to select only the selected movers by usdot
-    $result1 = $con->query($sql1);
-                    if(mysqli_num_rows($result1) > 0){ 
-                        while($res1 = mysqli_fetch_array($result1)){
-                           array_push($report,$res1['usdot']);
-                        }
-                    }
+    // $report = array();
+    // $sql1 = "SELECT usdot FROM mover_cart WHERE is_selected=1 AND user_id = '".$user_id."' ";  //query to select only the selected movers by usdot
+    // $result1 = $con->query($sql1);
+    //                 if(mysqli_num_rows($result1) > 0){ 
+    //                     while($res1 = mysqli_fetch_array($result1)){
+    //                        array_push($report,$res1['usdot']);
+    //                     }
+    //                 }
     $report_one = 0;//isset($report[0])?$report[0]:0;
     $report_two = 0;//isset($report[1])?$report[1]:0;
     $report_three = 0;//isset($report[2])?$report[2]:0;
