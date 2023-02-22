@@ -709,11 +709,11 @@
 
         <!-- END STEPS -->
         <div class="container-partners" id="partners">
-            <div class="row text-center">
+            <div class="row">
                 <div class="col-md-12 text-center">
                     <h1 style="font-weight: 500">Partners and Collaborators</h1>
                 </div>
-                <div class="text-center">
+                <div style="display: flex; justify-content: center; align-items: center;">
                     <div class="col-md-12 m-b15">
                         <span class="client-item " style="width: 23%">
                             <!-- <a href="javascript:;"> -->
