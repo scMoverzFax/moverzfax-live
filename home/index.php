@@ -384,6 +384,9 @@
         width:90%;
         height:fit-content;
         margin:2% auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .front-step{
         height:200px;
