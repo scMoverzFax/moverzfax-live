@@ -46,16 +46,20 @@
     $tr_country_code =$obj['purchase_units'][0]['shipping']['address']['country_code'];
     $tr_payer_id =$obj['payer']['payer_id'];
     
+    echo "3.1";
     //replace all char with spaces in the date value
     $dateValue = $obj['create_time'];
     $tr_create_time = preg_replace('/[A-Za-z]/', ' ', $dateValue);
 
+    echo "3.2";
     $updatedTimeValue = $obj['update_time'];
     $tr_update_time = preg_replace('/[A-Za-z]/', ' ', $updatedTimeValue);
     
+    echo "3.3";
     $sql = "INSERT INTO payment (user_id,tr_id,tr_status,tr_currency_code,tr_amount,tr_email_address,tr_merchant_id,tr_full_name,tr_address_line_1,tr_admin_area_1,tr_admin_area_2,tr_postal_code,tr_country_code,tr_payer_id,tr_create_time,tr_update_time,report_one,report_two,report_three,report_four,report_five)
      VALUES ('".$user_id."','".$tr_id."','".$tr_status."','".$tr_currency_code."','".$tr_amount."','".$tr_email_address."','".$tr_merchant_id."','".$tr_full_name."','".$tr_address_line_1."','".$tr_admin_area_1."','".$tr_admin_area_2."',".$tr_postal_code.",'".$tr_country_code."','".$tr_payer_id."','".$tr_create_time."','".$tr_update_time."','".$report_one."','".$report_two."','".$report_three."','".$report_four."','".$report_five."' )";    
 
+echo "3.4";
     if ($con->query($sql) === TRUE)
     {   
         
@@ -138,6 +142,7 @@
     }
     else{
 
+        echo "4.4";
         echo "UnSuccessfull";
     }
     
