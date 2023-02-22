@@ -423,6 +423,20 @@
 
     }
 
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      
+    .image {
+        border: solid 1px black;
+        flex: 1;
+        margin: 0 10px;
+        max-width: calc(100% / 7 - 20px);
+    }
+
 </style>
 
 
@@ -715,38 +729,15 @@
                 </div>
 
                 <!-- -------- -->
-
-                    <div class="col-md-12 m-b15">
-                        <span class="client-item " style="width: 23%">
-                            <img src="../img/moversfax/01.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                        <span class="client-item" style="width: 13%">
-                            <img src="../img/moversfax/02.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                        <span class="client-item" style="width: 27%">
-                            <img src="../img/moversfax/03.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                    </div>
-
-                    <div class="col-md-12 m-b15">
-                        <span class="client-item" style="width: 24%">
-                            <img src="../img/moversfax/07.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                        <span class="client-item " style="width: 25%">
-                            <img src="../img/moversfax/09.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                    </div>
-
-                    <div class="col-md-12 m-b15">
-                        <span class="client-item " style="width: 38%">
-                            <img src="../img/moversfax/11.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                        <span class="client-item" style="width: 11%">
-                            <img src="../img/moversfax/12.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
-                        </span>
-                    </div>
-
-                
+                <div class="image-container">
+                    <img class="image" src="../img/moversfax/01.png" alt="My Moving Reviews">
+                    <img class="image" src="../img/moversfax/02.png" alt="Yelp">
+                    <img class="image" src="../img/moversfax/03.png" alt="Insider Pages">
+                    <img class="image" src="../img/moversfax/07.png" alt="Mover Reviews">
+                    <img class="image" src="../img/moversfax/09.png" alt="Ripoff Report">
+                    <img class="image" src="../img/moversfax/11.png" alt="Angies List">
+                    <img class="image" src="../img/moversfax/12.png" alt="Transport Reviews">
+                </div>
                 <!-- -------- -->
                 
             </div>
