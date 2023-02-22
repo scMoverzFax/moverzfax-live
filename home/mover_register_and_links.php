@@ -418,19 +418,15 @@ if(isset($_REQUEST["usdot-check"])){
 	function resetToTop() {
 		// Get the current URL
 		let url = window.location.href;
-
 		// Remove the parameters from the URL
 		let newUrl = url.split('?')[0];
-
 		// Modify the current URL without reloading the page
 		window.history.pushState({}, document.title, newUrl);
-
 		// Reload the page
 		location.reload();
-
 		// Scroll to the top of the page
 		// window.scrollTo(0, 0);
-
+		// Scroll to the top of the form
 		// window.scrollTo({
 		// 	top: document.getElementById('mv-reg-form').offsetTop,
 		// 	behavior: 'smooth'
