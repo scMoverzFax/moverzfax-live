@@ -27,6 +27,7 @@
     //                        array_push($report,$res1['usdot']);
     //                     }
     //                 }
+    echo "Here is the name: " . $obj['purchase_units'][0]['shipping']['name']['full_name'];
     $report_one = 0;//isset($report[0])?$report[0]:0;
     $report_two = 0;//isset($report[1])?$report[1]:0;
     $report_three = 0;//isset($report[2])?$report[2]:0;
