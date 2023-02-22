@@ -381,7 +381,7 @@
     }
     
     .container-partners{
-        width:90%;
+        /* width:90%; */
         height:fit-content;
         margin:2% auto;
         display: flex;
