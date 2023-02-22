@@ -716,8 +716,6 @@
 
                 <!-- -------- -->
 
-                <div style="display: flex; justify-content: center; align-items: center;">
-                
                     <div class="col-md-12 m-b15">
                         <span class="client-item " style="width: 23%">
                             <img src="../img/moversfax/01.png" class="img-responsive first-item" style="display: block; cursor: default;" alt="">
@@ -748,7 +746,6 @@
                         </span>
                     </div>
 
-                </div>
                 
                 <!-- -------- -->
                 
