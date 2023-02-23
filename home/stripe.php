@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Stripe Pre-built Checkout Form</title>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-  </head>
-  <body>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
     
     <button id="customButton">Purchase</button>
 
@@ -33,5 +28,3 @@
         handler.close();
       });
     </script>
-  </body>
-</html>
