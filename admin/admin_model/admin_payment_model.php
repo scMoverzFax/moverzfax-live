@@ -133,7 +133,11 @@
             header('Location: ../confirmation.php');
         }
         else{
-            echo "Mail Failed To Send";
+            echo "Mail Failed To Send <br>";
+            $lastError = error_get_last();
+            if ($lastError) {
+                echo "Error message: " . $lastError['message'];
+            }
         }
 
         // header('Location: ../confirmation.php');

@@ -121,12 +121,17 @@
         $header .= "From: project.egift@gmail.com";
 
         if(mail($to_mail, $subject, $body, $header)){
-            echo "Mail Sent";
+            // echo "Mail Sent";
+            header('Location: ../home/order_report.php');
         }
         else{
-            echo "Failed";
+            echo "Mail Failed To Send <br>";
+            $lastError = error_get_last();
+            if ($lastError) {
+                echo "Error message: " . $lastError['message'];
+            }
         }
-        header('Location: ../home/order_report.php');
+        // header('Location: ../home/order_report.php');
     }
     else{
         echo "UnnSUcessfull"; 
