@@ -1,7 +1,7 @@
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
     
-    <button id="customButton">Purchase</button>
+    <button id="customButton">Checkout</button>
 
     <script>
       var stripe = Stripe('your_publishable_key');
@@ -19,7 +19,7 @@
         handler.open({
           name: 'My Store',
           description: 'Product or service description',
-          amount: 500 // Amount in cents
+          amount: <?php echo $total; ?> // Amount in cents
         });
         e.preventDefault();
       });

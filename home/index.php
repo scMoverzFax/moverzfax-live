@@ -67,7 +67,7 @@
         box-sizing: border-box;
     }
     .b-contaoner{
-        background-image: url(../img/MoverZfax_index_1.png); 
+        background-image: url(../img/index-1.avif);
         background-repeat:no-repeat;
         background-position: top center; 
         background-size:contain; 
