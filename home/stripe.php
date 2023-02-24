@@ -4,10 +4,10 @@
     <button id="customButton">Checkout</button>
 
     <script>
-      var stripe = Stripe('your_publishable_key');
+      var stripe = Stripe('pk_live_51MengREekUL6ontJMr1Ha3WrDmgW4plW4FjZfz6ywmkcBc2mOyDXAIZRRUA6s6plPRqD5uGGFGOVFbtfz9vbgEb60019C0r5zt');
 
       var handler = StripeCheckout.configure({
-        key: 'your_publishable_key',
+        key: 'pk_live_51MengREekUL6ontJMr1Ha3WrDmgW4plW4FjZfz6ywmkcBc2mOyDXAIZRRUA6s6plPRqD5uGGFGOVFbtfz9vbgEb60019C0r5zt',
         locale: 'auto',
         token: function(token) {
           // You can send the token to your server to process the payment

@@ -263,7 +263,7 @@
             letter-spacing: 0px;
         }
         .b-contaoner{
-            background-image: url(../img/MoverZfax_index_2.png); /* this may need to chang back in production */
+            background-image: url(../img/index-1.avif); /* this may need to chang back in production */
         }
     }
 
