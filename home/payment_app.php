@@ -21,7 +21,10 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 
 
 
-            <?php include 'stripe.php'; ?>
+            <!-- Add a call to Stripe checkout here -->
+            <?php include '../stripe/checkout.html'; ?>
+            
+
 
 
             <div class="container-fluid text-center mt-4">
