@@ -26,45 +26,47 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
             
 
 
-
+            <!-- Old Paypal Code -->
             <div class="container-fluid text-center mt-4">
-                <script src="https://www.paypal.com/sdk/js?client-id=AYLQiHy0FSSGs-oBL4nSW7yMLr7czCuyiuMf4JaVr92uVkotmbJiKZCeSGb_m0EM__WeshiYzOUP9EoZ&currency=USD"></script>
-                <!-- Set up a container element for the button -->
+                <!-- <script src="https://www.paypal.com/sdk/js?client-id=AYLQiHy0FSSGs-oBL4nSW7yMLr7czCuyiuMf4JaVr92uVkotmbJiKZCeSGb_m0EM__WeshiYzOUP9EoZ&currency=USD"></script>
+                
                 <div id="paypal-button-container"></div>
 
-            <script>
-                paypal.Buttons({
+                <script>
+                    paypal.Buttons({
 
-                    // Sets up the transaction when a payment button is clicked
+                        // Sets up the transaction when a payment button is clicked
 
-                    createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                        amount: {
-                            value: '<?php echo $total; ?>' // Can reference variables or functions. Example: `value: document.getElementById('...').value`
-                            }
-                        }]
-                    });
-                },
-
-                    // Finalize the transaction after payer approval
-                    onApprove: function(data, actions) {
-                        loaderShowFunction();
-                        return actions.order.capture().then(function(orderData) {
-                            // Successful capture! For dev/demo purposes:
-                                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                                var transaction = orderData.purchase_units[0].payments.captures[0];
-                                if(transaction.status == "COMPLETED"){
-                                var myJSON = JSON.stringify(orderData);
-                                window.location = "../model/payment_data_model.php?x="+ myJSON ;
+                        createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                            amount: {
+                                value: '<?php //echo $total; ?>' // Can reference variables or functions. Example: `value: document.getElementById('...').value`
                                 }
-                            });
-                        }
-                    }).render('#paypal-button-container');
-                </script>
+                            }]
+                        });
+                    },
+
+                        // Finalize the transaction after payer approval
+                        onApprove: function(data, actions) {
+                            loaderShowFunction();
+                            return actions.order.capture().then(function(orderData) {
+                                // Successful capture! For dev/demo purposes:
+                                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                    var transaction = orderData.purchase_units[0].payments.captures[0];
+                                    if(transaction.status == "COMPLETED"){
+                                    var myJSON = JSON.stringify(orderData);
+                                    window.location = "../model/payment_data_model.php?x="+ myJSON ;
+                                    }
+                                });
+                            }
+                        }).render('#paypal-button-container');
+                </script> -->
             </div>
-                </div>
-        
-    <hr />
+
+
+</div>
+
+<hr />
     
 <?php include 'footer.php'; ?>
