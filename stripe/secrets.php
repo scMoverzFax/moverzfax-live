@@ -6,3 +6,12 @@
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
 $stripeSecretKey = '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';
+
+
+//////////
+
+// Set your secret key. Remember to switch to your live secret key in production.
+// See your keys here: https://dashboard.stripe.com/apikeys
+$stripe = new \Stripe\StripeClient('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');
+
+$stripe->products->create(['name' => 'Report']);
