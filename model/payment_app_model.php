@@ -1,6 +1,7 @@
 <tbody>
     <?php
-    $usdotArray = array();
+    // $usdotArray = array();
+    $moverNameArray = array();
     $a = array("10$","Free","3$","2$","1$"); 
     $i = 0;
     $numberOfReports = 0;
@@ -12,7 +13,8 @@
     $result = $con->query($sql);
     if(mysqli_num_rows($result) > 0){ 
         while($res = mysqli_fetch_array($result)){
-            array_push($usdotArray, $res['usdot']);
+            // array_push($usdotArray, $res['usdot']);
+            array_push($moverNameArray, $res['company_name']);
             $numberOfReports++;
     ?>
         <tr>
@@ -45,7 +47,8 @@
     }
     session_start();
     $_SESSION['numberOfReports'] = $numberOfReports;
-    $_SESSION['usdotArray'] = $usdotArray;
+    // $_SESSION['usdotArray'] = $usdotArray;
+    $_SESSION['moverNameArray'] = $moverNameArray;
     ?>
     <tr >
         <td colspan="4" class="font-weight-bold">Total</td>
