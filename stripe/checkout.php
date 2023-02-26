@@ -46,6 +46,8 @@ foreach ($moverNameArray as $index => $product) {
     }
 }
 
+print_r($lineItemsArrayOfPriceDatas);
+
 
 
 $checkout_session = \Stripe\Checkout\Session::create([
