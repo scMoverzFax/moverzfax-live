@@ -10,7 +10,12 @@ header('Content-Type: application/json');
 
 $YOUR_DOMAIN = 'https://www.moverzfax.com/stripe';
 
-$numberOfReports = 1;
+session_start();
+$numberOfReports = $_SESSION['numberOfReports'];
+$usdotArray = $_SESSION['usdotArray'];
+
+// Use the variable in the HTML
+echo "Price: $price";
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => [[
