@@ -52,8 +52,8 @@ foreach ($moverNameArray as $index => $product) {
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => $lineItemsArrayOfPriceDatas,
   'mode' => 'payment',
-  'success_url' => 'https://www.moverzfax.com/stripe/success.html',
-  'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
+  'success_url' => 'https://www.moverzfax.com/home/order_report.php',
+  'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
   'customer_email' => $customerEmail,
 ]);
 
