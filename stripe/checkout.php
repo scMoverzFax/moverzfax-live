@@ -10,7 +10,7 @@ header('Content-Type: application/json');
 
 $YOUR_DOMAIN = 'https://www.moverzfax.com/stripe';
 
-
+$numberOfReports = 1;
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => [[
