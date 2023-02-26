@@ -43,7 +43,7 @@ foreach ($moverNameArray as $index => $product) {
             ],
             'quantity' => 1,
         ];
-        $lineItemsArrayOfPriceDatas[] = $price;
+        $lineItemsArrayOfPriceDatas[] = $priceData;
     }
 }
 
