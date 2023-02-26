@@ -52,22 +52,22 @@ foreach ($moverNameArray as $index => $product) {
 
 
 
-$checkout_session = \Stripe\Checkout\Session::create([
-  'line_items' => $lineItemsArrayOfPriceDatas,
-  'mode' => 'payment',
-  'success_url' => 'https://www.moverzfax.com/stripe/success.html',
-  'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
-]);
-
 // $checkout_session = \Stripe\Checkout\Session::create([
-//   'line_items' => [[
-//     'price' => 'price_1MfYV9EekUL6ontJJ2cyri9W',
-//     'quantity' => $numberOfReports,
-//   ]],
+//   'line_items' => $lineItemsArrayOfPriceDatas,
 //   'mode' => 'payment',
 //   'success_url' => 'https://www.moverzfax.com/stripe/success.html',
 //   'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
 // ]);
+
+$checkout_session = \Stripe\Checkout\Session::create([
+  'line_items' => [[
+    'price' => 'prod_NQiRKop4xO9hgG',
+    'quantity' => 1,
+  ]],
+  'mode' => 'payment',
+  'success_url' => 'https://www.moverzfax.com/stripe/success.html',
+  'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
+]);
 
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
