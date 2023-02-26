@@ -8,7 +8,7 @@ require_once 'secrets.php'; //secrets.php stored in cpanel file manager inside s
 \Stripe\Stripe::setApiKey($stripeSecretKey);
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'https://www.moverzfax.com/';
+$YOUR_DOMAIN = 'https://www.moverzfax.com/stripe';
 
 
 
