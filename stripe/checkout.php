@@ -14,7 +14,6 @@ $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
 
-print_r($moverNameArray);
 
 
 // $products = ['product1', 'product2', 'product3', 'product4', 'product5']; // an example array of product names
@@ -47,7 +46,6 @@ foreach ($moverNameArray as $index => $product) {
     }
 }
 
-print_r($lineItemsArrayOfPriceDatas);
 
 
 $checkout_session = \Stripe\Checkout\Session::create([
