@@ -14,7 +14,7 @@ $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
 
-print_r($moverNameArray);
+// print_r($moverNameArray);
 
 
 
@@ -48,7 +48,7 @@ foreach ($moverNameArray as $index => $product) {
     // }
 }
 
-print_r($lineItemsArrayOfPriceDatas);
+// print_r($lineItemsArrayOfPriceDatas);
 
 
 
