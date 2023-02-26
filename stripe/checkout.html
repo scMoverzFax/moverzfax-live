@@ -5,6 +5,26 @@
     <link rel="stylesheet" href="style.css"> -->
     <script src="https://js.stripe.com/v3/"></script>
   </head>
+  <style>
+    .button-mf {
+		font-size: 15px;
+		color: #fff;
+		background-color: #85CA63;
+		border-radius: 5px 5px;
+		width: 150px;
+		border-color: none;
+		transition: all .5s;
+	}
+
+	.button-mf:hover {
+		background-color: #67bd3c;
+		border-color: #55bd1a;
+		color: #fff;
+		border-radius: 10px;
+		width: 200px;
+		transition: all .5s;
+	}
+  </style>
   <body>
     <section class="text-center">
       <form action="../stripe/checkout.php" method="POST">
