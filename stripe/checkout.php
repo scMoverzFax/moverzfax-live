@@ -17,7 +17,7 @@ $customerEmail = $_SESSION['email'];
 $customerName = $_SESSION['first_name'] . $_SESSION['last_name'];
 
 // print_r($moverNameArray);
-print_r($_SESSION);
+// print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
