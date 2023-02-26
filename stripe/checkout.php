@@ -61,7 +61,7 @@ foreach ($moverNameArray as $index => $product) {
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => [[
-    'price' => 'prod_NQiRKop4xO9hgG',
+    'price' => 'price_1Mfr0vEekUL6ontJswp7tGGU',
     'quantity' => 1,
   ]],
   'mode' => 'payment',
