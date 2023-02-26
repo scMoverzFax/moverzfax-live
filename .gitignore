@@ -1,2 +1,2 @@
 .DS_store
-../stripe/secrets.php
+stripe/secrets.php
