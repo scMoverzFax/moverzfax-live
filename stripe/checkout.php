@@ -14,6 +14,7 @@ $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
 $customerEmail = $_SESSION['email'];
+$customerName = $_SESSION['first_name'] . $_SESSION['last_name'];
 
 // print_r($moverNameArray);
 print_r($_SESSION);
@@ -49,8 +50,7 @@ foreach ($moverNameArray as $index => $product) {
 
 $customer = \Stripe\Customer::create([
   'email' => $customerEmail,
-  'name' => null,
-  'source' => 'tok_visa', // Replace with a test card token or payment method ID
+  'name' => $customerName,
 ]);
 
 $checkout_session = \Stripe\Checkout\Session::create([
