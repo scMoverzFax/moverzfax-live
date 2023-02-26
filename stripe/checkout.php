@@ -21,5 +21,5 @@ $checkout_session = \Stripe\Checkout\Session::create([
   'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
 ]);
 
-// header("HTTP/1.1 303 See Other");
-// header("Location: " . $checkout_session->url);
+header("HTTP/1.1 303 See Other");
+header("Location: " . $checkout_session->url);
