@@ -15,7 +15,7 @@ $YOUR_DOMAIN = 'https://www.moverzfax.com/';
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => [[
     # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
-    'price' => 'prod_NQPB4czxaEhk2W',
+    'price' => 'price_1MfYV9EekUL6ontJJ2cyri9W',
     'quantity' => 1,
   ]],
   'mode' => 'payment',
