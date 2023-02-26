@@ -16,7 +16,7 @@ $moverNameArray = $_SESSION['moverNameArray'];
 $customerEmail = $_SESSION['email'];
 
 // print_r($moverNameArray);
-// print_r($_SESSION);
+print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
@@ -47,14 +47,18 @@ foreach ($moverNameArray as $index => $product) {
 
 // print_r($lineItemsArrayOfPriceDatas);
 
-
+$customer = \Stripe\Customer::create([
+  'email' => $customerEmail,
+  'name' => null,
+  'source' => 'tok_visa', // Replace with a test card token or payment method ID
+]);
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => $lineItemsArrayOfPriceDatas,
   'mode' => 'payment',
   'success_url' => 'https://www.moverzfax.com/home/order_report.php',
   'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
-  'customer_email' => $customerEmail,
+  'customer' => $customer->id,
 ]);
 
 // $checkout_session = \Stripe\Checkout\Session::create([
