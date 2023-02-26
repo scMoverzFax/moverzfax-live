@@ -14,9 +14,6 @@ session_start();
 $numberOfReports = $_SESSION['numberOfReports'];
 $usdotArray = $_SESSION['usdotArray'];
 
-// Use the variable in the HTML
-echo "Price: $price";
-
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => [[
     # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
