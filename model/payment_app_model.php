@@ -1,8 +1,9 @@
 <tbody>
                     <?php
-                    
+                    $usdotArray = array();
                     $a = array("10$","Free","3$","2$","1$"); 
                     $i = 0;
+                    $numberOfReports = 0;
                     include "connection.php";
                     $sql = "SELECT mo.*,ci.name as ciname,st.name as stname FROM mover_cart AS mo
                             LEFT JOIN `city` as ci ON  ci.id = mo.city_id
@@ -11,6 +12,8 @@
                     $result = $con->query($sql);
                     if(mysqli_num_rows($result) > 0){ 
                         while($res = mysqli_fetch_array($result)){
+                            array_push($usdotArray, $res['usdot']);
+                            $numberOfReports++;
                     ?>
                         <tr>
                             <td><?= $res['company_name']; ?></td>
