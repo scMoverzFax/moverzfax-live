@@ -14,6 +14,8 @@ $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
 
+print_r($moverNameArray);
+
 
 
 // $products = ['product1', 'product2', 'product3', 'product4', 'product5']; // an example array of product names
@@ -31,7 +33,7 @@ foreach ($moverNameArray as $index => $product) {
         $unit_amount = 100;
     }
 
-    if ($unit_amount !== 0) {
+    // if ($unit_amount !== 0) {
         $priceData = [
             'price_data' => [
                 'currency' => 'usd',
@@ -43,7 +45,7 @@ foreach ($moverNameArray as $index => $product) {
             'quantity' => 1,
         ];
         $lineItemsArrayOfPriceDatas[] = $priceData;
-    }
+    // }
 }
 
 print_r($lineItemsArrayOfPriceDatas);
