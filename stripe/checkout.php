@@ -16,9 +16,6 @@ $moverNameArray = $_SESSION['moverNameArray'];
 
 // print_r($moverNameArray);
 
-
-
-// $products = ['product1', 'product2', 'product3', 'product4', 'product5']; // an example array of product names
 $lineItemsArrayOfPriceDatas = [];
 
 foreach ($moverNameArray as $index => $product) {
@@ -33,7 +30,6 @@ foreach ($moverNameArray as $index => $product) {
         $unit_amount = 100;
     }
 
-    // if ($unit_amount !== 0) {
         $priceData = [
             'price_data' => [
                 'currency' => 'usd',
@@ -45,29 +41,28 @@ foreach ($moverNameArray as $index => $product) {
             'quantity' => 1,
         ];
         $lineItemsArrayOfPriceDatas[] = $priceData;
-    // }
 }
 
 // print_r($lineItemsArrayOfPriceDatas);
 
 
 
-// $checkout_session = \Stripe\Checkout\Session::create([
-//   'line_items' => $lineItemsArrayOfPriceDatas,
-//   'mode' => 'payment',
-//   'success_url' => 'https://www.moverzfax.com/stripe/success.html',
-//   'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
-// ]);
-
 $checkout_session = \Stripe\Checkout\Session::create([
-  'line_items' => [[
-    'price' => 'price_1Mfr0vEekUL6ontJswp7tGGU',
-    'quantity' => 1,
-  ]],
+  'line_items' => $lineItemsArrayOfPriceDatas,
   'mode' => 'payment',
   'success_url' => 'https://www.moverzfax.com/stripe/success.html',
   'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
 ]);
+
+// $checkout_session = \Stripe\Checkout\Session::create([
+//   'line_items' => [[
+//     'price' => 'price_1Mfr0vEekUL6ontJswp7tGGU',
+//     'quantity' => 1,
+//   ]],
+//   'mode' => 'payment',
+//   'success_url' => 'https://www.moverzfax.com/stripe/success.html',
+//   'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
+// ]);
 
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
