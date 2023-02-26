@@ -13,10 +13,10 @@ session_start();
 $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
-// $customerEmail = $_SESSION['customerEmail'];
+$customerEmail = $_SESSION['email'];
 
 // print_r($moverNameArray);
-print_r($_SESSION);
+// print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
