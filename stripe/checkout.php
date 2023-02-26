@@ -13,8 +13,10 @@ session_start();
 $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
+// $customerEmail = $_SESSION['customerEmail'];
 
 // print_r($moverNameArray);
+print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
@@ -35,7 +37,7 @@ foreach ($moverNameArray as $index => $product) {
                 'currency' => 'usd',
                 'unit_amount' => $unit_amount,
                 'product_data' => [
-                    'name' => $product,
+                    'name' => 'MoverZfax Report for ' . $product,
                 ],
             ],
             'quantity' => 1,
@@ -49,6 +51,7 @@ foreach ($moverNameArray as $index => $product) {
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => $lineItemsArrayOfPriceDatas,
+  'customer_email' => $customerEmail,
   'mode' => 'payment',
   'success_url' => 'https://www.moverzfax.com/stripe/success.html',
   'cancel_url' => 'https://www.moverzfax.com/stripe/cancel.html',
