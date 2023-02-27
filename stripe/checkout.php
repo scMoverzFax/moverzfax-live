@@ -46,8 +46,6 @@ foreach ($moverNameArray as $index => $product) {
         $lineItemsArrayOfPriceDatas[] = $priceData;
 }
 
-// print_r($lineItemsArrayOfPriceDatas);
-
 $customer = \Stripe\Customer::create([
   'email' => $customerEmail,
   'name' => $customerName,
@@ -56,15 +54,12 @@ $customer = \Stripe\Customer::create([
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => $lineItemsArrayOfPriceDatas,
   'mode' => 'payment',
-//   'invoice_creation' => ['enabled' => true],
+  'invoice_creation' => ['enabled' => true],
 //   'success_url' => 'https://www.moverzfax.com/home/order_report.php',
   'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
   'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
   'customer' => $customer->id,
   'billing_address_collection' => 'required',
-  'payment_intent_data' => [
-    'create_invoice' => true,
-  ],
 ]);
 
 // Save the Checkout Session ID to a session variable
