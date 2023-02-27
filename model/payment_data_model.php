@@ -1,12 +1,5 @@
 <?php 
 
-$stripe = new \Stripe\StripeClient(
-    'sk_test_51MengREekUL6ontJXOZQWkJpwUq34M0YfwRMgKi9AAEGGMU7iKgA2puPzUuv7bumJw9jWtA6lzir1Orcd2pbwLmA00AVgnui4H'
-  );
-  $stripe->webhookEndpoints->retrieve(
-    'we_1MgBksEekUL6ontJrCJCJ5nr',
-    []
-  );
 
 http_response_code(200);
 
