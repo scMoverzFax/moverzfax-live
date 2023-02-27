@@ -18,7 +18,8 @@ $payment_intent_id = $checkout_session->payment_intent;
 // Retrieve the Payment Intent object
 $payment_intent = \Stripe\PaymentIntent::retrieve($payment_intent_id);
 
-var_dump($payment_intent);
+// Format the Payment Intent object and display it on the screen
+echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
 
 // Access payment information
 // $payment_status = $payment_intent->status;
