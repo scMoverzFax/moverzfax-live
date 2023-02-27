@@ -19,11 +19,17 @@ $payment_intent_id = $checkout_session->payment_intent;
 // // Format the Payment Intent object and display it on the screen
 // echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
 
-// Retrieve the Invoice object associated with the Checkout Session
-$invoice = $checkout_session->invoice;
 
-// Print the Invoice object to the screen
-echo '<pre>' . json_encode($invoice, JSON_PRETTY_PRINT) . '</pre>';
+if ($checkout_session->payment_status === 'paid') {
+    // The Checkout Session has been completed successfully, retrieve the associated Invoice object
+    $invoice = $checkout_session->invoice;
+  
+    // Print the Invoice object to the screen
+    echo '<pre>' . json_encode($invoice, JSON_PRETTY_PRINT) . '</pre>';
+  } else {
+    // The Checkout Session has not been completed yet, display an error message
+    echo 'The Checkout Session has not been completed yet.';
+  }
 
 
     // session_start();
