@@ -8,7 +8,25 @@ $json = file_get_contents('php://input');
 // Parse the JSON data into a PHP object
 $data = json_decode($json);
 
-echo $data->type;
+
+if (empty($json)) {
+    // Request body is empty
+    http_response_code(400);
+    echo 'Error: No request body found';
+    exit;
+  }
+  
+  $data = json_decode($json, true);
+  
+  if (json_last_error() !== JSON_ERROR_NONE) {
+    // JSON data is malformed
+    http_response_code(400);
+    echo 'Error: Malformed JSON data';
+    exit;
+  }
+
+
+  
 
 // Verify that the incoming webhook is for a payment_intent.succeeded event
 if ($data->type === 'payment_intent.succeeded') {
