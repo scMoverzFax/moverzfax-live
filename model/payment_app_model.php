@@ -14,7 +14,7 @@
     if(mysqli_num_rows($result) > 0){ 
         while($res = mysqli_fetch_array($result)){
             // array_push($usdotArray, $res['usdot']);
-            array_push($moverNameArray, $res['company_name']);
+            array_push($moverNameArray, $res['company_name'] . ": USDOT #" . $res['usdot']);
             $numberOfReports++;
     ?>
         <tr>
