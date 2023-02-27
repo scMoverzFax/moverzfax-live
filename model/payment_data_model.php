@@ -1,11 +1,9 @@
 <?php 
 
-
 require_once '../vendor/autoload.php'; // Make sure to require the Stripe PHP library
 require_once '../stripe/secrets.php'; //secrets.php stored in cpanel file manager inside stripe folder
 
 \Stripe\Stripe::setApiKey($stripeSecretKey);
-
 
 // Retrieve the Checkout Session ID from the session variable
 session_start();
@@ -15,24 +13,17 @@ $checkout_session_id = $_SESSION['checkout_session_id'];
 $checkout_session = \Stripe\Checkout\Session::retrieve($checkout_session_id);
 $payment_intent_id = $checkout_session->payment_intent;
 
-// Retrieve the Payment Intent object
-$payment_intent = \Stripe\PaymentIntent::retrieve($payment_intent_id);
+// // Retrieve the Payment Intent object
+// $payment_intent = \Stripe\PaymentIntent::retrieve($payment_intent_id);
 
-// Format the Payment Intent object and display it on the screen
-echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
+// // Format the Payment Intent object and display it on the screen
+// echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
 
-// Access payment information
-// $payment_status = $payment_intent->status;
-// $payment_amount = $payment_intent->amount / 100; // Convert from cents to dollars
-// $payment_currency = $payment_intent->currency;
-// $payment_method = $payment_intent->payment_method;
+// Retrieve the Invoice object associated with the Checkout Session
+$invoice = $checkout_session->invoice;
 
-// // Display payment information
-// echo 'Payment Status: ' . $payment_status . '<br>';
-// echo 'Payment Amount: $' . $payment_amount . ' ' . $payment_currency . '<br>';
-// echo 'Payment Method: ' . $payment_method . '<br>';
-
-
+// Print the Invoice object to the screen
+echo '<pre>' . json_encode($invoice, JSON_PRETTY_PRINT) . '</pre>';
 
 
     // session_start();
@@ -63,29 +54,74 @@ echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
     // $report_three = isset($report[2])?$report[2]:0;
     // $report_four = isset($report[3])?$report[3]:0;
     // $report_five = isset($report[4])?$report[4]:0;
-    // $tr_id = $obj['id'];
-    // $tr_status =$obj['status'];
-    // $tr_currency_code =$obj['purchase_units'][0]['amount']['currency_code'];
-    // $tr_amount =$obj['purchase_units'][0]['amount']['value'];
-    // $tr_email_address =$obj['purchase_units'][0]['payee']['email_address'];
-    // $tr_merchant_id =$obj['purchase_units'][0]['payee']['merchant_id'];
-    // $tr_full_name =$obj['purchase_units'][0]['shipping']['name']['full_name'];
-    // $tr_address_line_1 =$obj['purchase_units'][0]['shipping']['address']['address_line_1'];
-    // $tr_admin_area_1 =$obj['purchase_units'][0]['shipping']['address']['admin_area_1'];
-    // $tr_admin_area_2 =$obj['purchase_units'][0]['shipping']['address']['admin_area_2'];
-    // $tr_postal_code =$obj['purchase_units'][0]['shipping']['address']['postal_code'];
-    // $tr_country_code =$obj['purchase_units'][0]['shipping']['address']['country_code'];
-    // $tr_payer_id =$obj['payer']['payer_id'];
-    
-    // //replace all char with spaces in the date value
-    // $dateValue = $obj['create_time'];
-    // $tr_create_time = preg_replace('/[A-Za-z]/', ' ', $dateValue);
 
-    // $updatedTimeValue = $obj['update_time'];
-    // $tr_update_time = preg_replace('/[A-Za-z]/', ' ', $updatedTimeValue);
+    // $tr_id = $payment_intent->id;
+    // $tr_status = $payment_intent->status;
+    // $tr_currency_code = $payment_intent->currency;
+    // $tr_amount = $payment_intent->amount / 100;
+    // $tr_email_address = $payment_intent->receipt_email;
     
-    // $sql = "INSERT INTO payment (user_id,tr_id,tr_status,tr_currency_code,tr_amount,tr_email_address,tr_merchant_id,tr_full_name,tr_address_line_1,tr_admin_area_1,tr_admin_area_2,tr_postal_code,tr_country_code,tr_payer_id,tr_create_time,tr_update_time,report_one,report_two,report_three,report_four,report_five)
-    //  VALUES ('".$user_id."','".$tr_id."','".$tr_status."','".$tr_currency_code."','".$tr_amount."','".$tr_email_address."','".$tr_merchant_id."','".$tr_full_name."','".$tr_address_line_1."','".$tr_admin_area_1."','".$tr_admin_area_2."',".$tr_postal_code.",'".$tr_country_code."','".$tr_payer_id."','".$tr_create_time."','".$tr_update_time."','".$report_one."','".$report_two."','".$report_three."','".$report_four."','".$report_five."' )";    
+    // $tr_merchant_id = $obj['purchase_units'][0]['payee']['merchant_id'];
+    // $tr_full_name = $obj['purchase_units'][0]['shipping']['name']['full_name'];
+    // $tr_address_line_1 = $obj['purchase_units'][0]['shipping']['address']['address_line_1'];
+    // $tr_admin_area_1 = $obj['purchase_units'][0]['shipping']['address']['admin_area_1'];
+    // $tr_admin_area_2 = $obj['purchase_units'][0]['shipping']['address']['admin_area_2'];
+    // $tr_postal_code = $obj['purchase_units'][0]['shipping']['address']['postal_code'];
+    // $tr_country_code = $obj['purchase_units'][0]['shipping']['address']['country_code'];
+    
+    // $tr_payer_id = $payment_intent->customer;
+    
+    // $dateValue = $payment_intent->created;
+    // $tr_create_time = date('Y-m-d H:i:s', $dateValue);
+    // $updatedTimeValue = time();
+    // $tr_update_time = date('Y-m-d H:i:s', $updatedTimeValue);
+    
+    // $sql = "INSERT INTO payment (
+    //     user_id,
+    //     tr_id,
+    //     tr_status,
+    //     tr_currency_code,
+    //     tr_amount,
+    //     tr_email_address,
+    //     tr_merchant_id,
+    //     tr_full_name,
+    //     tr_address_line_1,
+    //     tr_admin_area_1,
+    //     tr_admin_area_2,
+    //     tr_postal_code,
+    //     tr_country_code,
+    //     tr_payer_id,
+    //     tr_create_time,
+    //     tr_update_time,
+    //     report_one,
+    //     report_two,
+    //     report_three,
+    //     report_four,
+    //     report_five
+    //     )
+    //  VALUES (
+    //     '".$user_id."',
+    //     '".$tr_id."',
+    //     '".$tr_status."',
+    //     '".$tr_currency_code."',
+    //     '".$tr_amount."',
+    //     '".$tr_email_address."',
+    //     '".$tr_merchant_id."',
+    //     '".$tr_full_name."',
+    //     '".$tr_address_line_1."',
+    //     '".$tr_admin_area_1."',
+    //     '".$tr_admin_area_2."',
+    //     ".$tr_postal_code.",
+    //     '".$tr_country_code."',
+    //     '".$tr_payer_id."',
+    //     '".$tr_create_time."',
+    //     '".$tr_update_time."',
+    //     '".$report_one."',
+    //     '".$report_two."',
+    //     '".$report_three."',
+    //     '".$report_four."',
+    //     '".$report_five."'
+    //  )";    
 
     // // If the insert into payment table was successful, create the email to be sent
     // if ($con->query($sql) === TRUE)
@@ -171,7 +207,7 @@ echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
     //     // header('Location: ../home/order_report.php');
     // }
     // else{
-    //     echo "UnnSUcessfull"; 
+    //     echo "UnSuccessful"; 
     // }
     
 ?>
