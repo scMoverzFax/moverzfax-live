@@ -287,11 +287,11 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                                         <!-- <a href="../new-sample-upload-form-movers/mover_links_collection.php" class="sub-link">Mover Links Collection Form</a> -->
                                         <a href="../home/mover_edit_links.php" class="sub-link">Edit My Company Information</a>
                                     <?php } ?>
-                                    <a href="my_order.php" class="sub-link" <?php if (isset($_SESSION["email"]) && $role == "customer") {
+                                    <a href="my_order.php" class="sub-link" <?php if (isset($_SESSION["email"]) && $role != "admin") {
                                                                                 echo "";
                                                                             } else {
                                                                                 echo 'style="display:none"';
-                                                                            } ?>>My Order</a>
+                                                                            } ?>>My Orders</a>
                                     
                                 </div>
                             </div>
