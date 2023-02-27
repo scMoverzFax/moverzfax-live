@@ -1,60 +1,34 @@
 <?php 
 
 
-http_response_code(200);
+require_once '../vendor/autoload.php'; // Make sure to require the Stripe PHP library
+require_once '../stripe/secrets.php'; //secrets.php stored in cpanel file manager inside stripe folder
 
-// Retrieve the raw JSON data from the request body
-$json = file_get_contents('php://input');
-
-// Parse the JSON data into a PHP object
-$data = json_decode($json);
+\Stripe\Stripe::setApiKey($stripeSecretKey);
 
 
-if (empty($json)) {
-    // Request body is empty
-    http_response_code(400);
-    echo 'Error: No request body found';
-    exit;
-  }
-  
-  $data = json_decode($json, true);
-  
-  if (json_last_error() !== JSON_ERROR_NONE) {
-    // JSON data is malformed
-    http_response_code(400);
-    echo 'Error: Malformed JSON data';
-    exit;
-  }
+// Replace "cs_test_123456789" with the actual Checkout Session ID
+$checkout_session_id = $_GET['session_id'];
 
+// Retrieve the Checkout Session object
+$checkout_session = \Stripe\Checkout\Session::retrieve($checkout_session_id);
 
+// Retrieve the Payment Intent ID from the Checkout Session object
+$payment_intent_id = $checkout_session->payment_intent;
 
+// Retrieve the Payment Intent object
+$payment_intent = \Stripe\PaymentIntent::retrieve($payment_intent_id);
 
-// Verify that the incoming webhook is for a payment_intent.succeeded event
-if ($data->type === 'payment_intent.succeeded') {
-  // Extract payment information from the paymentIntent object
-  $paymentIntent = $data->data->object;
-  $paymentAmount = $paymentIntent->amount;
-  $paymentCurrency = $paymentIntent->currency;
-  $paymentStatus = $paymentIntent->status;
-  $paymentMethod = $paymentIntent->payment_method;
+// Access payment information
+$payment_status = $payment_intent->status;
+$payment_amount = $payment_intent->amount / 100; // Convert from cents to dollars
+$payment_currency = $payment_intent->currency;
+$payment_method = $payment_intent->payment_method;
 
-  // Format the payment information as a JSON response
-  $response = array(
-    'message' => 'Payment succeeded',
-    'amount' => $paymentAmount,
-    'currency' => $paymentCurrency,
-    'status' => $paymentStatus,
-    'payment_method' => $paymentMethod
-  );
-  header('Content-Type: application/json');
-  echo json_encode($response);
-} else {
-  // Handle unexpected webhook events
-  http_response_code(400);
-  $response = array('error' => 'Unexpected webhook received');
-  header('Content-Type: application/json');
-  echo json_encode($response);
-}
+// Display payment information
+echo 'Payment Status: ' . $payment_status . '<br>';
+echo 'Payment Amount: $' . $payment_amount . ' ' . $payment_currency . '<br>';
+echo 'Payment Method: ' . $payment_method . '<br>';
 
 
 
