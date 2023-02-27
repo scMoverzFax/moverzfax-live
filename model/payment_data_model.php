@@ -18,16 +18,18 @@ $payment_intent_id = $checkout_session->payment_intent;
 // Retrieve the Payment Intent object
 $payment_intent = \Stripe\PaymentIntent::retrieve($payment_intent_id);
 
-// Access payment information
-$payment_status = $payment_intent->status;
-$payment_amount = $payment_intent->amount / 100; // Convert from cents to dollars
-$payment_currency = $payment_intent->currency;
-$payment_method = $payment_intent->payment_method;
+var_dump($payment_intent);
 
-// Display payment information
-echo 'Payment Status: ' . $payment_status . '<br>';
-echo 'Payment Amount: $' . $payment_amount . ' ' . $payment_currency . '<br>';
-echo 'Payment Method: ' . $payment_method . '<br>';
+// Access payment information
+// $payment_status = $payment_intent->status;
+// $payment_amount = $payment_intent->amount / 100; // Convert from cents to dollars
+// $payment_currency = $payment_intent->currency;
+// $payment_method = $payment_intent->payment_method;
+
+// // Display payment information
+// echo 'Payment Status: ' . $payment_status . '<br>';
+// echo 'Payment Amount: $' . $payment_amount . ' ' . $payment_currency . '<br>';
+// echo 'Payment Method: ' . $payment_method . '<br>';
 
 
 
