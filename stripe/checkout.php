@@ -60,6 +60,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
   'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
   'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
   'customer' => $customer->id,
+  'billing_address_collection' => 'required',
 ]);
 
 // Save the Checkout Session ID to a session variable
