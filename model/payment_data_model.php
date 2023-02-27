@@ -8,6 +8,8 @@ $json = file_get_contents('php://input');
 // Parse the JSON data into a PHP object
 $data = json_decode($json);
 
+echo $data->type;
+
 // Verify that the incoming webhook is for a payment_intent.succeeded event
 if ($data->type === 'payment_intent.succeeded') {
   // Extract payment information from the paymentIntent object
@@ -34,8 +36,6 @@ if ($data->type === 'payment_intent.succeeded') {
   header('Content-Type: application/json');
   echo json_encode($response);
 }
-
-echo json_encode($response);
 
 
 
