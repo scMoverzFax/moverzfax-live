@@ -46,7 +46,7 @@
             break;
     }
     session_start();
-    $_SESSION['numberOfReports'] = $numberOfReports;
+    // $_SESSION['numberOfReports'] = $numberOfReports;
     // $_SESSION['usdotArray'] = $usdotArray;
     $_SESSION['moverNameArray'] = $moverNameArray;
     ?>

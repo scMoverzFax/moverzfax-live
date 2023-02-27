@@ -10,7 +10,7 @@ header('Content-Type: application/json');
 
 
 session_start();
-$numberOfReports = $_SESSION['numberOfReports'];
+// $numberOfReports = $_SESSION['numberOfReports'];
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
 $customerEmail = $_SESSION['email'];
@@ -56,7 +56,8 @@ $customer = \Stripe\Customer::create([
 $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => $lineItemsArrayOfPriceDatas,
   'mode' => 'payment',
-  'success_url' => 'https://www.moverzfax.com/home/order_report.php',
+//   'success_url' => 'https://www.moverzfax.com/home/order_report.php',
+  'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
   'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
   'customer' => $customer->id,
 ]);
