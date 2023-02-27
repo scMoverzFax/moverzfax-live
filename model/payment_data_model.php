@@ -20,16 +20,19 @@ $payment_intent_id = $checkout_session->payment_intent;
 // echo '<pre>' . json_encode($payment_intent, JSON_PRETTY_PRINT) . '</pre>';
 
 
-if ($checkout_session->payment_status === 'paid') {
     // The Checkout Session has been completed successfully, retrieve the associated Invoice object
-    $invoice = $checkout_session->invoice;
-  
-    // Print the Invoice object to the screen
-    echo '<pre>' . json_encode($invoice, JSON_PRETTY_PRINT) . '</pre>';
-  } else {
-    // The Checkout Session has not been completed yet, display an error message
-    echo 'The Checkout Session has not been completed yet.';
-  }
+    $invoice_id = $checkout_session->invoice;
+
+
+
+// Retrieve the Invoice object
+$invoice = \Stripe\Invoice::retrieve($invoice_id);
+
+// Serialize the Invoice object to a JSON object
+$invoice_json = json_encode($invoice->jsonSerialize(), JSON_PRETTY_PRINT);
+
+// Print the Invoice JSON object to the screen
+echo '<pre>' . $invoice_json . '</pre>';
 
 
     // session_start();
