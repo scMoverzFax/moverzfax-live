@@ -14,7 +14,7 @@ session_start();
 // $usdotArray = $_SESSION['usdotArray'];
 $moverNameArray = $_SESSION['moverNameArray'];
 $customerEmail = $_SESSION['email'];
-$customerName = $_SESSION['first_name'] . $_SESSION['last_name'];
+$customerName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 
 // print_r($moverNameArray);
 // print_r($_SESSION);
@@ -58,7 +58,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
 //   'success_url' => 'https://www.moverzfax.com/home/order_report.php',
   'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
   'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
-  'customer' => $customer->id,
+//   'customer' => $customer->id,
   'billing_address_collection' => 'required',
 ]);
 
