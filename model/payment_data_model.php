@@ -7,13 +7,12 @@ require_once '../stripe/secrets.php'; //secrets.php stored in cpanel file manage
 \Stripe\Stripe::setApiKey($stripeSecretKey);
 
 
-// Replace "cs_test_123456789" with the actual Checkout Session ID
-$checkout_session_id = $_GET['session_id'];
-
-// Retrieve the Checkout Session object
-$checkout_session = \Stripe\Checkout\Session::retrieve($checkout_session_id);
+// Retrieve the Checkout Session ID from the session variable
+session_start();
+$checkout_session_id = $_SESSION['checkout_session_id'];
 
 // Retrieve the Payment Intent ID from the Checkout Session object
+$checkout_session = \Stripe\Checkout\Session::retrieve($checkout_session_id);
 $payment_intent_id = $checkout_session->payment_intent;
 
 // Retrieve the Payment Intent object

@@ -57,10 +57,13 @@ $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => $lineItemsArrayOfPriceDatas,
   'mode' => 'payment',
 //   'success_url' => 'https://www.moverzfax.com/home/order_report.php',
-  'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php?session_id={CHECKOUT_SESSION_ID}',
+  'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
   'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
   'customer' => $customer->id,
 ]);
+
+// Save the Checkout Session ID to a session variable
+$_SESSION['checkout_session_id'] = $checkout_session->id;
 
 // $checkout_session = \Stripe\Checkout\Session::create([
 //   'line_items' => [[
