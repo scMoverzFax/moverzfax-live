@@ -35,7 +35,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
             </table>
         </div> -->
 
-        <div class="input-for-total text-center">
+        <div class="input-for-total text-center" style="border: 1px solid black;">
             <div class="total-input-contain">
                     <span class="mt-2"><h5>Enter Payment Total: </h5></span>
                     <input  class="form-control form-control-sm text-center"
