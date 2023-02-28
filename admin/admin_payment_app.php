@@ -12,6 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 3px;
     }
     /* #totalInput {
         margin: 3px;
@@ -23,7 +24,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 <div class="container-fluid">
     <h3 class="text-center mt-2">MoverZFax Admin Payment System</h3>
         <br/>
-        <div class="input-for-total text-center">
+        <div class="input-for-total">
 
             <form method="post" action="admin_payment_checkout.php">
                 <?php
