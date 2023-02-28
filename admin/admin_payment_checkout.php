@@ -13,7 +13,9 @@ include 'admin_header.php';
             $_SESSION['customer_email'] = $_POST['customer_email'];
             include '../stripe/checkout.html';
         }
-
-        include '../home/footer.php';
     ?>
 </div>
+
+<?php 
+include '../home/footer.php'; 
+?>
