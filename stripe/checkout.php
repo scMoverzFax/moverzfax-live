@@ -15,8 +15,8 @@ if($role == 'admin'){
   // print_r($_SESSION);
 // $numberOfReports = $_SESSION['numberOfReports'];
   // $usdotArray = $_SESSION['usdotArray'];
-  $moverNameArray = $_SESSION['moverNameArray'];
-  $customerEmail = $_SESSION['email'];
+  $moverNameArray = $_SESSION['usdot_numbers'];
+  $customerEmail = $_SESSION['customer_email'];
   $customerName = 'Customer';
 
 } else {
@@ -28,7 +28,7 @@ if($role == 'admin'){
 }
 
 // print_r($moverNameArray);
-print_r($_SESSION);
+// print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
