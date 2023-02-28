@@ -12,7 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 3px;
+        margin: 5px;
     }
     /* #totalInput {
         margin: 3px;
@@ -64,7 +64,10 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             required />
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </div>
+
             </form>
 
 
