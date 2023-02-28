@@ -35,7 +35,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
             </table>
         </div> -->
 
-        <div class="input-for-total text-center" style="border: 1px solid black;">
+        <div class="input-for-total text-center">
 
             <div class="total-input-contain">
                     <span class="mt-2"><h5>Enter Payment Total: </h5></span>
@@ -46,13 +46,13 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             step="any"
                             value='<?php echo $total ?>' />
             </div>
-            
+
                     <!-- <div class="col-md-4 search">
                             <span class="col-md-5">Total:</span>
                             <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
                         </div> -->
 
-            <div class="total-input-contain">
+            <div class="total-input-contain"  style="border: 1px solid black;">
                     <span class="mt-2"><h5>Enter Customer Email: </h5></span>
                     <input  class="form-control form-control-sm text-center"
                             id="totalInput"
