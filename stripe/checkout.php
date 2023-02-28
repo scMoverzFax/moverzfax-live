@@ -62,15 +62,27 @@ $customer = \Stripe\Customer::create([
   'name' => $customerName,
 ]);
 
-$checkout_session = \Stripe\Checkout\Session::create([
-  'line_items' => $lineItemsArrayOfPriceDatas,
-  'mode' => 'payment',
-  'invoice_creation' => ['enabled' => true],
-  'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
-  'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
-//   'customer' => $customer->id,
-  'billing_address_collection' => 'required',
-]);
+if($role == 'admin'){
+  $checkout_session = \Stripe\Checkout\Session::create([
+    'line_items' => $lineItemsArrayOfPriceDatas,
+    'mode' => 'payment',
+    'invoice_creation' => ['enabled' => true],
+    'success_url' => 'https://www.moverzfax.com/admin/confirmation.php',
+    'cancel_url' => 'https://www.moverzfax.com/admin/admin_run_payment.php',
+  //   'customer' => $customer->id,
+    'billing_address_collection' => 'required',
+  ]);
+} else {
+  $checkout_session = \Stripe\Checkout\Session::create([
+    'line_items' => $lineItemsArrayOfPriceDatas,
+    'mode' => 'payment',
+    'invoice_creation' => ['enabled' => true],
+    'success_url' => 'https://www.moverzfax.com/model/payment_data_model.php',
+    'cancel_url' => 'https://www.moverzfax.com/home/payment_app.php',
+  //   'customer' => $customer->id,
+    'billing_address_collection' => 'required',
+  ]);
+}
 
 // Save the Checkout Session ID to a session variable
 $_SESSION['checkout_session_id'] = $checkout_session->id;
