@@ -37,6 +37,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                 // $usdot_numbers = array();
                 // Loop through five times to create five input elements
                 for ($i = 1; $i <= 5; $i++) {
+                    $required = ($i == 1) ? 'required' : '';
                     echo '
                         <div class="total-input-contain">
                             <span class="mt-2"><h5>Report #' . $i . ': </h5></span>
@@ -47,7 +48,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                                     type="number"
                                     step="1"
                                     value="' . $usdot_numbers[$i - 1] . '"
-                                    />
+                                    ' . $required . ' />
                         </div>
                     ';
                 }
