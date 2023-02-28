@@ -32,39 +32,38 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                 </thead>
                 <?php include '../model/payment_app_model.php'; ?> 
             </table>
+        </div>
+        <div class="col-md-4 search">
+            <span class="col-md-5">Total:</span>
+            <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
         </div> -->
 
         <div class="input-for-total text-center">
 
             <div class="total-input-contain">
-                    <span class="mt-2"><h5>Enter Payment Total: </h5></span>
-                    <input  class="form-control form-control-sm text-center"
-                            id="totalInput"
-                            placeholder="Enter Total"
-                            type="number"
-                            step="any"
-                            value='<?php echo $total ?>' />
+                <span class="mt-2"><h5>Enter Payment Total: </h5></span>
+                <input  class="form-control form-control-sm text-center"
+                        id="totalInput"
+                        placeholder="Enter Total"
+                        type="number"
+                        step="any"
+                        value='<?php echo $total ?>' />
             </div>
 
-                    <!-- <div class="col-md-4 search">
-                            <span class="col-md-5">Total:</span>
-                            <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
-                        </div> -->
-
             <div class="total-input-contain">
-                    <span class="mt-2"><h5>Enter Customer Email: </h5></span>
-                    <input  class="form-control form-control-sm text-center"
-                            id="totalInput"
-                            placeholder="Enter Email"
-                            type="text"
-                            value='<?php $customerEmail=''; echo $customerEmail ?>' />
+                <span class="mt-2"><h5>Enter Customer Email: </h5></span>
+                <input  class="form-control form-control-sm text-center"
+                        id="totalInput"
+                        placeholder="Enter Email"
+                        type="text"
+                        value='<?php $customerEmail=''; echo $customerEmail ?>' />
             </div>
 
         </div>
 
         <br>
         <br>
-        
+
         <!-- Add a call to Stripe checkout here -->
         <?php include '../stripe/checkout.html'; ?>
 

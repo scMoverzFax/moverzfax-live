@@ -15,9 +15,10 @@ session_start();
 $moverNameArray = $_SESSION['moverNameArray'];
 $customerEmail = $_SESSION['email'];
 $customerName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+$role = $_SESSION['catagory'];
 
 // print_r($moverNameArray);
-// print_r($_SESSION);
+print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
