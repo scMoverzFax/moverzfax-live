@@ -10,7 +10,7 @@
     }
     .total-input-contain {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         margin: 5px;
     }
