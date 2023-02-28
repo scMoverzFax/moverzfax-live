@@ -23,7 +23,7 @@
 defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');?>
 <div class="container-fluid">
     <h3 class="text-center mt-2">MoverZFax Admin Payment System</h3>
-        <p>Enter the USDOT for the number of reports tied to this payment</p>
+        <p class="text-center mt-2">Enter the USDOT for the number of reports tied to this payment</p>
         <br/>
         <div class="input-for-total">
 
