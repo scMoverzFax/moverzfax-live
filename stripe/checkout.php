@@ -12,7 +12,7 @@ header('Content-Type: application/json');
 session_start();
 $role = $_SESSION['catagory'];
 if($role == 'admin'){
-  print_r($_SESSION);
+  // print_r($_SESSION);
 // $numberOfReports = $_SESSION['numberOfReports'];
   // $usdotArray = $_SESSION['usdotArray'];
   $moverNameArray = $usdot_numbers;
