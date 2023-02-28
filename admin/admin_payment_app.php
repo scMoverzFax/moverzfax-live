@@ -1,6 +1,6 @@
 <style>
     .input-for-total {
-        height: 50px;
+        margin-bottom: 10px;
     }
     .total-input-contain {
         display: flex;
