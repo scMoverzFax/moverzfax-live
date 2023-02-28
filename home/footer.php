@@ -85,7 +85,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-12 col-lg-4 col-xl-4 anim text-left"><a href="privacy_notice.php" target="_blank">Privacy Policy </a> <span>|</span><a href="#">Terms of Service</a></div>
+			<div class="col-md-12 col-lg-4 col-xl-4 anim text-left"><a href="privacy_notice.pdf" target="_blank">Privacy Policy </a> <span>|</span><a href="#">Terms of Service</a></div>
 			<div class="col-md-12 col-lg-4 col-xl-4 anim center-text">
                 <a href="https://www.facebook.com/MoverZfaxLLC" target="_blank"><i class="fa fa-facebook"></i></a>
                 <!-- <a href="https://www.protectyourmove.gov/related-sites/contactstate_view.aspx"><i class="fa fa-google-plus"></i></a> -->
