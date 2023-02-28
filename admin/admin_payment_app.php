@@ -65,7 +65,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-3">Enter Stripe Checkout</button>
                 </div>
 
             </form>
