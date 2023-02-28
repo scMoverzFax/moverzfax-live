@@ -40,15 +40,39 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 
         <div class="input-for-total text-center">
 
-            <div class="total-input-contain">
+            <!-- <div class="total-input-contain">
                 <span class="mt-2"><h5>Enter Payment Total: </h5></span>
                 <input  class="form-control form-control-sm text-center"
                         id="totalInput"
                         placeholder="Enter Total"
                         type="number"
                         step="any"
-                        value='<?php echo $total ?>' />
-            </div>
+                        value='<?php //echo $total ?>'
+                        required />
+            </div> -->
+
+            <?php
+            // Define an array of DOT numbers
+            $dot_numbers = array('DOT1', 'DOT2', 'DOT3', 'DOT4', 'DOT5');
+
+            // Loop through the DOT numbers and create an input element for each
+            foreach ($dot_numbers as $dot_number) {
+                echo '
+                    <div class="total-input-contain">
+                        <span class="mt-2"><h5>Enter Payment Total for ' . $dot_number . ': </h5></span>
+                        <input  class="form-control form-control-sm text-center"
+                                id="' . $dot_number . 'TotalInput"
+                                name="' . $dot_number . 'Total"
+                                placeholder="Enter Total"
+                                type="number"
+                                step="any"
+                                value="' . $total . '"
+                                required />
+                    </div>
+                ';
+            }
+            ?>
+
 
             <div class="total-input-contain">
                 <span class="mt-2"><h5>Enter Customer Email: </h5></span>
@@ -56,7 +80,8 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                         id="totalInput"
                         placeholder="Enter Email"
                         type="text"
-                        value='<?php $customerEmail=''; echo $customerEmail ?>' />
+                        value='<?php $adminEnteredCustomerEmail=''; echo $adminEnteredCustomerEmail ?>'
+                        required />
             </div>
 
         </div>

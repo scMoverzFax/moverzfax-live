@@ -10,15 +10,25 @@ header('Content-Type: application/json');
 
 
 session_start();
-// $numberOfReports = $_SESSION['numberOfReports'];
-// $usdotArray = $_SESSION['usdotArray'];
-$moverNameArray = $_SESSION['moverNameArray'];
-$customerEmail = $_SESSION['email'];
-$customerName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 $role = $_SESSION['catagory'];
+if($role == 'admin'){
+  print_r($_SESSION);
+// $numberOfReports = $_SESSION['numberOfReports'];
+  // $usdotArray = $_SESSION['usdotArray'];
+  $moverNameArray = $_SESSION['moverNameArray'];
+  $customerEmail = $adminEnteredCustomerEmail;
+  $customerName = 'Customer';
+
+} else {
+  // $numberOfReports = $_SESSION['numberOfReports'];
+  // $usdotArray = $_SESSION['usdotArray'];
+  $moverNameArray = $_SESSION['moverNameArray'];
+  $customerEmail = $_SESSION['email'];
+  $customerName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+}
 
 // print_r($moverNameArray);
-print_r($_SESSION);
+// print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
