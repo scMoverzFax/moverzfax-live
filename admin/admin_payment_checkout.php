@@ -1,5 +1,8 @@
 <?php 
 include 'admin_header.php';
+?>
+<div style="margin: 10px;"></div>
+<?php
     // Start a PHP session
     session_start();
 
