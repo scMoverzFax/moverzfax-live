@@ -25,12 +25,12 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
             <form method="post" action="admin_payment_checkout.php">
                 <?php
                 // Initialize the $usdot_numbers array with empty strings if it has not been submitted yet
-                if (!isset($_POST['usdot'])) {
-                    $usdot_numbers = array_fill(0, 5, '');
-                } else {
-                    $usdot_numbers = $_POST['usdot'];
-                }
-
+                // if (!isset($_POST['usdot'])) {
+                //     $usdot_numbers = array_fill(0, 5, '');
+                // } else {
+                //     $usdot_numbers = $_POST['usdot'];
+                // }
+                $usdot_numbers = array();
                 // Loop through five times to create five input elements
                 for ($i = 1; $i <= 5; $i++) {
                     echo '
