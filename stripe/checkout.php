@@ -15,7 +15,7 @@ if($role == 'admin'){
   print_r($_SESSION);
 // $numberOfReports = $_SESSION['numberOfReports'];
   // $usdotArray = $_SESSION['usdotArray'];
-  $moverNameArray = $_SESSION['moverNameArray'];
+  $moverNameArray = $usdot_numbers;
   $customerEmail = $adminEnteredCustomerEmail;
   $customerName = 'Customer';
 
