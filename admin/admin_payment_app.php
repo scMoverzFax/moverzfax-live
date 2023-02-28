@@ -20,7 +20,7 @@
         <br/>
         <div class="input-for-total text-center">
 
-        <form method="post" action="admin_payment_app.php">
+        <form method="post" action="admin_payment_checkout.php">
             <?php
             // Initialize the $usdot_numbers array with empty strings if it has not been submitted yet
             if (!isset($_POST['usdot'])) {
@@ -66,20 +66,6 @@
 
         <br>
         <br>
-
-        <!-- Add a call to Stripe checkout here -->
-        <?php 
-        // Start a PHP session
-        session_start();
-
-        // Assign the usdot inputs to session variables
-        if (isset($_POST['usdot']) && isset($_POST['customer_email'])) {
-            $_SESSION['usdot_numbers'] = $_POST['usdot'];
-            $_SESSION['customer_email'] = $_POST['customer_email'];
-            include '../stripe/checkout.html';
-        }
-
-        ?>
 
 </div>
 <hr />
