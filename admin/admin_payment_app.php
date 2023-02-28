@@ -17,73 +17,78 @@
 defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');?>
 <div class="container-fluid">
     <h3 class="text-center mt-2">MoverZFax Admin Payment System</h3>
-                    <br/>
-        
-            <!-- <div class="col-md-12 mover_table">
-                <table class="table table-striped table-hover ">
-                    <thead class="sticky-top thead-dark">
-                        <tr>
-                            <th scope="col">Company Name </th>
-                            <th scope="col">USDOT</th>
-                            <th scope="col">Company State</th>
-                            <th scope="col">Company City</th>
-                            <th scope="col">Zip Code</th>
-                            <th class=" text-center">Price</th>
-                        </tr>
-                    </thead>
-                    <?php include '../model/payment_app_model.php'; ?> 
-                </table>
-            </div> -->
+        <br/>
+    
+        <!-- <div class="col-md-12 mover_table">
+            <table class="table table-striped table-hover ">
+                <thead class="sticky-top thead-dark">
+                    <tr>
+                        <th scope="col">Company Name </th>
+                        <th scope="col">USDOT</th>
+                        <th scope="col">Company State</th>
+                        <th scope="col">Company City</th>
+                        <th scope="col">Zip Code</th>
+                        <th class=" text-center">Price</th>
+                    </tr>
+                </thead>
+                <?php include '../model/payment_app_model.php'; ?> 
+            </table>
+        </div> -->
 
-            <div class="input-for-total text-center">
-                <div class="total-input-contain">
-                        <span class="mt-2"><h5>Enter Payment Total: </h5></span>
-                        <input  class="form-control form-control-sm text-center"
-                                id="totalInput"
-                                placeholder="Enter Total"
-                                type="number"
-                                step="any"
-                                value='<?php echo $total ?>' />
-                                
-                        <!-- <div class="col-md-4 search">
-                                <span class="col-md-5">Total:</span>
-                                <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
-                            </div> -->
-                </div>
-                <div class="total-input-contain">
-                        <span class="mt-2"><h5>Enter Customer Email: </h5></span>
-                        <input  class="form-control form-control-sm text-center"
-                                id="totalInput"
-                                placeholder="Enter Email"
-                                type="text"
-                                value='<?php $customerEmail=''; echo $customerEmail ?>' />
-
-                        <br>
-                        <br>
-                </div>
+        <div class="input-for-total text-center">
+            <div class="total-input-contain">
+                    <span class="mt-2"><h5>Enter Payment Total: </h5></span>
+                    <input  class="form-control form-control-sm text-center"
+                            id="totalInput"
+                            placeholder="Enter Total"
+                            type="number"
+                            step="any"
+                            value='<?php echo $total ?>' />
+                            
+                    <!-- <div class="col-md-4 search">
+                            <span class="col-md-5">Total:</span>
+                            <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
+                        </div> -->
             </div>
-            <br>
-                        <br>
-            <div class="container-fluid text-center mt-4">
+            <div class="total-input-contain">
+                    <span class="mt-2"><h5>Enter Customer Email: </h5></span>
+                    <input  class="form-control form-control-sm text-center"
+                            id="totalInput"
+                            placeholder="Enter Email"
+                            type="text"
+                            value='<?php $customerEmail=''; echo $customerEmail ?>' />
+
+                    <br>
+                    <br>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Add a call to Stripe checkout here -->
+        <?php include '../stripe/checkout.html'; ?>
+
+
+            <!-- <div class="container-fluid text-center mt-4">
                 <br/>
                 <script src="https://www.paypal.com/sdk/js?client-id=AYLQiHy0FSSGs-oBL4nSW7yMLr7czCuyiuMf4JaVr92uVkotmbJiKZCeSGb_m0EM__WeshiYzOUP9EoZ&currency=USD"></script>
-                <!-- Set up a container element for the button -->
+
                 <div id="paypal-button-container"></div>
 
-            <script>
-                paypal.Buttons({
+                <script>
+                    paypal.Buttons({
 
-                    // Sets up the transaction when a payment button is clicked
+                        // Sets up the transaction when a payment button is clicked
 
-                    createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                        amount: {
-                            value: document.getElementById('totalInput').value //'<?php // echo $total; ?>' // Can reference variables or functions. Example: `value: document.getElementById('...').value`
-                            }
-                        }]
-                    });
-                },
+                        createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                            amount: {
+                                value: document.getElementById('totalInput').value //'<?php // echo $total; ?>' // Can reference variables or functions. Example: `value: document.getElementById('...').value`
+                                }
+                            }]
+                        });
+                    },
 
                     // Finalize the transaction after payer approval
                     onApprove: function(data, actions) {
@@ -100,7 +105,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                         }
                     }).render('#paypal-button-container');
                 </script>
-            </div>
+            </div> -->
 </div>
-        
-    <hr />
+
+<hr />
