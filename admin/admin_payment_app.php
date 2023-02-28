@@ -5,15 +5,18 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .input-for-total input {
+        width: 300px;
+    }
     .total-input-contain {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    #totalInput {
+    /* #totalInput {
         margin: 3px;
-        /* width: 200px; */
-    }
+        width: 200px;
+    } */
 </style>
 <?php 
 defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');?>
