@@ -28,7 +28,7 @@ if($role == 'admin'){
 }
 
 // print_r($moverNameArray);
-// print_r($_SESSION);
+print_r($_SESSION);
 
 $lineItemsArrayOfPriceDatas = [];
 
