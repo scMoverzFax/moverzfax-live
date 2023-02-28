@@ -35,7 +35,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                 for ($i = 1; $i <= 5; $i++) {
                     echo '
                         <div class="total-input-contain">
-                            <span class="mt-2"><h5>USDOT #' . $i . ': </h5></span>
+                            <span class="mt-2"><h5>Report #' . $i . ': </h5></span>
                             <input  class="form-control form-control-sm text-center"
                                     id="usdotInput' . $i . '"
                                     name="usdot[]"
