@@ -94,7 +94,14 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
         <br>
 
         <!-- Add a call to Stripe checkout here -->
-        <?php include '../stripe/checkout.html'; ?>
+        <?php 
+            session_start();
+            // $_SESSION['numberOfReports'] = $numberOfReports;
+            // $_SESSION['usdotArray'] = $usdotArray;
+            $_SESSION['moverNameArray'] = $usdot_numbers;
+            $_SESSION['email'] = $adminEnteredCustomerEmail;
+            include '../stripe/checkout.html';
+        ?>
 
 
             <!-- <div class="container-fluid text-center mt-4">

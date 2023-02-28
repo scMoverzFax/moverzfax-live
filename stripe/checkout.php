@@ -8,15 +8,15 @@ require_once 'secrets.php'; //secrets.php stored in cpanel file manager inside s
 \Stripe\Stripe::setApiKey($stripeSecretKey);
 header('Content-Type: application/json');
 
-
 session_start();
 $role = $_SESSION['catagory'];
+
 if($role == 'admin'){
   // print_r($_SESSION);
 // $numberOfReports = $_SESSION['numberOfReports'];
   // $usdotArray = $_SESSION['usdotArray'];
-  $moverNameArray = $usdot_numbers;
-  $customerEmail = $adminEnteredCustomerEmail;
+  $moverNameArray = $_SESSION['moverNameArray'];
+  $customerEmail = $_SESSION['email'];
   $customerName = 'Customer';
 
 } else {
