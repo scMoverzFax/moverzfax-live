@@ -1,14 +1,17 @@
 <?php 
 include 'admin_header.php';
 ?>
-<div style="margin: 10px;"></div>
+<br>
+<br>
+<br>
 <?php
     // Start a PHP session
     session_start();
 
     // Assign the usdot inputs to session variables
     if (isset($_POST['usdot']) && isset($_POST['customer_email'])) {
-        $_SESSION['usdot_numbers'] = $_POST['usdot'];
+        $fullArray = $_POST['usdot'];
+        $_SESSION['usdot_numbers'] = array_filter($fullArray);
         $_SESSION['customer_email'] = $_POST['customer_email'];
         include '../stripe/checkout.html';
     }
