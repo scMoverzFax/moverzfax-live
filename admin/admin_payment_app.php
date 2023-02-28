@@ -52,7 +52,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                             <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter Total Price" required>
                         </div> -->
 
-            <div class="total-input-contain"  style="border: 1px solid black;">
+            <div class="total-input-contain"  style="border: 1px solid black; padding: 5px;">
                     <span class="mt-2"><h5>Enter Customer Email: </h5></span>
                     <input  class="form-control form-control-sm text-center"
                             id="totalInput"
