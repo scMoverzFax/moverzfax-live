@@ -123,7 +123,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
 
         .main-body {
             background: #eff0eb;
-            background-image: url('../img/bg.png');
+            background-image: url('../img/bg.avif');
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0;

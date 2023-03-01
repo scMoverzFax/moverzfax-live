@@ -473,7 +473,7 @@
                 
                 <div class="wo-image mt-20">
                     <!-- <img src="https://www.moversfax.com/frontend/img/wo.png" width="100%">  -->
-                    <img src="../img/moversfax/woman.png" width="100%">
+                    <img src="../img/moversfax/woman.avif" width="100%">
                 </div>
                 <div class="wo-services">
                    
@@ -679,7 +679,7 @@
                         <!-- Carousel items -->
                         <div class="carousel-inner">
                             <div class="active item">
-                                <img class="pull-left" src="../img/moversfax/banner1.png" alt="">
+                                <img class="pull-left" src="../img/moversfax/banner1.avif" alt="">
                             </div>
                             <div class="item">
                                 <img class="pull-left" src="../img/moversfax/banner2.avif" alt="">
