@@ -1,3 +1,4 @@
+<?php require_once '../model/connection.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -16,9 +17,7 @@
 </head>
 
 <body>
-
-	<?php
-	require_once '../model/connection.php';
+<?php
 	//get the movers information from the mover table
 	$search = $_GET['usdot'];
 
@@ -28,8 +27,6 @@
 	$resultChecking = mysqli_num_rows($checkResult);
 	$rows2 = mysqli_fetch_assoc($checkResult);
 	if($resultChecking > 0 && $rows2['approved'] == 1){
-		echo $resultChecking;
-		echo $rows2['approved'];
 		header("Location: https://www.moverzfax.com/model/registered_template.php?usdot=".$search);
 	}
 	
