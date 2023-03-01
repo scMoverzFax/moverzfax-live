@@ -1,4 +1,3 @@
-<?php require_once '../model/connection.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -18,6 +17,8 @@
 
 <body>
 <?php
+	ob_start();
+	require_once '../model/connection.php';
 	//get the movers information from the mover table
 	$search = $_GET['usdot'];
 
