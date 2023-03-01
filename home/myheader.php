@@ -55,7 +55,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     <meta property="og:title" content="Consumer Protection Portal: Moverzfax">
     <meta property="og:description" content="Consumer Protection Portal: Moverzfax">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="Consumer Protection Portal: Moverzfax"><!-- link to image for socio -->
+    <meta property="og:image" content="Consumer Protection Portal: Moverzfax"><!-- link to image for socials -->
     <meta property="og:url" content="Consumer Protection Portal: Moverzfax">
 
     <link rel="shortcut icon" href="https://www.moversfax.com/frontend/m_icon.png">

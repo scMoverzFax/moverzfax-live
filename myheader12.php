@@ -425,7 +425,7 @@
             </div>
             <div class="col-md-4 col-sm-4 front-step-col">
                 <div class="front-step front-step2">
-                    <h2>Analyse</h2>
+                    <h2>Analyze</h2>
                     <p>Providing detailed history report on every movers through reviews, licensing and so much more.
                     </p>
                 </div>
