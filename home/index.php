@@ -490,7 +490,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/moversfax/truck.png" width="40"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/moversfax/truck.avif" width="40"></div>
                                         <div class="uk-width-expand">
                                             <h2 class="uk-card-title uk-margin-remove-bottom">Order a Report</h2>
                                         </div>
