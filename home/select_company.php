@@ -128,9 +128,118 @@ include 'myheader.php';
 
 <!--conditional rendering for if the user is not logged in--> 
 <?php if (!defined('LOGIN')) { ?>
-            <h3 class="text-center my-5 py-5 ">Please Login First...</h3>
-            
-    <?php } ?>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .b-container {
+            overflow: hidden;
+            height: fit-content;
+            width: fit-content;
+            position: relative;
+            padding: 50px;
+            max-width: 1440px;
+
+        }
+
+        .in-container {
+        /* background-color: white;
+        box-shadow: 0 0 10px 2px #eee; */
+        /* border-radius: 10px 10px; */
+        /* border: 1px solid #eee; */
+        /* width: fit-content; */
+        padding: 50px;
+        }
+
+        .bg-form {
+            margin: 0;
+            width: 100%;
+            background-color: white;
+
+        }
+
+        .i-width {
+
+            width: 100%;
+        }
+
+        .row .button-mf {
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
+            -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
+            -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
+            background-color: #7aeb41;
+            border-color: none;
+        }
+
+        .button-mf:hover {
+            background-color: #67bd3c;
+            border-color: none;
+        }
+
+        textarea {
+            height: 100px;
+            font-family: cursive;
+        }
+
+        .bg-form p {
+
+            padding: 0 5%;
+        }
+
+        .bg-form .row {
+            padding: 0 5%;
+        }
+
+        .con-info {
+            padding: 4% 4%;
+            background-color: #e9ecef;
+            word-wrap: break-word;
+
+        }
+
+        /* Desktop-mobile approach --------------------------------------------------------------*/
+
+        /* smaller than Desktop HD */
+        @media (max-width: 1200px) {}
+
+        /* smaller than desktop */
+        @media (max-width: 1000px) {}
+
+        /* smaller than tablet */
+        @media (max-width: 750px) {}
+
+        /* smaller than phablet (also point when grid becomes active) */
+        @media (max-width: 550px) {}
+
+        /* smaller than mobile */
+        @media (max-width: 400px) {}
+
+    </style>
+
+    <!-- Start of Document ----------------------------------------------->
+
+    <div class="b-container">
+        <div class="container in-container slide-in-bottom">
+            <div class="bg-form">
+                <br>
+
+                <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
+                <p>
+                    <a href="signin.php">Login </a> <span>|</span><a href="register.php">Register</a>
+                </p>
+                
+            </div>
+
+        </div>
+    </div>
+    <!-- <h3 class="text-center my-5 py-5 ">Please Login First...</h3> -->
+<?php } ?>
 
 <div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
     <div class="container in-container slide-in-bottom">
