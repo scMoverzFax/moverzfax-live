@@ -147,6 +147,16 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
 
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD3P4DJW8V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FD3P4DJW8V');
+</script>
+
 <body>
     <?php
     //  include 'truck_loader.php'; 

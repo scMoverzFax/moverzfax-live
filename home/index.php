@@ -441,15 +441,7 @@
 </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD3P4DJW8V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-FD3P4DJW8V');
-</script>
 
 <!-- Start of Document ----------------------------------------------->
 <main>
