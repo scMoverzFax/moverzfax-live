@@ -93,9 +93,8 @@
 	/* smaller than mobile */
 	@media (max-width: 400px) {}
 </style>
-<br>
-<br>
-<br>
+<div style="margin-top: 30px;">
     <h3 class="text-center mt-2">Payment Received</h3>
+</div>
 
 <?php include '../home/footer.php'; ?>
