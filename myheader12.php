@@ -558,7 +558,7 @@
                 <h4 style="color: #ffffff; text-align: center;">MoverZfax.com</h4>
                 <ul style="color: #ffffff; font-size: 13px">
                     <a href="faq.html">Frequently Asked Questions</a>
-                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="privacy_notice.pdf" target="_blank">Privacy Policy</a>
                     <a href="contact_us.html">Contact Us</a>
                     <a href="terms_of_use.pdf" target="_blank">Terms of Use</a>
                 </ul>
@@ -617,7 +617,7 @@
             2019 © BestStronger IT Talents. ALL Rights Reserved.
         </div>
         <div class="col-md-4 col-sm-4 padding-top-10">
-            <a href="javascript:;">Privacy Policy</a> | <a href="terms_of_use.pdf" target="_blank">Terms of Service</a>
+            <a href="privacy_notice.pdf" target="_blank">Privacy Policy</a> | <a href="terms_of_use.pdf" target="_blank">Terms of Service</a>
         </div>
         <div class="col-md-4 col-sm-4 padding-top-10" style="font-size: large;">
             <ul class="social-footer list-unstyled list-inline pull-right">

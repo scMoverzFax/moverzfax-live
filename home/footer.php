@@ -24,7 +24,7 @@
 				<h4>MoverZfax.com</h4>
 				<ul>
 					<li><a href="faq.php" target="_blank">Frequently Asked Questions</a></li>
-					<!-- <li><a href="privacy_policy.php" target="_blank">Privacy Policy</a></li> -->
+					<!-- <li><a href="privacy_notice.pdf" target="_blank">Privacy Policy</a></li> -->
 					<li><a href="contact.php" target="_blank">Contact Us</a></li>
 					<!-- <li><a href="terms_of_use.pdf" target="_blank">Terms of Use</a></li> -->
 				</ul>
