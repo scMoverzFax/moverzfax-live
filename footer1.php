@@ -28,7 +28,7 @@
 					<a href="faq.php">Frequently Asked Questions</a>
 					<a href="privacy_policy.php">Privacy Policy</a>
 					<a href="contact_us.php">Contact Us</a>
-					<a href="t&c.php">Terms of Use</a>
+					<a href="terms_of_use.pdf" target="_blank">Terms of Use</a>
 				<!--</ul>-->
 			</div>
 			<div class="col-sm-3">
@@ -84,7 +84,7 @@
 			<p> 2019 © BestStronger IT Talents. ALL Rights Reserved.</p>
 		</div>
 		<div class="row">
-			<div class="text-left" style="color: white"><a href="#">Privacy Policy </a> | <a href="#">Terms of Service</a></div>
+			<div class="text-left" style="color: white"><a href="#">Privacy Policy </a> | <a href="terms_of_use.pdf" target="_blank">Terms of Service</a></div>
 			<style type="text/css">
 				.container-text-right{
 					padding-left: 30px;

@@ -17,7 +17,7 @@
 			<div class="col-sm-8">
 				<h1 class="text-center" style="font-weight: 500">Post a Moving Job</h1>
 				<p>If you need to Post a Moving job, this is the step to take. Contact our office and describe where and when you are moving and we will help you find the right mover. First, make sure to have a list of several USDOT number (License to operate a moving company in the USA) to choose from and we can provide you with the best mover among the one you have. It is ALWAYS important to ask for the USDOT number of the moving company who contacted you or provided you with a quote. This will let you know of their license to operate and also allow us to provide you with the detailed report on that mover. This will in return allow you to get the fact about that company and help you select the best mover that is honest and professional to service you for your relocation needs.</p><br>
-				<p style="color: #721c24; font-weight: 700">Important Notice:</p>Before posting a moving job, you must read and agree with our<a href="t&c.php"> TERMS OF SERVICE</a>. If your city is not listed in our collection, please select nearest location or enter them manually.
+				<p style="color: #721c24; font-weight: 700">Important Notice:</p>Before posting a moving job, you must read and agree with our<a href="terms_of_use.pdf" target="_blank"> TERMS OF SERVICE</a>. If your city is not listed in our collection, please select nearest location or enter them manually.
 				<form>
 					<table class="table">
 						<tr>
@@ -136,7 +136,7 @@
 					<table class="table text-center">
 						<tr>
 								<td></td>
-								<td><input type="checkbox" name="" required> I agree to the <a href="t&c.php" target="_blank">terms of use</a></td>
+								<td><input type="checkbox" name="" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
 							</tr>
 							<tr>
 								<td></td>

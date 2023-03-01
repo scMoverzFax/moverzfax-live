@@ -560,7 +560,7 @@
                     <a href="faq.html">Frequently Asked Questions</a>
                     <a href="privacy_policy.html">Privacy Policy</a>
                     <a href="contact_us.html">Contact Us</a>
-                    <a href="t&amp;c.html">Terms of Use</a>
+                    <a href="terms_of_use.pdf" target="_blank">Terms of Use</a>
                 </ul>
             </div>
             <div class="col-sm-3">
@@ -617,7 +617,7 @@
             2019 © BestStronger IT Talents. ALL Rights Reserved.
         </div>
         <div class="col-md-4 col-sm-4 padding-top-10">
-            <a href="javascript:;">Privacy Policy</a> | <a href="javascript:;">Terms of Service</a>
+            <a href="javascript:;">Privacy Policy</a> | <a href="terms_of_use.pdf" target="_blank">Terms of Service</a>
         </div>
         <div class="col-md-4 col-sm-4 padding-top-10" style="font-size: large;">
             <ul class="social-footer list-unstyled list-inline pull-right">

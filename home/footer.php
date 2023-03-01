@@ -26,7 +26,7 @@
 					<li><a href="faq.php" target="_blank">Frequently Asked Questions</a></li>
 					<!-- <li><a href="privacy_policy.php" target="_blank">Privacy Policy</a></li> -->
 					<li><a href="contact.php" target="_blank">Contact Us</a></li>
-					<!-- <li><a href="t&c.php" target="_blank">Terms of Use</a></li> -->
+					<!-- <li><a href="terms_of_use.pdf" target="_blank">Terms of Use</a></li> -->
 				</ul>
 			</div>
 			<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 anim">
