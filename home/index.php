@@ -10,12 +10,12 @@
     <meta content="MoverZfax UI description" name="description">
     <meta content="MoverZfax Shop UI keywords" name="keywords">
     <meta content="keenthemes" name="author">
-    <meta property="og:site_name" content="Customer Protection Portal: Moverzfax">
-    <meta property="og:title" content="Customer Protection Portal: Moverzfax">
-    <meta property="og:description" content="Customer Protection Portal: Moverzfax">
+    <meta property="og:site_name" content="Consumer Protection Portal: Moverzfax">
+    <meta property="og:title" content="Consumer Protection Portal: Moverzfax">
+    <meta property="og:description" content="Consumer Protection Portal: Moverzfax">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="Customer Protection Portal: Moverzfax"><!-- link to image for socio -->
-    <meta property="og:url" content="Customer Protection Portal: Moverzfax">	
+    <meta property="og:image" content="Consumer Protection Portal: Moverzfax"><!-- link to image for socio -->
+    <meta property="og:url" content="Consumer Protection Portal: Moverzfax">	
 
     <link rel="shortcut icon" href="https://www.moversfax.com/frontend/m_icon.png">
 
