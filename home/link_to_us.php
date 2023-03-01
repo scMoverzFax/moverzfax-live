@@ -46,9 +46,9 @@
 				<hr>
 				<ul>
 					<li style="list-style-type:disc;"><a href="https://movemewithcare.com/" target="_blank">Accredited and Certified moving network for USA and CANADA</a></li><br>
-					<li style="list-style-type:disc;"><a href="https://movinguwithcare.com/" target="_blank">Licensed movers for USA and CANADA</a></li><br>
+					<!-- <li style="list-style-type:disc;"><a href="https://movinguwithcare.com/" target="_blank">Licensed movers for USA and CANADA</a></li><br> -->
 					<li style="list-style-type:disc;"><a href="https://moving.proaceintl.com/" target="_blank">Professional and Certified mover in Washington DC, Maryland, Virginia, Nationwide and International: ProAce International Moving and Storage</a></li><br>
-					<li style="list-style-type:disc;"><a href="https://relocatorsnetwork.com/" target="_blank">Professional and Ethical moving companies in America</a></li><br>
+					<!-- <li style="list-style-type:disc;"><a href="https://relocatorsnetwork.com/" target="_blank">Professional and Ethical moving companies in America</a></li><br> -->
 					<li style="list-style-type:disc;"><a href="https://www.kejandelivery.com" target="_blank">Miami Movers</a></li><br>
 					<li style="list-style-type:disc;"><a href="https://www.bigredsmoving.com" target="_blank">Tallahassee Movers</a></li>
 				</ul>
