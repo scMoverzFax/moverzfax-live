@@ -129,9 +129,7 @@ include 'myheader.php';
 <!--conditional rendering for if the user is not logged in--> 
 <?php if (!defined('LOGIN')) { ?>
             <h3 class="text-center my-5 py-5 ">Please Login First...</h3>
-            <div class="text-center">
-                <a href="signin.php">Login </a>|<a href="register.php"> Register</a>
-            </div>
+            
     <?php } ?>
 
 <div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
