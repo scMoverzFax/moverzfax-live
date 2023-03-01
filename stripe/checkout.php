@@ -24,7 +24,9 @@ if($role == 'admin'){
   // $usdotArray = $_SESSION['usdotArray'];
   $moverNameArray = $_SESSION['moverNameArray'];
   $customerEmail = $_SESSION['email'];
-  $customerName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+  if (isset($_SESSION['first_name']) && isset($_SESSION['last_name'])) {
+    $customerName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+  }
 }
 
 // print_r($moverNameArray);
