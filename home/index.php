@@ -1,444 +1,443 @@
 <?php include "myheader.php" ?> 
 
 <head>
-<title>MoverZfax</title>
- <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="fSbR7179ytQFETKa3rkDvn1fFmhbAymvwBsjj9JC">
-    <meta content="MoverZfax UI description" name="description">
-    <meta content="MoverZfax Shop UI keywords" name="keywords">
-    <meta content="keenthemes" name="author">
-    <meta property="og:site_name" content="Consumer Protection Portal: Moverzfax">
-    <meta property="og:title" content="Consumer Protection Portal: Moverzfax">
-    <meta property="og:description" content="Consumer Protection Portal: Moverzfax">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="Consumer Protection Portal: Moverzfax"><!-- link to image for socio -->
-    <meta property="og:url" content="Consumer Protection Portal: Moverzfax">	
+    <title>MoverZfax</title>
+    <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="fSbR7179ytQFETKa3rkDvn1fFmhbAymvwBsjj9JC">
+        <meta content="MoverZfax UI description" name="description">
+        <meta content="MoverZfax Shop UI keywords" name="keywords">
+        <meta content="keenthemes" name="author">
+        <meta property="og:site_name" content="Consumer Protection Portal: Moverzfax">
+        <meta property="og:title" content="Consumer Protection Portal: Moverzfax">
+        <meta property="og:description" content="Consumer Protection Portal: Moverzfax">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="Consumer Protection Portal: Moverzfax"><!-- link to image for socio -->
+        <meta property="og:url" content="Consumer Protection Portal: Moverzfax">	
 
-    <link rel="shortcut icon" href="https://www.moversfax.com/frontend/m_icon.png">
+        <link rel="shortcut icon" href="https://www.moversfax.com/frontend/m_icon.png">
 
-    <!-- Fonts START -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
-    <link href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-    <!-- Fonts END -->
+        <!-- Fonts START -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+        <link href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+        <!-- Fonts END -->
 
-    <!-- Global styles START -->
-    <link href="https://www.moversfax.com/frontend/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Global styles END -->
+        <!-- Global styles START -->
+        <link href="https://www.moversfax.com/frontend/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Global styles END -->
 
-    <!-- Page level plugin styles START -->
-    <link href="https://www.moversfax.com/frontend/pages/css/animate.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
-    <!-- Page level plugin styles END -->
+        <!-- Page level plugin styles START -->
+        <link href="https://www.moversfax.com/frontend/pages/css/animate.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+        <!-- Page level plugin styles END -->
 
-    <!-- Theme styles START -->
-    <link href="https://www.moversfax.com/frontend/pages/css/components.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
-    <!--<link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/corporate/css/themes/green.css" rel="stylesheet" id="style-color">-->
-    <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
+        <!-- Theme styles START -->
+        <link href="https://www.moversfax.com/frontend/pages/css/components.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
+        <!--<link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/corporate/css/themes/green.css" rel="stylesheet" id="style-color">-->
+        <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
 
-    <!-- formwidzard css -->
-    <link href="https://www.moversfax.com/backend/css/style-metronic.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/backend/css/plugins.css" rel="stylesheet">
-    <!-- <link href="css/uikit.min.css" rel="stylesheet"> -->
+        <!-- formwidzard css -->
+        <link href="https://www.moversfax.com/backend/css/style-metronic.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/backend/css/plugins.css" rel="stylesheet">
+        <!-- <link href="css/uikit.min.css" rel="stylesheet"> -->
 
-    <!-- this is a review_modal css -->
-    <link href="https://www.moversfax.com/frontend/corporate/css/examples.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/corporate/css/bars-movie.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/corporate/css/star_style.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/corporate/css/custom.css" rel="stylesheet">
-    <link href="https://www.moversfax.com/frontend/corporate/css/modal.css" rel="stylesheet">	
-  <!-- CSS–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- this is a review_modal css -->
+        <link href="https://www.moversfax.com/frontend/corporate/css/examples.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/corporate/css/bars-movie.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/corporate/css/star_style.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/corporate/css/custom.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/frontend/corporate/css/modal.css" rel="stylesheet">	
+    <!-- CSS–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-
-<!-- Searchbox CSS start-->
-<style>
-    
-    *,
-    body{
-        margin: 0;
-        padding:0;
-        box-sizing: border-box;
-    }
-    .b-contaoner{
-        background-image: url(../img/index-1.avif);
-        background-repeat:no-repeat;
-        background-position: top center; 
-        background-size:contain; 
-        margin-top: 0 !important; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 450px;
-        width: 100vw;
-        /*background-color: #85CA63;*/
-        /*#67bd3c*/
-    }
-
-    .b-search{
-        position: relative;
-    }
-
-    .b-search
-    input, button{
-        font-family: 'Poppins', sans-serif;
-        letter-spacing: .8px;
-    }
-    .b-search .inner-form{
-        display: -ms-flexbox;
-        display: flex;
-        width: 50vw;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -ms-flex-align: center;
-        align-items: center;
-        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-        border-radius: 34px;
-        overflow: hidden;
-    }
-    .b-search .inner-form .input-field {
-        height: 55px;
-    }
-    .b-search .inner-form .input-field input {
-        height: 100%;
-        background: transparent;
-        border: 0;
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-        font-size: 16px;
-        color: #000;
-    }
-
-    .b-search form .inner-form .input-field input.placeholder {
-        color: #222;
-        font-size: 16px;
-    }
-
-    .b-search form .inner-form .input-field input:-moz-placeholder {
-        color: #222;
-        font-size: 16px;
-    }
-
-    .b-search form .inner-form .input-field input::-webkit-input-placeholder {
-        color: #222;
-        font-size: 16px;
-    }
-
-    .b-search form .inner-form .input-field input:hover, .b-search form .inner-form .input-field input:focus {
-        box-shadow: none;
-        outline: 0;
-    }
-
-    .b-search form .inner-form .input-field.first-wrap {
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-align: center;
-            align-items: center;
-        background: rgba(217, 241, 227,.7);
-    }
-
-    .b-search form .inner-form .input-field.first-wrap input {
-        -ms-flex-positive: 1;
-            flex-grow: 5;
-    }
-
-    .b-search form .inner-form .input-field.first-wrap .svg-wrapper {
-        min-width: 80px;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-pack: center;
-            justify-content: center;
-        -ms-flex-align: center;
-            align-items: center;
-    }
-
-    .b-search form .inner-form .input-field.first-wrap svg {
-        width: 36px;
-        height: 36px;
-        fill: #222;
-    }
-
-    .b-search form .inner-form .input-field.second-wrap {
-        min-width: 180px;
-    }
-
-    .b-search form .inner-form .input-field.second-wrap .btn-search {
-        height: 100%;
-        width: 100%;
-        white-space: nowrap;
-        color: #fff;
-        border: 0;
-        cursor: pointer;
-        font-weight: 700;
-        position: relative;
-        z-index: 0;
-        background: rgba(0, 173, 95,0.7);
-        transition: all .2s ease-out, color .2s ease-out;
-    }
-
-    .b-search form .inner-form .input-field.second-wrap .btn-search:hover {
-        background: #009451;
-    }
-
-    .b-search form .inner-form .input-field.second-wrap .btn-search:focus {
-        outline: 0;
-        box-shadow: none;
-    }
-
-    .b-search form .info {
-        font-size: 15px;
-        color: #ccc;
-        padding-left: 26px;
-    }
-
-    @media screen and (max-width: 992px) {
-        .b-search form .inner-form .input-field {
-        height: 50px;
+    <!-- Searchbox CSS start-->
+    <style>
+        
+        *,
+        body{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
         }
+        .b-contaoner{
+            background-image: url(../img/index-1.avif);
+            background-repeat:no-repeat;
+            background-position: top center; 
+            background-size:contain; 
+            margin-top: 0 !important; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 450px;
+            width: 100vw;
+            /*background-color: #85CA63;*/
+            /*#67bd3c*/
+        }
+
+        .b-search{
+            position: relative;
+        }
+
+        .b-search
+        input, button{
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: .8px;
+        }
+        .b-search .inner-form{
+            display: -ms-flexbox;
+            display: flex;
+            width: 50vw;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -ms-flex-align: center;
+            align-items: center;
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            border-radius: 34px;
+            overflow: hidden;
+        }
+        .b-search .inner-form .input-field {
+            height: 55px;
+        }
+        .b-search .inner-form .input-field input {
+            height: 100%;
+            background: transparent;
+            border: 0;
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #000;
+        }
+
         .b-search form .inner-form .input-field input.placeholder {
             color: #222;
-            font-size: 13px;
+            font-size: 16px;
         }
 
         .b-search form .inner-form .input-field input:-moz-placeholder {
             color: #222;
-            font-size: 13px;
+            font-size: 16px;
         }
 
         .b-search form .inner-form .input-field input::-webkit-input-placeholder {
             color: #222;
-            font-size: 13px;
+            font-size: 16px;
         }
-        .b-search form .inner-form .input-field.second-wrap {
-        min-width: 160px;
-        }
-        .b-contaoner{
-            height:350px;
-        }
-    }
 
-    @media screen and (max-width: 768px) {
+        .b-search form .inner-form .input-field input:hover, .b-search form .inner-form .input-field input:focus {
+            box-shadow: none;
+            outline: 0;
+        }
+
+        .b-search form .inner-form .input-field.first-wrap {
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+                align-items: center;
+            background: rgba(217, 241, 227,.7);
+        }
+
+        .b-search form .inner-form .input-field.first-wrap input {
+            -ms-flex-positive: 1;
+                flex-grow: 5;
+        }
+
         .b-search form .inner-form .input-field.first-wrap .svg-wrapper {
-            min-width: 40px;
+            min-width: 80px;
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: center;
                 justify-content: center;
             -ms-flex-align: center;
                 align-items: center;
-            padding: 0 10px;
         }
+
         .b-search form .inner-form .input-field.first-wrap svg {
-            width: 26px;
-            height: 26px;
+            width: 36px;
+            height: 36px;
             fill: #222;
         }
+
         .b-search form .inner-form .input-field.second-wrap {
-           min-width: 100px;
+            min-width: 180px;
         }
-        .b-search .inner-form{
-           width: 70vw;
-        }
-        .b-contaoner{
-            height: 250px;
-        }
-        
-    }
-    /* smaller than phablet (also point when grid becomes active) */
-    @media (max-width: 550px) {
-        .b-search .inner-form{
-        width: 90vw;
-        }
-        .b-search
-        input, button{
-            letter-spacing: 0px;
-        }
-        .b-contaoner{
-            background-image: url(../img/index-1.avif); /* this may need to chang back in production */
-        }
-    }
 
-    /* smaller than mobile */
-    @media (max-width: 400px) {
-        .b-search form .inner-form .input-field.second-wrap {
-           min-width: 80px;
-        }
-        .b-contaoner{
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        height: 230px;
-        width: 100vw;
-        /*background-color: #85CA63;*/
-    }
-    }
-
-</style>
-<!-- Searchbox CSS end -->
-
-<style>
-
-        * {
-           
-          box-sizing: border-box;
-        }
-		
-        .b-container{
+        .b-search form .inner-form .input-field.second-wrap .btn-search {
+            height: 100%;
             width: 100%;
-			margin:0;
+            white-space: nowrap;
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            font-weight: 700;
+            position: relative;
+            z-index: 0;
+            background: rgba(0, 173, 95,0.7);
+            transition: all .2s ease-out, color .2s ease-out;
+        }
+
+        .b-search form .inner-form .input-field.second-wrap .btn-search:hover {
+            background: #009451;
+        }
+
+        .b-search form .inner-form .input-field.second-wrap .btn-search:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+
+        .b-search form .info {
+            font-size: 15px;
+            color: #ccc;
+            padding-left: 26px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .b-search form .inner-form .input-field {
+            height: 50px;
+            }
+            .b-search form .inner-form .input-field input.placeholder {
+                color: #222;
+                font-size: 13px;
+            }
+
+            .b-search form .inner-form .input-field input:-moz-placeholder {
+                color: #222;
+                font-size: 13px;
+            }
+
+            .b-search form .inner-form .input-field input::-webkit-input-placeholder {
+                color: #222;
+                font-size: 13px;
+            }
+            .b-search form .inner-form .input-field.second-wrap {
+            min-width: 160px;
+            }
+            .b-contaoner{
+                height:350px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .b-search form .inner-form .input-field.first-wrap .svg-wrapper {
+                min-width: 40px;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-pack: center;
+                    justify-content: center;
+                -ms-flex-align: center;
+                    align-items: center;
+                padding: 0 10px;
+            }
+            .b-search form .inner-form .input-field.first-wrap svg {
+                width: 26px;
+                height: 26px;
+                fill: #222;
+            }
+            .b-search form .inner-form .input-field.second-wrap {
+            min-width: 100px;
+            }
+            .b-search .inner-form{
+            width: 70vw;
+            }
+            .b-contaoner{
+                height: 250px;
+            }
+            
+        }
+        /* smaller than phablet (also point when grid becomes active) */
+        @media (max-width: 550px) {
+            .b-search .inner-form{
+            width: 90vw;
+            }
+            .b-search
+            input, button{
+                letter-spacing: 0px;
+            }
+            .b-contaoner{
+                background-image: url(../img/index-1.avif); /* this may need to chang back in production */
+            }
+        }
+
+        /* smaller than mobile */
+        @media (max-width: 400px) {
+            .b-search form .inner-form .input-field.second-wrap {
+            min-width: 80px;
+            }
+            .b-contaoner{
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            height: 230px;
+            width: 100vw;
+            /*background-color: #85CA63;*/
+        }
+        }
+
+    </style>
+    <!-- Searchbox CSS end -->
+
+    <style>
+
+            * {
+            
+            box-sizing: border-box;
+            }
+            
+            .b-container{
+                width: 100%;
+                margin:0;
+                padding:0;
+                overflow: hidden;
+
+            }
+        
+            .in-container{
+                width: 90%;
+                margin: 19px auto;
+                
+
+            }
+            .bg-form{
+                margin: 0 auto;
+                padding: 0 10%;
+                width:80%;
+                background-color: #f6f6f6;
+                border-radius: 10px 10px;
+            }
+            .bg-form h4{
+                padding-top:30px;
+            }
+            .bg-form .row{
+                margin-left:0;
+                margin-right:0;
+                padding: 0 10%;
+            }
+            .i-width{
+                width: 100%;
+            }
+            .row .button-mf{
+                font-size: 15px;
+                color: rgb(255, 255, 255);
+                box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
+                -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
+                -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
+                background-color: #7aeb41;
+                border-color: none;
+            }
+            .button-mf:hover{
+                background-color: #67bd3c;
+                border-color: none;
+            }
+            .bg-form hr{
+                padding:20px 0;
+            }
+    </style>
+
+    <style>
+        .main{
+            margin:0;
             padding:0;
             overflow: hidden;
-
-		}
-     
-        .in-container{
-            width: 90%;
-            margin: 19px auto;
-            
-
-         }
-         .bg-form{
-             margin: 0 auto;
-             padding: 0 10%;
-             width:80%;
-             background-color: #f6f6f6;
-             border-radius: 10px 10px;
-         }
-         .bg-form h4{
-             padding-top:30px;
-         }
-        .bg-form .row{
-            margin-left:0;
-            margin-right:0;
-            padding: 0 10%;
         }
-        .i-width{
-            width: 100%;
-        }
-        .row .button-mf{
-            font-size: 15px;
-            color: rgb(255, 255, 255);
-            box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-            -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-            -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-            background-color: #7aeb41;
-            border-color: none;
-        }
-        .button-mf:hover{
-            background-color: #67bd3c;
-            border-color: none;
-        }
-        .bg-form hr{
-            padding:20px 0;
-        }
-</style>
-
-<style>
-    .main{
-        margin:0;
-        padding:0;
-        overflow: hidden;
-    }
-    /*.services{*/
-    /*    margin-left: 5% ;*/
-    /*    margin-right: 5% ;*/
-    /*}*/
-    .wo-image{
-        float: left;
-        width: 25%;
-        padding-right: 1% ;
-    }
-    .wo-services{
-        float: left;
-        width: 75%;
-    }
-    
-    .container-partners{
-        width:90%;
-        height:fit-content;
-        margin:2% auto;
-    }
-    .front-step{
-        height:200px;
-    }
-    
-     /* Desktop-mobile approach --------------------------------------------------------------*/
-
-    /* smaller than Desktop HD */
-    @media (max-width: 1200px) {}
-
-    /* smaller than desktop */
-    @media (max-width: 900px) {}
-
-    /* smaller than tablet */
-    @media (max-width: 750px) {
+        /*.services{*/
+        /*    margin-left: 5% ;*/
+        /*    margin-right: 5% ;*/
+        /*}*/
         .wo-image{
-            width: 35%;
+            float: left;
+            width: 25%;
+            padding-right: 1% ;
         }
         .wo-services{
-            width: 65%;
+            float: left;
+            width: 75%;
         }
-        #partners{
-            height:350px;
-        }
+        
         .container-partners{
-            width:95%;
+            width:90%;
             height:fit-content;
             margin:2% auto;
         }
-    }
-
-    /* smaller than phablet (also point when grid becomes active) */
-    @media (max-width: 550px) {
-        .services{
-            margin-left: 1% ;
-            margin-right: 1% ;
+        .front-step{
+            height:200px;
         }
-        #partners{
-            height:300px;
+        
+        /* Desktop-mobile approach --------------------------------------------------------------*/
+
+        /* smaller than Desktop HD */
+        @media (max-width: 1200px) {}
+
+        /* smaller than desktop */
+        @media (max-width: 900px) {}
+
+        /* smaller than tablet */
+        @media (max-width: 750px) {
+            .wo-image{
+                width: 35%;
+            }
+            .wo-services{
+                width: 65%;
+            }
+            #partners{
+                height:350px;
+            }
+            .container-partners{
+                width:95%;
+                height:fit-content;
+                margin:2% auto;
+            }
         }
-        #tabs-nav{
-            padding-left:5px;
-            padding-right:5px;
-            font-size:80%;
+
+        /* smaller than phablet (also point when grid becomes active) */
+        @media (max-width: 550px) {
+            .services{
+                margin-left: 1% ;
+                margin-right: 1% ;
+            }
+            #partners{
+                height:300px;
+            }
+            #tabs-nav{
+                padding-left:5px;
+                padding-right:5px;
+                font-size:80%;
+            }
         }
-    }
 
-    /* smaller than mobile */
-    @media (max-width: 350px) {
-        #tabs-nav{
-            padding-left:2px;
-            padding-right:2px;
-            font-size:70%;
+        /* smaller than mobile */
+        @media (max-width: 350px) {
+            #tabs-nav{
+                padding-left:2px;
+                padding-right:2px;
+                font-size:70%;
+            }
+
         }
 
-    }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+        .image {
+            flex: 1;
+            margin: 0 10px;
+            max-width: calc(100% / 7 - 20px);
+        }
 
-    .image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-      
-    .image {
-        flex: 1;
-        margin: 0 10px;
-        max-width: calc(100% / 7 - 20px);
-    }
-
-</style>
+    </style>
 </head>
 
 
@@ -610,7 +609,7 @@
             <!-- END SERVICE BOX -->
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <img class="img-fluid" src="../img/moversfax/our_mission.png">
+                    <img class="img-fluid" src="../img/moversfax/our_mission.avif">
                 </div>
             </div><hr>
 
