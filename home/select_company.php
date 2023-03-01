@@ -158,7 +158,7 @@ include 'myheader.php';
         .bg-form {
             margin: 0;
             width: 100%;
-            background-color: white;
+            /* background-color: white; */
 
         }
 
@@ -231,7 +231,7 @@ include 'myheader.php';
 
                 <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
                 <p>
-                    <a href="signin.php">Login </a> <span>|</span><a href="register.php">Register</a>
+                    <a href="signin.php">Login </a> <span>|</span><a href="register.php"> Register</a>
                 </p>
                 
             </div>
