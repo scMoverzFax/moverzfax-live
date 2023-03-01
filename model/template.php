@@ -21,7 +21,6 @@
 	require_once '../model/connection.php';
 	//get the movers information from the mover table
 	$search = $_GET['usdot'];
-
 	//check is mover usdot is in mover_register table. If it is, then redirect to claimed_template and exit this file
 	$check = "SELECT * FROM mover_register WHERE usdot = '" . $search . "';";
 	$checkResult = mysqli_query($con, $check);
@@ -35,6 +34,7 @@
 	$sql = "SELECT  name, address, url, phone, contact_person, fax, usdot, mc, state_id FROM mover WHERE usdot = '" . $search . "';";
 	$result = mysqli_query($con, $sql);
 	$resultCheck = mysqli_num_rows($result);
+	$validMover = false;
 
 	if ($resultCheck > 0) {
 		$validMover = true;
