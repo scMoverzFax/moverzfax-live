@@ -1,3 +1,19 @@
+<?php
+	require_once '../model/connection.php';
+	//get the movers information from the mover table
+	$search = $_GET['usdot'];
+
+	//check is mover usdot is in mover_register table. If it is, then redirect to claimed_template and exit this file
+	$check = "SELECT * FROM mover_register WHERE usdot = '" . $search . "';";
+	$checkResult = mysqli_query($con, $check);
+	$resultChecking = mysqli_num_rows($checkResult);
+	$rows2 = mysqli_fetch_assoc($checkResult);
+	if($resultChecking > 0 && $rows2['approved'] == 1){
+		header("Location: https://www.moverzfax.com/model/registered_template.php?usdot=" . $search . "");
+	}
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -17,22 +33,7 @@
 
 <body>
 <?php
-	require_once '../model/connection.php';
-	//get the movers information from the mover table
-	$search = $_GET['usdot'];
-
-	//check is mover usdot is in mover_register table. If it is, then redirect to claimed_template and exit this file
-	$check = "SELECT * FROM mover_register WHERE usdot = '" . $search . "';";
-	$checkResult = mysqli_query($con, $check);
-	$resultChecking = mysqli_num_rows($checkResult);
-	$rows2 = mysqli_fetch_assoc($checkResult);
-	if($resultChecking > 0 && $rows2['approved'] == 1){
-
-		echo "Location: https://www.moverzfax.com/model/registered_template.php?usdot=" . $search . "";
-		// header("Location: https://www.moverzfax.com/model/registered_template.php?usdot=" . $search . "");
-	}
 	
-
 	$sql = "SELECT  name, address, url, phone, contact_person, fax, usdot, mc, state_id FROM mover WHERE usdot = '" . $search . "';";
 	$result = mysqli_query($con, $sql);
 	$resultCheck = mysqli_num_rows($result);
