@@ -56,6 +56,16 @@
     <link href="https://www.moversfax.com/frontend/corporate/css/custom.css" rel="stylesheet">
     <link href="https://www.moversfax.com/frontend/corporate/css/modal.css" rel="stylesheet">	
   <!-- CSS–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD3P4DJW8V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FD3P4DJW8V');
+</script>
 
 <!-- Searchbox CSS start-->
 <style>
