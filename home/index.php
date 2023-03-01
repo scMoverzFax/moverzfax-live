@@ -508,7 +508,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="35" src="../img/moversfax/report_card.png" width="35"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="35" src="../img/moversfax/report_card.avif" width="35"></div>
                                         <div class="uk-width-expand">
                                             <h3 class="uk-card-title uk-margin-remove-bottom">Sample Report Card Snapshot</h3>
                                         </div>
