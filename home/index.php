@@ -650,7 +650,7 @@
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <!-- <a href="https://www.moversfax.com/frontend/temp/photos/img10.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button"> -->
-                                    <img style="height: 100px;" src="https://www.moversfax.com/frontend/pages/img/photos/img10.jpg" alt="">
+                                    <img style="height: 100px;" src="../img/moversfax/img2.avif" alt="">
                                 <!-- </a> -->
                             </div>
                         </div>
@@ -682,7 +682,7 @@
                                 <img class="pull-left" src="../img/moversfax/banner1.png" alt="">
                             </div>
                             <div class="item">
-                                <img class="pull-left" src="../img/moversfax/banner2.png" alt="">
+                                <img class="pull-left" src="../img/moversfax/banner2.avif" alt="">
                             </div>
                             <div class="item">
                                 <img class="pull-left" src="../img/moversfax/banner3.png" alt="">
