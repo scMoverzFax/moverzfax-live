@@ -127,7 +127,13 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 
 <!--conditional rendering for if the user is not logged in--> 
-<?php if (!defined('LOGIN')) { echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>';} ?>
+<?php if (!defined('LOGIN')) { 
+    echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>
+            <div class="col-md-12 col-lg-4 col-xl-4 anim text-left">
+                <a href="signin.php">Login </a> <span>|
+                </span><a href="register.php">Register</a>
+            </div>
+    ';} ?>
 
 <div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
     <div class="container in-container slide-in-bottom">
