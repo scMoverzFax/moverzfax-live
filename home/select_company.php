@@ -129,7 +129,7 @@ include 'myheader.php';
 <!--conditional rendering for if the user is not logged in--> 
 <?php if (!defined('LOGIN')) { 
     echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>
-            <div class="col-md-12 col-lg-4 col-xl-4 anim text-left">
+            <div>
                 <a href="signin.php">Login </a> <span>|
                 </span><a href="register.php">Register</a>
             </div>
