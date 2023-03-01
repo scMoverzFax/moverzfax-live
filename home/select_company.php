@@ -230,7 +230,7 @@ include 'myheader.php';
                 <br>
 
                 <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
-                <p>
+                <p class="text-center">
                     <a href="signin.php">Login </a> <span>|</span><a href="register.php"> Register</a>
                 </p>
                 
