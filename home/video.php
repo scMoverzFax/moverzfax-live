@@ -1,6 +1,6 @@
 <?php include 'myheader.php'; ?>
 
-<title>Proamotional Video</title>
+<title>Promotional Video</title>
 
 <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
