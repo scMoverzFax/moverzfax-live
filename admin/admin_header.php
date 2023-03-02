@@ -233,7 +233,6 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                             <a href="admin_cs_transaction.php">Customer Transactions</a>
                             <a href="admin_mv_transaction.php">Mover Transactions</a>
                         </div>
-                    </div>
 
                     <button class="collapsible">All Users</button>
                         <div class="content1">
