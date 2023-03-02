@@ -745,9 +745,9 @@
             </div>
         </div>
 
-        <div id="topcontrol" title="Scroll Back to Top" style="display: none; position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
+        <!-- <div id="topcontrol" title="Scroll Back to Top" style="display: none; position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
             <img src="../img/up.png" style="width:40px; height:40px" alt="Move to top icon" >
-        </div>
+        </div> -->
 
 </main>
 
