@@ -23,8 +23,7 @@
             position: relative;
         }
 
-        .b-search
-        input, button{
+        .b-search input, button{
             font-family: 'Poppins', sans-serif;
             letter-spacing: .8px;
         }
@@ -189,9 +188,6 @@
             .b-contaoner{
                 height: 250px;
             }
-            .wo-image{
-                display: none;
-            }
             
         }
         /* smaller than phablet (also point when grid becomes active) */
@@ -232,16 +228,13 @@
                 margin:0;
                 padding:0;
                 overflow: hidden;
-
             }
         
             .in-container{
-                width: 90%;
+                width: 100%;
                 margin: 19px auto;
-                
-
             }
-            .bg-form{
+            /* .bg-form{
                 margin: 0 auto;
                 padding: 0 10%;
                 width:80%;
@@ -255,7 +248,7 @@
                 margin-left:0;
                 margin-right:0;
                 padding: 0 10%;
-            }
+            } */
             .i-width{
                 width: 100%;
             }
@@ -272,9 +265,9 @@
                 background-color: #67bd3c;
                 border-color: none;
             }
-            .bg-form hr{
+            /* .bg-form hr{
                 padding:20px 0;
-            }
+            } */
             .main{
                 margin:0;
                 padding:0;
@@ -295,7 +288,7 @@
             }
             
             .container-partners{
-                width:90%;
+                width:100%;
                 height:fit-content;
                 margin:2% auto;
             }
@@ -326,6 +319,9 @@
                     width:95%;
                     height:fit-content;
                     margin:2% auto;
+                }
+                .wo-image{
+                    display: none;
                 }
             }
     
