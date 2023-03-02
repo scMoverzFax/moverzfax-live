@@ -473,7 +473,7 @@
                 
                 <div class="wo-image mt-20">
                     <!-- <img src="https://www.moversfax.com/frontend/img/wo.png" width="100%">  -->
-                    <img src="../img/moversfax/woman.png" width="100%">
+                    <img src="../img/moversfax/woman.png" alt="Woman gesturing towards site content" width="100%">
                 </div>
                 <div class="wo-services">
                    
@@ -490,7 +490,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/moversfax/truck.avif" width="40"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/moversfax/truck.avif" alt="Red moving truck" width="40"></div>
                                         <div class="uk-width-expand">
                                             <h2 class="uk-card-title uk-margin-remove-bottom">Order a Report</h2>
                                         </div>
@@ -508,7 +508,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="35px" src="../img/moversfax/report_card.avif" width="35px"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="35px" src="../img/moversfax/report_card.avif" alt="Mover Report Card Preview" width="35px"></div>
                                         <div class="uk-width-expand">
                                             <h3 class="uk-card-title uk-margin-remove-bottom">Sample Report Card Snapshot</h3>
                                         </div>
@@ -528,7 +528,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="50" src="../img/moversfax/cseal.png" width="50"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="50" src="../img/moversfax/cseal.png" alt="Example seal of approval" width="50"></div>
                                         <div class="uk-width-expand">
                                             <h3 class="uk-card-title uk-margin-remove-bottom">MoverZfax Certified Seal</h3>
                                         </div>
@@ -547,7 +547,7 @@
                                 <div class="wo-card-height">
                                     <div class="uk-grid-small uk-flex-middle ">
                                         <div class="uk-width-auto ">
-                                            <img class="uk-border-square" src="../img/moversfax/stf.png">
+                                            <img class="uk-border-square" src="../img/moversfax/stf.png" alt="Special Moving Task Force Logo">
                                         </div>
                                         <div class="uk-width-expand">
                                             <h2 class="uk-card-title uk-margin-remove-bottom">Special Moving Task Force</h2>
@@ -568,7 +568,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/m_icon.png" width="40"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/m_icon.png" alt="Moverzfax M icon" width="40"></div>
                                         <div class="uk-width-expand">
                                             <h3 class="uk-card-title uk-margin-remove-bottom">What is MoverzFax all about?</h3>
                                         </div>
@@ -586,7 +586,7 @@
                             <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-width-1@m">
                                 <div class="uk-card-header">
                                     <div class="uk-grid-small uk-flex-middle">
-                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/moversfax/info.png" width="40"></div>
+                                        <div class="uk-width-auto"><img class="uk-border-square" height="40" src="../img/moversfax/info.png" alt="Information icon" width="40"></div>
                                         <div class="uk-width-expand">
                                             <h3 class="uk-card-title uk-margin-remove-bottom">Get Informed</h3>
                                         </div>
@@ -609,7 +609,7 @@
             <!-- END SERVICE BOX -->
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <img class="img-fluid" src="../img/moversfax/our_mission.avif">
+                    <img class="img-fluid" src="../img/moversfax/our_mission.avif" alt="Banner displaying the Moverzfax mission">
                 </div>
             </div><hr>
 
@@ -746,7 +746,7 @@
         </div>
 
         <div id="topcontrol" title="Scroll Back to Top" style="display: none; position: fixed; bottom: 10px; right: 10px; cursor: pointer; opacity: 1;">
-            <img src="../img/up.png" style="width:40px; height:40px">
+            <img src="../img/up.png" style="width:40px; height:40px" alt="Move to top icon" >
         </div>
 
 </main>
