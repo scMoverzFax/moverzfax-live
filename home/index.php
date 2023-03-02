@@ -627,7 +627,7 @@
                         <div class="tab-pane row fade active in" id="tab-1">
                             <div class="col-md-3 col-sm-3">
                                 <!-- <a href="https://www.moversfax.com/frontend/temp/photos/img7.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button"> -->
-                                    <img style="height: 100px;" src="https://www.moversfax.com/frontend/pages/img/photos/img7.jpg" alt="">
+                                    <img style="height: 100px; width: auto;" src="https://www.moversfax.com/frontend/pages/img/photos/img7.jpg" alt="">
                                 <!-- </a> -->
                             </div>
                             <div class="col-md-9 col-sm-9">
