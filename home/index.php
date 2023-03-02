@@ -558,7 +558,7 @@
                                     <p>Have you been cheated? Have you hired a rogue mover?</p>
                                 </div>
                                 <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="task_force.php">Read More About SMTF</a>
+                                    <a class="uk-button uk-button-text" href="task_force.php">Read About SMTF</a>
                                 </div>
                             </div>
                         </div>
