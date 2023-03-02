@@ -214,7 +214,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                     <a href="blog.php">Blog</a>
                     <a href="link_to_us.php">Link to us</a>
                     <a href="pro.php">Promotional Video</a>
-                    <a href="#" class="sub-link">Testimonials</a>
+                    <!-- <a href="#" class="sub-link">Testimonials</a> -->
                     <a href="video.php">Video Testimonials</a>
                 </div>
 
