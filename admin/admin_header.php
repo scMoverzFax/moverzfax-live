@@ -196,8 +196,8 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             <!-------------------------- side menu start  -------------------------->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="index.php">Home</a>
-                <a href="about.php">About</a>
+                <!-- <a href="index.php">Home</a>
+                <a href="about.php">About</a> -->
                 <!-- <a href="show_review.php">My Review</a>
                 <a href="show_jobs.php">My Jobs</a> -->
                 <!-- <button class="collapsible">Mover Job</button> -->
@@ -211,11 +211,11 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                     <a href="order_report.php" >Oreder Report</a>
                     <a href="add_review.php" >Add a Review</a>
                   </div> -->
-                <button class="collapsible">Support</button>
+                <!-- <button class="collapsible">Support</button>
                 <div class="content1">
-                    <a href="contact.php">Contact Us</a>
+                    <a href="contact.php">Contact Us</a> -->
                     <!-- <a href="support.php">Send a Message</a> -->
-                </div>
+                <!-- </div>
                 <button class="collapsible">More Links</button>
                 <div class="content1">
                     <a href="blog.php">Blog</a>
@@ -223,7 +223,27 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                     <a href="pro.php">Promotional Video</a>
                     <a href="#" class="sub-link">Testimonials</a>
                     <a href="video.php">Video Testimonials</a>
-                </div>
+                </div> -->
+
+                <a href="admin_dashboard.php">Dashboard</a>
+                <a href="admin_reports.php">Generate Reports</a>
+
+                    <button class="collapsible">All Transactions</button>
+                        <div class="content1">
+                            <a href="admin_cs_transaction.php">Customer Transactions</a>
+                            <a href="admin_mv_transaction.php">Mover Transactions</a>
+                        </div>
+                    </div>
+
+                    <button class="collapsible">All Users</button>
+                        <div class="content1">
+                            <a href="admin_cs_user.php">Customer Users</a>
+                            <a href="admin_mv_user.php">Mover Users</a>
+                            <a href="admin_mv_approval.php">Mover Approval</a>
+                            <a href="admin_mv_scammer.php">Mover Scam System</a>
+                        </div>
+
+                <a href="admin_review.php">Reviews</a>
 
             </div>
 
