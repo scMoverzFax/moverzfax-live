@@ -1,4 +1,6 @@
 <?php
+header('Cache-Control: public, max-age=31536000');
+
 session_start();
 if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
     $user_id = $_SESSION["id"];
