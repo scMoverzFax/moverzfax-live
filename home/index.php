@@ -251,6 +251,9 @@
             .b-contaoner{
                 height: 250px;
             }
+            .wo-image{
+                display: none;
+            }
             
         }
         /* smaller than phablet (also point when grid becomes active) */
