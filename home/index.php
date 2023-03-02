@@ -660,7 +660,7 @@
                             </p>
                         </div>
                         <div class="col-md-3 col-sm-3">
-                            <img style="height: 100px;" src="../img/moversfax/img2.avif" alt="">
+                            <img style="height: 100px; width: auto;" src="../img/moversfax/img2.avif" alt="">
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab-3">

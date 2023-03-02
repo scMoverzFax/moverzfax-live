@@ -136,10 +136,6 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             justify-content: center;
         }
     </style>
-    <!-- Loader CSS -->
-    <style>
-
-    </style>
 
 </head>
 <!-- Google tag (gtag.js) -->
