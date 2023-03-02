@@ -56,6 +56,7 @@
         <link href="https://www.moversfax.com/frontend/corporate/css/custom.css" rel="stylesheet">
         <link href="https://www.moversfax.com/frontend/corporate/css/modal.css" rel="stylesheet">	
     <!-- CSS–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link href="../css/index.css" rel="stylesheet">
 
     <!-- Searchbox CSS-->
     <!-- <style>
