@@ -7,8 +7,8 @@
 
     if(!defined('LOGIN')){
         echo '<h3 class="text-center my-5 py-5 ">Please Login First...</h3>';
-    } else {
-        // echo '<br><br><br>';
+    } else { ?>
+        <!-- // echo '<br><br><br>';
         // // first box eith all user for MoverzFax compnay 
         // $firstBox = mysqli_query($con,"SELECT count(id) AS all_customer FROM `customer_register` WHERE is_active = '1'")->fetch_assoc();
         // echo "Number of customers registered with Moverzfax: " . $firstBox['all_customer'] . "<br>";
@@ -23,9 +23,8 @@
     
         // // Fourth box eith all mover for MoverzFax compnay 
         // $fourthBox = mysqli_query($con,"SELECT sum(tr_amount) AS all_money FROM `payment`")->fetch_assoc();
-        // echo "Money collecetd through Moverzfax: " . $fourthBox['all_money'] . "<br>";
-    }
-    ?>
+        // echo "Money collecetd through Moverzfax: " . $fourthBox['all_money'] . "<br>"; -->
+
     <div  class="wo-services">
         <div class="row mt-20">
             <div class="col-sm-6">
@@ -148,5 +147,6 @@
     </div>
 
 <?php
+}
     include '../home/footer.php';
 ?>
