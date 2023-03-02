@@ -228,7 +228,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                 <a href="admin_dashboard.php">Dashboard</a>
                 <a href="admin_reports.php">Generate Reports</a>
 
-                    <button class="collapsible">All Transactions</button>
+                    <button class="collapsible">Transactions</button>
                         <div class="content1">
                             <a href="admin_cs_transaction.php">Customer Transactions</a>
                             <a href="admin_mv_transaction.php">Mover Transactions</a>
