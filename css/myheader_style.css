@@ -481,6 +481,9 @@ body{
     .cotacts, .signing{
         width: 100%;
     }
+    .cotacts {
+        display: none;
+    }
 }
 @media (max-width: 350px) {
     .cotacts, .signing{
