@@ -26,6 +26,13 @@ if ($response_data->success) {
     // echo "5";
     // $st->close();
     // echo "6";
+    $to = "support@moverzfax.com";
+    $headers = "From: " . $name . " <" . $email . ">\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+    mail($to, $subject, $message, $headers);
 
     $sql = "INSERT INTO contact(name,email,subject,message)
             VALUES ('" . $name . "',
