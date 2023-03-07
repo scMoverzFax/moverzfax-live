@@ -192,7 +192,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
                         <table>
                             <tr>
                                 <td><label>Name<sup style="color: red">*</sup></label></td>
-                                <td><input class="form-control" type="text" placeholder="Full Name" style="border:1px solid #e9ecef;" required></td>
+                                <td><input class="form-control" type="text" name="na" placeholder="Full Name" style="border:1px solid #e9ecef;" required></td>
                             </tr>
                             <tr>
                                 <td><label>Email<sup style="color: red">*</sup></label></td>
