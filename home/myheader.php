@@ -230,7 +230,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                     <div class="signing anim" <?php if (isset($_SESSION["email"])) {
                                                     echo 'style="display:none"';
                                                 } ?>>
-                        <a href="signin.php">Login</a><span>|</span><a href="register.php">Register</a>
+                        <a href="signin.php" style="color:#85CA63;">Login</a><span>|</span><a href="register.php" style="color:#85CA63;">Register</a>
                     </div>
 
                     <div class="signing" <?php if (isset($_SESSION["email"])) {
