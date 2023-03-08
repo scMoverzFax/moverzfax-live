@@ -136,7 +136,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             justify-content: center;
         }
         #topcontrol {
-            right: 300px !important;
+            right: 150px !important;
         }
     </style>
 
