@@ -13,18 +13,10 @@
 			document.querySelector('.g-recaptcha').setAttribute('data-style', 'bottomleft');
         });
     </script>
+	<script src="https://www.google.com/recaptcha/api.js?badge=bottomleft"></script>
 </head>
 
 <style>
-	.grecaptcha-badge {
-  width: 70px !important;
-  overflow: hidden !important;
-  transition: all 0.3s ease !important;
-  left: 4px !important;
-}
-.grecaptcha-badge:hover {
-  width: 256px !important;
-}
 
 	* {
 		font-family: sans-serif;
