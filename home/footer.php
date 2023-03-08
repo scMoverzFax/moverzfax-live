@@ -2,7 +2,14 @@
 </div>
 
 <!-- **************** Main Body End ***************************-->
+<head>
 
+<style>
+#tawkchat-minified-wrapper {
+  top: calc(100% - 30px);
+}
+</style>
+</head>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -239,11 +246,6 @@
 	s0.parentNode.insertBefore(s1,s0);
 	})();
 </script>
-<style>
-#tawkchat-minified-wrapper {
-  top: calc(100% - 30px);
-}
-</style>
 <!--End of Tawk.to Script-->
 
 </body>
