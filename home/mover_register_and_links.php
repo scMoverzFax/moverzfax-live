@@ -10,8 +10,8 @@
             grecaptcha.execute('6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS', {action: 'submit'}).then(function(token) {
                 document.getElementById("token").value = token;
             });
+			document.querySelector('.g-recaptcha').setAttribute('data-style', 'topright');
         });
-		document.querySelector('.g-recaptcha').setAttribute('data-style', 'topright');
     </script>
 </head>
 
