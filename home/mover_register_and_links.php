@@ -16,11 +16,9 @@
 </head>
 
 <style>
-	/* .grecaptcha-badge {
-		position: fixed;
-		top: 10px;
-		right: 10px;
-	} */
+	.grecaptcha-badge {
+		bottom: 90px !important;
+	}
 
 	* {
 		font-family: sans-serif;
