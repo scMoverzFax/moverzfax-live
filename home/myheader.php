@@ -135,6 +135,9 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             display: flex;
             justify-content: center;
         }
+        #us1kbeku79ag1678235589455 {
+            bottom: 50px !important;
+        }
     </style>
 
 </head>
