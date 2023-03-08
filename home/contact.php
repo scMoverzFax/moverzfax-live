@@ -27,6 +27,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
             });
         });
     </script>
+	<script src="https://www.google.com/recaptcha/api.js?badge=bottomleft"></script>
 </head>
 
 <!-- Mobile Specific Metas

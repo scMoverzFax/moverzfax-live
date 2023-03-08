@@ -12,6 +12,7 @@
             });
         });
     </script>
+	<script src="https://www.google.com/recaptcha/api.js?badge=bottomleft"></script>
 </head>
 
 <style>
