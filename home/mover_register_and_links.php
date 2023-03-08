@@ -15,6 +15,12 @@
 </head>
 
 <style>
+	.g-recaptcha {
+		position: fixed;
+		top: 10px;
+		right: 10px;
+	}
+	
 	* {
 		font-family: sans-serif;
 		box-sizing: border-box;
