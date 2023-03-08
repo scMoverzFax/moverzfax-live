@@ -226,18 +226,25 @@
 <script>
 	setTimeout(loaderHideFunction, 100);
 </script>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6407cc8331ebfa0fe7f1440c/1gqv7dolg';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/6407cc8331ebfa0fe7f1440c/1gqv7dolg';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
 </script>
+<style>
+#tawkchat-minified-wrapper {
+  top: calc(100% - 30px);
+}
+</style>
 <!--End of Tawk.to Script-->
+
 </body>
 </html>
