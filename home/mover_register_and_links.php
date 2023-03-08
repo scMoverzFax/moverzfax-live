@@ -11,15 +11,16 @@
                 document.getElementById("token").value = token;
             });
         });
+		document.querySelector('.g-recaptcha').setAttribute('data-style', 'topright');
     </script>
 </head>
 
 <style>
-	.grecaptcha-badge {
+	/* .grecaptcha-badge {
 		position: fixed;
 		top: 10px;
 		right: 10px;
-	}
+	} */
 
 	* {
 		font-family: sans-serif;
