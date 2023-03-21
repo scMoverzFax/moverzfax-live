@@ -1,5 +1,5 @@
 <?php include_once 'myheader.php'; ?>
-
+<title>Frequently Asked Questions</title>
 <style>
 	* {
 		font-family: sans-serif;
