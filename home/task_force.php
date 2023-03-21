@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+<?php include_once 'myheader.php'; ?><!DOCTYPE html>
 <html lang="en">
 <title>Special Moving Task Force</title>
 <head>
-	<?php include_once 'myheader.php'; ?>
 	<script type="text/javascript">
 		function refreshCaptcha(){
 			img = document.getElementById("capt");
