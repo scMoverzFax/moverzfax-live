@@ -1,5 +1,5 @@
 <?php include_once 'myheader.php'; ?>
-
+<title>Link To Us</title>
 <style>
 	* {
 		font-family: sans-serif;
