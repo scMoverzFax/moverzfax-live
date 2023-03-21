@@ -234,9 +234,13 @@ include 'myheader.php';
                 <p class="text-center">
                     <a href="signin.php">Login  </a> <span>|</span><a href="register.php">  Register</a>
                 </p> -->
-                <h2 class="text-center mb-5" style="font-weight: 500">
-                    Please <a href="signin.php">Login</a>,<a href="register.php"> Register</a>, or if you are a mover<a href="register.php"> Claim</a> your business.
-                </h2>
+                <h3 class="text-center mb-5" style="font-weight: 500">
+                    Customers, please <a href="signin.php">Login</a> or <a href="register.php">Register</a> before searching our database.
+                </h3>
+                <br>
+                <h3 class="text-center mb-5" style="font-weight: 500">
+                    Movers, please <a href="mover_register_and_links.php">Claim</a> your business.
+                </h3>
             </div>
 
         </div>
