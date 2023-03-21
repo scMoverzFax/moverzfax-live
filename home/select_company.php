@@ -2,6 +2,7 @@
 include 'myheader.php';
 //defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
 ?>
+<title>USDOT Search</title>
 <style>
     * {
         font-family: sans-serif;
@@ -229,11 +230,13 @@ include 'myheader.php';
             <div class="bg-form">
                 <br>
 
-                <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
+                <!-- <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
                 <p class="text-center">
                     <a href="signin.php">Login  </a> <span>|</span><a href="register.php">  Register</a>
-                </p>
-                
+                </p> -->
+                <h2 class="text-center mb-5" style="font-weight: 500">
+                    Please <a href="signin.php">Login</a>,<a href="register.php"> Register</a>, or if you are a mover<a href="register.php"> Claim</a> your business.
+                </h2>
             </div>
 
         </div>
