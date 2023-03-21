@@ -213,6 +213,6 @@
 			<div class="col-sm-12"><img src="../img/CAPTURE2.png"></div>
 		</div><br> -->
 	</div>
-	<?php include 'footer.php'; ?>
 </body>
 </html>
+<?php include 'footer.php'; ?>
