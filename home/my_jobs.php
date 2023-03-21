@@ -1,6 +1,7 @@
 <?php include_once 'myheader.php'; 
 defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
 ?>
+<title>My Jobs</title>
 
 <style>
     * {

@@ -1,6 +1,7 @@
 <?php include "myheader.php";
 defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
 ?>
+<title>My Reviews</title>
 <style>
     * {
         font-family: sans-serif;
