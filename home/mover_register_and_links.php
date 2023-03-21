@@ -1,5 +1,6 @@
 <?php include_once 'myheader.php'; ?>
 
+<title>Mover Registration</title>
 <head>
     <script src="https://www.google.com/recaptcha/api.js?render=6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></script>
 	<script>
