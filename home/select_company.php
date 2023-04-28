@@ -1,16 +1,14 @@
 <?php
 include 'myheader.php';
-//defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
-// Start a session
 if (!defined('LOGIN')) {
+// Start a session
 session_start();
 
 // Function to generate a random ten-digit decimal number
 function generateRandomTenDigitDecimal() {
-    $intPart = mt_rand(100000000, 999999999); // Generate random integer part (9 digits)
-    $decimalPart = mt_rand(0, 99); // Generate random decimal part (2 digits)
-    $randomDecimal = $intPart + ($decimalPart / 100); // Combine integer and decimal parts
-    return number_format($randomDecimal, 2, '.', ''); // Format the number to ensure 2 decimal places
+    $decimalPart = mt_rand(1000000000, 9999999999); // Generate random decimal part (10 digits)
+    $randomDecimal = "0." . $decimalPart; // Combine "0." with the decimal part
+    return $randomDecimal;
 }
 
 // Assign a random ten-digit decimal number to $_SESSION["id"]
