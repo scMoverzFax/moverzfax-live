@@ -11,11 +11,13 @@ function generateRandomTenDigitDecimal() {
     return $randomDecimal;
 }
 
-// Assign a random ten-digit decimal number to $_SESSION["id"]
-$_SESSION["id"] = generateRandomTenDigitDecimal();
-
+// Check if the session id is already set
+if (!isset($_SESSION["id"])) {
+    // If not set, assign a random ten-digit decimal number to $_SESSION["id"]
+    $_SESSION["id"] = generateRandomTenDigitDecimal();
+}
 // Debug: Print the generated number
-echo "Random ten-digit decimal number: " . $_SESSION["id"];
+echo "Random id: " . $_SESSION["id"];
 }
 ?>
 <title>USDOT Search</title>
