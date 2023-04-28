@@ -1,6 +1,24 @@
 <?php
 include 'myheader.php';
 //defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
+// Start a session
+if (!defined('LOGIN')) {
+session_start();
+
+// Function to generate a random ten-digit decimal number
+function generateRandomTenDigitDecimal() {
+    $intPart = mt_rand(100000000, 999999999); // Generate random integer part (9 digits)
+    $decimalPart = mt_rand(0, 99); // Generate random decimal part (2 digits)
+    $randomDecimal = $intPart + ($decimalPart / 100); // Combine integer and decimal parts
+    return number_format($randomDecimal, 2, '.', ''); // Format the number to ensure 2 decimal places
+}
+
+// Assign a random ten-digit decimal number to $_SESSION["id"]
+$_SESSION["id"] = generateRandomTenDigitDecimal();
+
+// Debug: Print the generated number
+echo "Random ten-digit decimal number: " . $_SESSION["id"];
+}
 ?>
 <title>USDOT Search</title>
 <style>
@@ -128,9 +146,8 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 
 <!--conditional rendering for if the user is not logged in--> 
-<?php if (!defined('LOGIN')) { ?>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<?php //if (!defined('LOGIN')) { ?>
+    <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
             font-family: sans-serif;
@@ -222,18 +239,10 @@ include 'myheader.php';
         @media (max-width: 400px) {}
 
     </style>
-
-    <!-- Start of Document ----------------------------------------------->
-
     <div class="b-container">
         <div class="container in-container slide-in-bottom">
             <div class="bg-form">
                 <br>
-
-                <!-- <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
-                <p class="text-center">
-                    <a href="signin.php">Login  </a> <span>|</span><a href="register.php">  Register</a>
-                </p> -->
                 <h3 class="text-center mb-5" style="font-weight: 500">
                     Customers, please <a href="signin.php">Login</a> or <a href="register.php">Register</a> before searching our database.
                 </h3>
@@ -244,11 +253,10 @@ include 'myheader.php';
             </div>
 
         </div>
-    </div>
-    <!-- <h3 class="text-center my-5 py-5 ">Please Login First...</h3> -->
-<?php } ?>
+    </div> -->
+<?php //} ?>
 
-<div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
+<div class="b-container" <?php //if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
             <div class="row">
@@ -256,7 +264,7 @@ include 'myheader.php';
                     <h2 class="text-center">Cart</h2>
                     <div class="text-center text-danger">
                         <span style="font-size:17px;">Important Notice : You can buy up to 5 reports in one transaction to take advantage of discounts offered.
-                            First report is 10$ and you get second Free.<br> Third report is 3$, fourth report is 2$ and fifth report is 1$.</span>
+                            First report is $10 and you get second Free.<br> Third report is $3, fourth report is $2 and fifth report is $1.</span>
                     </div>
 
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post">
@@ -364,7 +372,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('not_valid').innerHTML = "Please select atleast one compnay";
+            document.getElementById('not_valid').innerHTML = "Please select at least one compnay";
             return false;
         }
 
