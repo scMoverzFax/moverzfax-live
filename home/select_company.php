@@ -17,7 +17,7 @@ if (!isset($_SESSION["id"])) {
     $_SESSION["id"] = generateRandomTenDigitDecimal();
 }
 // Debug: Print the generated number
-echo "Guest ID: " . $_SESSION["id"];
+// echo "Guest ID: " . $_SESSION["id"];
 }
 ?>
 <title>USDOT Search</title>
