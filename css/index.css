@@ -342,9 +342,10 @@ button {
     }
 
     .container-partners {
+        border: 1px solid black;
         width: 80%;
         height: fit-content;
-        margin: 2% auto;
+        /* margin: 2% auto; */
     }
 
     .wo-image {
