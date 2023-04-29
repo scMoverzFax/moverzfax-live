@@ -40,8 +40,8 @@
         <link href="https://www.moversfax.com/frontend/pages/css/slider.css" rel="stylesheet">
         <link href="https://www.moversfax.com/frontend/corporate/css/style.css" rel="stylesheet">
         <link href="https://www.moversfax.com/frontend/corporate/css/style-responsive.css" rel="stylesheet">
-        <link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
-        <!--<link href="https://www.moversfax.com/corporate/css/themes/green.css" rel="stylesheet" id="style-color">-->
+        <!--<link href="https://www.moversfax.com/corporate/css/style-responsive.css" rel="stylesheet">
+        <link href="https://www.moversfax.com/corporate/css/themes/green.css" rel="stylesheet" id="style-color">-->
         <link href="https://www.moversfax.com/frontend/corporate/css/themes/green.css" rel="stylesheet" id="style-color">
 
         <!-- formwidzard css -->
