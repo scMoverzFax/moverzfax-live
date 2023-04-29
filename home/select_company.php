@@ -238,8 +238,8 @@ if (!isset($_SESSION["id"])) {
                             Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
                             and a fantastic deal of $1 for the fifth.
                         </span>
-                    </div> -->
-                    <div class="text-center" style="margin-top:10px;">
+                    </div>  style="margin-top:50px;"-->
+                    <div class="text-center">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
                 </div>
