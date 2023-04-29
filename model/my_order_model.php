@@ -6,8 +6,6 @@ $result = $con->query($sql);
 $i = 1;
 if (mysqli_num_rows($result) > 0) {
     while ($res = mysqli_fetch_array($result)) {
-        echo $user_id;
-        $user_id = 0;
         //select the time of purchase for when that user purchsed that usdot
         $sql1 = "SELECT tr_create_time FROM payment WHERE user_id=" . $user_id . " AND " . $res['usdot'] . " IN(report_one, report_two, report_three, report_four, report_five)";
         $result1 = $con->query($sql1);

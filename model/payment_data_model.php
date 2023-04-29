@@ -19,6 +19,7 @@ $invoice = \Stripe\Invoice::retrieve($invoice_id);
 
     session_start();
     // include 'demo4.php';
+    echo $_SESSION["id"];
     if(isset($_SESSION["email"])){
 		$user_id = $_SESSION["id"];
         $user_first_name = $_SESSION["first_name"];
