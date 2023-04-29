@@ -223,6 +223,9 @@ button {
 
 /* smaller than mobile */
 @media (max-width: 400px) {
+    .b-search {
+        border: 1px solid black;
+    }
     .b-search form .inner-form .input-field.second-wrap {
         min-width: 80px;
     }
@@ -334,8 +337,7 @@ button {
 @media (max-width: 750px) {
 
     .wo-services {
-        width: 100%;
-        margin-right: 20px;
+        width: 90%;
     }
 
     #partners {
