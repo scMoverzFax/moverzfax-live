@@ -320,6 +320,7 @@
                 <a class="right-btn" href="#myCarousel" data-slide="next"></a>
             </div>
         </div>
+        
     </div>
 
     <div class="container-partners">

@@ -332,13 +332,10 @@ button {
 
 /* smaller than tablet */
 @media (max-width: 750px) {
-    .wo-image {
-        width: 35%;
-    }
 
     .wo-services {
         width: 65%;
-        border: black 1px solid;
+        border: black 5px solid;
     }
 
     #partners {
