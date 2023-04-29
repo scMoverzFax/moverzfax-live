@@ -6,13 +6,13 @@ $result = $con->query($sql);
 $i = 1;
 if (mysqli_num_rows($result) > 0) {
     while ($res = mysqli_fetch_array($result)) {
+        echo $user_id;
+        $user_id = 0;
         //select the time of purchase for when that user purchsed that usdot
         $sql1 = "SELECT tr_create_time FROM payment WHERE user_id=" . $user_id . " AND " . $res['usdot'] . " IN(report_one, report_two, report_three, report_four, report_five)";
         $result1 = $con->query($sql1);
         $res1 = mysqli_fetch_array($result1);
         $mostRecent = 0;
-        echo $res1;
-        echo "result one";
         if($res1 != null){
             $mostRecent = $res1['tr_create_time'];
         }
@@ -24,18 +24,12 @@ if (mysqli_num_rows($result) > 0) {
         }
         //add two weeks in seconds to the date created
         date_default_timezone_set('America/New_York');
-        echo $mostRecent;
-        echo "is recent";
         $expDateInSeconds = strtotime($mostRecent) + 2628288;  //1209600 seconds in 14 days, 2628288 in a month
         $expDate = date('m/d/Y', $expDateInSeconds);
         $expDateToCompare = date('Y/m/d', $expDateInSeconds);
         $currentDate = date('m/d/Y');
         $currentDateToCompare = date('Y/m/d');
         $_SESSION['exp_date'] = $expDate;
-        echo $currentDateToCompare;
-        echo "middle";
-        echo $expDateToCompare;
-        echo "<br>"
         ?>
         <tr>
             <td><?= $i; ?></td>
