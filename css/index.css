@@ -345,12 +345,16 @@ button {
         border: 1px solid black;
         width: 85%;
         height: fit-content;
-        transform: translateX(-10px);
+        transform: translateX(-25px);
         margin: 2% auto;
     }
 
     .wo-image {
         display: none;
+    }
+
+    .image {
+        flex-shrink: 0;
     }
 }
 
