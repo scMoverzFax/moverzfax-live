@@ -1,6 +1,6 @@
 <?php 
 include 'myheader.php'; 
-defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');?>
+//defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');?>
 <div class="container-fluid">
     <h3 class="text-center mt-2">MoverZFax Payment </h3>
             <div class="col-md-12 mover_table">
@@ -16,7 +16,7 @@ defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First.
                         </tr>
                     </thead> 
                     <?php include '../model/payment_app_model.php'; ?>
-                </table>
+                </table> 
             </div>
 
             <!-- Add a call to Stripe checkout here -->

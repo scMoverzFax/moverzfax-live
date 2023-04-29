@@ -1,5 +1,7 @@
 <tbody>
     <?php
+
+    $user_id = $_SESSION["id"];
     // $usdotArray = array();
     $moverNameArray = array();
     $a = array("10$","Free","3$","2$","1$"); 

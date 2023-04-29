@@ -1,6 +1,24 @@
 <?php
 include 'myheader.php';
-//defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
+if (!defined('LOGIN')) {
+// Start a session
+session_start();
+
+// Function to generate a random ten-digit decimal number
+function generateRandomTenDigitDecimal() {
+    $decimalPart = mt_rand(1000000000, 9999999999); // Generate random decimal part (10 digits)
+    $randomDecimal = "0." . $decimalPart; // Combine "0." with the decimal part
+    return $randomDecimal;
+}
+
+// Check if the session id is already set
+if (!isset($_SESSION["id"])) {
+    // If not set, assign a random ten-digit decimal number to $_SESSION["id"]
+    $_SESSION["id"] = generateRandomTenDigitDecimal();
+}
+// Debug: Print the generated number
+// echo "Guest ID: " . $_SESSION["id"];
+}
 ?>
 <title>USDOT Search</title>
 <style>
@@ -127,173 +145,69 @@ include 'myheader.php';
 <?php $usdot = isset($_GET["usdot"]) ? $_GET["usdot"] : NULL; ?>
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 
-<!--conditional rendering for if the user is not logged in--> 
-<?php if (!defined('LOGIN')) { ?>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        * {
-            font-family: sans-serif;
-            box-sizing: border-box;
-        }
-
-        .b-container {
-            overflow: hidden;
-            height: fit-content;
-            width: fit-content;
-            position: relative;
-            padding: 50px;
-            max-width: 1440px;
-
-        }
-
-        .in-container {
-        /* background-color: white;
-        box-shadow: 0 0 10px 2px #eee; */
-        /* border-radius: 10px 10px; */
-        /* border: 1px solid #eee; */
-        /* width: fit-content; */
-        padding: 50px;
-        }
-
-        .bg-form {
-            margin: 0;
-            width: 100%;
-            /* background-color: white; */
-
-        }
-
-        .i-width {
-
-            width: 100%;
-        }
-
-        .row .button-mf {
-            font-size: 15px;
-            color: rgb(255, 255, 255);
-            box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-            -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-            -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-            background-color: #7aeb41;
-            border-color: none;
-        }
-
-        .button-mf:hover {
-            background-color: #67bd3c;
-            border-color: none;
-        }
-
-        textarea {
-            height: 100px;
-            font-family: cursive;
-        }
-
-        .bg-form p {
-
-            padding: 0 5%;
-        }
-
-        .bg-form .row {
-            padding: 0 5%;
-        }
-
-        .con-info {
-            padding: 4% 4%;
-            background-color: #e9ecef;
-            word-wrap: break-word;
-
-        }
-
-        /* Desktop-mobile approach --------------------------------------------------------------*/
-
-        /* smaller than Desktop HD */
-        @media (max-width: 1200px) {}
-
-        /* smaller than desktop */
-        @media (max-width: 1000px) {}
-
-        /* smaller than tablet */
-        @media (max-width: 750px) {}
-
-        /* smaller than phablet (also point when grid becomes active) */
-        @media (max-width: 550px) {}
-
-        /* smaller than mobile */
-        @media (max-width: 400px) {}
-
-    </style>
-
-    <!-- Start of Document ----------------------------------------------->
-
-    <div class="b-container">
-        <div class="container in-container slide-in-bottom">
-            <div class="bg-form">
-                <br>
-
-                <!-- <h2 class="text-center mb-5" style="font-weight: 500">Please Login First...</h2>
-                <p class="text-center">
-                    <a href="signin.php">Login  </a> <span>|</span><a href="register.php">  Register</a>
-                </p> -->
-                <h3 class="text-center mb-5" style="font-weight: 500">
-                    Customers, please <a href="signin.php">Login</a> or <a href="register.php">Register</a> before searching our database.
-                </h3>
-                <br>
-                <h3 class="text-center mb-5" style="font-weight: 500">
-                    Movers, please <a href="mover_register_and_links.php">Claim</a> your business.
-                </h3>
-            </div>
-
-        </div>
-    </div>
-    <!-- <h3 class="text-center my-5 py-5 ">Please Login First...</h3> -->
-<?php } ?>
-
-<div class="b-container" <?php if (!defined('LOGIN')) { echo 'style="display:none"';} ?>>
+<div class="b-container">
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-center">Cart</h2>
-                    <div class="text-center text-danger">
-                        <span style="font-size:17px;">Important Notice : You can buy up to 5 reports in one transaction to take advantage of discounts offered.
-                            First report is 10$ and you get second Free.<br> Third report is 3$, fourth report is 2$ and fifth report is 1$.</span>
-                    </div>
+                    <?php if (!defined('LOGIN')) { ?>
+                        <h2 class="text-center">Guest Cart</h2>
+                        <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
 
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post">
+                        <p class="text-center" style="font-size:17px;">
+                            Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                            The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                            wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
+                        </p>
+                    <?php } else { ?>
+                        <h2 class="text-center">Cart</h2>
+                        <p class="text-center" style="font-size:17px;">
+                            Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                            The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                            wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
+                        </p>
+                    <?php } ?>
+
+                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
-                            <div class="d-flex col-md-12 form-group">
-                                <div class="col-md-4 search">
-                                    <span class="col-md-5">Add Company :</span>
-                                    <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT number" required>
+                            <div class="d-flex col-md-12 align-items-center form-group">
+                                <div class="col-md-4 search d-flex align-items-center">
+                                    <span class="col-md-5">Add A Mover:</span>
+                                    <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
                                 </div>
                                 <div class="col-md-3 pl-0">
-                                    <input type="submit" class="col-md-3 btn btn-success btn-sm" value="Go">
+                                    <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
-                                <div class="col-md-5" style="height:40px;">
+                                <div class="col-md-5 d-flex align-items-center" style="height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
                                     <div class="d-flex">
                                         <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                                        <span for="" id="cart_label2"><?php 
-                                                                        if ($status == "as") {
-                                                                            echo "is Added Successfully.";
-                                                                        } elseif ($status == "nr") {
-                                                                            echo "is not registered with MoverzFax.";
-                                                                        } elseif ($status == "ae") {
-                                                                            echo "Already Exist.";
-                                                                        } elseif ($status == "rf") {
-                                                                            echo "Request Failed.";
-                                                                        } else {
-                                                                            echo " "; //edge case
-                                                                        }
-                                                                        ?></span>
+                                        <span for="" id="cart_label2">
+                                            <?php 
+                                                if ($status == "as") {
+                                                    echo "was added successfully.";
+                                                } elseif ($status == "nr") {
+                                                    echo "is not registered with MoverzFax.";
+                                                } elseif ($status == "ae") {
+                                                    echo "already exist.";
+                                                } elseif ($status == "rf") {
+                                                    echo "Request Failed.";
+                                                } else {
+                                                    echo " "; //edge case
+                                                }
+                                            ?>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+
+
 
                     <span Class="text-center text-danger"></span>
                     <div class="text-center">
@@ -318,6 +232,13 @@ include 'myheader.php';
                             <tbody id="table_cart"></tbody>
                         </table>
                     </div>
+                    <!-- <div class="text-center text-danger">
+                        <span style="font-size:15px;">
+                            Purchase your first report for $10 and receive the second one free of charge. 
+                            Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                            and a fantastic deal of $1 for the fifth.
+                        </span>
+                    </div>  style="margin-top:50px;"-->
                     <div class="text-center">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
@@ -364,7 +285,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('not_valid').innerHTML = "Please select atleast one compnay";
+            document.getElementById('not_valid').innerHTML = "Please select at least one compnay";
             return false;
         }
 
@@ -401,23 +322,5 @@ include 'myheader.php';
         usdot_checkbox();
     }
     setTimeout(usdot_checkbox, 500);
-
-    
-    // function proceed() {
-    //     var action = document.getElementsByName('usdot_number');
-    //     var newvar = 0;
-    //     var count;
-    //     for (count = 0; count < action.length; count++) {
-    //         if (action[count].checked == true) {
-    //             newvar ++;
-    //         }
-    //     }
-    //     if (newvar == 0) {
-    //         document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-    //         // alert('Please select atleast one compnay');
-    //         return false;
-    //     }
-    // }
-    // proceed();
 </script>
 <?php include 'footer.php'; ?>
