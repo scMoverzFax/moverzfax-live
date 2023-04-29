@@ -397,5 +397,5 @@ button {
     flex: 1;
     margin: 0 10px;
     max-width: calc(100% / 7 - 20px);
-    min-width: 80px;
+    min-width: 120px;
 }
