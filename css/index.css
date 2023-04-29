@@ -334,8 +334,7 @@ button {
 @media (max-width: 750px) {
 
     .wo-services {
-        width: 85%;
-        border: 1px black solid;
+        width: 100%;
     }
 
     #partners {
