@@ -28,6 +28,8 @@ if (mysqli_num_rows($result) > 0) {
         $currentDate = date('m/d/Y');
         $currentDateToCompare = date('Y/m/d');
         $_SESSION['exp_date'] = $expDate;
+        echo $currentDateToCompare;
+        echo $expDateToCompare;
         
         ?>
         <tr>
