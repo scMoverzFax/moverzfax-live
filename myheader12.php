@@ -679,7 +679,7 @@
 <script src="https://www.moversfax.com/frontend/corporate/scripts/jquery.dataTables.min.js" type="text/javascript"></script>
 
     
-    <script src="https://www.moversfax.com/frontend/corporate/scripts/jquery.barrating.js" type="text/javascript"></script>
+    <!-- <script src="https://www.moversfax.com/frontend/corporate/scripts/jquery.barrating.js" type="text/javascript"></script> -->
     <script src="https://www.moversfax.com/frontend/corporate/scripts/examples.js" type="text/javascript"></script>
     <script src="https://www.moversfax.com/frontend/corporate/scripts/star.js" type="text/javascript"></script>
 

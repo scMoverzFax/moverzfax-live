@@ -139,10 +139,6 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
             right: 150px !important;
         }
     </style>
-<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/6en8XCp+HHAAK5GSLf2xlYtvJ8U2Q4U+9cuEnJoa3"
-  crossorigin="anonymous"></script>
 
 </head>
 <!-- Google tag (gtag.js) -->
