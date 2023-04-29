@@ -26,7 +26,7 @@ $user_id = $_SESSION["id"];
         </table>
         <span style="color:red;font-size:16px;">This report is valid for the next month.</span>  
         <h2 class="text-center">Thank You so much...</h2>
-        <span class="text-center" style="font-size:16px;">Be sure to download your reports now if this was a guest checkout, as they will not be available upon your return.</span>  
+        <p class="text-center" style="font-size:16px;">Be sure to download your reports now if this was a guest checkout, as they will not be available upon your return.</p>  
     </div>
 </body>
 </html>
