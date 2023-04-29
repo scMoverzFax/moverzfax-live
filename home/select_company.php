@@ -169,12 +169,12 @@ if (!isset($_SESSION["id"])) {
                         </p>
                     <?php } ?>
 
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="margin-top:50px;">
+                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="margin-top:50px; border:black 1px solid;">
                         <div class="row">
                             <div class="d-flex col-md-12 form-group">
                                 <div class="col-md-4 search">
-                                    <span class="col-md-5">Add Company :</span>
-                                    <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT number" required>
+                                    <span class="col-md-5">Add A Mover:</span>
+                                    <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
                                 </div>
                                 <div class="col-md-3 pl-0">
