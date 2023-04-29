@@ -1,5 +1,6 @@
 <?php include 'myheader.php' ;
 // defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');
+$user_id = $_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
