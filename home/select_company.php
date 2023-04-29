@@ -153,23 +153,23 @@ if (!isset($_SESSION["id"])) {
                 <div class="col-md-12">
                     <?php if (!defined('LOGIN')) { ?>
                         <h2 class="text-center">Guest Cart</h2>
-                        <p class="text-center">If you are already a Moverzfax member, please <a href="login.php">log in</a>.</p>
+                        <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">log in</a>.</p>
 
-                        <p class="text-center">
+                        <p class="text-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
                             The mover's information will appear in the table beneath the search box. Simply select the movers you 
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to confirm your order.
                         </p>
                     <?php } else { ?>
                         <h2 class="text-center">Cart</h2>
-                        <p class="text-center">
+                        <p class="text-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
                             The mover's information will appear in the table beneath the search box. Simply select the movers you 
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to confirm your order.
                         </p>
                     <?php } ?>
 
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post">
+                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="margin-top:20px;">
                         <div class="row">
                             <div class="d-flex col-md-12 form-group">
                                 <div class="col-md-4 search">
@@ -237,7 +237,7 @@ if (!isset($_SESSION["id"])) {
                             and a fantastic deal of $1 for the fifth.
                         </span>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" style="margin-top:20px;">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
                 </div>
