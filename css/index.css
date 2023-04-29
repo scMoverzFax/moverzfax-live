@@ -223,15 +223,11 @@ button {
 
 /* smaller than mobile */
 @media (max-width: 400px) {
-    .b-search {
-        border: 1px solid black;
-    }
     .b-search form .inner-form .input-field.second-wrap {
         min-width: 80px;
     }
 
     .b-contaoner {
-        border: 1px solid black;
         display: flex;
         justify-content: center;
         align-items: end;
