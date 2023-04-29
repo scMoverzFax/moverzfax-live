@@ -169,7 +169,7 @@ if (!isset($_SESSION["id"])) {
                         </p>
                     <?php } ?>
 
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:25px;">
+                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
                             <div class="d-flex col-md-12 align-items-center form-group">
                                 <div class="col-md-4 search d-flex align-items-center">
