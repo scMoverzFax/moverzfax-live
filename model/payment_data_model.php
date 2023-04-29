@@ -25,8 +25,10 @@ $invoice = \Stripe\Invoice::retrieve($invoice_id);
         $user_last_name = $_SESSION["last_name"];
         $user_email = $_SESSION["email"];
     }else{
-        $user_id = 0;
-        $user_email = "email@email.com";
+        $user_id = $_SESSION["id"];
+        $user_first_name = "Guest";
+        $user_last_name = "Checkout";
+        $user_email = "guest@email.com";
     }
 
     // $obj = json_decode($_GET["x"], true);
