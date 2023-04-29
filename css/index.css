@@ -343,7 +343,7 @@ button {
 
     .container-partners {
         border: 1px solid black;
-        width: 100vw;
+        width: 90%;
         height: fit-content;
         /* margin: 2% auto; */
     }
