@@ -311,9 +311,6 @@ button {
     float: left;
     width: 75%;
 }
-.wo-services h2 {
-    color: red;
-}
 
 .container-partners {
     width: 90%;
@@ -337,8 +334,8 @@ button {
 @media (max-width: 750px) {
 
     .wo-services {
-        width: 65%;
-        border: 5px black solid;
+        width: 85%;
+        border: 1px black solid;
     }
 
     #partners {
