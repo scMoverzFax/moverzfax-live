@@ -22,6 +22,8 @@ if (mysqli_num_rows($result) > 0) {
         }
         //add two weeks in seconds to the date created
         date_default_timezone_set('America/New_York');
+        echo $mostRecent;
+        echo "is recent";
         $expDateInSeconds = strtotime($mostRecent) + 2628288;  //1209600 seconds in 14 days, 2628288 in a month
         $expDate = date('m/d/Y', $expDateInSeconds);
         $expDateToCompare = date('Y/m/d', $expDateInSeconds);
@@ -31,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
         echo $currentDateToCompare;
         echo "middle";
         echo $expDateToCompare;
-        
+        echo "<br>"
         ?>
         <tr>
             <td><?= $i; ?></td>
