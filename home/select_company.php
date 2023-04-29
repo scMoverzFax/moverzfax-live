@@ -151,12 +151,23 @@ if (!isset($_SESSION["id"])) {
         <div class="bg-form form-group">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-center">Cart</h2>
-                    <p class="text-center"><?php echo "Guest ID: " . $_SESSION["id"]; ?></p>
-                    <div class="text-center text-danger">
-                        <span style="font-size:17px;">Important Notice : You can buy up to 5 reports in one transaction to take advantage of discounts offered.
-                            First report is $10 and you get second Free.<br> Third report is $3, fourth report is $2 and fifth report is $1.</span>
-                    </div>
+                    <?php if (!defined('LOGIN')) { ?>
+                        <h2 class="text-center">Guest Cart</h2>
+                        <p class="text-center">If you are already a Moverzfax member, please <a href="login.php">log in</a>.</p>
+
+                        <p class="text-center">
+                            Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                            The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                            wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to confirm your order.
+                        </p>
+                    <?php } else { ?>
+                        <h2 class="text-center">Cart</h2>
+                        <p class="text-center">
+                            Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                            The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                            wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to confirm your order.
+                        </p>
+                    <?php } ?>
 
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post">
                         <div class="row">
@@ -175,19 +186,21 @@ if (!isset($_SESSION["id"])) {
                                     </div>
                                     <div class="d-flex">
                                         <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                                        <span for="" id="cart_label2"><?php 
-                                                                        if ($status == "as") {
-                                                                            echo "is Added Successfully.";
-                                                                        } elseif ($status == "nr") {
-                                                                            echo "is not registered with MoverzFax.";
-                                                                        } elseif ($status == "ae") {
-                                                                            echo "Already Exist.";
-                                                                        } elseif ($status == "rf") {
-                                                                            echo "Request Failed.";
-                                                                        } else {
-                                                                            echo " "; //edge case
-                                                                        }
-                                                                        ?></span>
+                                        <span for="" id="cart_label2">
+                                            <?php 
+                                                if ($status == "as") {
+                                                    echo "was added successfully.";
+                                                } elseif ($status == "nr") {
+                                                    echo "is not registered with MoverzFax.";
+                                                } elseif ($status == "ae") {
+                                                    echo "already exist.";
+                                                } elseif ($status == "rf") {
+                                                    echo "Request Failed.";
+                                                } else {
+                                                    echo " "; //edge case
+                                                }
+                                            ?>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -216,6 +229,13 @@ if (!isset($_SESSION["id"])) {
                             </thead>
                             <tbody id="table_cart"></tbody>
                         </table>
+                    </div>
+                    <div class="text-center text-danger">
+                        <span style="font-size:15px;">
+                            Purchase your first report for $10 and receive the second one free of charge. 
+                            Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                            and a fantastic deal of $1 for the fifth.
+                        </span>
                     </div>
                     <div class="text-center">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
