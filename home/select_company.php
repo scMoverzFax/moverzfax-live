@@ -153,7 +153,7 @@ if (!isset($_SESSION["id"])) {
                 <div class="col-md-12">
                     <?php if (!defined('LOGIN')) { ?>
                         <h2 class="text-center">Guest Cart</h2>
-                        <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">log in</a>.</p>
+                        <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
 
                         <p class="text-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
@@ -169,7 +169,7 @@ if (!isset($_SESSION["id"])) {
                         </p>
                     <?php } ?>
 
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="margin-top:20px;">
+                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="margin-top:50px;">
                         <div class="row">
                             <div class="d-flex col-md-12 form-group">
                                 <div class="col-md-4 search">
@@ -237,7 +237,7 @@ if (!isset($_SESSION["id"])) {
                             and a fantastic deal of $1 for the fifth.
                         </span>
                     </div>
-                    <div class="text-center" style="margin-top:20px;">
+                    <div class="text-center" style="margin-top:50px;">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
                 </div>
