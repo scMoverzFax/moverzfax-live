@@ -12,7 +12,7 @@ $user_id = $_SESSION["id"];
 </head>
 <body>  
     <div class="container-fluid">
-        <h3 class="text-center mt-4 font-weight-bold"> Download Report</h3>
+        <h3 class="text-center mt-10 font-weight-bold"> Download Report</h3>
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <th>Sr. No.</th>
