@@ -169,7 +169,7 @@ if (!isset($_SESSION["id"])) {
                         </p>
                     <?php } ?>
 
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="margin-top:50px; border:black 1px solid;">
+                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:50px;">
                         <div class="row">
                             <div class="d-flex col-md-12 align-items-center form-group">
                                 <div class="col-md-4 search d-flex align-items-center">
@@ -239,7 +239,7 @@ if (!isset($_SESSION["id"])) {
                             and a fantastic deal of $1 for the fifth.
                         </span>
                     </div> -->
-                    <div class="text-center" style="margin-top:20px;">
+                    <div class="text-center" style="margin-top:10px;">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
                 </div>
