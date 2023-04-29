@@ -130,9 +130,8 @@
 <script src="https://www.moversfax.com/frontend/pages/scripts/bs-carousel.js" type="text/javascript"></script>
 
 <script src="https://www.moversfax.com/frontend/corporate/scripts/jquery.dataTables.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script src="https://www.moversfax.com/frontend/corporate/scripts/jquery.barrating.js" type="text/javascript"></script>
+<!-- <script src="https://www.moversfax.com/frontend/corporate/scripts/jquery.barrating.js" type="text/javascript"></script> -->
 <script src="https://www.moversfax.com/frontend/corporate/scripts/examples.js" type="text/javascript"></script>
 <script src="https://www.moversfax.com/frontend/corporate/scripts/star.js" type="text/javascript"></script>
 <script src="https://www.moversfax.com/frontend/plugins/dist/jquery.validate.min.js" type="text/javascript"></script>
