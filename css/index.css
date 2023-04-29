@@ -231,6 +231,7 @@ button {
     }
 
     .b-contaoner {
+        border: 1px solid black;
         display: flex;
         justify-content: center;
         align-items: end;
