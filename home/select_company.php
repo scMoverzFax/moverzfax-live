@@ -15,6 +15,7 @@ function generateRandomTenDigitDecimal() {
 if (!isset($_SESSION["id"])) {
     // If not set, assign a random ten-digit decimal number to $_SESSION["id"]
     $_SESSION["id"] = generateRandomTenDigitDecimal();
+    $user_id = $_SESSION["id"];
 }
 // Debug: Print the generated number
 // echo "Guest ID: " . $_SESSION["id"];
