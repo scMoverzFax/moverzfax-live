@@ -338,6 +338,7 @@ button {
 
     .wo-services {
         width: 65%;
+        border: black 1px solid;
     }
 
     #partners {
