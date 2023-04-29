@@ -262,6 +262,7 @@ if (!isset($_SESSION["id"])) {
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-center">Cart</h2>
+                    <p class="text-center"><?php echo "Guest ID: " . $_SESSION["id"]; ?></p>
                     <div class="text-center text-danger">
                         <span style="font-size:17px;">Important Notice : You can buy up to 5 reports in one transaction to take advantage of discounts offered.
                             First report is $10 and you get second Free.<br> Third report is $3, fourth report is $2 and fifth report is $1.</span>
