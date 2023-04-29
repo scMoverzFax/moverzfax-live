@@ -16,4 +16,4 @@
         <td class="text-center"><a href="../model/template.php?usdot=<?php echo $usdot; ?>" target="_blank" class="btn text-light font-weight-bold" style="background-color:green">Check And Download Report</a></td>
     </tr>
     <?php $sr_no++; } } ?>
-</tbody>
+</tbody> 
