@@ -11,6 +11,8 @@ if (mysqli_num_rows($result) > 0) {
         $result1 = $con->query($sql1);
         $res1 = mysqli_fetch_array($result1);
         $mostRecent = 0;
+        echo $res1;
+        echo "result one";
         if($res1 != null){
             $mostRecent = $res1['tr_create_time'];
         }
