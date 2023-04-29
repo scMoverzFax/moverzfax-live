@@ -311,6 +311,9 @@ button {
     float: left;
     width: 75%;
 }
+.wo-services h2 {
+    color: red;
+}
 
 .container-partners {
     width: 90%;
