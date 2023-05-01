@@ -18,12 +18,14 @@ include 'myheader.php';
                     <?php include '../model/payment_app_model.php'; ?>
                 </table> 
             </div>
-
-                <p class="text-center w-50 p-2" style="font-size:17px;">
+<div class="text-center">
+<p class="w-75 p-2" style="font-size:14px;">
                     Kindly take a moment to double-check your order details before advancing to the checkout page. 
                     If you need to make any adjustments, please click the back button to modify your cart. 
                     We appreciate your business.
                 </p>
+</div>
+
 
             <!-- Add a call to Stripe checkout here -->
             <?php include '../stripe/checkout.html'; ?>
