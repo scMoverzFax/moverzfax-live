@@ -2,8 +2,8 @@
 include 'myheader.php'; 
 //defined('LOGIN') OR exit('<h3 class="text-center my-5 py-5 ">Please Login First...</h3>');?>
 <div class="container-fluid">
-    <h3 class="text-center mt-2">MoverZFax Payment </h3>
-            <div class="col-md-12 mover_table">
+            <h3 class="text-center mt-4">MoverZFax Order Confirmation</h3>
+            <div class="col-md-12 mover_table mt-4">
                 <table class="table table-striped table-hover ">
                     <thead class="sticky-top thead-dark">
                         <tr>
@@ -18,6 +18,12 @@ include 'myheader.php';
                     <?php include '../model/payment_app_model.php'; ?>
                 </table> 
             </div>
+
+            <p class="text-center" style="font-size:17px;">
+                    Kindly take a moment to double-check your order details before advancing to the checkout page. 
+                    If you need to make any adjustments, please click the back button to modify your cart. 
+                    We appreciate your business.
+                </p>
 
             <!-- Add a call to Stripe checkout here -->
             <?php include '../stripe/checkout.html'; ?>
