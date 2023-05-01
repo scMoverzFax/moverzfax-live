@@ -19,7 +19,7 @@ include 'myheader.php';
                 </table> 
             </div>
 <div class="text-center">
-<p class="w-75 p-2" style="font-size:14px;">
+                <p class="px-5 p-2" style="font-size:14px;">
                     Kindly take a moment to double-check your order details before advancing to the checkout page. 
                     If you need to make any adjustments, please click the back button to modify your cart. 
                     We appreciate your business.
