@@ -2,7 +2,7 @@
 if (!defined('LOGIN')) {
     // Start a session
     session_start();
-    
+    unset($_SESSION["id"]);
     // Function to generate a random ten-digit decimal number
     function generateRandomTenDigitDecimal() {
         $decimalPart = mt_rand(1000000000, 9999999999); // Generate random decimal part (10 digits)
