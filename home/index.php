@@ -1,4 +1,24 @@
-<?php include "myheader.php" ?> 
+<?php include "myheader.php";
+if (!defined('LOGIN')) {
+    // Start a session
+    session_start();
+    
+    // Function to generate a random ten-digit decimal number
+    function generateRandomTenDigitDecimal() {
+        $decimalPart = mt_rand(1000000000, 9999999999); // Generate random decimal part (10 digits)
+        $randomDecimal = "0." . $decimalPart; // Combine "0." with the decimal part
+        return $randomDecimal;
+    }
+    
+    // Check if the session id is already set
+    if (!isset($_SESSION["id"])) {
+        // If not set, assign a random ten-digit decimal number to $_SESSION["id"]
+        $_SESSION["id"] = generateRandomTenDigitDecimal();
+    }
+    // Debug: Print the generated number
+    // echo "Guest ID: " . $_SESSION["id"];
+    }
+?> 
 
 <head>
     <title>MoverZfax - Home</title>
