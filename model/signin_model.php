@@ -23,7 +23,6 @@ include 'connection.php';
     // output data of each row
         $row = $result->fetch_assoc();
         // echo "id: " . $row["id"]. " - Name: " . $row["email"]. "<br>";
-        echo $row["id"];
         session_start();
         $_SESSION["id"] = $row["id"];
         $_SESSION["first_name"] = $row["first_name"];
