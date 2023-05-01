@@ -214,14 +214,14 @@ include 'myheader.php';
                             <tbody id="table_cart"></tbody>
                         </table>
                     </div>
-                    <!-- <div class="text-center text-danger">
+                    <div class="text-center text-danger">
                         <span style="font-size:15px;">
                             Purchase your first report for $10 and receive the second one free of charge. 
                             Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
                             and a fantastic deal of $1 for the fifth.
                         </span>
-                    </div>  style="margin-top:50px;"-->
-                    <div class="text-center">
+                    </div>
+                    <div class="text-center" style="margin-top:50px;">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
                 </div>
