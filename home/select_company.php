@@ -111,6 +111,7 @@ include 'myheader.php';
         }
         .search {
             border: 1px solid black;
+            justify-content: start;
         }
         .search-btn {
             width: 25%;
