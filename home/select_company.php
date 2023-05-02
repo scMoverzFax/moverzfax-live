@@ -110,27 +110,23 @@ include 'myheader.php';
             margin: 0;
             flex-direction: column;
             justify-content: start;
-            border: 1px solid black;
         }
         .search {
             width: 100%;
             padding: 0;
             margin: 0;
-            border: 1px solid black;
         }
         .search span {
             padding: 0;
             margin: 0;
-            border: 1px solid black;
         }
         .search-btn {
             width: 25%;
             margin-top: 10px;
-            border: 1px solid black;
         }
         .search-btn-contain {
             width: 100%;
-            border: 1px solid black;
+            /* border: 1px solid black; */
         }
         .resp {
             padding: 0;
