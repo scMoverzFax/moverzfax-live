@@ -107,6 +107,10 @@ include 'myheader.php';
     @media (max-width: 750px) {
         .search-n-resp {
             flex-direction: column;
+            border: 1px solid black;
+        }
+        .search {
+            border: 1px solid black;
         }
         .search-btn {
             width: 25%;
@@ -169,14 +173,17 @@ include 'myheader.php';
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
                             <div class="search-n-resp d-flex col-md-12 align-items-center form-group">
+
                                 <div class="col-md-4 search d-flex align-items-center">
                                     <span class="col-md-5">Add A Mover:</span>
                                     <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
                                 </div>
+
                                 <div class="col-md-3 pl-0">
                                     <input type="submit" class="search-btn col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
+
                                 <div class="col-md-5 d-flex align-items-center" style="height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
@@ -200,6 +207,7 @@ include 'myheader.php';
                                         </span>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </form>
