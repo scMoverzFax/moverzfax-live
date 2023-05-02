@@ -123,6 +123,10 @@ include 'myheader.php';
             margin-top: 10px;
             border: 1px solid black;
         }
+        .search-btn-contain {
+            width: 100%;
+            border: 1px solid black;
+        }
         .mover_table {
             padding: 0;
             margin: 0;
@@ -191,7 +195,7 @@ include 'myheader.php';
                                     <input name="function" type="hidden" value="search">
                                 </div>
                                 <!-- Go button -->
-                                <div class="col-md-3 pl-0">
+                                <div class="col-md-3 pl-0 search-btn-contain">
                                     <input type="submit" class="search-btn col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
                                 <!-- Response message -->
