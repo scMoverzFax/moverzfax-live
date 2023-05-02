@@ -94,7 +94,11 @@ include 'myheader.php';
     @media (max-width: 1200px) {}
 
     /* smaller than desktop */
-    @media (max-width: 1000px) {}
+    @media (max-width: 1000px) {
+        .in-container {
+            width: 100%;
+        }
+    }
 
     /* smaller than tablet */
     @media (max-width: 750px) {}
