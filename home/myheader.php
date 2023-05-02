@@ -200,7 +200,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                 <!-- <button class="collapsible">Service</button>
                   <div class="content1">
                     <a href="find_a_mover.php" >Find a Mover</a>
-                    <a href="order_report.php" >Oreder Report</a>
+                    <a href="order_report.php" >Order Report</a>
                     <a href="add_review.php" >Add a Review</a>
                   </div> -->
                 <button class="collapsible">Support</button>
