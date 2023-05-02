@@ -95,6 +95,10 @@ include 'myheader.php';
 
     /* smaller than desktop */
     @media (max-width: 1000px) {
+        .b-container {
+            padding: 0px;
+
+        }
         .in-container {
             width: 100%;
         }
