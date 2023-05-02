@@ -104,7 +104,11 @@ include 'myheader.php';
     }
 
     /* smaller than tablet */
-    @media (max-width: 750px) {}
+    @media (max-width: 750px) {
+        .search-n-resp {
+            flex-direction: column;
+        }
+    }
 
     /* smaller than phablet (also point when grid becomes active) */
     @media (max-width: 550px) {}
@@ -160,7 +164,7 @@ include 'myheader.php';
 
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
-                            <div class="d-flex col-md-12 align-items-center form-group">
+                            <div class="search-n-resp d-flex col-md-12 align-items-center form-group">
                                 <div class="col-md-4 search d-flex align-items-center">
                                     <span class="col-md-5">Add A Mover:</span>
                                     <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
