@@ -121,7 +121,7 @@ include 'myheader.php';
         .search span {
             padding: 0;
             margin: 0;
-            width: 25%;
+            width: 100px;
             border: 1px solid black;
         }
         .search-btn {
