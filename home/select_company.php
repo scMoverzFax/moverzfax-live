@@ -106,6 +106,8 @@ include 'myheader.php';
     /* smaller than tablet */
     @media (max-width: 750px) {
         .search-n-resp {
+            padding: 0;
+            margin: 0;
             flex-direction: column;
             justify-content: start;
             border: 1px solid black;
@@ -120,6 +122,10 @@ include 'myheader.php';
             width: 25%;
             margin-top: 10px;
             border: 1px solid black;
+        }
+        .mover_table {
+            padding: 0;
+            margin: 0;
         }
     }
 
