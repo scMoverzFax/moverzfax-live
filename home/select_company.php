@@ -132,6 +132,10 @@ include 'myheader.php';
             width: 100%;
             border: 1px solid black;
         }
+        .resp {
+            padding: 0;
+            margin: 0;
+        }
         .mover_table {
             padding: 0;
             margin: 0;
@@ -204,7 +208,7 @@ include 'myheader.php';
                                     <input type="submit" class="search-btn col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
                                 <!-- Response message -->
-                                <div class="col-md-5 d-flex align-items-center" style="height:40px;">
+                                <div class="resp col-md-5 d-flex align-items-center" style="height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
