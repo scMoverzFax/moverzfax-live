@@ -107,17 +107,20 @@ include 'myheader.php';
     @media (max-width: 750px) {
         .search-n-resp {
             flex-direction: column;
+            border: 1px solid black;
         }
         .search {
             width: 100%;
             padding: 0;
             margin: 0;
             justify-content: start;
+            border: 1px solid black;
         }
         .search-btn {
             width: 25%;
             margin-top: 10px;
             justify-content: end;
+            border: 1px solid black;
         }
     }
 
