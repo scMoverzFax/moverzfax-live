@@ -108,6 +108,10 @@ include 'myheader.php';
         .search-n-resp {
             flex-direction: column;
         }
+        .search-btn {
+            width: 25%;
+            margin-top: 10px;
+        }
     }
 
     /* smaller than phablet (also point when grid becomes active) */
@@ -171,7 +175,7 @@ include 'myheader.php';
                                     <input name="function" type="hidden" value="search">
                                 </div>
                                 <div class="col-md-3 pl-0">
-                                    <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
+                                    <input type="submit" class="search-btn col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
                                 <div class="col-md-5 d-flex align-items-center" style="height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
