@@ -169,6 +169,7 @@ function insertIntoTracking($usdot, $dataFound) {
     $sqltracking = "INSERT INTO mv_registration_tracking (usdot, search_time, data_found) VALUES ('$usdot', '$currentDateTime', '$dataFoundInt')";
 
     mysqli_query($con, $sqltracking);
+    $con->close();
 }
 
 //function checkDatabase(){
