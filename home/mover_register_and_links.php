@@ -160,24 +160,6 @@ $moversreviewed_link = '';
 $angies_link = '';
 $transportreviews_link = '';
 
-function insertIntoTracking($usdot, $dataFound) {
-	require_once '../model/connection.php';
-
-    $currentDateTime = date('Y-m-d H:i:s');
-    $dataFoundInt = $dataFound ? 1 : 0;
-
-    $sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
-	VALUES ('" . $usdot . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
-
-    // mysqli_query($con, $sqltracking);
-	if (mysqli_query($con, $sqltracking)) {
-		echo "worked";
-	} else {
-		echo "Failed";
-	}
-    $con->close();
-}
-
 //function checkDatabase(){
 if(isset($_REQUEST["usdot-check"])){
 	require_once '../model/connection.php';
@@ -187,21 +169,16 @@ if(isset($_REQUEST["usdot-check"])){
 	$resultCheck = mysqli_num_rows($result);
 
 	if ($resultCheck > 0) {
-		$dataFound = True;
-
-		$currentDateTime = date('Y-m-d H:i:s');
-		$dataFoundInt = $dataFound ? 1 : 0;
-	
-		$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
-		VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
-	
-		// mysqli_query($con, $sqltracking);
-		if (mysqli_query($con, $sqltracking)) {
-			echo "worked";
-		} else {
-			echo "Failed";
-		}
-		$con->close();
+		//insert into tracking table
+			$dataFound = True;
+			$currentDateTime = date('Y-m-d H:i:s');
+			$dataFoundInt = $dataFound ? 1 : 0;
+		
+			$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
+			VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+		
+			mysqli_query($con, $sqltracking);
+			$con->close();
 
 		//sets table values to variables
 		while ($rows = mysqli_fetch_assoc($result)) {
@@ -252,25 +229,19 @@ if(isset($_REQUEST["usdot-check"])){
 	} else {
 		$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
 		$checkSuccessMsg = '';
-		$dataFound = False;
 
-		$currentDateTime = date('Y-m-d H:i:s');
-		$dataFoundInt = $dataFound ? 1 : 0;
-	
-		$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
-		VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
-	
-		mysqli_query($con, $sqltracking);
-		// if (mysqli_query($con, $sqltracking)) {
-		// 	echo "worked";
-		// } else {
-		// 	echo "Failed";
-		// }
-		$con->close();
+		//insert into tracking table
+			$dataFound = False;
+			$currentDateTime = date('Y-m-d H:i:s');
+			$dataFoundInt = $dataFound ? 1 : 0;
+		
+			$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
+			VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+		
+			mysqli_query($con, $sqltracking);
+			$con->close();
 
 	}
-
-	// insertIntoTracking($search, $dataFound);
 }
 //}
 ?>
