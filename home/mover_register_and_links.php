@@ -188,6 +188,21 @@ if(isset($_REQUEST["usdot-check"])){
 
 	if ($resultCheck > 0) {
 		$dataFound = True;
+
+		$currentDateTime = date('Y-m-d H:i:s');
+		$dataFoundInt = $dataFound ? 1 : 0;
+	
+		$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
+		VALUES ('" . $usdot . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+	
+		// mysqli_query($con, $sqltracking);
+		if (mysqli_query($con, $sqltracking)) {
+			echo "worked";
+		} else {
+			echo "Failed";
+		}
+		$con->close();
+		
 		//sets table values to variables
 		while ($rows = mysqli_fetch_assoc($result)) {
 			$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
@@ -238,9 +253,24 @@ if(isset($_REQUEST["usdot-check"])){
 		$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
 		$checkSuccessMsg = '';
 		$dataFound = False;
+
+		$currentDateTime = date('Y-m-d H:i:s');
+		$dataFoundInt = $dataFound ? 1 : 0;
+	
+		$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
+		VALUES ('" . $usdot . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+	
+		// mysqli_query($con, $sqltracking);
+		if (mysqli_query($con, $sqltracking)) {
+			echo "worked";
+		} else {
+			echo "Failed";
+		}
+		$con->close();
+
 	}
 
-	insertIntoTracking($search, $dataFound);
+	// insertIntoTracking($search, $dataFound);
 }
 //}
 ?>
