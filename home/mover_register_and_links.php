@@ -193,7 +193,7 @@ if(isset($_REQUEST["usdot-check"])){
 		$dataFoundInt = $dataFound ? 1 : 0;
 	
 		$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
-		VALUES ('" . $usdot . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+		VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
 	
 		// mysqli_query($con, $sqltracking);
 		if (mysqli_query($con, $sqltracking)) {
@@ -202,7 +202,7 @@ if(isset($_REQUEST["usdot-check"])){
 			echo "Failed";
 		}
 		$con->close();
-		
+
 		//sets table values to variables
 		while ($rows = mysqli_fetch_assoc($result)) {
 			$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
