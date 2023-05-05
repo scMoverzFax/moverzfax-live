@@ -168,7 +168,12 @@ function insertIntoTracking($usdot, $dataFound) {
 
     $sqltracking = "INSERT INTO mv_registration_tracking (usdot, search_time, data_found) VALUES ('$usdot', '$currentDateTime', '$dataFoundInt')";
 
-    mysqli_query($con, $sqltracking);
+    // mysqli_query($con, $sqltracking);
+	if (mysqli_query($con, $sqltracking)) {
+		echo "worked";
+	} else {
+		echo "Failed";
+	}
     $con->close();
 }
 
@@ -229,9 +234,9 @@ if(isset($_REQUEST["usdot-check"])){
 			//$movingguardian_link = $rows['movingguardian_link'];
 		}
 	} else {
-			$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
-			$checkSuccessMsg = '';
-			$dataFound = False;
+		$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
+		$checkSuccessMsg = '';
+		$dataFound = False;
 	}
 
 	insertIntoTracking($search, $dataFound);
