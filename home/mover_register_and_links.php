@@ -164,83 +164,94 @@ $transportreviews_link = '';
 if(isset($_REQUEST["usdot-check"])){
 	require_once '../model/connection.php';
     $search = $_REQUEST["usdot-check"];
-	$sql = "SELECT  * FROM mover WHERE usdot = '" . $search . "';";
-	$result = mysqli_query($con, $sql);
-	$resultCheck = mysqli_num_rows($result);
 
-	if ($resultCheck > 0) {
-		//insert into tracking table
-			$dataFound = True;
-			$currentDateTime = date('Y-m-d H:i:s');
-			$dataFoundInt = $dataFound ? 1 : 0;
-		
-			$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
-			VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
-		
-			mysqli_query($con, $sqltracking);
-			$con->close();
-
-		//sets table values to variables
-		while ($rows = mysqli_fetch_assoc($result)) {
-			$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
-			$checkMsg = '';
-			$usdot = $rows['usdot'];
-			$company_name = $rows['name'];
-			$alt_company_name = $rows['alias'];
-			$website = $rows['url'];
-			$phone = $rows['phone'];
-			$fax = $rows['fax'];
-			$contact_person = $rows['contact_person'];
-			$mc = $rows['mc'];
-
-			$country_id = $rows['country_id'];
-			$_SESSION['country_id'] = $rows['country_id'];
-			$state_id = $rows['state_id'];
-			$_SESSION['state_id'] = $rows['state_id'];
-			$city_id = $rows['city_id'];
-			$_SESSION['city_id'] = $rows['city_id'];
-
-			$zip = $rows['zipcode'];
-			$email = $rows['email'];
-			$logo = $rows['logo'];
-
-			//set all of the links that we will still use
-			//this list will change pending Dan's list of current sites to use.
-			$state_link = $rows['state_registration_link'];
-			$federal_link = "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=" . $usdot ;
-			//$fmcsa_link = $rows['fmcsa_link'];
-			$bbb_link = $rows['bbb_link'];
-			$msc_link = $rows['amsa_link'];
-			$hhgfaa_link = $rows['hhgfaa_link'];
-			$ripoffreport_link = $rows['ripoffreport_link'];
-			$movingscam_link = $rows['movingscam_link'];
-			$mymovingreviews_link = $rows['mymovingreviews_link'];
-			$yelp_link = $rows['yelp_link'];
-			$insiderpages_link = $rows['insiderpages_link'];
-			//$kudzu_rate = $rows['kudzu_rate'];
-			$moversreviewed_link = $rows['moversreviewed_link'];
-			//$reviewamover_link = $rows['reviewamover_link'];
-			//$moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
-			$angies_link = $rows['angies_link'];
-			$transportreviews_link = $rows['transportreviews_link'];
-			//$transportreports_link = $rows['transportreports_link'];
-			//$movingguardian_link = $rows['movingguardian_link'];
-		}
-	} else {
-		$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
+	//check if mover is already registered
+	$sqlExist = "SELECT  * FROM mover_register WHERE usdot = '" . $search . "';";
+	$resultExist = mysqli_query($con, $sqlExist);
+	$resultCheckExist = mysqli_num_rows($resultExist);
+	if($resultCheckExist > 0) {
+		$checkMsg = "This USDOT is already registered with MoverZfax, please login to use your account.";
 		$checkSuccessMsg = '';
+	} else {
 
-		//insert into tracking table
-			$dataFound = False;
-			$currentDateTime = date('Y-m-d H:i:s');
-			$dataFoundInt = $dataFound ? 1 : 0;
-		
-			$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
-			VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
-		
-			mysqli_query($con, $sqltracking);
-			$con->close();
+		$sql = "SELECT  * FROM mover WHERE usdot = '" . $search . "';";
+		$result = mysqli_query($con, $sql);
+		$resultCheck = mysqli_num_rows($result);
 
+		if ($resultCheck > 0) {
+			//insert into tracking table
+				$dataFound = True;
+				$currentDateTime = date('Y-m-d H:i:s');
+				$dataFoundInt = $dataFound ? 1 : 0;
+			
+				$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
+				VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+			
+				mysqli_query($con, $sqltracking);
+				$con->close();
+	
+			//sets table values to variables
+			while ($rows = mysqli_fetch_assoc($result)) {
+				$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
+				$checkMsg = '';
+				$usdot = $rows['usdot'];
+				$company_name = $rows['name'];
+				$alt_company_name = $rows['alias'];
+				$website = $rows['url'];
+				$phone = $rows['phone'];
+				$fax = $rows['fax'];
+				$contact_person = $rows['contact_person'];
+				$mc = $rows['mc'];
+	
+				$country_id = $rows['country_id'];
+				$_SESSION['country_id'] = $rows['country_id'];
+				$state_id = $rows['state_id'];
+				$_SESSION['state_id'] = $rows['state_id'];
+				$city_id = $rows['city_id'];
+				$_SESSION['city_id'] = $rows['city_id'];
+	
+				$zip = $rows['zipcode'];
+				$email = $rows['email'];
+				$logo = $rows['logo'];
+	
+				//set all of the links that we will still use
+				//this list will change pending Dan's list of current sites to use.
+				$state_link = $rows['state_registration_link'];
+				$federal_link = "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=" . $usdot ;
+				//$fmcsa_link = $rows['fmcsa_link'];
+				$bbb_link = $rows['bbb_link'];
+				$msc_link = $rows['amsa_link'];
+				$hhgfaa_link = $rows['hhgfaa_link'];
+				$ripoffreport_link = $rows['ripoffreport_link'];
+				$movingscam_link = $rows['movingscam_link'];
+				$mymovingreviews_link = $rows['mymovingreviews_link'];
+				$yelp_link = $rows['yelp_link'];
+				$insiderpages_link = $rows['insiderpages_link'];
+				//$kudzu_rate = $rows['kudzu_rate'];
+				$moversreviewed_link = $rows['moversreviewed_link'];
+				//$reviewamover_link = $rows['reviewamover_link'];
+				//$moverssearchandreviews_link = $rows['moverssearchandreviews_link'];
+				$angies_link = $rows['angies_link'];
+				$transportreviews_link = $rows['transportreviews_link'];
+				//$transportreports_link = $rows['transportreports_link'];
+				//$movingguardian_link = $rows['movingguardian_link'];
+			}
+		} else {
+			$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
+			$checkSuccessMsg = '';
+	
+			//insert into tracking table
+				$dataFound = False;
+				$currentDateTime = date('Y-m-d H:i:s');
+				$dataFoundInt = $dataFound ? 1 : 0;
+			
+				$sqltracking = "INSERT INTO mv_registration_tracking(usdot, search_time, data_found) 
+				VALUES ('" . $search . "', '" . $currentDateTime . "', '" . $dataFoundInt . "');";
+			
+				mysqli_query($con, $sqltracking);
+				$con->close();
+		}
+		
 	}
 }
 //}
