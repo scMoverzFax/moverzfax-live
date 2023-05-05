@@ -234,7 +234,7 @@ if(isset($_REQUEST["usdot-check"])){
 			$dataFound = False;
 	}
 
-	// insertIntoTracking($search, $dataFound);
+	insertIntoTracking($search, $dataFound);
 }
 //}
 ?>
