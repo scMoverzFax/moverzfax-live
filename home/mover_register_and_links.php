@@ -160,6 +160,17 @@ $moversreviewed_link = '';
 $angies_link = '';
 $transportreviews_link = '';
 
+function insertIntoTracking($usdot, $dataFound) {
+	require_once '../model/connection.php';
+
+    $currentDateTime = date('Y-m-d H:i:s');
+    $dataFoundInt = $dataFound ? 1 : 0;
+
+    $sqltracking = "INSERT INTO mv_registration_tracking (usdot, search_time, data_found) VALUES ('$usdot', '$currentDateTime', '$dataFoundInt')";
+
+    mysqli_query($con, $sqltracking);
+}
+
 //function checkDatabase(){
 if(isset($_REQUEST["usdot-check"])){
 	require_once '../model/connection.php';
@@ -169,6 +180,7 @@ if(isset($_REQUEST["usdot-check"])){
 	$resultCheck = mysqli_num_rows($result);
 
 	if ($resultCheck > 0) {
+		$dataFound = True;
 		//sets table values to variables
 		while ($rows = mysqli_fetch_assoc($result)) {
 			$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
@@ -218,8 +230,10 @@ if(isset($_REQUEST["usdot-check"])){
 	} else {
 			$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
 			$checkSuccessMsg = '';
-			
+			$dataFound = False;
 	}
+
+	insertIntoTracking($search, $dataFound);
 }
 //}
 ?>
@@ -238,10 +252,14 @@ if(isset($_REQUEST["usdot-check"])){
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
+					<h5 class="text-center">
+						Use the search box to check for your USDOT in our database. If we have your information, 
+						the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
+					</h5>
 					<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
 
 					<form method="get" action="mover_register_and_links.php">
-						<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check my USDOT#" required><br>
+						<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check My #USDOT" required><br>
 						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
 					</form>
 					<br>
@@ -378,24 +396,6 @@ if(isset($_REQUEST["usdot-check"])){
 									<td></td>
 									<td><input type="checkbox" name="" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
 								</tr>
-								<!-- <tr>
-									<td></td>
-									<td><img name="HELPER-captcha_image" id="capt" src="captcha.php">
-										<a href="javascript://" onclick="refreshCaptcha('captcha.php');">Refresh</a>
-									</td>
-								</tr> -->
-								<!-- <tr>
-									<td></td>
-									<td>
-										//old captcha 
-										<input type="text" name="" placeholder="Enter Captcha Code">
-
-										//reCAPTCHA v2 if want to use
-										<div class="col-md-12 d-flex justify-content-center">
-											<div class="g-recaptcha" data-sitekey="6LcoH5ckAAAAABJIsdDqWRa4vAwgpT1PPDF-kaxS"></div>
-										</div>
-									</td>
-								</tr> -->
 							</tbody>
 						</table>
 						<div class="row text-center">
