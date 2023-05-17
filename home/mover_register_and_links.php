@@ -436,7 +436,7 @@ if(isset($_REQUEST["usdot-check"])){
 								<tbody>
 									<tr>
 										<td></td>
-										<td><input type="checkbox" name="" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
+										<td><input type="checkbox" name="agreement" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
 									</tr>
 								</tbody>
 							</table>
