@@ -469,12 +469,10 @@ if(isset($_REQUEST["usdot-check"])){
             // Hide the first section and show the second.
             $(".section-1").hide();
         	$(".section-2").show();
-			resetToTop();
         });
 		$("#back-button").click(function () {
 			$(".section-2").hide();
 			$(".section-1").show();
-			resetToTop();
 		});
     });
 	function resetToTop() {
