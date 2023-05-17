@@ -471,12 +471,13 @@ if(isset($_REQUEST["usdot-check"])){
             if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
+				form.reportValidity();
             } else {
 
-            // Hide the first section and show the second.
-            $(".section-1").hide();
-        	$(".section-2").show();
-        	window.scrollTo(0, 0);
+				// Hide the first section and show the second.
+				$(".section-1").hide();
+				$(".section-2").show();
+				window.scrollTo(0, 0);
 			}
         });
 		$("#back-button").click(function () {
