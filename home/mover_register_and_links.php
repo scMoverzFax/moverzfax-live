@@ -272,9 +272,9 @@ if(isset($_REQUEST["usdot-check"])){
 		<div class="bg-form form-group">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
-
 					<div class="section-1">
+						<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
+
 						<h5 class="text-center">
 							Use the search box to check for your USDOT in our database. If we have your information, 
 							the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
@@ -389,8 +389,12 @@ if(isset($_REQUEST["usdot-check"])){
 						</div>
 
 						<div class="section-2" style="display: none;">
-							<!-- The second part of your form goes here. --><h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Links</h1>
-							<h5 class="text-center">Please paste the link to your business on each site. Leave the feild blank if not applicable.</h5>
+							<button type="button" id="back-button" class="btn button-mf-cancel">Go Back</button>
+							<h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Registration Links</h1>
+							<h5 class="text-center">
+								To complete your registration process, kindly provide the URLs of your business profiles from various platforms in the respective fields. 
+								If a particular platform is not applicable to your business, please feel free to leave that field empty. Thank you for your cooperation.
+							</h5>
 
 							<table class="table">
 								<tbody>
@@ -465,7 +469,13 @@ if(isset($_REQUEST["usdot-check"])){
             // Hide the first section and show the second.
             $(".section-1").hide();
         	$(".section-2").show();
+			resetToTop();
         });
+		$("#back-button").click(function () {
+			$(".section-2").hide();
+			$(".section-1").show();
+			resetToTop();
+		});
     });
 	function resetToTop() {
 		// Get the current URL
