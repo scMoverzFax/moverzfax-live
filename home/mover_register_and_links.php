@@ -273,6 +273,7 @@ if(isset($_REQUEST["usdot-check"])){
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
+
 					<div class="section-1">
 						<h5 class="text-center">
 							Use the search box to check for your USDOT in our database. If we have your information, 
@@ -462,8 +463,8 @@ if(isset($_REQUEST["usdot-check"])){
             // Optionally, validate form input here.
 
             // Hide the first section and show the second.
-            $(this).closest('.section-1').hide();
-            $(this).closest('.section-1').next('.section-2').show();
+            $(".section-1").hide();
+        	$(".section-2").show();
         });
     });
 	function resetToTop() {
