@@ -192,7 +192,9 @@ if(isset($_REQUEST["usdot-check"])){
 	
 			//sets table values to variables
 			while ($rows = mysqli_fetch_assoc($result)) {
-				$checkSuccessMsg = "We found your company in our records! This form has been auto-populated with the information we have, but please review, and make updates as needed.";
+				$checkSuccessMsg = "Your company is already in our database! Please review and update your information. 
+				By registering, you'll get the opportunity to connect with the vast market of 15 million customers in this industry. 
+				You'll have control over the information in your reports and significantly improve your business grade. Let's work together to drive your profits up!";
 				$checkMsg = '';
 				$usdot = $rows['usdot'];
 				$company_name = $rows['name'];
@@ -282,149 +284,161 @@ if(isset($_REQUEST["usdot-check"])){
 						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
 					</form>
 					<br>
-					<form action="../model/mover_model.php" method="post" id="mv-reg-form" enctype="multipart/form-data"> 
-						<table class="table">
-							<tbody>
-								<tr>
-									<td><label>USDOT#<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="usdot" id="usdot" value="<?php echo (isset($usdot)) ? $usdot : '';?>" placeholder="Enter USDOT#" required></td>
-								</tr>
-								<tr>
-									<td><label>Company Name<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="name" id="company_name" value="<?php echo (isset($company_name)) ? $company_name : '';?>" placeholder="Enter Company Name" required></td>
-								</tr>
-								<tr>
-									<td><label>Alternative Business Name</label></td>
-									<td><input type="text" class="form-control" name="alternate_business" value="<?php echo (isset($alt_company_name)) ? $alt_company_name : '';?>" placeholder="Enter Alternative Business Name"></td>
-								</tr>
-								<tr>
-									<td><label>Company's Website</label></td>
-									<td><input type="text" class="form-control" name="website" value="<?php echo (isset($website)) ? $website : '';?>" placeholder="example.com"></td>
-								</tr>
-								<tr>
-									<td><label>Company's Contact Number<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="contact_number" value="<?php echo (isset($phone)) ? $phone : '';?>" placeholder="000-000-0000" required></td>
-								</tr>
-								<tr>
-									<td><label>Company's Fax Number</label></td>
-									<td><input type="text" class="form-control" name="fax" value="<?php echo (isset($fax)) ? $fax : '';?>" placeholder="Fax Number"></td>
-								</tr>
-								<tr>
-									<td><label>Contact Person</label></td>
-									<td><input type="text" class="form-control" name="contact_person" value="<?php echo (isset($contact_person)) ? $contact_person : '';?>" placeholder="Enter Full Name"></td>
-								</tr>
-								<tr>
-									<td><label>MC#</label></td>
-									<td><input type="text" class="form-control" name="mc" value="<?php echo (isset($mc)) ? $mc : '';?>" placeholder="Enter MC#"></td>
-								</tr>
-								<tr>
-									<td><label>Country<sup style="color: red">*</sup></label></td>
-									<td>
-										<select class="form-select" id="country_1" name="country" onchange="get_state_1()" readonly required>
-											<!-- Country -->
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><label>State<sup style="color: red">*</sup></label></td>
-									<td>
-										<select class="form-select" id="state_1" name="state" onchange="get_city_1()" required>
-											<!-- State -->
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><label>City<sup style="color: red">*</sup></label></td>
-									<td>
-										<select class="form-select" id="city_1" name="city" required>
-											<!-- City -->
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><label>Zip Code<sup style="color: red">*</sup></label></td>
-									<td><input type="text" class="form-control" name="zip_code" value="<?php echo (isset($zip)) ? $zip : '';?>" placeholder="Enter Zip Code" required></td>
-								</tr>
-								<tr>
-									<td>Business Coverage</td>
-									<td><input type="checkbox" name="business_mover[]" value="local_mover" checked> Local Mover<br>
-										<input type="checkbox" name="business_mover[]" value="long_mover"> Long Distance Mover<br>
-										<input type="checkbox" name="business_mover[]" value="cross_mover"> Cross-Border to Cannada
-									</td>
-								</tr>
-								<tr>
-									<td><label>E-mail Address<sup style="color: red">*</sup></label></td>
-									<td><input type="email" class="form-control" name="mover_email" value="<?php echo (isset($email)) ? $email : '';?>" placeholder="xxxxxx@example.com" required></td>
-								</tr>
-								<tr>
-									<td><label>Password<sup style="color: red">*</sup></label></td>
-									<td><input type="password" class="form-control" name="passwords" id="passwords" placeholder="Please Enter Your Password" required></td>
-								</tr>
-								<tr>
-									<td colspan="2"><span id="message" style="color:red; font-size:15px;"></span></td>
-								</tr>
-								<tr>
-									<td><label>Confirm Password<sup style="color: red">*</sup></label></td>
-									<td><input type="password" class="form-control" oninput="myfun1()" id="confirm_passwords" name="confirm_password" placeholder="Confirm Your Password" required></td>
-								</tr>
-								<tr>
-									<td><label>Company Logo</label></td>
-									<td><input type="file" class="form-control" name="company_logo" value="<?php echo (isset($logo)) ? $logo : '';?>"></td>
-								</tr>
-							</tbody>
-						</table>
-								<h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Links</h1>
-								<h5 class="text-center">Please paste the link to your business on each site. Leave the feild blank if not applicable.</h5>
-						<table class="table">
-							<tbody>
-								<?php echo linkInput("State Registered", "/home/state_link_redirect.php", "state_registration_link", $state_link, false, ''); ?>
-								<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, ''); ?>
-								<!-- <?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?> -->
-								
-								<!-- <?php echo linkInput("BBB Member", "https://www.bbb.org/", "member_of_bbb", $bbb_link, true, "bbb_grade"); ?> -->
-								<tr>
-									<td>
-										<label>BBB Member</label>
-										<a href="https://www.bbb.org/" target="_blank">Visit Site</a>
-									</td>
-									<td>
-										<input style="width: 100%;" type="text" class="form-control" name="member_of_bbb" value="<?php echo (isset($bbb_link)) ? $bbb_link : '';?>" placeholder="Paste your link here if applicable." />
-										<a href=<?php echo $bbb_link ?> target="_blank">Test Link</a>
-										<input type="text" class="form-control" name="bbb_grade" placeholder="Enter your BBB grade (e.g. A+, A, A-)">
-									</td>
-								</tr>
-								<?php echo linkInput("ProMover Member", "https://www.moving.org/", "member_of_msc", $msc_link, false, ""); ?>
-								<?php echo linkInput("HHGFAA Member", "https://www.iamovers.org/", "member_of_hhgffaa", $hhgfaa_link, false, ""); ?>
 
-								<?php echo linkInput("Ripoff Report", "https://www.ripoffreport.com/", "present_on_ripff_report", $ripoffreport_link, false, ""); ?>
-								<?php echo linkInput("Moving Scam", "http://www.movingscam.com", "present_on_moving_scam", $movingscam_link, false, ""); ?>
+					<form action="../model/mover_model.php" method="post" id="mv-reg-form" enctype="multipart/form-data">
 
-								<?php echo linkInput("Google", "http://www.google.com/", "present_on_google", '', true, "google_stars"); ?>
-								<?php echo linkInput("My Moving Reviews", "https://www.mymovingreviews.com/", "present_on_moving_reviews", $mymovingreviews_link, true, "moving_reviews_stars"); ?>
-								<?php echo linkInput("Yelp", "http://www.yelp.com/", "present_on_yelp", $yelp_link, true, "yelp_stars"); ?>
-								<?php echo linkInput("Insider Pages", "https://www.insiderpages.com/", "present_on_insider_pages", $insiderpages_link, true, "insider_pages_stars"); ?>
-								<?php echo linkInput("Mover Reviews", "https://www.moverreviews.com/", "present_on_mover_reviews", $moversreviewed_link, true, "mover_reviews_stars"); ?>
-								<?php echo linkInput("Transport Reviews", "https://www.transportreviews.com/", "present_on_transport_reviews", $transportreviews_link, true, "transport_reviews_stars"); ?>
-								<?php echo linkInput("Angies List", "http://www.angieslist.com/", "present_on_angies_list", $angies_link, true, "angie_stars"); ?>
-								<?php echo linkInput("Trust Pilot", "https://www.trustpilot.com/", "present_on_trust_pilot", '', true, "trust_pilot_stars"); ?>
-							</tbody>
-						</table>
-						<table class="table text-center">
-							<tbody>
-								<tr>
-									<td></td>
-									<td><input type="checkbox" name="" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="row text-center">
-							<input id="token" name="token" style="display: none;">
-							<div class="col-md-12 d-flex justify-content-center">
-								<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button>
-								<button type="reset" class="btn button-mf-cancel" onclick="reset_csc(); resetToTop();">Reset</button>
+						<div id="section-1">
+							<!-- The first part of your form goes here. -->
+							<table class="table">
+								<tbody>
+									<tr>
+										<td><label>USDOT#<sup style="color: red">*</sup></label></td>
+										<td><input type="text" class="form-control" name="usdot" id="usdot" value="<?php echo (isset($usdot)) ? $usdot : '';?>" placeholder="Enter USDOT#" required></td>
+									</tr>
+									<tr>
+										<td><label>Company Name<sup style="color: red">*</sup></label></td>
+										<td><input type="text" class="form-control" name="name" id="company_name" value="<?php echo (isset($company_name)) ? $company_name : '';?>" placeholder="Enter Company Name" required></td>
+									</tr>
+									<tr>
+										<td><label>Alternative Business Name</label></td>
+										<td><input type="text" class="form-control" name="alternate_business" value="<?php echo (isset($alt_company_name)) ? $alt_company_name : '';?>" placeholder="Enter Alternative Business Name"></td>
+									</tr>
+									<tr>
+										<td><label>Company's Website</label></td>
+										<td><input type="text" class="form-control" name="website" value="<?php echo (isset($website)) ? $website : '';?>" placeholder="example.com"></td>
+									</tr>
+									<tr>
+										<td><label>Company's Contact Number<sup style="color: red">*</sup></label></td>
+										<td><input type="text" class="form-control" name="contact_number" value="<?php echo (isset($phone)) ? $phone : '';?>" placeholder="000-000-0000" required></td>
+									</tr>
+									<tr>
+										<td><label>Company's Fax Number</label></td>
+										<td><input type="text" class="form-control" name="fax" value="<?php echo (isset($fax)) ? $fax : '';?>" placeholder="Fax Number"></td>
+									</tr>
+									<tr>
+										<td><label>Contact Person</label></td>
+										<td><input type="text" class="form-control" name="contact_person" value="<?php echo (isset($contact_person)) ? $contact_person : '';?>" placeholder="Enter Full Name"></td>
+									</tr>
+									<tr>
+										<td><label>MC#</label></td>
+										<td><input type="text" class="form-control" name="mc" value="<?php echo (isset($mc)) ? $mc : '';?>" placeholder="Enter MC#"></td>
+									</tr>
+									<tr>
+										<td><label>Country<sup style="color: red">*</sup></label></td>
+										<td>
+											<select class="form-select" id="country_1" name="country" onchange="get_state_1()" readonly required>
+												<!-- Country -->
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td><label>State<sup style="color: red">*</sup></label></td>
+										<td>
+											<select class="form-select" id="state_1" name="state" onchange="get_city_1()" required>
+												<!-- State -->
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td><label>City<sup style="color: red">*</sup></label></td>
+										<td>
+											<select class="form-select" id="city_1" name="city" required>
+												<!-- City -->
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td><label>Zip Code<sup style="color: red">*</sup></label></td>
+										<td><input type="text" class="form-control" name="zip_code" value="<?php echo (isset($zip)) ? $zip : '';?>" placeholder="Enter Zip Code" required></td>
+									</tr>
+									<tr>
+										<td>Business Coverage</td>
+										<td><input type="checkbox" name="business_mover[]" value="local_mover" checked> Local Mover<br>
+											<input type="checkbox" name="business_mover[]" value="long_mover"> Long Distance Mover<br>
+											<input type="checkbox" name="business_mover[]" value="cross_mover"> Cross-Border to Cannada
+										</td>
+									</tr>
+									<tr>
+										<td><label>E-mail Address<sup style="color: red">*</sup></label></td>
+										<td><input type="email" class="form-control" name="mover_email" value="<?php echo (isset($email)) ? $email : '';?>" placeholder="xxxxxx@example.com" required></td>
+									</tr>
+									<tr>
+										<td><label>Password<sup style="color: red">*</sup></label></td>
+										<td><input type="password" class="form-control" name="passwords" id="passwords" placeholder="Please Enter Your Password" required></td>
+									</tr>
+									<tr>
+										<td colspan="2"><span id="message" style="color:red; font-size:15px;"></span></td>
+									</tr>
+									<tr>
+										<td><label>Confirm Password<sup style="color: red">*</sup></label></td>
+										<td><input type="password" class="form-control" oninput="myfun1()" id="confirm_passwords" name="confirm_password" placeholder="Confirm Your Password" required></td>
+									</tr>
+									<tr>
+										<td><label>Company Logo</label></td>
+										<td><input type="file" class="form-control" name="company_logo" value="<?php echo (isset($logo)) ? $logo : '';?>"></td>
+									</tr>
+								</tbody>
+							</table>
+							<button type="button" class="btn button-mf me-5" id="continue">Continue</button>
+						</div>
+
+						<div id="section-2" style="display: none;">
+							<!-- The second part of your form goes here. --><h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Links</h1>
+							<h5 class="text-center">Please paste the link to your business on each site. Leave the feild blank if not applicable.</h5>
+
+							<table class="table">
+								<tbody>
+									<?php echo linkInput("State Registered", "/home/state_link_redirect.php", "state_registration_link", $state_link, false, ''); ?>
+									<?php echo linkInput("Federally Registered", "https://ai.fmcsa.dot.gov/hhg/search.asp", "federal_registration_link", $federal_link, false, ''); ?>
+									<!-- <?php echo linkInput("Public Liscense", "https://safer.fmcsa.dot.gov/", "licensing_and_information", $fmcsa_link, false, ''); ?> -->
+									
+									<!-- <?php echo linkInput("BBB Member", "https://www.bbb.org/", "member_of_bbb", $bbb_link, true, "bbb_grade"); ?> -->
+									<tr>
+										<td>
+											<label>BBB Member</label>
+											<a href="https://www.bbb.org/" target="_blank">Visit Site</a>
+										</td>
+										<td>
+											<input style="width: 100%;" type="text" class="form-control" name="member_of_bbb" value="<?php echo (isset($bbb_link)) ? $bbb_link : '';?>" placeholder="Paste your link here if applicable." />
+											<a href=<?php echo $bbb_link ?> target="_blank">Test Link</a>
+											<input type="text" class="form-control" name="bbb_grade" placeholder="Enter your BBB grade (e.g. A+, A, A-)">
+										</td>
+									</tr>
+									<?php echo linkInput("ProMover Member", "https://www.moving.org/", "member_of_msc", $msc_link, false, ""); ?>
+									<?php echo linkInput("HHGFAA Member", "https://www.iamovers.org/", "member_of_hhgffaa", $hhgfaa_link, false, ""); ?>
+
+									<?php echo linkInput("Ripoff Report", "https://www.ripoffreport.com/", "present_on_ripff_report", $ripoffreport_link, false, ""); ?>
+									<?php echo linkInput("Moving Scam", "http://www.movingscam.com", "present_on_moving_scam", $movingscam_link, false, ""); ?>
+
+									<?php echo linkInput("Google", "http://www.google.com/", "present_on_google", '', true, "google_stars"); ?>
+									<?php echo linkInput("My Moving Reviews", "https://www.mymovingreviews.com/", "present_on_moving_reviews", $mymovingreviews_link, true, "moving_reviews_stars"); ?>
+									<?php echo linkInput("Yelp", "http://www.yelp.com/", "present_on_yelp", $yelp_link, true, "yelp_stars"); ?>
+									<?php echo linkInput("Insider Pages", "https://www.insiderpages.com/", "present_on_insider_pages", $insiderpages_link, true, "insider_pages_stars"); ?>
+									<?php echo linkInput("Mover Reviews", "https://www.moverreviews.com/", "present_on_mover_reviews", $moversreviewed_link, true, "mover_reviews_stars"); ?>
+									<?php echo linkInput("Transport Reviews", "https://www.transportreviews.com/", "present_on_transport_reviews", $transportreviews_link, true, "transport_reviews_stars"); ?>
+									<?php echo linkInput("Angies List", "http://www.angieslist.com/", "present_on_angies_list", $angies_link, true, "angie_stars"); ?>
+									<?php echo linkInput("Trust Pilot", "https://www.trustpilot.com/", "present_on_trust_pilot", '', true, "trust_pilot_stars"); ?>
+								</tbody>
+							</table>
+							<table class="table text-center">
+								<tbody>
+									<tr>
+										<td></td>
+										<td><input type="checkbox" name="" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="row text-center">
+								<input id="token" name="token" style="display: none;">
+								<div class="col-md-12 d-flex justify-content-center">
+									<button type="submit" class="btn button-mf me-5" name="" value="Signup">Register</button>
+									<button type="reset" class="btn button-mf-cancel" onclick="reset_csc(); resetToTop();">Reset</button>
+								</div>
 							</div>
 						</div>
+						
 					</form>
+
 				</div>
 			</div>
 
@@ -438,6 +452,15 @@ if(isset($_REQUEST["usdot-check"])){
 <script src="../js/csc_sort_1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+	$(document).ready(function() {
+        $('#continue').click(function() {
+            // Optionally, validate form input here.
+
+            // Hide the first section and show the second.
+            $('#section-1').hide();
+            $('#section-2').show();
+        });
+    });
 	function resetToTop() {
 		// Get the current URL
 		let url = window.location.href;
