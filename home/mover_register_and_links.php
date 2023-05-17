@@ -466,19 +466,35 @@ if(isset($_REQUEST["usdot-check"])){
 <script>
 	$(document).ready(function() {
         $('#continue').click(function() {
-            // Optionally, validate form input here.
-			var form = $('#mv-reg-form')[0];
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-				form.reportValidity();
-				// Force a focus on the first invalid element.
-            	$(form).find(':invalid').first().focus();
-            } else {
+            // // Optionally, validate form input here.
+			// var form = $('#mv-reg-form')[0];
+            // if (form.checkValidity() === false) {
+            //     event.preventDefault();
+            //     event.stopPropagation();
+			// 	form.reportValidity();
+			// 	// Force a focus on the first invalid element.
+            // 	$(form).find(':invalid').first().focus();
+            // } else {
 
-				// Hide the first section and show the second.
+			// 	// Hide the first section and show the second.
+			// 	$(".section-1").hide();
+			// 	$(".section-2").show();
+			// 	window.scrollTo(0, 0);
+			// }
+			var form = $('#mv-reg-form')[0];
+			// Temporarily show the second section for validation.
+			$(".section-2").show();
+			if (form.checkValidity() === false) {
+				event.preventDefault();
+				event.stopPropagation();
+				form.reportValidity();
+				// Hide the second section again if validation fails.
+				$(".section-2").hide();
+				// Force a focus on the first invalid element.
+				$(form).find(':invalid').first().focus();
+			} else {
+				// Hide the first section and keep the second section visible.
 				$(".section-1").hide();
-				$(".section-2").show();
 				window.scrollTo(0, 0);
 			}
         });
