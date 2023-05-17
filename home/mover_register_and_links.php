@@ -389,7 +389,9 @@ if(isset($_REQUEST["usdot-check"])){
 						</div>
 
 						<div class="section-2" style="display: none;">
-							<button type="button" id="back-button" class="btn button-mf-cancel">Go Back</button>
+
+							<button type="button" id="back-button" class="btn btn-light"><i class="fa fa-arrow-left me-2"></i>Go Back</button>
+
 							<h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Registration Links</h1>
 							<h5 class="text-center">
 								To complete your registration process, kindly provide the URLs of your business profiles from various platforms in the respective fields. 
