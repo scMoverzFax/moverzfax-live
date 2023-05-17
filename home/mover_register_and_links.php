@@ -464,30 +464,57 @@ if(isset($_REQUEST["usdot-check"])){
 <script src="../js/csc_sort_1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+	// $(document).ready(function() {
+    //     $('#continue').click(function() {
+    //         // Optionally, validate form input here.
+	// 		var form = $('#mv-reg-form')[0];
+    //         if (form.checkValidity() === false) {
+    //             event.preventDefault();
+    //             event.stopPropagation();
+	// 			form.reportValidity();
+	// 			// Force a focus on the first invalid element.
+    //         	$(form).find(':invalid').first().focus();
+    //         } else {
+
+	// 			// Hide the first section and show the second.
+	// 			$(".section-1").hide();
+	// 			$(".section-2").show();
+	// 			window.scrollTo(0, 0);
+	// 		}
+    //     });
+	// 	$("#back-button").click(function () {
+	// 		$(".section-2").hide();
+	// 		$(".section-1").show();
+    //     	window.scrollTo(0, 0);
+	// 	});
+    // });
 	$(document).ready(function() {
-        $('#continue').click(function() {
-            // Optionally, validate form input here.
+		// Initially, hide section-2 and show section-1
+		$(".section-2").css({"visibility": "hidden", "opacity": "0", "position": "absolute"});
+		$(".section-1").css({"visibility": "visible", "opacity": "1", "position": "static"});
+
+		$('#continue').click(function(event) {
 			var form = $('#mv-reg-form')[0];
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
+			if (form.checkValidity() === false) {
+				event.preventDefault();
+				event.stopPropagation();
 				form.reportValidity();
 				// Force a focus on the first invalid element.
-            	$(form).find(':invalid').first().focus();
-            } else {
-
+				$(form).find(':invalid').first().focus();
+			} else {
 				// Hide the first section and show the second.
-				$(".section-1").hide();
-				$(".section-2").show();
+				$(".section-1").css({"visibility": "hidden", "opacity": "0", "position": "absolute"});
+				$(".section-2").css({"visibility": "visible", "opacity": "1", "position": "static"});
 				window.scrollTo(0, 0);
 			}
-        });
-		$("#back-button").click(function () {
-			$(".section-2").hide();
-			$(".section-1").show();
-        	window.scrollTo(0, 0);
 		});
-    });
+		$("#back-button").click(function () {
+			$(".section-2").css({"visibility": "hidden", "opacity": "0", "position": "absolute"});
+			$(".section-1").css({"visibility": "visible", "opacity": "1", "position": "static"});
+			window.scrollTo(0, 0);
+		});
+	});
+
 	function resetToTop() {
 		// Get the current URL
 		let url = window.location.href;
