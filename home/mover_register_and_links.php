@@ -473,64 +473,27 @@ if(isset($_REQUEST["usdot-check"])){
 <script src="../js/csc_sort_1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-	// $(document).ready(function() {
-    //     $('#continue').click(function() {
-    //         // Optionally, validate form input here.
-	// 		var form = $('#mv-reg-form')[0];
-    //         if (form.checkValidity() === false) {
-    //             event.preventDefault();
-    //             event.stopPropagation();
-	// 			form.reportValidity();
-	// 			// Force a focus on the first invalid element.
-    //         	$(form).find(':invalid').first().focus();
-    //         } else {
+	$(document).ready(function() {
+        $('#continue').click(function() {
+            // Optionally, validate form input here.
+			var form = $('#mv-reg-form')[0];
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
 
-	// 			// Hide the first section and show the second.
-	// 			$(".section-1").hide();
-	// 			$(".section-2").show();
-	// 			window.scrollTo(0, 0);
-	// 		}
-    //     });
-	// 	$("#back-button").click(function () {
-	// 		$(".section-2").hide();
-	// 		$(".section-1").show();
-    //     	window.scrollTo(0, 0);
-	// 	});
-    // });
-
-$(document).ready(function() {
-    $('#continue').click(function() {
-        // Hide the first section and show the second.
-        $(".section-1").hide();
-        $(".section-2").show();
-        window.scrollTo(0, 0);
-    });
-
-    $("#back-button").click(function () {
-        $(".section-2").hide();
-        $(".section-1").show();
-        window.scrollTo(0, 0);
-    });
-
-    $('#mv-reg-form').submit(function(e) {
-        // Check the validity of the first section.
-        var isValid = true;
-        $('.section-1 :input[required]').each(function() {
-            if (!this.validity.valid) {
-                isValid = false;
-                return false;  // Break the loop.
-            }
+				// Hide the first section and show the second.
+				$(".section-1").hide();
+				$(".section-2").show();
+				window.scrollTo(0, 0);
+			}
         });
-
-        if (!isValid) {
-            e.preventDefault();  // Stop the form submission.
-            $(".section-2").hide();
-            $(".section-1").show();
-            window.scrollTo(0, 0);
-            this.reportValidity();  // Show validation errors.
-        }
+		$("#back-button").click(function () {
+			$(".section-2").hide();
+			$(".section-1").show();
+        	window.scrollTo(0, 0);
+		});
     });
-});
 
 
 
