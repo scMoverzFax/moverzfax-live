@@ -273,18 +273,20 @@ if(isset($_REQUEST["usdot-check"])){
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
-					
-					<h5 class="text-center section-1">
-						Use the search box to check for your USDOT in our database. If we have your information, 
-						the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
-					</h5>
-					<h5 class="text-danger text-center section-1"><?= $msg ?><?= $cmsg ?></h5>
+					<div class="section-1">
+						<h5 class="text-center">
+							Use the search box to check for your USDOT in our database. If we have your information, 
+							the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
+						</h5>
+						<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
 
-					<form method="get" action="mover_register_and_links.php" class='section-1'>
-						<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check My #USDOT" required><br>
-						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
-					</form>
-					<br>
+						<form method="get" action="mover_register_and_links.php">
+							<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check My #USDOT" required><br>
+							<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
+						</form>
+						<br>
+					</div>
+
 
 					<form action="../model/mover_model.php" method="post" id="mv-reg-form" enctype="multipart/form-data">
 
@@ -380,7 +382,9 @@ if(isset($_REQUEST["usdot-check"])){
 									</tr>
 								</tbody>
 							</table>
-							<button type="button" class="btn button-mf me-5 text-center" id="continue">Continue</button>
+							<div class="text-center">
+								<button type="button" class="btn button-mf me-5" id="continue">Continue</button>
+							</div>
 						</div>
 
 						<div class="section-2" style="display: none;">
