@@ -454,24 +454,13 @@ if(isset($_REQUEST["usdot-check"])){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-        // $('#continue').click(function() {
-        //     // Optionally, validate form input here.
+        $('#continue').click(function() {
+            // Optionally, validate form input here.
 
-        //     // Hide the first section and show the second.
-        //     $(this).closest('.section-1').hide();
-        //     $(this).closest('.section-1').next('.section-2').show();
-        // });
-		$('.continue').click(function() {
-            var form = $('#form-section-1')[0];
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-            } else {
-                // Hide the first section and show the second.
-                $(this).closest('.section-1').hide();
-                $(this).closest('.section-1').next('.section-2').show();
-            }
-            form.classList.add('was-validated');
+            // Hide the first section and show the second.
+            $(this).closest('.section-1').hide();
+            $(this).closest('.section-1').next('.section-2').show();
+        });
     });
 	function resetToTop() {
 		// Get the current URL
