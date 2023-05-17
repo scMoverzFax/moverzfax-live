@@ -467,14 +467,22 @@ if(isset($_REQUEST["usdot-check"])){
 	$(document).ready(function() {
         $('#continue').click(function() {
             // Optionally, validate form input here.
+			var form = $('#mv-reg-form')[0];
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
 
             // Hide the first section and show the second.
             $(".section-1").hide();
         	$(".section-2").show();
+        	window.scrollTo(0, 0);
+			}
         });
 		$("#back-button").click(function () {
 			$(".section-2").hide();
 			$(".section-1").show();
+        	window.scrollTo(0, 0);
 		});
     });
 	function resetToTop() {
