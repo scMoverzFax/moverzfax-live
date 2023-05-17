@@ -273,13 +273,14 @@ if(isset($_REQUEST["usdot-check"])){
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
-					<h5 class="text-center">
+					
+					<h5 class="text-center section-1">
 						Use the search box to check for your USDOT in our database. If we have your information, 
 						the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
 					</h5>
-					<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
+					<h5 class="text-danger text-center section-1"><?= $msg ?><?= $cmsg ?></h5>
 
-					<form method="get" action="mover_register_and_links.php">
+					<form method="get" action="mover_register_and_links.php" class='section-1'>
 						<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check My #USDOT" required><br>
 						<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
 					</form>
@@ -287,7 +288,7 @@ if(isset($_REQUEST["usdot-check"])){
 
 					<form action="../model/mover_model.php" method="post" id="mv-reg-form" enctype="multipart/form-data">
 
-						<div id="section-1">
+						<div class="section-1" id="form-section-1">
 							<!-- The first part of your form goes here. -->
 							<table class="table">
 								<tbody>
@@ -379,10 +380,10 @@ if(isset($_REQUEST["usdot-check"])){
 									</tr>
 								</tbody>
 							</table>
-							<button type="button" class="btn button-mf me-5" id="continue">Continue</button>
+							<button type="button" class="btn button-mf me-5 text-center" id="continue">Continue</button>
 						</div>
 
-						<div id="section-2" style="display: none;">
+						<div class="section-2" style="display: none;">
 							<!-- The second part of your form goes here. --><h1 class="text-center"><i class="fas fa-link me-2"></i>Mover Links</h1>
 							<h5 class="text-center">Please paste the link to your business on each site. Leave the feild blank if not applicable.</h5>
 
@@ -453,13 +454,24 @@ if(isset($_REQUEST["usdot-check"])){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-        $('#continue').click(function() {
-            // Optionally, validate form input here.
+        // $('#continue').click(function() {
+        //     // Optionally, validate form input here.
 
-            // Hide the first section and show the second.
-            $('#section-1').hide();
-            $('#section-2').show();
-        });
+        //     // Hide the first section and show the second.
+        //     $(this).closest('.section-1').hide();
+        //     $(this).closest('.section-1').next('.section-2').show();
+        // });
+		$('.continue').click(function() {
+            var form = $('#form-section-1')[0];
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                // Hide the first section and show the second.
+                $(this).closest('.section-1').hide();
+                $(this).closest('.section-1').next('.section-2').show();
+            }
+            form.classList.add('was-validated');
     });
 	function resetToTop() {
 		// Get the current URL
