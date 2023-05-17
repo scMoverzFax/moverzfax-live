@@ -472,6 +472,8 @@ if(isset($_REQUEST["usdot-check"])){
                 event.preventDefault();
                 event.stopPropagation();
 				form.reportValidity();
+				// Force a focus on the first invalid element.
+            	$(form).find(':invalid').first().focus();
             } else {
 
 				// Hide the first section and show the second.
