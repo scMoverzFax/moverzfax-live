@@ -383,6 +383,14 @@ if(isset($_REQUEST["usdot-check"])){
 									</tr>
 								</tbody>
 							</table>
+							<table class="table text-center">
+								<tbody>
+									<tr>
+										<td></td>
+										<td><input type="checkbox" name="agreement" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
+									</tr>
+								</tbody>
+							</table>
 							<div class="text-center">
 								<button type="button" class="btn button-mf me-5" id="continue">Continue</button>
 							</div>
@@ -430,14 +438,6 @@ if(isset($_REQUEST["usdot-check"])){
 									<?php echo linkInput("Transport Reviews", "https://www.transportreviews.com/", "present_on_transport_reviews", $transportreviews_link, true, "transport_reviews_stars"); ?>
 									<?php echo linkInput("Angies List", "http://www.angieslist.com/", "present_on_angies_list", $angies_link, true, "angie_stars"); ?>
 									<?php echo linkInput("Trust Pilot", "https://www.trustpilot.com/", "present_on_trust_pilot", '', true, "trust_pilot_stars"); ?>
-								</tbody>
-							</table>
-							<table class="table text-center">
-								<tbody>
-									<tr>
-										<td></td>
-										<td><input type="checkbox" name="agreement" required> I agree to the <a href="terms_of_use.pdf" target="_blank">terms of use</a></td>
-									</tr>
 								</tbody>
 							</table>
 							<div class="row text-center">
