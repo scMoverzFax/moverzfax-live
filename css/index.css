@@ -45,8 +45,8 @@ width: 100vw;
 }
 
 .row .button-mf {
-    /* height: 100%;
-    width: 100%; */
+    height: 40px;
+    width: 100px;
     /* white-space: nowrap; */
     color: #fff;
     border: 0;
