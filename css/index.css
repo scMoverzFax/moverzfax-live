@@ -44,23 +44,21 @@ width: 100vw;
 }
 
 .row .button-mf {
-    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
     color: #fff;
-    background-color: #85CA63;
-    border-radius: 5px 5px;
-    width: 150px;
-    border-color: none;
-    transition: all .5s;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    position: relative;
+    z-index: 0;
+    background: rgba(0, 173, 95,0.7);
+    transition: all .2s ease-out, color .2s ease-out;
 }
 
 .row .button-mf:hover {
-    background-color: #67bd3c;
-    border-color: #55bd1a;
-    color: #fff;
-    border-radius: 10px;
-    width: 200px;
-    transition: all .5s;
-
+    background: #009451;
 }
 
 
