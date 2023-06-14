@@ -46,12 +46,12 @@ width: 100vw;
 .row .button-mf {
     height: 100%;
     width: 100%;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     color: #fff;
     border: 0;
     cursor: pointer;
     font-weight: 700;
-    position: relative;
+    /* position: relative; */
     z-index: 0;
     background: rgba(0, 173, 95,0.7);
     transition: all .2s ease-out, color .2s ease-out;
