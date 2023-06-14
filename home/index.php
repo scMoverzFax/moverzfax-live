@@ -67,7 +67,7 @@
         <div class="landing-section row">
             <h2>Planning a Move?</h2>
             <p>Are you looking to safely relocate with zero risk of being scammed by rouge movers?</p>
-            <a href="../model/select_operation.php">
+            <a href="../home/select_company.php">
                 <button class="button-mf">Order a Report</button>
             </a>
         </div>
