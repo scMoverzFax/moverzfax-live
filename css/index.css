@@ -45,8 +45,9 @@ width: 100vw;
 }
 
 .row .button-mf {
-    height: 40px;
-    width: 100px;
+    height: 80px;
+    width: 200px;
+    border-radius: 10px 10px;
     /* white-space: nowrap; */
     color: #fff;
     border: 0;
