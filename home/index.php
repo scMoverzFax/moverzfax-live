@@ -62,15 +62,15 @@
 <!-- Start of Document ----------------------------------------------->
 <main>
 
-    <div class="landing-container bg-form">
+    <div class="landing-container">
 
-        <div class="landing-section">
+        <div class="landing-section row">
             <h2>Planning a Move?</h2>
             <p>Are you looking to safely relocate with zero risk of being scammed by rouge movers?</p>
             <button class="btn button-mf">Order a Report</button>
         </div>
 
-        <div class="landing-section">
+        <div class="landing-section row">
             <h2>Running a Moving Company?</h2>
             <p>Looking to operate ethically and service 15 million consumers nationwide?</p>
             <button class="btn button-mf">Claim Your Business</button>
