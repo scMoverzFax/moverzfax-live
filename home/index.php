@@ -67,13 +67,17 @@
         <div class="landing-section row">
             <h2>Planning a Move?</h2>
             <p>Are you looking to safely relocate with zero risk of being scammed by rouge movers?</p>
-            <button class="button-mf">Order a Report</button>
+            <a href="../model/select_operation.php">
+                <button class="button-mf">Order a Report</button>
+            </a>
         </div>
 
         <div class="landing-section row">
             <h2>Running a Moving Company?</h2>
             <p>Looking to operate ethically and service 15 million consumers nationwide?</p>
-            <button class="button-mf">Claim Your Business</button>
+            <a href="../home/mover_register_and_links.php">
+                <button class="button-mf">Claim Your Business</button>
+            </a>
         </div>
 
     </div>

@@ -21,11 +21,11 @@ width: 100vw;
 
 .landing-container {
     margin: auto;
-    padding: 20px;
+    padding: 60px;
     display: flex;
     justify-content: space-between;
     width: 70vw;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .landing-section {
@@ -37,7 +37,7 @@ width: 100vw;
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .landing-section h2, .section p, .section button {
