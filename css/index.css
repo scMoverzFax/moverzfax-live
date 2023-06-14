@@ -21,6 +21,7 @@ width: 100vw;
 
 .landing-container {
     margin: auto;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     width: 70vw;
@@ -44,8 +45,8 @@ width: 100vw;
 }
 
 .row .button-mf {
-    height: 100%;
-    width: 100%;
+    /* height: 100%;
+    width: 100%; */
     /* white-space: nowrap; */
     color: #fff;
     border: 0;
