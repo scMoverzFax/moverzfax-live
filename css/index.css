@@ -19,6 +19,36 @@ width: 100vw;
 /*#67bd3c*/
 }
 
+.b-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Change the last value to the level of opacity you want (0-1) */
+}
+
+.landing-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.landing-section h2, .section p, .section button {
+    margin: 10px 0;
+}
+
 .b-search{
 position: relative;
 }
