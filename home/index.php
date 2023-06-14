@@ -66,7 +66,7 @@
         <div class="landing-section">
             <h2>Movers,</h2>
             <p>Looking to operate ethically and service 15 million consumers nationwide?</p>
-            <button>Claim Your Business</button>
+            <button class="btn button-mf">Claim Your Business</button>
         </div>
 
         <div class="landing-section">

@@ -5,7 +5,7 @@ padding:0;
 box-sizing: border-box;
 }
 .b-contaoner{
-background-image: url(../img/index-1.avif);
+/* background-image: url(../img/index-1.avif); */
 background-repeat:no-repeat;
 background-position: top center; 
 background-size:contain; 
@@ -19,15 +19,15 @@ width: 100vw;
 /*#67bd3c*/
 }
 
-.b-container::before {
+/* .b-contaoner::before {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5); /* Change the last value to the level of opacity you want (0-1) */
-}
+    background: rgba(0, 0, 0, 0.5);
+} */
 
 .landing-container {
     display: flex;
@@ -60,7 +60,7 @@ letter-spacing: .8px;
 .b-search .inner-form{
 display: -ms-flexbox;
 display: flex;
-width: 50vw;
+/* width: 50vw; */
 -ms-flex-pack: justify;
 justify-content: space-between;
 -ms-flex-align: center;
