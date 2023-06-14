@@ -183,6 +183,9 @@ padding-left: 26px;
 }
 
 @media screen and (max-width: 992px) {
+.landing-container {
+    width: 90vw;
+}
 .b-search form .inner-form .input-field {
 height: 50px;
 }
@@ -237,6 +240,9 @@ width: 70vw;
 }
 /* smaller than phablet (also point when grid becomes active) */
 @media (max-width: 550px) {
+.landing-container {
+    flex-direction: column;
+}
 .b-search .inner-form{
 width: 90vw;
 }
