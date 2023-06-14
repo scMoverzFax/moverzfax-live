@@ -20,9 +20,10 @@ width: 100vw;
 }
 
 .landing-container {
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    width: 80vw;
+    width: 90vw;
     border: 1px solid black;
 }
 
