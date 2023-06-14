@@ -245,6 +245,9 @@ width: 70vw;
     flex-direction: column;
     width: 90%;
 }
+.landing-section {
+    width: 100%;
+}
 .b-search .inner-form{
 width: 90vw;
 }
