@@ -5,7 +5,7 @@ padding:0;
 box-sizing: border-box;
 }
 .b-contaoner{
-/* background-image: url(../img/index-1.avif); */
+background-image: url(../img/index-1.avif);
 background-repeat:no-repeat;
 background-position: top center; 
 background-size:contain; 
@@ -19,16 +19,6 @@ width: 100vw;
 /*#67bd3c*/
 }
 
-/* .b-contaoner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-} */
-
 .landing-container {
     display: flex;
     justify-content: space-between;
@@ -39,7 +29,7 @@ width: 100vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 45%;
     padding: 20px;
     box-sizing: border-box;

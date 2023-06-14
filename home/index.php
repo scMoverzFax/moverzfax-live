@@ -61,17 +61,24 @@
 
 <!-- Start of Document ----------------------------------------------->
 <main>
-    <div class="b-contaoner">
+
     <div class="landing-container">
+
         <div class="landing-section">
-            <h2>Movers,</h2>
+            <h2>Planning a Move?</h2>
+            <p>Are you looking to safely relocate with zero risk of being scammed by rouge movers?</p>
+            <button class="btn button-mf">Order a Report</button>
+        </div>
+
+        <div class="landing-section">
+            <h2>Running a Moving Company?</h2>
             <p>Looking to operate ethically and service 15 million consumers nationwide?</p>
             <button class="btn button-mf">Claim Your Business</button>
         </div>
 
-        <div class="landing-section">
-            <h2>Consumers,</h2>
-            <p>Are you looking to safely relocate with zero risk of being scammed by rouge movers?</p>
+    </div>
+
+    <div class="b-contaoner">
             <!-- USDOT SEARCH -->
             <div class="b-search"> 
                 <form method="post" action="../model/select_operation.php">
@@ -92,9 +99,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
-        
     </div>
 
     <div class="in-container">
