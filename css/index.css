@@ -274,18 +274,24 @@ box-sizing: border-box;
 .i-width{
     width: 100%;
 }
-.row .button-mf{
+.row .button-mf {
     font-size: 15px;
-    color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-    -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-    -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-    background-color: #7aeb41;
+    color: #fff;
+    background-color: #85CA63;
+    border-radius: 5px 5px;
+    width: 150px;
     border-color: none;
+    transition: all .5s;
 }
-.button-mf:hover{
+
+.row .button-mf:hover {
     background-color: #67bd3c;
-    border-color: none;
+    border-color: #55bd1a;
+    color: #fff;
+    border-radius: 10px;
+    width: 200px;
+    transition: all .5s;
+
 }
 /* .bg-form hr{
     padding:20px 0;
