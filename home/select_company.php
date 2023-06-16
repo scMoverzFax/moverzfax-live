@@ -172,31 +172,11 @@ if (!isset($_SESSION["id"])) {
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
                             <div class="d-flex col-md-12 align-items-center form-group">
-                                <!-- <div class="col-md-4 search d-flex align-items-center">
+                                <div class="col-md-4 search d-flex align-items-center">
                                     <span class="col-md-5">Add A Mover:</span>
                                     <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
-                                </div> -->
-                                <!-- USDOT SEARCH -->
-            <div class="b-search"> 
-                <form method="post" action="../model/select_operation.php">
-                    <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4">
-                    <div class="inner-form">
-                        <div class="input-field first-wrap">
-                            <div class="svg-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                                </svg>
-                            </div>
-                            <input id="search" name="usdot" type="text" placeholder="Search USDOT Registration..." required>
-                            <input name="function" type="hidden" value="search">
-                        </div>
-                        <div class="input-field second-wrap">
-                            <button class="btn-search" type="submit" required>USDOT #</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                                </div>
                                 <div class="col-md-3 pl-0">
                                     <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
