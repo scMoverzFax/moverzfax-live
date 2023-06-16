@@ -5,6 +5,21 @@ body {
     box-sizing: border-box;
 }
 
+.b-contaoner{
+    background-image: url(../img/index-1.avif);
+    background-repeat:no-repeat;
+    background-position: top center; 
+    background-size:contain; 
+    margin-top: 0 !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 100vw;
+    /*background-color: #85CA63;*/
+    /*#67bd3c*/
+    }
+
 .landing-container {
     margin: auto;
     padding: 60px;
