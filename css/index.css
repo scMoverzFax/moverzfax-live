@@ -5,19 +5,55 @@ body {
     box-sizing: border-box;
 }
 
-.b-contaoner {
-    background-image: url(../img/index-1.avif);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
-    margin-top: 0 !important;
+.landing-container {
+    margin: auto;
+    padding: 60px;
     display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    /* border: 1px solid black; */
+}
+
+.landing-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4;
     justify-content: center;
     align-items: center;
-    height: 450px;
-    width: 100vw;
-    /*background-color: #85CA63;*/
-    /*#67bd3c*/
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+.landing-section h2, .section p, .section button {
+    margin: 10px 0;
+}
+
+.row .button-mf {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px 10px !important;
+    /* white-space: nowrap; */
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    /* position: relative; */
+    z-index: 0;
+    background: rgba(0, 173, 95,0.7);
+    transition: all .2s ease-out, color .2s ease-out;
+}
+
+.row .button-mf:hover {
+    background: #009451;
+}
+
+
+
+.b-search{
+position: relative;
 }
 
 .b-search {
@@ -144,9 +180,16 @@ button {
 }
 
 @media screen and (max-width: 992px) {
-    .b-search form .inner-form .input-field {
-        height: 50px;
-    }
+.landing-container {
+    width: 90vw;
+}
+.b-search form .inner-form .input-field {
+height: 50px;
+}
+.b-search form .inner-form .input-field input.placeholder {
+    color: #222;
+    font-size: 13px;
+}
 
     .b-search form .inner-form .input-field input.placeholder {
         color: #222;
@@ -206,19 +249,23 @@ button {
 
 /* smaller than phablet (also point when grid becomes active) */
 @media (max-width: 550px) {
-    .b-search .inner-form {
-        width: 90vw;
-    }
-
-    .b-search input,
-    button {
-        letter-spacing: 0px;
-    }
-
-    .b-contaoner {
-        background-image: url(../img/index-1.avif);
-        /* this may need to chang back in production */
-    }
+.landing-container {
+    flex-direction: column;
+    width: 90%;
+}
+.landing-section {
+    width: 90%;
+}
+.b-search .inner-form{
+width: 90vw;
+}
+.b-search
+input, button{
+    letter-spacing: 0px;
+}
+.b-contaoner{
+    background-image: url(../img/index-1.avif); /* this may need to chang back in production */
+}
 }
 
 /* smaller than mobile */
@@ -271,21 +318,6 @@ button {
 } */
 .i-width {
     width: 100%;
-}
-
-.row .button-mf {
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-    -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-    -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.18);
-    background-color: #7aeb41;
-    border-color: none;
-}
-
-.button-mf:hover {
-    background-color: #67bd3c;
-    border-color: none;
 }
 
 /* .bg-form hr{
