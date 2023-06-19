@@ -224,7 +224,7 @@ if (isset($_SESSION['catagory']) && $_SESSION['catagory'] == "customer") {
                 <div class="cotacts-signing">
                     <!--Contacts-->
                     <div class="cotacts">
-                        <a href="tel:8668289688" id="call"><i class="fa fa-phone"></i>866-828-9688</a><span> | </span>
+                        <a href="tel:8779637283" id="call"><i class="fa fa-phone"></i>877-963-7283</a><span> | </span>
                         <a href="mailto:support@moverzfax.com"><i class="fa fa-envelope"></i>support@moverzfax.com</a>
                     </div>
                     <!-- <div class="signing anim">

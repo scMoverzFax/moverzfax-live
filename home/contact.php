@@ -184,7 +184,7 @@ isset($_GET['captcha']) && !empty($_GET['captcha']) ? $cmsg = "Invalid reCAPTCHA
 
                         <p>If you want to advertise with us: advertise@moverzfax.com</p>
 
-                        <p>Customer support toll free: 866-828-9688</p>
+                        <p>Customer support toll free: 877-963-7283</p>
                     </div>
                 </div>
 

@@ -254,7 +254,7 @@ defined('LOGIN') or exit('<h3 class="text-center my-5 py-5 ">Please Login First.
 				<p>
                     This feature is not yet available on Moverzfax but we are working on implementing it soon. 
                     Thanks for your patience. In the meantime, contact our office at our toll free number 
-                    888-828-9688 and request a list of local movers in your area to provide you a professional 
+                    877-963-7283 and request a list of local movers in your area to provide you a professional 
                     service, scam free.
 				</p>
         </div>	
