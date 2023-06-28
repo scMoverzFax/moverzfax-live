@@ -118,7 +118,12 @@ if (!isset($_SESSION["id"])) {
     @media (max-width: 750px) {}
 
     /* smaller than phablet (also point when grid becomes active) */
-    @media (max-width: 550px) {}
+    @media (max-width: 550px) {
+        .in-container {
+            border: 1px solid #656565;
+            padding: 10px;
+        }
+    }
 
     /* smaller than mobile */
     @media (max-width: 400px) {}
