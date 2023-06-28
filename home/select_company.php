@@ -178,9 +178,9 @@ if (!isset($_SESSION["id"])) {
 
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
-                            <div class="d-flex col-md-12 align-items-center form-group border">
+                            <div class="d-flex col-md-12 align-items-center form-group  border border-secondary">
 
-                                <div class="col-md-4 search d-flex align-items-center border">
+                                <div class="col-md-4 search d-flex align-items-center  border border-secondary">
                                     <span class="col-md-5">Add A Mover:</span>
                                     <input type="text" name="usdot" id="usdot-search" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
