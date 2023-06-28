@@ -120,8 +120,10 @@ if (!isset($_SESSION["id"])) {
     /* smaller than phablet (also point when grid becomes active) */
     @media (max-width: 550px) {
         .in-container {
-            border: 1px solid #656565;
             padding: 10px;
+        }
+        #usdot-search {
+            border: 1px solid #656565;
         }
     }
 
@@ -177,23 +179,16 @@ if (!isset($_SESSION["id"])) {
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
                             <div class="d-flex col-md-12 align-items-center form-group">
-                                <!-- <div class="col-md-4 search d-flex align-items-center">
+
+                                <div class="col-md-4 search d-flex align-items-center">
                                     <span class="col-md-5">Add A Mover:</span>
-                                    <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
-                                    <input name="function" type="hidden" value="search">
-                                </div> -->
-                                <!-- Add a mover label and box -->
-                                <div class="col-md-4 d-flex align-items-center">
-                                    <div class="d-flex flex-md-row flex-column w-100">
-                                        <span class="col-md-5 mb-md-0 mb-2">Add A Mover:</span>
-                                        <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" style="border: 1px solid #ddd;" placeholder="Enter #USDOT Number" required>
-                                    </div>
+                                    <input type="text" name="usdot" id="usdot-search" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
                                 </div>
-
                                 <div class="col-md-3 pl-0">
                                     <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
+
                                 <div class="col-md-5 d-flex align-items-center" style="height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
@@ -299,7 +294,7 @@ if (!isset($_SESSION["id"])) {
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('not_valid').innerHTML = "Please select at least one compnay";
+            document.getElementById('not_valid').innerHTML = "Please select at least one company";
             return false;
         }
 
