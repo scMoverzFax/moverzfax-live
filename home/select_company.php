@@ -122,13 +122,14 @@ if (!isset($_SESSION["id"])) {
         .in-container {
             padding: 10px;
         }
-        #usdot-search {
-            border: 1px solid #656565;
-        }
     }
 
     /* smaller than mobile */
     @media (max-width: 400px) {}
+
+    #usdot-search {
+        border: 1px solid #808080;
+    }
 
     .container-fluid {
         height: fit-content;
@@ -189,7 +190,7 @@ if (!isset($_SESSION["id"])) {
                                     <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
 
-                                <div class="col-md-5 d-flex align-items-center" style="height:40px;">
+                                <div class="col-md-5 d-flex align-items-center  border border-secondary" style="height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
