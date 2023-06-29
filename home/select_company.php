@@ -191,9 +191,9 @@ if (!isset($_SESSION["id"])) {
 
                                 <div class="contain-input">
 
-                                        <span class="col-md-5">Add A Mover:</span>
-                                        <input type="text" name="usdot" id="usdot-search" placeholder="Enter #USDOT Number" required>
-                                        <input name="function" type="hidden" value="search">
+                                    <span>Add A Mover:</span>
+                                    <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
+                                    <input name="function" type="hidden" value="search">
 
                                     <input type="submit" class="btn btn-success btn-sm" value="Go">
 
