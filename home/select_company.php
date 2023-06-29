@@ -195,7 +195,7 @@ if (!isset($_SESSION["id"])) {
                                         <input type="text" name="usdot" id="usdot-search" placeholder="Enter #USDOT Number" required>
                                         <input name="function" type="hidden" value="search">
 
-                                    <input type="submit" value="Go">
+                                    <input type="submit" class="btn btn-success btn-sm" value="Go">
 
                                 </div>
 
