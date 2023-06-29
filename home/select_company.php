@@ -179,18 +179,57 @@ if (!isset($_SESSION["id"])) {
 
                     <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
                         <div class="row">
-                            <div class="d-flex col-md-12 align-items-center form-group  border border-secondary">
+
+                            <!-- <div class="d-flex col-md-12 align-items-center form-group  border border-secondary">
 
                                 <div class="col-md-4 search d-flex align-items-center  border border-secondary">
                                     <span class="col-md-5">Add A Mover:</span>
                                     <input type="text" name="usdot" id="usdot-search" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
                                 </div>
+
                                 <div class="col-md-3 pl-0">
                                     <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
                                 </div>
 
                                 <div class="col-md-5 d-flex align-items-center  border border-secondary" style="height:40px;">
+                                    <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                                        <span for="" id="cart_label2">
+                                            <?php 
+                                                // if ($status == "as") {
+                                                //     echo "was added successfully.";
+                                                // } elseif ($status == "nr") {
+                                                //     echo "is not registered with MoverzFax.";
+                                                // } elseif ($status == "ae") {
+                                                //     echo "already exist.";
+                                                // } elseif ($status == "rf") {
+                                                //     echo "Request Failed.";
+                                                // } else {
+                                                //     echo " "; //edge case
+                                                // }
+                                            ?>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div> -->
+                            <div class="d-flex flex-md-nowrap flex-wrap col-md-12 align-items-center form-group border border-secondary">
+                                <div class="d-flex flex-column flex-md-row align-items-center border border-secondary" style="width: 60%;">
+                                    <div class="col-md-4 search d-flex align-items-center border border-secondary">
+                                        <span class="col-md-5">Add A Mover:</span>
+                                        <input type="text" name="usdot" id="usdot-search" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
+                                        <input name="function" type="hidden" value="search">
+                                    </div>
+                                    <div class="col-md-3 pl-0">
+                                        <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5 d-flex align-items-center border border-secondary" style="width: 40%; height:40px;">
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
@@ -214,6 +253,8 @@ if (!isset($_SESSION["id"])) {
                                     </div>
                                 </div>
                             </div>
+
+                            
                         </div>
                     </form>
 
