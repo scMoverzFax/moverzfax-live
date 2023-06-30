@@ -146,7 +146,7 @@ if (!isset($_SESSION["id"])) {
         overflow-y: auto;
     }
 
-    .contain-search {
+    /* .contain-search {
         border: 1px solid #000000;
     }
     .contain-input {
@@ -160,6 +160,40 @@ if (!isset($_SESSION["id"])) {
     }
     .contain-result {
         border: 1px solid #0000FF;
+    } */
+
+    .contain-search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+
+    .contain-input, .contain-result {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .contain-input {
+        flex: 1 0 300px; /* Or whatever minimum width you'd like for this section */
+    }
+
+    #usdot-search {
+        min-width: 40px;
+        flex-grow: 1; /* This allows the input to take up remaining space */
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 600px) {
+        .contain-search {
+            flex-direction: column;
+        }
+
+        .contain-input, .contain-result {
+            width: 100%;
+            align-items: center;
+        }
     }
 
 </style>
