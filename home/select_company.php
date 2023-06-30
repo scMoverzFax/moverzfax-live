@@ -176,10 +176,6 @@ if (!isset($_SESSION["id"])) {
         align-items: center;
     }
 
-    .contain-input input.form-control {
-        flex-grow: 1;
-    }
-
     .contain-result {
         display: flex;
         flex-direction: column;
@@ -188,8 +184,7 @@ if (!isset($_SESSION["id"])) {
 
     #usdot-search {
         border: 1px solid #808080;
-        min-width: 40px;
-        flex-grow: 1; /* This allows the input to take up remaining space */
+        width: 40px !important;
     }
 
     /* Responsive layout for smaller screens */
