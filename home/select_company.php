@@ -163,12 +163,15 @@ if (!isset($_SESSION["id"])) {
     } */
 
     .contain-search {
-    display: flex;
-    flex-direction: column;
+        border: 1px solid #000000;
+        display: flex;
+        flex-direction: column;
     }
 
     .contain-input {
+        border: 1px solid #FF0000;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
     }
@@ -180,6 +183,7 @@ if (!isset($_SESSION["id"])) {
     }
 
     #usdot-search {
+        border: 1px solid #808080;
         min-width: 40px;
         flex-grow: 1; /* This allows the input to take up remaining space */
     }
@@ -188,7 +192,7 @@ if (!isset($_SESSION["id"])) {
     @media (max-width: 600px) {
         .contain-input {
             flex-direction: column;
-            align-items: center;
+            /* align-items: center; */
         }
     }
 
