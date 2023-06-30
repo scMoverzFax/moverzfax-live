@@ -164,19 +164,19 @@ if (!isset($_SESSION["id"])) {
 
     .contain-search {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    }
-
-    .contain-input, .contain-result {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+    flex-direction: column;
     }
 
     .contain-input {
-        flex: 1 0 300px; /* Or whatever minimum width you'd like for this section */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .contain-result {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     #usdot-search {
@@ -186,15 +186,12 @@ if (!isset($_SESSION["id"])) {
 
     /* Responsive layout for smaller screens */
     @media (max-width: 600px) {
-        .contain-search {
+        .contain-input {
             flex-direction: column;
-        }
-
-        .contain-input, .contain-result {
-            width: 100%;
             align-items: center;
         }
     }
+
 
 </style>
 <?php $usdot = isset($_GET["usdot"]) ? $_GET["usdot"] : NULL; ?>
