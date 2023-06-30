@@ -176,6 +176,10 @@ if (!isset($_SESSION["id"])) {
         align-items: center;
     }
 
+    .contain-input input.form-control {
+        flex-grow: 1;
+    }
+
     .contain-result {
         display: flex;
         flex-direction: column;
