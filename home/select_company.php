@@ -151,9 +151,12 @@ if (!isset($_SESSION["id"])) {
     }
     .contain-input {
         border: 1px solid #FF0000;
+        display: flex;
+        flex-wrap: wrap;
     }
     #usdot-search {
         border: 1px solid #808080;
+        min-width: 40px;
     }
     .contain-result {
         border: 1px solid #0000FF;
@@ -207,7 +210,7 @@ if (!isset($_SESSION["id"])) {
 
                                     <div class="d-flex">
                                         <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                                        <span for="" id="cart_label2">
+                                        <span for="" id="cart_label2">Placeholder Text
                                             <?php 
                                                 if ($status == "as") {
                                                     echo "was added successfully.";
