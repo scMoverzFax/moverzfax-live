@@ -174,7 +174,8 @@ if (!isset($_SESSION["id"])) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
+        gap: 0.5em;
+        /* align-items: center; */
     }
 
     .contain-result {
@@ -185,7 +186,7 @@ if (!isset($_SESSION["id"])) {
 
     #usdot-search {
         border: 1px solid #808080;
-        width: 400px !important;
+        width: 200px !important;
     }
 
     /* Responsive layout for smaller screens */
