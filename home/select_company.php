@@ -166,6 +166,7 @@ if (!isset($_SESSION["id"])) {
         border: 1px solid #000000;
         display: flex;
         flex-direction: column;
+        gap: 1em;
     }
 
     .contain-input {
@@ -184,7 +185,7 @@ if (!isset($_SESSION["id"])) {
 
     #usdot-search {
         border: 1px solid #808080;
-        width: 40px !important;
+        width: 400px !important;
     }
 
     /* Responsive layout for smaller screens */
@@ -243,7 +244,7 @@ if (!isset($_SESSION["id"])) {
                                     </div>
 
                                     <div class="d-flex">
-                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?>55555</span>
                                         <span for="" id="cart_label2">Placeholder Text
                                             <?php 
                                                 if ($status == "as") {
