@@ -61,8 +61,8 @@
         <td class="text-center font-weight-bold" colspan="2" style="background:#FF4500;color:white"><?= $total;  ?>$</td>
     </tr>
     <tr class="d-table-row d-md-none">
-        <td colspan="3" class="font-weight-bold">Total</td>
-        <td class="text-center font-weight-bold" style="background:#FF4500;color:white"><?= $total;  ?>$</td>
+        <td colspan="1" class="font-weight-bold">Total</td>
+        <td class="text-center font-weight-bold" colspan="2" style="background:#FF4500;color:white"><?= $total;  ?>$</td>
     </tr>
 
 </tbody>
