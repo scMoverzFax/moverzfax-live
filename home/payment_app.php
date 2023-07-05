@@ -9,8 +9,8 @@ include 'myheader.php';
                         <tr>
                             <th scope="col">Company Name </th>
                             <th scope="col">USDOT</th>
-                            <th scope="col">Company State</th>
-                            <th scope="col">Company City</th>
+                            <th scope="col" class="d-none d-md-table-cell">Company State</th>
+                            <th scope="col" class="d-none d-md-table-cell">Company City</th>
                             <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
                             <th class=" text-center">Price</th>
                         </tr>

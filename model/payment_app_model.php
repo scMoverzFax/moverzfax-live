@@ -22,9 +22,9 @@
         <tr>
             <td><?= $res['company_name']; ?></td>
             <td><?= $res['usdot']; ?></td>
-            <td><?= $res['stname']; ?></td>
-            <td><?= $res['ciname']; ?></td>
-            <td><?= $res['zipcode']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['stname']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['ciname']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['zipcode']; ?></td>
             <td class="text-center"><?= $a[$i] ;?></td>
         </tr>
         
