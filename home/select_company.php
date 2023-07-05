@@ -210,14 +210,14 @@ if (!isset($_SESSION["id"])) {
                         <h2 class="text-center">Guest Cart</h2>
                         <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
 
-                        <p class="text-center" style="font-size:17px;">
+                        <p class="text-md-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
                             The mover's information will appear in the table beneath the search box. Simply select the movers you 
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
                         </p>
                     <?php } else { ?>
                         <h2 class="text-center">Cart</h2>
-                        <p class="text-center" style="font-size:17px;">
+                        <p class="text-md-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
                             The mover's information will appear in the table beneath the search box. Simply select the movers you 
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
