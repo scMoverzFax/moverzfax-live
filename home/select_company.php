@@ -170,7 +170,7 @@ if (!isset($_SESSION["id"])) {
     }
 
     .contain-input {
-        border: 1px solid #FF0000;
+        /* border: 1px solid #FF0000; */
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -185,7 +185,7 @@ if (!isset($_SESSION["id"])) {
     }
 
     #usdot-search {
-        border: 1px solid #808080;
+        /* border: 1px solid #808080; */
         width: 200px !important;
     }
 
@@ -223,7 +223,7 @@ if (!isset($_SESSION["id"])) {
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
                         </p>
                     <?php } ?>
-                    <form action="../model/select_operation.php" name="usdot" method="post" style="padding-top:15px;">
+                    <form action="../model/select_operation.php" name="usdot" method="post" class="m-3" style="padding-top:15px;">
                         <div class="row">
 
                             <div class="contain-search">
@@ -245,8 +245,8 @@ if (!isset($_SESSION["id"])) {
                                     </div>
 
                                     <div class="d-flex">
-                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?>55555</span>
-                                        <span for="" id="cart_label2">Placeholder Text
+                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                                        <span for="" id="cart_label2">
                                             <?php 
                                                 if ($status == "as") {
                                                     echo "was added successfully.";
