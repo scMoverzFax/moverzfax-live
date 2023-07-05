@@ -163,7 +163,7 @@ if (!isset($_SESSION["id"])) {
     } */
 
     .contain-search {
-        border: 1px solid #000000;
+        /* border: 1px solid #000000; */
         display: flex;
         flex-direction: column;
         gap: 1em;
@@ -185,7 +185,7 @@ if (!isset($_SESSION["id"])) {
     }
 
     #usdot-search {
-        /* border: 1px solid #808080; */
+        border: 1px solid #808080;
         width: 200px !important;
     }
 
