@@ -11,7 +11,7 @@ include 'myheader.php';
                             <th scope="col">USDOT</th>
                             <th scope="col">Company State</th>
                             <th scope="col">Company City</th>
-                            <th scope="col">Zip Code</th>
+                            <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
                             <th class=" text-center">Price</th>
                         </tr>
                     </thead> 
