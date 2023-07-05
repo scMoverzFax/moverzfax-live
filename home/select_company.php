@@ -223,7 +223,7 @@ if (!isset($_SESSION["id"])) {
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
                         </p>
                     <?php } ?>
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
+                    <form action="../model/select_operation.php" name="usdot" method="post" style="padding-top:15px;">
                         <div class="row">
 
                             <div class="contain-search">
