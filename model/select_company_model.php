@@ -20,12 +20,12 @@ if (mysqli_num_rows($result) > 0) {
             <td><input type="checkbox" id="<?php echo $res['id']; ?>" name="usdot_number" onclick="update_checkbox(<?php echo $res['id']; ?>);" <?php if ($res['is_selected'] == 1) { echo "checked";} ?>></td>
             <td><?= $res['company_name']; ?></td>
             <td><?= $res['usdot']; ?></td>
-            <td><?= $res['company_url']; ?></td>
-            <td><?= $res['stname']; ?></td>
-            <td><?= $res['ciname']; ?></td>
-            <td><?= $res['zipcode']; ?></td>
-            <td><?= $res['phone']; ?></td>
-            <td><?= $res['contact_person']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['company_url']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['stname']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['ciname']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['zipcode']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['phone']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['contact_person']; ?></td>
             <td class="text-center"><a href="../model/select_operation.php?id=<?php echo $id; ?>&function=delete" class="text-danger"><i class="fas fa-trash-alt"></a></i></td>
         </tr>
 

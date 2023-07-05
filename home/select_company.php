@@ -319,12 +319,12 @@ if (!isset($_SESSION["id"])) {
                                     <th scope="col">Add</th>
                                     <th scope="col">Company Name </th>
                                     <th scope="col">USDOT</th>
-                                    <th scope="col">Company URL</th>
-                                    <th scope="col">Company State</th>
-                                    <th scope="col">Company City</th>
-                                    <th scope="col">Zip Code</th>
-                                    <th scope="col">Phone Number</th>
-                                    <th scope="col">Contact Person</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company URL</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company State</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company City</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
