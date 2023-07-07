@@ -401,12 +401,12 @@ input, button{
         height: 350px;
     }
 
-    .container-partners {
+    /* .container-partners {
         width: 85%;
         height: fit-content;
         transform: translateX(-20px);
         margin: 2% auto;
-    }
+    } */
     .container-partners{
         width:90%;
         height:fit-content;
