@@ -5,6 +5,8 @@ padding:0;
 box-sizing: border-box;
 }
 main {
+    margin: 0;
+    padding:0;
     width: 100vw;
     border: 1px solid black;
 }
@@ -371,7 +373,7 @@ box-sizing: border-box;
         height:350px;
     }
     .container-partners{
-        width:85%;
+        width:90%;
         height:fit-content;
         margin-left: 0;
     }
