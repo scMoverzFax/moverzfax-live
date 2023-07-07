@@ -5,7 +5,8 @@ padding:0;
 box-sizing: border-box;
 }
 main {
-border: 1px solid black;
+    width: 100vw;
+    border: 1px solid black;
 }
 .b-contaoner{
 background-image: url(../img/index-1.avif);
