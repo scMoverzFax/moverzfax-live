@@ -375,6 +375,7 @@ box-sizing: border-box;
     .container-partners{
         width:90%;
         height:fit-content;
+        margin:1% auto;
         /* margin-left: 0; */
     }
     .wo-image{
