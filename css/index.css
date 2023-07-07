@@ -359,8 +359,8 @@ box-sizing: border-box;
         width: 35%;
     }
     .wo-services{
-        width: 65%;
-        margin-left: 20px;
+        width: 85%;
+        /* margin-left: 20px; */
     }
     #partners{
         height:350px;
