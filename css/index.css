@@ -4,6 +4,9 @@ margin: 0;
 padding:0;
 box-sizing: border-box;
 }
+main {
+border: 1px solid black;
+}
 .b-contaoner{
 background-image: url(../img/index-1.avif);
 background-repeat:no-repeat;
@@ -367,7 +370,7 @@ box-sizing: border-box;
         height:350px;
     }
     .container-partners{
-        width:90%;
+        width:85%;
         height:fit-content;
         margin:2% auto;
     }
