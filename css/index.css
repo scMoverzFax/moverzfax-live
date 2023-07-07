@@ -367,9 +367,9 @@ box-sizing: border-box;
         height:350px;
     }
     .container-partners{
-        width:95%;
+        width:80%;
         height:fit-content;
-        margin:2% auto;
+        /* margin:2% auto; */
     }
     .wo-image{
         display: none;
