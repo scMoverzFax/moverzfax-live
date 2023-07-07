@@ -25,7 +25,7 @@ width: 100vw;
     display: flex;
     justify-content: space-between;
     width: 70vw;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .landing-section {
