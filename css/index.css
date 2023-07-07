@@ -4,12 +4,12 @@ margin: 0;
 padding:0;
 box-sizing: border-box;
 }
-main {
+/* main {
     margin: 0;
     padding:0;
     width: 100vw;
-    /* border: 1px solid black; */
-}
+    border: 1px solid black;
+} */
 .b-contaoner{
 background-image: url(../img/index-1.avif);
 background-repeat:no-repeat;
