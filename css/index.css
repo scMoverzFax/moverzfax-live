@@ -288,7 +288,7 @@ width: 100vw;
 box-sizing: border-box;
 }
 
-.b-container{
+.b-container{ 
     width: 100%;
     margin:0;
     padding:0;
@@ -375,7 +375,7 @@ box-sizing: border-box;
     .container-partners{
         width:90%;
         height:fit-content;
-        margin-left: 0;
+        /* margin-left: 0; */
     }
     .wo-image{
         display: none;
