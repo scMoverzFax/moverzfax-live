@@ -373,7 +373,7 @@ box-sizing: border-box;
     .container-partners{
         width:85%;
         height:fit-content;
-        margin: 0% auto;
+        margin-left: 0;
     }
     .wo-image{
         display: none;
