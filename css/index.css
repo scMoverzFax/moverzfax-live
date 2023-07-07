@@ -4,7 +4,12 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
+/* main {
+    margin: 0;
+    padding:0;
+    width: 100vw;
+    border: 1px solid black;
+} */
 .b-contaoner{
     background-image: url(../img/index-1.avif);
     background-repeat:no-repeat;
@@ -267,9 +272,11 @@ height: 50px;
 .landing-container {
     flex-direction: column;
     width: 90%;
+    padding-left: 0;
 }
 .landing-section {
-    width: 90%;
+    width: 90vw;
+    margin-left: 0;
 }
 .b-search .inner-form{
 width: 90vw;
@@ -304,7 +311,7 @@ input, button{
     box-sizing: border-box;
 }
 
-.b-container {
+.b-container{ 
     width: 100%;
     margin: 0;
     padding: 0;
@@ -314,6 +321,7 @@ input, button{
 .in-container {
     width: 90%;
     margin: 19px auto;
+    /* border: 1px solid black; */
 }
 
 /* .bg-form{
@@ -357,12 +365,14 @@ input, button{
 .wo-services {
     float: left;
     width: 75%;
+    /* border: 1px solid black; */
 }
 
 .container-partners {
     width: 90%;
     height: fit-content;
     margin: 2% auto;
+    /* border: 1px solid black; */
 }
 
 .front-step {
@@ -383,6 +393,9 @@ input, button{
     .wo-services {
         width: 90%;
     }
+    .wo-services{
+        width: 85%;
+        /* margin-left: 20px; */
 
     #partners {
         height: 350px;
@@ -394,8 +407,13 @@ input, button{
         transform: translateX(-20px);
         margin: 2% auto;
     }
-
-    .wo-image {
+    .container-partners{
+        width:90%;
+        height:fit-content;
+        margin: 1%;
+        /* margin-left: 0; */
+    }
+    .wo-image{
         display: none;
     }
 

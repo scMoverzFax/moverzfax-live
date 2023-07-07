@@ -22,9 +22,9 @@
         <tr>
             <td><?= $res['company_name']; ?></td>
             <td><?= $res['usdot']; ?></td>
-            <td><?= $res['stname']; ?></td>
-            <td><?= $res['ciname']; ?></td>
-            <td><?= $res['zipcode']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['stname']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['ciname']; ?></td>
+            <td class="d-none d-md-table-cell"><?= $res['zipcode']; ?></td>
             <td class="text-center"><?= $a[$i] ;?></td>
         </tr>
         
@@ -52,8 +52,17 @@
     // $_SESSION['usdotArray'] = $usdotArray;
     $_SESSION['moverNameArray'] = $moverNameArray;
     ?>
-    <tr >
+    <!-- <tr >
+        <td colspan="4" class="font-weight-bold">Total</td>
+        <td class="text-center font-weight-bold" colspan="2" style="background:#FF4500;color:white"><?= $total;  ?>$</td>
+    </tr> -->
+    <tr class="d-none d-md-table-row">
         <td colspan="4" class="font-weight-bold">Total</td>
         <td class="text-center font-weight-bold" colspan="2" style="background:#FF4500;color:white"><?= $total;  ?>$</td>
     </tr>
+    <tr class="d-table-row d-md-none">
+        <td colspan="1" class="font-weight-bold">Total</td>
+        <td class="text-center font-weight-bold" colspan="2" style="background:#FF4500;color:white"><?= $total;  ?>$</td>
+    </tr>
+
 </tbody>

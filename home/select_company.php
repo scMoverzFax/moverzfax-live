@@ -139,7 +139,11 @@ include 'myheader.php';
     }
 
     /* smaller than phablet (also point when grid becomes active) */
-    @media (max-width: 550px) {}
+    @media (max-width: 550px) {
+        .in-container {
+            padding: 10px;
+        }
+    }
 
     /* smaller than mobile */
     @media (max-width: 400px) {}
@@ -162,11 +166,62 @@ include 'myheader.php';
         max-height: 50vh;
         overflow-y: auto;
     }
+
+    /* .contain-search {
+        border: 1px solid #000000;
+    }
+    .contain-input {
+        border: 1px solid #FF0000;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #usdot-search {
+        border: 1px solid #808080;
+        min-width: 40px;
+    }
+    .contain-result {
+        border: 1px solid #0000FF;
+    } */
+
+    .contain-search {
+        /* border: 1px solid #000000; */
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .contain-input {
+        /* border: 1px solid #FF0000; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        /* align-items: center; */
+    }
+
+    .contain-result {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #usdot-search {
+        border: 1px solid #808080;
+        width: 200px !important;
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 600px) {
+        .contain-input {
+            flex-direction: column;
+            /* align-items: center; */
+        }
+    }
+
+
 </style>
 <?php $usdot = isset($_GET["usdot"]) ? $_GET["usdot"] : NULL; ?>
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
-
-
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
@@ -176,38 +231,40 @@ include 'myheader.php';
                         <h2 class="text-center">Guest Cart</h2>
                         <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
 
-                        <p class="text-center" style="font-size:17px;">
+                        <p class="text-md-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
                             The mover's information will appear in the table beneath the search box. Simply select the movers you 
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
                         </p>
                     <?php } else { ?>
                         <h2 class="text-center">Cart</h2>
-                        <p class="text-center" style="font-size:17px;">
+                        <p class="text-md-center" style="font-size:17px;">
                             Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
                             The mover's information will appear in the table beneath the search box. Simply select the movers you 
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
                         </p>
                     <?php } ?>
-
-                    <form action="../model/select_operation.php" name="usdot" class="m-3" method="post" style="padding-top:15px;">
+                    <form action="../model/select_operation.php" name="usdot" method="post" class="m-3" style="padding-top:15px;">
                         <div class="row">
-                            <div class="search-n-resp d-flex col-md-12 align-items-center form-group">
-                                <!-- Add a mover label and box -->
-                                <div class="col-md-4 search d-flex align-items-center">
-                                    <span class="col-md-5">Add A Mover:</span>
-                                    <input type="text" name="usdot" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
+
+                            <div class="contain-search">
+
+                                <div class="contain-input">
+
+                                    <span>Add A Mover:</span>
+                                    <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
                                     <input name="function" type="hidden" value="search">
+
+                                    <input type="submit" class="btn btn-success btn-sm" value="Go">
+
                                 </div>
-                                <!-- Go button -->
-                                <div class="col-md-3 pl-0 search-btn-contain">
-                                    <input type="submit" class="search-btn col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
-                                </div>
-                                <!-- Response message -->
-                                <div class="resp col-md-5 d-flex align-items-center" style="height:40px;">
+
+                                <div class="contain-result">
+
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
+
                                     <div class="d-flex">
                                         <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
                                         <span for="" id="cart_label2">
@@ -226,9 +283,47 @@ include 'myheader.php';
                                             ?>
                                         </span>
                                     </div>
+
                                 </div>
 
                             </div>
+                            <!-- <div class="d-flex col-md-12 align-items-center form-group  border border-secondary">
+
+                                <div class="col-md-4 search d-flex align-items-center  border border-secondary">
+                                    <span class="col-md-5">Add A Mover:</span>
+                                    <input type="text" name="usdot" id="usdot-search" class="col-md-7 form-control form-control-sm" placeholder="Enter #USDOT Number" required>
+                                    <input name="function" type="hidden" value="search">
+                                </div>
+
+                                <div class="col-md-3 pl-0">
+                                    <input type="submit" class="col-md-3 btn btn-success btn-sm align-middle" style="height: calc(1.5em + .75rem + 2px);" value="Go">
+                                </div>
+
+                                <div class="col-md-5 d-flex align-items-center  border border-secondary" style="height:40px;">
+                                    <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                                        <span for="" id="cart_label2">
+                                            <?php 
+                                                // if ($status == "as") {
+                                                //     echo "was added successfully.";
+                                                // } elseif ($status == "nr") {
+                                                //     echo "is not registered with MoverzFax.";
+                                                // } elseif ($status == "ae") {
+                                                //     echo "already exist.";
+                                                // } elseif ($status == "rf") {
+                                                //     echo "Request Failed.";
+                                                // } else {
+                                                //     echo " "; //edge case
+                                                // }
+                                            ?>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div> -->
                         </div>
                     </form>
 
@@ -245,12 +340,12 @@ include 'myheader.php';
                                     <th scope="col">Add</th>
                                     <th scope="col">Company Name </th>
                                     <th scope="col">USDOT</th>
-                                    <th scope="col">Company URL</th>
-                                    <th scope="col">Company State</th>
-                                    <th scope="col">Company City</th>
-                                    <th scope="col">Zip Code</th>
-                                    <th scope="col">Phone Number</th>
-                                    <th scope="col">Contact Person</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company URL</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company State</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company City</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
@@ -310,7 +405,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('not_valid').innerHTML = "Please select at least one compnay";
+            document.getElementById('not_valid').innerHTML = "Please select at least one company";
             return false;
         }
 
