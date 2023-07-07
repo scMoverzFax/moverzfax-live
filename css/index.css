@@ -292,7 +292,7 @@ box-sizing: border-box;
 .in-container{
     width: 90%;
     margin: 19px auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 /* .bg-form{
     margin: 0 auto;
@@ -333,13 +333,14 @@ box-sizing: border-box;
 .wo-services{
     float: left;
     width: 75%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .container-partners{
     width: 90%;
     height:fit-content;
     margin:2% auto;
+    border: 1px solid black;
 }
 .front-step{
     height:200px;
