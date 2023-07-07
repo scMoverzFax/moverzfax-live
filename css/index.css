@@ -369,7 +369,7 @@ box-sizing: border-box;
     .container-partners{
         width:80%;
         height:fit-content;
-        /* margin:2% auto; */
+        margin:2% auto;
     }
     .wo-image{
         display: none;
