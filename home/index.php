@@ -85,7 +85,7 @@ if (!defined('LOGIN')) {
     <div class="landing-container">
 
         <div class="landing-section row">
-            <h2>Planning a Move?</h2>
+            <h2>Planning a Move??</h2>
             <p>Relocate safely with zero risk of being scammed by rouge movers</p>
             <br>
             <a href="../home/select_company.php">
