@@ -390,6 +390,7 @@ input, button{
 /* smaller than tablet */
 @media (max-width: 750px) {
 
+    
     .wo-services {
         width: 90%;
     }
