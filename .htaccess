@@ -1,1 +1,5 @@
 RewriteEngine On
+RewriteBase /
+
+# Rewrite /home/check_my_usdot to /home/mover_register_and_links.php
+RewriteRule ^home/check_my_usdot$ /home/mover_register_and_links.php [L]
