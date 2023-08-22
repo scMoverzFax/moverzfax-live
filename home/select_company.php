@@ -376,7 +376,7 @@ include 'myheader.php';
             url: "../model/select_company_model.php",
             success: function(result) {
                 console.log(result);
-                document.getElementById('results-table').style.display = "";
+                document.getElementById('results-table').style.display = "block";
                 document.getElementById('table_cart').innerHTML = result;
                 // alert("Table Updated");
                 document.getElementById('cart_spinner').style.display = "none";
