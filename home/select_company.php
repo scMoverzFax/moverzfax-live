@@ -251,9 +251,9 @@ include 'myheader.php';
                     <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary" style="padding-top:15px;">
                         <div class="row">
 
-                            <div class="contain-search">
+                            <div class="contain-search border border-secondary">
 
-                                <div class="contain-input">
+                                <div class="contain-input border border-secondary">
 
                                     <span>Add A Mover:</span>
                                     <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
@@ -263,7 +263,7 @@ include 'myheader.php';
 
                                 </div>
 
-                                <div class="contain-result">
+                                <div class="contain-result border border-secondary">
 
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
