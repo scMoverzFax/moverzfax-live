@@ -320,7 +320,7 @@ include 'myheader.php';
                                                 // }
                                             ?>
                                         </span>
-                                    </div>
+                                    </div> 
                                 </div>
 
                             </div> -->
@@ -328,7 +328,7 @@ include 'myheader.php';
                     </form>
 
 
-
+<div id="results-table">
                     <span Class="text-center text-danger"></span>
                     <div class="text-center">
                         <span style="color:red;font-size:17px;" id="not_valid"></span>
@@ -352,6 +352,8 @@ include 'myheader.php';
                             <tbody id="table_cart"></tbody>
                         </table>
                     </div>
+</div>
+                    
                     <div class="text-center text-danger">
                         <span style="font-size:15px;">
                             Purchase your first report for $10 and receive the second one free of charge. 
@@ -405,6 +407,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
+            document.getElementById('results-table').setAttribute("style", "display: none;");
             document.getElementById('not_valid').innerHTML = "Please select at least one company";
             return false;
         }
