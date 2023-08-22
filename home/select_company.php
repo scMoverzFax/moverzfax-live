@@ -409,7 +409,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('results-table').setAttribute("style", "display: none;");
+            // document.getElementById('results-table').setAttribute("style", "display: none;");
             document.getElementById('not_valid').innerHTML = "Please select at least one company";
             return false;
         }
