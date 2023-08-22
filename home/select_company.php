@@ -226,26 +226,29 @@ include 'myheader.php';
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
             <div class="row">
-                <div class="col-md-12">
-                    <?php if (!defined('LOGIN')) { ?>
-                        <h2 class="text-center">Guest Cart</h2>
-                        <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
+                <div class="col-md-12 border border-secondary">
+                    <div class="border border-secondary">
+                        <?php if (!defined('LOGIN')) { ?>
+                            <h2 class="text-center">Guest Cart</h2>
+                            <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
 
-                        <p class="text-md-center" style="font-size:17px;">
-                            Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
-                            The mover's information will appear in the table beneath the search box. Simply select the movers you 
-                            wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
-                        </p>
-                    <?php } else { ?>
-                        <h2 class="text-center">Cart</h2>
-                        <p class="text-md-center" style="font-size:17px;">
-                            Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
-                            The mover's information will appear in the table beneath the search box. Simply select the movers you 
-                            wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
-                        </p>
-                    <?php } ?>
+                            <p class="text-md-center" style="font-size:17px;">
+                                Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                                The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                                wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
+                            </p>
+                        <?php } else { ?>
+                            <h2 class="text-center">Cart</h2>
+                            <p class="text-md-center" style="font-size:17px;">
+                                Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                                The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                                wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
+                            </p>
+                        <?php } ?>
+                    </div>
+                        
 
-                    <form action="../model/select_operation.php" name="usdot" method="post" class="m-3 border" style="padding-top:15px;">
+                    <form action="../model/select_operation.php" name="usdot" method="post" class="m-3 border border-secondary" style="padding-top:15px;">
                         <div class="row">
 
                             <div class="contain-search">
@@ -329,7 +332,7 @@ include 'myheader.php';
                     </form>
 
 
-                    <div id="results-table" class="border">
+                    <div id="results-table" class="border border-secondary">
                         <span Class="text-center text-danger"></span>
                         <div class="text-center">
                             <span style="color:red;font-size:17px;" id="not_valid"></span>
@@ -355,7 +358,7 @@ include 'myheader.php';
                         </div>
                     </div>
                         
-                        <div class="text-center text-danger border">
+                        <div class="text-center text-danger border border-secondary">
                             <span style="font-size:15px;">
                                 Purchase your first report for $10 and receive the second one free of charge. 
                                 Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
@@ -363,7 +366,7 @@ include 'myheader.php';
                             </span>
                         </div>
 
-                        <div class="text-center border" style="margin-top:50px;" id="results-table">
+                        <div class="text-center border border-secondary" style="margin-top:50px;" id="results-table">
                             <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                         </div>
 
