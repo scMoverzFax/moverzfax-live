@@ -381,7 +381,7 @@ include 'myheader.php';
                 // alert("Table Updated");
                 document.getElementById('cart_spinner').style.display = "none";
                 // $('#table_cart').html(result);
-                if (result = "<tr><td colspan='10' align='center'>No companies added yet..</td></tr>") {
+                if (result === "<tr><td colspan='10' align='center'>No companies added yet..</td></tr>") {
                     document.getElementById('results-table').style.display = "none";
                     console.log("running true");
 
