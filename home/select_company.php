@@ -376,10 +376,15 @@ include 'myheader.php';
             url: "../model/select_company_model.php",
             success: function(result) {
                 console.log(result);
+                document.getElementById('results-table').style.display = "";
                 document.getElementById('table_cart').innerHTML = result;
                 // alert("Table Updated");
                 document.getElementById('cart_spinner').style.display = "none";
                 // $('#table_cart').html(result);
+                if (result = "<tr><td colspan='10' align='center'>No companies added yet..</td></tr>") {
+                    document.getElementById('results-table').style.display = "none";
+
+                }
             }
         });
     }
@@ -397,19 +402,16 @@ include 'myheader.php';
         if (newvar <= 5 && newvar > 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: auto;");
             document.getElementById('not_valid').innerHTML = " ";
-            document.getElementById('results-table').setAttribute("style", "");
 
         }
 
         if (newvar >= 6) {
             document.getElementById('not_valid').innerHTML = "Please Select Only Five Companies";
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('results-table').setAttribute("style", "");
         }
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            // document.getElementById('results-table').setAttribute("style", "display: none;");
             document.getElementById('not_valid').innerHTML = "Please select at least one company";
             return false;
         }
