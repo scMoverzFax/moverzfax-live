@@ -244,7 +244,8 @@ include 'myheader.php';
                             wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
                         </p>
                     <?php } ?>
-                    <form action="../model/select_operation.php" name="usdot" method="post" class="m-3" style="padding-top:15px;">
+
+                    <form action="../model/select_operation.php" name="usdot" method="post" class="m-3 border" style="padding-top:15px;">
                         <div class="row">
 
                             <div class="contain-search">
@@ -328,42 +329,44 @@ include 'myheader.php';
                     </form>
 
 
-<div id="results-table">
-                    <span Class="text-center text-danger"></span>
-                    <div class="text-center">
-                        <span style="color:red;font-size:17px;" id="not_valid"></span>
+                    <div id="results-table" class="border">
+                        <span Class="text-center text-danger"></span>
+                        <div class="text-center">
+                            <span style="color:red;font-size:17px;" id="not_valid"></span>
+                        </div>
+                        <div class="col-md-12 mover_table mb-5">
+                            <table class="table table-striped table-hover ">
+                                <thead class="sticky-top thead-dark">
+                                    <tr>
+                                        <th scope="col">Add</th>
+                                        <th scope="col">Company Name </th>
+                                        <th scope="col">USDOT</th>
+                                        <th scope="col" class="d-none d-md-table-cell">Company URL</th>
+                                        <th scope="col" class="d-none d-md-table-cell">Company State</th>
+                                        <th scope="col" class="d-none d-md-table-cell">Company City</th>
+                                        <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
+                                        <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
+                                        <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table_cart"></tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="col-md-12 mover_table mb-5">
-                        <table class="table table-striped table-hover ">
-                            <thead class="sticky-top thead-dark">
-                                <tr>
-                                    <th scope="col">Add</th>
-                                    <th scope="col">Company Name </th>
-                                    <th scope="col">USDOT</th>
-                                    <th scope="col" class="d-none d-md-table-cell">Company URL</th>
-                                    <th scope="col" class="d-none d-md-table-cell">Company State</th>
-                                    <th scope="col" class="d-none d-md-table-cell">Company City</th>
-                                    <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
-                                    <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
-                                    <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table_cart"></tbody>
-                        </table>
-                    </div>
-</div>
-                    
-                    <div class="text-center text-danger">
-                        <span style="font-size:15px;">
-                            Purchase your first report for $10 and receive the second one free of charge. 
-                            Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
-                            and a fantastic deal of $1 for the fifth.
-                        </span>
-                    </div>
-                    <div class="text-center" style="margin-top:50px;" id="results-table">
-                        <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
-                    </div>
+                        
+                        <div class="text-center text-danger border">
+                            <span style="font-size:15px;">
+                                Purchase your first report for $10 and receive the second one free of charge. 
+                                Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                                and a fantastic deal of $1 for the fifth.
+                            </span>
+                        </div>
+
+                        <div class="text-center border" style="margin-top:50px;" id="results-table">
+                            <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
+                        </div>
+
                 </div>
             </div>
         </div>
