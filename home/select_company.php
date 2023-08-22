@@ -383,6 +383,7 @@ include 'myheader.php';
                 // $('#table_cart').html(result);
                 if (result = "<tr><td colspan='10' align='center'>No companies added yet..</td></tr>") {
                     document.getElementById('results-table').style.display = "none";
+                    console.log("running true");
 
                 }
             }
