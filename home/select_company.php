@@ -361,7 +361,7 @@ include 'myheader.php';
                             and a fantastic deal of $1 for the fifth.
                         </span>
                     </div>
-                    <div class="text-center" style="margin-top:50px;">
+                    <div class="text-center" style="margin-top:50px;" id="results-table">
                         <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                     </div>
                 </div>
@@ -397,12 +397,14 @@ include 'myheader.php';
         if (newvar <= 5 && newvar > 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: auto;");
             document.getElementById('not_valid').innerHTML = " ";
+            document.getElementById('results-table').setAttribute("style", "");
 
         }
 
         if (newvar >= 6) {
             document.getElementById('not_valid').innerHTML = "Please Select Only Five Companies";
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
+            document.getElementById('results-table').setAttribute("style", "");
         }
 
         if (newvar == 0) {
