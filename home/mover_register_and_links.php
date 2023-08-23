@@ -100,7 +100,7 @@
 	}
 	
 	#usdot-check {
-		width: 100px;
+		width: 250px;
 	}
 
 	/* Desktop-mobile approach --------------------------------------------------------------*/
