@@ -244,8 +244,13 @@ include 'myheader.php';
         align-items: flex-start;
     }
 
+    #step-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
     #proceed {
-        width: 36px;
+        width: 50px;
     }
 
     /* Desktop-mobile approach --------------------------------------------------------------*/
@@ -403,7 +408,7 @@ include 'myheader.php';
             </div>
 
             <div>
-                <p style="font-size:17px;">
+                <p id="step-title">
                     1. Search a mover by their USDOT.
                 </p>
 
@@ -466,7 +471,7 @@ include 'myheader.php';
             <div id="results-table" class="d-flex flex-column gap-2">
 
                 <div>
-                    <p style="font-size:17px;">
+                    <p id="step-title">
                         2. Use the table to create a package of up to five movers.
                     </p>
                     <ul style="font-size:12px;">
@@ -497,7 +502,7 @@ include 'myheader.php';
                 </div>
 
                 <div class="d-flex flex-column gap-1">
-                    <p style="font-size:17px;">
+                    <p id="step-title">
                         3. Proceed to confirmation page.
                     </p>
 
