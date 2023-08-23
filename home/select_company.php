@@ -275,9 +275,9 @@ include 'myheader.php';
             min-width: 100px;
         }
 
-        .b-search .inner-form {
+        /* .b-search .inner-form {
             width: 70vw;
-        }
+        } */
 
     }
 
@@ -320,9 +320,6 @@ include 'myheader.php';
     @media (max-width: 550px) {
         .in-container {
             padding: 10px;
-        }
-        .b-search .inner-form{
-            width: 80vw;
         }
         .b-search input, button{
             letter-spacing: 0px;
