@@ -414,7 +414,7 @@ include 'myheader.php';
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
 
-        <div class="d-flex flex-column gap-2">
+        <div class="d-flex flex-column gap-5">
                     
             <!-- Page Title and Instructions -->
             <div>
@@ -483,16 +483,18 @@ include 'myheader.php';
             </div>
 
             <!-- Display only when there is something in the table -->
-            <div id="results-table" class="border border-secondary">
+            <div id="results-table" class="d-flex flex-column gap-5 border border-secondary">
 
-                <p style="font-size:17px;">
-                    2. Use the table to create a package of up to five movers.
-                </p>
-                <span style="font-size:12px;">
-                    Purchase your first report for $10 and receive the second one free of charge. 
-                    Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
-                    and a fantastic deal of $1 for the fifth.
-                </span>
+                <div>
+                    <p style="font-size:17px;">
+                        2. Use the table to create a package of up to five movers.
+                    </p>
+                    <span style="font-size:12px;">
+                        Purchase your first report for $10 and receive the second one free of charge. 
+                        Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                        and a fantastic deal of $1 for the fifth.
+                    </span>
+                </div>
 
                 <div class="mover_table">
                     <table class="table table-striped table-hover ">
@@ -514,17 +516,19 @@ include 'myheader.php';
                     </table>
                 </div>
 
-                <span Class="text-center text-danger"></span>
-                <div class="text-center">
-                    <span style="color:red;font-size:17px;" id="not_valid"></span>
-                </div>
+                <div>
+                    <p style="font-size:17px;">
+                        3. Proceed to confirmation page.
+                    </p>
 
-                <p style="font-size:17px;">
-                    3. Proceed to confirmation page.
-                </p>
-                
-                <div class="border border-secondary" id="results-table">
-                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
+                    <span Class="text-center text-danger"></span>
+                    <div class="text-center">
+                        <span style="color:red;font-size:12px;" id="not_valid"></span>
+                    </div>
+
+                    <div class="border border-secondary" id="results-table">
+                        <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
+                    </div>
                 </div>
 
             </div>
