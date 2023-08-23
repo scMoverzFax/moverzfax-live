@@ -429,7 +429,7 @@ include 'myheader.php';
             </p>
 
             <!-- Search USDOT and Result Message -->
-            <div class="b-search">
+            <div class="b-search mb-5">
                 <form action="../model/select_operation.php" name="usdot" method="post">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
@@ -511,7 +511,7 @@ include 'myheader.php';
                     <span style="color:red;font-size:17px;" id="not_valid"></span>
                 </div>
                 
-                <div class="text-center text-danger border border-secondary">
+                <div class="border border-secondary">
                     <span style="font-size:15px;">
                         Purchase your first report for $10 and receive the second one free of charge. 
                         Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
@@ -519,7 +519,7 @@ include 'myheader.php';
                     </span>
                 </div>
 
-                <div class="text-center border border-secondary" id="results-table">
+                <div class="border border-secondary" id="results-table">
                     <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
                 </div>
 
@@ -572,7 +572,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('not_valid').innerHTML = "Please select at least one company";
+            document.getElementById('not_valid').innerHTML = "Please select at least one company before proceeding";
             return false;
         }
 
