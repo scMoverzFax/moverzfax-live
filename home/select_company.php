@@ -224,6 +224,65 @@ include 'myheader.php';
         }
     }
 
+    @media screen and (max-width: 992px) {
+
+        .b-search form .inner-form .input-field {
+        height: 50px;
+        }
+        .b-search form .inner-form .input-field input.placeholder {
+            color: #222;
+            font-size: 13px;
+        }
+
+        .b-search form .inner-form .input-field input.placeholder {
+            color: #222;
+            font-size: 13px;
+        }
+
+        .b-search form .inner-form .input-field input:-moz-placeholder {
+            color: #222;
+            font-size: 13px;
+        }
+
+        .b-search form .inner-form .input-field input::-webkit-input-placeholder {
+            color: #222;
+            font-size: 13px;
+        }
+
+        .b-search form .inner-form .input-field.second-wrap {
+            min-width: 160px;
+        }
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .b-search form .inner-form .input-field.first-wrap .svg-wrapper {
+            min-width: 40px;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .b-search form .inner-form .input-field.first-wrap svg {
+            width: 26px;
+            height: 26px;
+            fill: #222;
+        }
+
+        .b-search form .inner-form .input-field.second-wrap {
+            min-width: 100px;
+        }
+
+        .b-search .inner-form {
+            width: 70vw;
+        }
+
+    }
+
     /* smaller than tablet */
     @media (max-width: 750px) {
         .search-n-resp {
@@ -264,10 +323,21 @@ include 'myheader.php';
         .in-container {
             padding: 10px;
         }
+        .b-search .inner-form{
+        width: 90vw;
+        }
+        .b-search
+        input, button{
+            letter-spacing: 0px;
+        }
     }
 
     /* smaller than mobile */
-    @media (max-width: 400px) {}
+    @media (max-width: 400px) {
+        .b-search form .inner-form .input-field.second-wrap {
+            min-width: 80px;
+        }
+    }
 
     .container-fluid {
         height: fit-content;
