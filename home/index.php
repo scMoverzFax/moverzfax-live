@@ -108,6 +108,7 @@ if (!defined('LOGIN')) {
             <!-- USDOT SEARCH -->
             <div class="b-search"> 
                 <form method="post" action="../model/select_operation.php">
+
                     <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4">
                     <div class="inner-form">
                         <div class="input-field first-wrap">
@@ -123,6 +124,7 @@ if (!defined('LOGIN')) {
                             <button class="btn-search" type="submit" required>USDOT #</button>
                         </div>
                     </div>
+                    
                 </form>
             </div>
     </div>

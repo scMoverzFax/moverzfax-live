@@ -218,7 +218,7 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
-        
+
         <div class="d-flex flex-column gap-2">
                     
             <!-- Page Title and Instructions -->
@@ -247,7 +247,7 @@ include 'myheader.php';
                 <!-- <div class="row border border-primary"> -->
                 <div class="border border-primary">
 
-                    <div class="contain-search">
+                    <!-- <div class="contain-search">
 
                         <div class="contain-input">
 
@@ -259,36 +259,53 @@ include 'myheader.php';
 
                         </div>
 
-                        <div class="contain-result">
-
-                            <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
-                                <span class="visually-hidden">Loading...</span>
+                    </div> -->
+                    <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4">
+                    <div class="inner-form">
+                        <div class="input-field first-wrap">
+                            <div class="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                </svg>
                             </div>
-
-                            <div class="d-flex">
-                                <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                                <span for="" id="cart_label2">
-                                    <?php 
-                                        if ($status == "as") {
-                                            echo "was added successfully.";
-                                        } elseif ($status == "nr") {
-                                            echo "is not registered with MoverzFax.";
-                                        } elseif ($status == "ae") {
-                                            echo "already exist.";
-                                        } elseif ($status == "rf") {
-                                            echo "Request Failed.";
-                                        } else {
-                                            echo " "; //edge case
-                                        }
-                                    ?>
-                                </span>
-                            </div>
-
+                            <input id="search" name="usdot" type="text" placeholder="Search USDOT Registration..." required>
+                            <input name="function" type="hidden" value="search">
                         </div>
-
+                        <div class="input-field second-wrap">
+                            <button class="btn-search" type="submit" required>USDOT #</button>
+                        </div>
                     </div>
+
                 </div>
             </form>
+
+            <!-- Show Result of Search -->
+            <div class="contain-result">
+
+                <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <div class="d-flex">
+                    <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                    <span for="" id="cart_label2">
+                        <?php 
+                            if ($status == "as") {
+                                echo "was added successfully.";
+                            } elseif ($status == "nr") {
+                                echo "is not registered with MoverzFax.";
+                            } elseif ($status == "ae") {
+                                echo "already exist.";
+                            } elseif ($status == "rf") {
+                                echo "Request Failed.";
+                            } else {
+                                echo " "; //edge case
+                            }
+                        ?>
+                    </span>
+                </div>
+
+            </div>
 
             <!-- Table of Movers Information, Price Information, and Proceed Button-->
             <div id="results-table" class="border border-secondary">
