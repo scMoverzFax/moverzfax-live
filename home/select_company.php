@@ -275,9 +275,9 @@ include 'myheader.php';
             min-width: 100px;
         }
 
-        /* .b-search .inner-form {
-            width: 70vw;
-        } */
+        .b-search .inner-form {
+            width: 100%;
+        }
 
     }
 
