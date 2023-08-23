@@ -426,14 +426,12 @@ include 'myheader.php';
                 <?php } ?>
             </div>
 
-
+            <p style="font-size:17px;">
+                1. Utilize the search box below to explore our comprehensive database of movers for the reports you desire.
+            </p>
 
             <!-- Search USDOT and Result Message -->
             <div class="b-search border border-secondary">
-                <!-- <p style="font-size:17px;"> -->
-                <p>
-                    1. Utilize the search box below to explore our comprehensive database of movers for the reports you desire.
-                </p>
                 <form action="../model/select_operation.php" name="usdot" method="post" class="border border-warning">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
