@@ -20,6 +20,9 @@ include 'myheader.php';
 
     .b-search {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .b-search input, button {
