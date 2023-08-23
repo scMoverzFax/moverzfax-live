@@ -275,6 +275,10 @@ include 'myheader.php';
             min-width: 100px;
         }
 
+        .b-search form {
+            width: 100%;
+        }
+
         .b-search .inner-form {
             width: 100%;
         }
