@@ -414,7 +414,7 @@ include 'myheader.php';
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
 
-        <div class="d-flex flex-column gap-5">
+        <div class="d-flex flex-column gap-5 border border-primary">
                     
             <!-- Page Title and Instructions -->
             <div>
@@ -424,68 +424,69 @@ include 'myheader.php';
                 <?php } ?>
             </div>
 
-            <p style="font-size:17px;">
-                1. Search a mover by their USDOT.
-            </p>
+            <div>
+                <p style="font-size:17px;">
+                    1. Search a mover by their USDOT.
+                </p>
 
-            <!-- Search USDOT -->
-            <div class="b-search mb-2">
-                <form action="../model/select_operation.php" name="usdot" method="post">
+                <div class="b-search mb-2">
+                    <form action="../model/select_operation.php" name="usdot" method="post">
 
-                        <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
-                        <div class="inner-form text-center">
+                            <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
+                            <div class="inner-form text-center">
 
-                            <div class="input-field first-wrap">
-                                <div class="svg-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                                    </svg>
+                                <div class="input-field first-wrap">
+                                    <div class="svg-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                        </svg>
+                                    </div>
+                                    <input id="search" name="usdot" type="text" placeholder="Enter USDOT Number" required>
+                                    <input name="function" type="hidden" value="search">
                                 </div>
-                                <input id="search" name="usdot" type="text" placeholder="Enter USDOT Number" required>
-                                <input name="function" type="hidden" value="search">
+
+                                <div class="input-field second-wrap">
+                                    <button class="btn-search" type="submit" required>SEARCH</button>
+                                </div>
+
                             </div>
 
-                            <div class="input-field second-wrap">
-                                <button class="btn-search" type="submit" required>SEARCH</button>
-                            </div>
-
-                        </div>
-
-                </form>
+                    </form>
+                </div>
             </div>
 
-            <!-- Result of Search Message -->
-            <div class="contain-result">
+                <!-- Result of Search Message -->
+                <div class="contain-result">
 
-                <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
-                    <span class="visually-hidden">Loading...</span>
+                    <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <div class="d-flex">
+                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                        <span for="" id="cart_label2">
+                            <?php 
+                                if ($status == "as") {
+                                    echo "was added successfully.";
+                                } elseif ($status == "nr") {
+                                    echo "is not registered with MoverzFax.";
+                                } elseif ($status == "ae") {
+                                    echo "already exist.";
+                                } elseif ($status == "rf") {
+                                    echo "Request Failed.";
+                                } else {
+                                    echo " "; //edge case
+                                }
+                            ?>
+                        </span>
+                    </div>
+
                 </div>
-
-                <div class="d-flex">
-                    <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                    <span for="" id="cart_label2">
-                        <?php 
-                            if ($status == "as") {
-                                echo "was added successfully.";
-                            } elseif ($status == "nr") {
-                                echo "is not registered with MoverzFax.";
-                            } elseif ($status == "ae") {
-                                echo "already exist.";
-                            } elseif ($status == "rf") {
-                                echo "Request Failed.";
-                            } else {
-                                echo " "; //edge case
-                            }
-                        ?>
-                    </span>
-                </div>
-
-            </div>
 
             <!-- Display only when there is something in the table -->
             <div id="results-table" class="d-flex flex-column gap-5 border border-secondary">
 
-                <div>
+                <div class="border border-secondary">
                     <p style="font-size:17px;">
                         2. Use the table to create a package of up to five movers.
                     </p>
@@ -496,7 +497,7 @@ include 'myheader.php';
                     </span>
                 </div>
 
-                <div class="mover_table">
+                <div class="mover_table border border-secondary">
                     <table class="table table-striped table-hover ">
                         <thead class="sticky-top thead-dark">
                             <tr>
@@ -516,19 +517,15 @@ include 'myheader.php';
                     </table>
                 </div>
 
-                <div>
+                <div class="border border-secondary">
                     <p style="font-size:17px;">
                         3. Proceed to confirmation page.
                     </p>
 
                     <span Class="text-center text-danger"></span>
-                    <div class="text-center">
-                        <span style="color:red;font-size:12px;" id="not_valid"></span>
-                    </div>
+                    <span style="color:red;font-size:12px;" id="not_valid"></span>
 
-                    <div class="border border-secondary" id="results-table">
-                        <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
-                    </div>
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
                 </div>
 
             </div>
