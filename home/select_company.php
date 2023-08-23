@@ -224,7 +224,8 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
-        <div class="bg-form form-group">
+        <!-- <div class="bg-form form-group"> -->
+        <div>
             <!-- <div class="row"> -->
 
                 <!-- <div class="col-md-12 border border-secondary"> -->
