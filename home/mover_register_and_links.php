@@ -290,8 +290,7 @@ if(isset($_REQUEST["usdot-check"])){
 						<!-- <h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5> -->
 
 						<form method="get" action="mover_register_and_links.php">
-							<!-- <div class="d-flex align-items-center"> -->
-							<div>
+							<div class="d-flex align-items-center">
 								<input type="text" class="form-control w-50" name="usdot-check" value="" placeholder="Enter Your USDOT" required>
 								<button type="submit" class="btn button-mf me-5">Validate</button>
 							</div>
