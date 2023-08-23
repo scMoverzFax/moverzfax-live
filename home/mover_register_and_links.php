@@ -288,12 +288,12 @@ if(isset($_REQUEST["usdot-check"])){
 					<div class="section-1">
 						<h1 class="text-center"><i class="fas fa-search me-2"></i>Validate Your USDOT Registration</h1>
 
-						<h5>
+						<h5 class="text-center">
 							Utilize the search box below to verify your USDOT license information within our nationwide Department of Transportation database. 
 						</h5>
 						<!-- <h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5> -->
 
-						<form method="get" action="mover_register_and_links.php">
+						<form class="text-center" method="get" action="mover_register_and_links.php">
 							<div class="d-flex align-items-center mb-3">
 								<input type="text" class="form-control mr-3" id="usdot-check" name="usdot-check" value="" placeholder="Enter Your USDOT" required>
 								<button type="submit" class="btn button-mf me-5">Validate</button>
