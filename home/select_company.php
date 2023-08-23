@@ -435,7 +435,7 @@ include 'myheader.php';
 
             <!-- Search USDOT and Result Message -->
             <div class="b-search border border-secondary">
-                <form action="../model/select_operation.php" name="usdot" method="post">
+                <form action="../model/select_operation.php" name="usdot" method="post" class="border border-warning">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
                         <div class="inner-form text-center border border-primary">
