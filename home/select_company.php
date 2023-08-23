@@ -485,7 +485,7 @@ include 'myheader.php';
             </div>
 
             <!-- Display only when there is something in the table -->
-            <div id="results-table" class="d-flex flex-column gap-5 border border-secondary">
+            <div id="results-table" class="d-flex flex-column gap-2 p-2 border border-secondary">
 
                 <div class="border border-secondary">
                     <p style="font-size:17px;">
@@ -518,7 +518,7 @@ include 'myheader.php';
                     </table>
                 </div>
 
-                <div class="border border-secondary">
+                <div class="d-flex flex-column gap-1 border border-secondary">
                     <p style="font-size:17px;">
                         3. Proceed to confirmation page.
                     </p>
