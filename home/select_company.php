@@ -242,15 +242,16 @@ include 'myheader.php';
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        padding-left: 15px;
     }
 
     #step-title {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     #proceed {
-        width: 90px;
+        width: 100px;
     }
 
     /* Desktop-mobile approach --------------------------------------------------------------*/
@@ -407,7 +408,7 @@ include 'myheader.php';
                 <?php } ?>
             </div>
 
-            <div>
+            <div class="d-flex flex-column gap-4">
                 <p id="step-title">
                     1. Search a mover by their USDOT.
                 </p>
