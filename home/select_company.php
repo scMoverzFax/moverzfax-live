@@ -225,8 +225,9 @@ include 'myheader.php';
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
         <div class="bg-form form-group">
-            <div class="row">
+            <!-- <div class="row"> -->
 
+                <!-- <div class="col-md-12 border border-secondary"> -->
                 <div class="border border-secondary">
                     
                     <div class="border border-warning">
@@ -373,7 +374,7 @@ include 'myheader.php';
                         </div>
 
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>
