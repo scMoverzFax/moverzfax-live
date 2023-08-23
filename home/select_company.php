@@ -1,6 +1,5 @@
 <?php
 include 'myheader.php';
-include '../css/index.css';
 
 ?>
 <title>USDOT Search</title>
@@ -18,6 +17,133 @@ include '../css/index.css';
         padding: 50px;
         max-width: 1440px;
 
+    }
+
+    .b-search{
+        position: relative;
+    }
+
+    .b-search {
+        position: relative;
+    }
+
+    .b-search input,
+    button {
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: .8px;
+    }
+
+    .b-search .inner-form {
+        display: -ms-flexbox;
+        display: flex;
+        width: 50vw;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: center;
+        align-items: center;
+        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 34px;
+        overflow: hidden;
+    }
+
+    .b-search .inner-form .input-field {
+        height: 55px;
+    }
+
+    .b-search .inner-form .input-field input {
+        height: 100%;
+        background: transparent;
+        border: 0;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #000;
+    }
+
+    .b-search form .inner-form .input-field input.placeholder {
+        color: #222;
+        font-size: 16px;
+    }
+
+    .b-search form .inner-form .input-field input:-moz-placeholder {
+        color: #222;
+        font-size: 16px;
+    }
+
+    .b-search form .inner-form .input-field input::-webkit-input-placeholder {
+        color: #222;
+        font-size: 16px;
+    }
+
+    .b-search form .inner-form .input-field input:hover,
+    .b-search form .inner-form .input-field input:focus {
+        box-shadow: none;
+        outline: 0;
+    }
+
+    .b-search form .inner-form .input-field.first-wrap {
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        background: rgba(217, 241, 227, .7);
+    }
+
+    .b-search form .inner-form .input-field.first-wrap input {
+        -ms-flex-positive: 1;
+        flex-grow: 5;
+    }
+
+    .b-search form .inner-form .input-field.first-wrap .svg-wrapper {
+        min-width: 80px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .b-search form .inner-form .input-field.first-wrap svg {
+        width: 36px;
+        height: 36px;
+        fill: #222;
+    }
+
+    .b-search form .inner-form .input-field.second-wrap {
+        min-width: 180px;
+    }
+
+    .b-search form .inner-form .input-field.second-wrap .btn-search {
+        height: 100%;
+        width: 100%;
+        white-space: nowrap;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+        position: relative;
+        z-index: 0;
+        background: rgba(0, 173, 95, 0.7);
+        transition: all .2s ease-out, color .2s ease-out;
+    }
+
+    .b-search form .inner-form .input-field.second-wrap .btn-search:hover {
+        background: #009451;
+    }
+
+    .b-search form .inner-form .input-field.second-wrap .btn-search:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    .b-search form .info {
+        font-size: 15px;
+        color: #ccc;
+        padding-left: 26px;
     }
 
     .in-container {
@@ -246,8 +372,8 @@ include '../css/index.css';
             <!-- Search USDOT and Result Message -->
             <div class="b-search"> 
             <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary">
-                <!-- <div class="row border border-primary"> -->
-                <div class="border border-primary">
+                
+                <!-- <div class="border border-primary"> -->
 
                     <!-- <div class="contain-search">
 
@@ -278,7 +404,7 @@ include '../css/index.css';
                         </div>
                     </div>
 
-                </div>
+                <!-- </div> -->
             </form>
             </div>
 
