@@ -484,11 +484,9 @@ include 'myheader.php';
 
             <!-- Table of Movers Information, Price Information, and Proceed Button-->
             <div id="results-table" class="border border-secondary">
-                <span Class="text-center text-danger"></span>
-                <div class="text-center">
-                    <span style="color:red;font-size:17px;" id="not_valid"></span>
-                </div>
-                <div class="col-md-12 mover_table mb-5">
+
+                <!-- <div class="col-md-12 mover_table mb-5"> -->
+                <div class="mover_table mb-1">
                     <table class="table table-striped table-hover ">
                         <thead class="sticky-top thead-dark">
                             <tr>
@@ -506,6 +504,11 @@ include 'myheader.php';
                         </thead>
                         <tbody id="table_cart"></tbody>
                     </table>
+                </div>
+
+                <span Class="text-center text-danger"></span>
+                <div class="text-center">
+                    <span style="color:red;font-size:17px;" id="not_valid"></span>
                 </div>
                 
                 <div class="text-center text-danger border border-secondary">
