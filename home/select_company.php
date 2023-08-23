@@ -212,12 +212,10 @@ include 'myheader.php';
 
     .cart-list {
         height: fit-content;
-
     }
 
     .payment-mode {
         height: fit-content;
-
     }
 
     .mover_table {
@@ -243,6 +241,12 @@ include 'myheader.php';
         flex-direction: column;
         align-items: flex-start;
         padding-left: 20px;
+    }
+
+    #results-table {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     #step-title {
@@ -469,7 +473,7 @@ include 'myheader.php';
             </div>
 
             <!-- Display only when there is something in the table -->
-            <div id="results-table" class="d-flex flex-column gap-4">
+            <div id="results-table">
 
                 <div>
                     <p id="step-title">
