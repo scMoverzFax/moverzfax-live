@@ -526,7 +526,7 @@ include 'myheader.php';
                     <span Class="text-center text-danger"></span>
                     <span style="color:red;font-size:12px;" id="not_valid"></span>
 
-                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning w-auto" onclick="proceed();">Proceed</a>
                 </div>
 
             </div>
@@ -578,7 +578,7 @@ include 'myheader.php';
 
         if (newvar == 0) {
             document.getElementById('proceed').setAttribute("style", "pointer-events: none;");
-            document.getElementById('not_valid').innerHTML = "Please select at least one company before proceeding";
+            document.getElementById('not_valid').innerHTML = "Please select at least one company from the table";
             return false;
         }
 
