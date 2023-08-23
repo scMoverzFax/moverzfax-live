@@ -418,23 +418,22 @@ include 'myheader.php';
                     
             <!-- Page Title and Instructions -->
             <div class="border border-warning">
-
                 <?php if (!defined('LOGIN')) { ?>
                     <h2 class="text-center">Search USDOT as a Guest</h2>
                     <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
                 <?php } else { ?>
                     <h2 class="text-center">Cart</h2>
                 <?php } ?>
-
-                <!-- <p class="text-md-center" style="font-size:17px;"> -->
-                <p style="font-size:17px;">
-                    1. Utilize the search box below to explore our comprehensive database of movers for the reports you desire.
-                </p>
-
             </div>
+
+
 
             <!-- Search USDOT and Result Message -->
             <div class="b-search border border-secondary">
+                <!-- <p style="font-size:17px;"> -->
+                <p>
+                    1. Utilize the search box below to explore our comprehensive database of movers for the reports you desire.
+                </p>
                 <form action="../model/select_operation.php" name="usdot" method="post" class="border border-warning">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
