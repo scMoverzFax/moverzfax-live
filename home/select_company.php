@@ -41,6 +41,7 @@ include 'myheader.php';
         box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
         border-radius: 34px;
         overflow: hidden;
+        max-width: 100%;
     }
 
     .b-search .inner-form .input-field {
