@@ -206,6 +206,47 @@ include 'myheader.php';
         color: #67bd3c;
     }
 
+    .container-fluid {
+        height: fit-content;
+    }
+
+    .cart-list {
+        height: fit-content;
+
+    }
+
+    .payment-mode {
+        height: fit-content;
+
+    }
+
+    .mover_table {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+
+    .contain-search {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .contain-input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .contain-result {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #proceed {
+        width: 36px;
+    }
 
     /* Desktop-mobile approach --------------------------------------------------------------*/
 
@@ -337,68 +378,6 @@ include 'myheader.php';
         }
     }
 
-    .container-fluid {
-        height: fit-content;
-    }
-
-    .cart-list {
-        height: fit-content;
-
-    }
-
-    .payment-mode {
-        height: fit-content;
-
-    }
-
-    .mover_table {
-        max-height: 50vh;
-        overflow-y: auto;
-    }
-
-    /* .contain-search {
-        border: 1px solid #000000;
-    }
-    .contain-input {
-        border: 1px solid #FF0000;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #usdot-search {
-        border: 1px solid #808080;
-        min-width: 40px;
-    }
-    .contain-result {
-        border: 1px solid #0000FF;
-    } */
-
-    .contain-search {
-        /* border: 1px solid #000000; */
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .contain-input {
-        /* border: 1px solid #FF0000; */
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5em;
-        /* align-items: center; */
-    }
-
-    .contain-result {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #usdot-search {
-        border: 1px solid #808080;
-        width: 200px !important;
-    }
-
     /* Responsive layout for smaller screens */
     @media (max-width: 600px) {
         .contain-input {
@@ -406,7 +385,6 @@ include 'myheader.php';
             /* align-items: center; */
         }
     }
-
 
 </style>
 <?php $usdot = isset($_GET["usdot"]) ? $_GET["usdot"] : NULL; ?>
@@ -492,7 +470,7 @@ include 'myheader.php';
                         2. Use the table to create a package of up to five movers.
                     </p>
                     <ul style="font-size:12px;">
-                        <li>Purchase your first report for $10 and receive the second one free of charge.</li>
+                        <li>Purchase your first report for $10 and receive the second one FREE.</li>
                         <li>Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
                         and a fantastic deal of $1 for the fifth.</li>
                     </ul>
@@ -526,7 +504,7 @@ include 'myheader.php';
                     <span Class="text-center text-danger"></span>
                     <span style="color:red;font-size:12px;" id="not_valid"></span>
 
-                    <a href="payment_app.php" id="proceed" class="btn btn-warning" style="width: 36px;" onclick="proceed();">
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">
                         Proceed
                     </a>
                 </div>
