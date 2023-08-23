@@ -246,11 +246,11 @@ include 'myheader.php';
 
     #step-title {
         font-size: 20px;
-        font-weight: bold;
+        font-weight: 500;
     }
 
     #proceed {
-        width: 50px;
+        width: 90px;
     }
 
     /* Desktop-mobile approach --------------------------------------------------------------*/
@@ -397,7 +397,7 @@ include 'myheader.php';
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
 
-        <div class="d-flex flex-column gap-5">
+        <div class="d-flex flex-column gap-4">
                     
             <!-- Page Title and Instructions -->
             <div>
@@ -468,7 +468,7 @@ include 'myheader.php';
             </div>
 
             <!-- Display only when there is something in the table -->
-            <div id="results-table" class="d-flex flex-column gap-2">
+            <div id="results-table" class="d-flex flex-column gap-4">
 
                 <div>
                     <p id="step-title">
@@ -479,26 +479,26 @@ include 'myheader.php';
                         <li>Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
                         and a fantastic deal of $1 for the fifth.</li>
                     </ul>
-                </div>
 
-                <div class="mover_table">
-                    <table class="table table-striped table-hover ">
-                        <thead class="sticky-top thead-dark">
-                            <tr>
-                                <th scope="col">Add</th>
-                                <th scope="col">Company Name </th>
-                                <th scope="col">USDOT</th>
-                                <th scope="col" class="d-none d-md-table-cell">Company URL</th>
-                                <th scope="col" class="d-none d-md-table-cell">Company State</th>
-                                <th scope="col" class="d-none d-md-table-cell">Company City</th>
-                                <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
-                                <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
-                                <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
-                                <th scope="col">Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table_cart"></tbody>
-                    </table>
+                    <div class="mover_table">
+                        <table class="table table-striped table-hover ">
+                            <thead class="sticky-top thead-dark">
+                                <tr>
+                                    <th scope="col">Add</th>
+                                    <th scope="col">Company Name </th>
+                                    <th scope="col">USDOT</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company URL</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company State</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Company City</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
+                                    <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_cart"></tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="d-flex flex-column gap-1">
