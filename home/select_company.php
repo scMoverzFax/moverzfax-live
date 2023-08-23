@@ -243,6 +243,7 @@ include 'myheader.php';
             </div>
                 
             <!-- Search USDOT and Result Message -->
+            <div class="b-search"> 
             <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary">
                 <!-- <div class="row border border-primary"> -->
                 <div class="border border-primary">
@@ -278,6 +279,7 @@ include 'myheader.php';
 
                 </div>
             </form>
+            </div>
 
             <!-- Show Result of Search -->
             <div class="contain-result">
