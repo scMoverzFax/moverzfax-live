@@ -526,7 +526,9 @@ include 'myheader.php';
                     <span Class="text-center text-danger"></span>
                     <span style="color:red;font-size:12px;" id="not_valid"></span>
 
-                    <a href="payment_app.php" id="proceed" class="btn btn-warning w-auto" onclick="proceed();">Proceed</a>
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning" style="align-self: auto;" onclick="proceed();">
+                        Proceed
+                    </a>
                 </div>
 
             </div>
