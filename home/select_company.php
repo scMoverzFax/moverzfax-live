@@ -418,16 +418,14 @@ include 'myheader.php';
                     
             <!-- Page Title and Instructions -->
             <div class="border border-warning">
+                <h2 class="text-center">MoverzFax Reputation Data Reports</h2>
                 <?php if (!defined('LOGIN')) { ?>
-                    <h2 class="text-center">Search USDOT as a Guest</h2>
                     <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
-                <?php } else { ?>
-                    <h2 class="text-center">Cart</h2>
                 <?php } ?>
             </div>
 
             <p style="font-size:17px;">
-                1. Utilize the search box below to explore our comprehensive database of movers for the reports you desire.
+                1. Search a mover by their USDOT.
             </p>
 
             <!-- Search USDOT and Result Message -->
