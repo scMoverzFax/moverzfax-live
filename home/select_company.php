@@ -429,7 +429,7 @@ include 'myheader.php';
             </p>
 
             <!-- Search USDOT -->
-            <div class="b-search mb-5">
+            <div class="b-search mb-2">
                 <form action="../model/select_operation.php" name="usdot" method="post">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
@@ -453,15 +453,6 @@ include 'myheader.php';
 
                 </form>
             </div>
-
-            <p style="font-size:17px;">
-                2. Use the table to create a package of up to five movers.
-            </p>
-            <span style="font-size:12px;">
-                Purchase your first report for $10 and receive the second one free of charge. 
-                Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
-                and a fantastic deal of $1 for the fifth.
-            </span>
 
             <!-- Result of Search Message -->
             <div class="contain-result">
@@ -491,11 +482,19 @@ include 'myheader.php';
 
             </div>
 
-            <!-- Table of Movers Information, Price Information, and Proceed Button-->
+            <!-- Display only when there is something in the table -->
             <div id="results-table" class="border border-secondary">
 
-                <!-- <div class="col-md-12 mover_table mb-5"> -->
-                <div class="mover_table mb-1">
+                <p style="font-size:17px;">
+                    2. Use the table to create a package of up to five movers.
+                </p>
+                <span style="font-size:12px;">
+                    Purchase your first report for $10 and receive the second one free of charge. 
+                    Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                    and a fantastic deal of $1 for the fifth.
+                </span>
+
+                <div class="mover_table">
                     <table class="table table-striped table-hover ">
                         <thead class="sticky-top thead-dark">
                             <tr>
@@ -520,13 +519,14 @@ include 'myheader.php';
                     <span style="color:red;font-size:17px;" id="not_valid"></span>
                 </div>
 
-            </div>
+                <p style="font-size:17px;">
+                    3. Proceed to confirmation page.
+                </p>
+                
+                <div class="border border-secondary" id="results-table">
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
+                </div>
 
-            <p style="font-size:17px;">
-                3. Proceed to confirmation page.
-            </p>
-            <div class="border border-secondary" id="results-table">
-                <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
             </div>
 
         </div>
