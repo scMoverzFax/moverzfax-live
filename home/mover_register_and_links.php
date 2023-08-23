@@ -98,6 +98,10 @@
 	.hidden {
 		z-index: -1;
 	}
+	
+	#usdot-check {
+		width: 500px;
+	}
 
 	/* Desktop-mobile approach --------------------------------------------------------------*/
 
@@ -290,8 +294,8 @@ if(isset($_REQUEST["usdot-check"])){
 						<!-- <h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5> -->
 
 						<form method="get" action="mover_register_and_links.php">
-							<div class="d-flex align-items-center">
-								<input type="text" class="form-control w-50" name="usdot-check" value="" placeholder="Enter Your USDOT" required>
+							<div class="d-flex align-items-center mb-5">
+								<input type="text" class="form-control" id="usdot-check" name="usdot-check" value="" placeholder="Enter Your USDOT" required>
 								<button type="submit" class="btn button-mf me-5">Validate</button>
 							</div>
 							<h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
