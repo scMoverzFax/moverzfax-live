@@ -282,11 +282,10 @@ if(isset($_REQUEST["usdot-check"])){
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-1">
-						<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
+						<h1 class="text-center"><i class="fas fa-search me-2"></i>Validate Your USDOT Registration</h1>
 
 						<h5 class="text-center">
-							Use the search box to check for your USDOT in our database. If we have your information, 
-							the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
+							Use the search box to check for your USDOT number. If you do not appear on the nationwide database, please continue to the form below to update your standing. 
 						</h5>
 						<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
 
@@ -297,6 +296,14 @@ if(isset($_REQUEST["usdot-check"])){
 						<br>
 					</div>
 
+					<div class="section-1">
+						<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
+
+						<h5 class="text-center">
+							If we have your information, the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
+						</h5>
+						<br>
+					</div>
 
 					<form action="../model/mover_model.php" method="post" id="mv-reg-form" enctype="multipart/form-data">
 
