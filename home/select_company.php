@@ -227,7 +227,7 @@ include 'myheader.php';
         <div class="bg-form form-group">
             <div class="row">
                 <div class="col-md-12 border border-secondary">
-                    <div class="border border-secondary">
+                    <div class="border border-warning">
                         <?php if (!defined('LOGIN')) { ?>
                             <h2 class="text-center">Guest Cart</h2>
                             <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
@@ -366,7 +366,7 @@ include 'myheader.php';
                             </span>
                         </div>
 
-                        <div class="text-center border border-secondary" style="margin-top:50px;" id="results-table">
+                        <div class="text-center border border-secondary" id="results-table">
                             <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
                         </div>
 
