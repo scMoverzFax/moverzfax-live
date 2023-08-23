@@ -414,17 +414,17 @@ include 'myheader.php';
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
 
-        <div class="d-flex flex-column gap-5 p-3 border border-primary">
+        <div class="d-flex flex-column gap-5">
                     
             <!-- Page Title and Instructions -->
-            <div class="border border-secondary">
+            <div>
                 <h2 class="text-center">MoverzFax Reputation Data Reports</h2>
                 <?php if (!defined('LOGIN')) { ?>
                     <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
                 <?php } ?>
             </div>
 
-            <div class="border border-secondary">
+            <div>
                 <p style="font-size:17px;">
                     1. Search a mover by their USDOT.
                 </p>
@@ -485,9 +485,9 @@ include 'myheader.php';
             </div>
 
             <!-- Display only when there is something in the table -->
-            <div id="results-table" class="d-flex flex-column gap-2 p-2 border border-secondary">
+            <div id="results-table" class="d-flex flex-column gap-2">
 
-                <div class="border border-secondary">
+                <div>
                     <p style="font-size:17px;">
                         2. Use the table to create a package of up to five movers.
                     </p>
@@ -498,7 +498,7 @@ include 'myheader.php';
                     </ul>
                 </div>
 
-                <div class="mover_table border border-secondary">
+                <div class="mover_table">
                     <table class="table table-striped table-hover ">
                         <thead class="sticky-top thead-dark">
                             <tr>
@@ -518,7 +518,7 @@ include 'myheader.php';
                     </table>
                 </div>
 
-                <div class="d-flex flex-column gap-1 border border-secondary">
+                <div class="d-flex flex-column gap-1">
                     <p style="font-size:17px;">
                         3. Proceed to confirmation page.
                     </p>
