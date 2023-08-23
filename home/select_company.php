@@ -491,11 +491,11 @@ include 'myheader.php';
                     <p style="font-size:17px;">
                         2. Use the table to create a package of up to five movers.
                     </p>
-                    <span style="font-size:12px;">
-                        Purchase your first report for $10 and receive the second one free of charge. 
-                        Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
-                        and a fantastic deal of $1 for the fifth.
-                    </span>
+                    <ul style="font-size:12px;">
+                        <li>Purchase your first report for $10 and receive the second one free of charge.</li>
+                        <li>Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                        and a fantastic deal of $1 for the fifth.</li>
+                    </ul>
                 </div>
 
                 <div class="mover_table border border-secondary">
@@ -526,7 +526,7 @@ include 'myheader.php';
                     <span Class="text-center text-danger"></span>
                     <span style="color:red;font-size:12px;" id="not_valid"></span>
 
-                    <a href="payment_app.php" id="proceed" class="btn btn-warning" style="align-self: auto;" onclick="proceed();">
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning" style="width: 36px;" onclick="proceed();">
                         Proceed
                     </a>
                 </div>
