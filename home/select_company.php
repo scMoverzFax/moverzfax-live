@@ -438,7 +438,7 @@ include 'myheader.php';
                 <form action="../model/select_operation.php" name="usdot" method="post">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
-                        <div class="inner-form border border-primary">
+                        <div class="inner-form text-center border border-primary">
 
                             <div class="input-field first-wrap">
                                 <div class="svg-wrapper">
