@@ -28,12 +28,6 @@ include 'myheader.php';
         padding: 50px;
     }
 
-    .bg-form {
-        margin: 0;
-        /* width: 1100px; */
-        background-color: white;
-    }
-
     .i-width {
         width: 100%;
     }
@@ -224,119 +218,118 @@ include 'myheader.php';
 <?php $status = isset($_GET["status"]) ? $_GET["status"] : NULL; ?>
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
-        <!-- <div class="bg-form form-group"> -->
-        <div>
-                <!-- <div class="border border-secondary"> -->
+        
+        <div class="d-flex flex-column gap-2">
                     
-                    <div class="border border-warning">
-                        <?php if (!defined('LOGIN')) { ?>
-                            <h2 class="text-center">Guest Cart</h2>
-                            <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
+            <!-- Page Title and Instructions -->
+            <div class="border border-warning">
+                <?php if (!defined('LOGIN')) { ?>
+                    <h2 class="text-center">Guest Cart</h2>
+                    <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
 
-                            <p class="text-md-center" style="font-size:17px;">
-                                Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
-                                The mover's information will appear in the table beneath the search box. Simply select the movers you 
-                                wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
-                            </p>
-                        <?php } else { ?>
-                            <h2 class="text-center">Cart</h2>
-                            <p class="text-md-center" style="font-size:17px;">
-                                Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
-                                The mover's information will appear in the table beneath the search box. Simply select the movers you 
-                                wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
-                            </p>
-                        <?php } ?>
-                    </div>
-                        
+                    <p class="text-md-center" style="font-size:17px;">
+                        Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                        The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                        wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
+                    </p>
+                <?php } else { ?>
+                    <h2 class="text-center">Cart</h2>
+                    <p class="text-md-center" style="font-size:17px;">
+                        Utilize the search box below to explore our comprehensive database of movers for the reports you desire. 
+                        The mover's information will appear in the table beneath the search box. Simply select the movers you 
+                        wish to obtain reports for using the checkboxes, and then click "Proceed To Pay" to view pricing and confirm your order.
+                    </p>
+                <?php } ?>
+            </div>
+                
+            <!-- Search USDOT and Result Message -->
+            <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary">
+                <!-- <div class="row border border-primary"> -->
+                <div class="border border-primary">
 
-                    <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary">
-                        <!-- <div class="row border border-primary"> -->
-                        <div class="border border-primary">
+                    <div class="contain-search">
 
-                            <div class="contain-search">
+                        <div class="contain-input">
 
-                                <div class="contain-input">
+                            <span>Add A Mover:</span>
+                            <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
+                            <input name="function" type="hidden" value="search">
 
-                                    <span>Add A Mover:</span>
-                                    <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
-                                    <input name="function" type="hidden" value="search">
+                            <input type="submit" class="btn btn-success btn-sm" value="Go">
 
-                                    <input type="submit" class="btn btn-success btn-sm" value="Go">
+                        </div>
 
-                                </div>
+                        <div class="contain-result">
 
-                                <div class="contain-result">
-
-                                    <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-
-                                    <div class="d-flex">
-                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
-                                        <span for="" id="cart_label2">
-                                            <?php 
-                                                if ($status == "as") {
-                                                    echo "was added successfully.";
-                                                } elseif ($status == "nr") {
-                                                    echo "is not registered with MoverzFax.";
-                                                } elseif ($status == "ae") {
-                                                    echo "already exist.";
-                                                } elseif ($status == "rf") {
-                                                    echo "Request Failed.";
-                                                } else {
-                                                    echo " "; //edge case
-                                                }
-                                            ?>
-                                        </span>
-                                    </div>
-
-                                </div>
-
+                            <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
-                        </div>
-                    </form>
 
+                            <div class="d-flex">
+                                <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                                <span for="" id="cart_label2">
+                                    <?php 
+                                        if ($status == "as") {
+                                            echo "was added successfully.";
+                                        } elseif ($status == "nr") {
+                                            echo "is not registered with MoverzFax.";
+                                        } elseif ($status == "ae") {
+                                            echo "already exist.";
+                                        } elseif ($status == "rf") {
+                                            echo "Request Failed.";
+                                        } else {
+                                            echo " "; //edge case
+                                        }
+                                    ?>
+                                </span>
+                            </div>
 
-                    <div id="results-table" class="border border-secondary">
-                        <span Class="text-center text-danger"></span>
-                        <div class="text-center">
-                            <span style="color:red;font-size:17px;" id="not_valid"></span>
                         </div>
-                        <div class="col-md-12 mover_table mb-5">
-                            <table class="table table-striped table-hover ">
-                                <thead class="sticky-top thead-dark">
-                                    <tr>
-                                        <th scope="col">Add</th>
-                                        <th scope="col">Company Name </th>
-                                        <th scope="col">USDOT</th>
-                                        <th scope="col" class="d-none d-md-table-cell">Company URL</th>
-                                        <th scope="col" class="d-none d-md-table-cell">Company State</th>
-                                        <th scope="col" class="d-none d-md-table-cell">Company City</th>
-                                        <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
-                                        <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
-                                        <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
-                                        <th scope="col">Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table_cart"></tbody>
-                            </table>
-                        </div>
+
                     </div>
-                        
-                        <div class="text-center text-danger border border-secondary">
-                            <span style="font-size:15px;">
-                                Purchase your first report for $10 and receive the second one free of charge. 
-                                Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
-                                and a fantastic deal of $1 for the fifth.
-                            </span>
-                        </div>
+                </div>
+            </form>
 
-                        <div class="text-center border border-secondary" id="results-table">
-                            <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed To Pay</a>
-                        </div>
+            <!-- Table of Movers Information, Price Information, and Proceed Button-->
+            <div id="results-table" class="border border-secondary">
+                <span Class="text-center text-danger"></span>
+                <div class="text-center">
+                    <span style="color:red;font-size:17px;" id="not_valid"></span>
+                </div>
+                <div class="col-md-12 mover_table mb-5">
+                    <table class="table table-striped table-hover ">
+                        <thead class="sticky-top thead-dark">
+                            <tr>
+                                <th scope="col">Add</th>
+                                <th scope="col">Company Name </th>
+                                <th scope="col">USDOT</th>
+                                <th scope="col" class="d-none d-md-table-cell">Company URL</th>
+                                <th scope="col" class="d-none d-md-table-cell">Company State</th>
+                                <th scope="col" class="d-none d-md-table-cell">Company City</th>
+                                <th scope="col" class="d-none d-md-table-cell">Zip Code</th>
+                                <th scope="col" class="d-none d-md-table-cell">Phone Number</th>
+                                <th scope="col" class="d-none d-md-table-cell">Contact Person</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_cart"></tbody>
+                    </table>
+                </div>
+                
+                <div class="text-center text-danger border border-secondary">
+                    <span style="font-size:15px;">
+                        Purchase your first report for $10 and receive the second one free of charge. 
+                        Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                        and a fantastic deal of $1 for the fifth.
+                    </span>
+                </div>
 
-                <!-- </div> -->
-            <!-- </div> -->
+                <div class="text-center border border-secondary" id="results-table">
+                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>
