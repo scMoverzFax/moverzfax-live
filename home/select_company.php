@@ -417,7 +417,7 @@ include 'myheader.php';
         <div class="d-flex flex-column gap-2">
                     
             <!-- Page Title and Instructions -->
-            <div class="border border-warning">
+            <div>
                 <h2 class="text-center">MoverzFax Reputation Data Reports</h2>
                 <?php if (!defined('LOGIN')) { ?>
                     <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
@@ -429,11 +429,11 @@ include 'myheader.php';
             </p>
 
             <!-- Search USDOT and Result Message -->
-            <div class="b-search border border-secondary">
-                <form action="../model/select_operation.php" name="usdot" method="post" class="border border-warning">
+            <div class="b-search">
+                <form action="../model/select_operation.php" name="usdot" method="post">
 
                         <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
-                        <div class="inner-form text-center border border-primary">
+                        <div class="inner-form text-center">
 
                             <div class="input-field first-wrap">
                                 <div class="svg-wrapper">
