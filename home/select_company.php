@@ -224,7 +224,7 @@ include 'myheader.php';
     @media screen and (max-width: 992px) {
 
         .b-search form .inner-form .input-field {
-        height: 50px;
+            height: 50px;
         }
         .b-search form .inner-form .input-field input.placeholder {
             color: #222;
@@ -321,10 +321,9 @@ include 'myheader.php';
             padding: 10px;
         }
         .b-search .inner-form{
-        width: 90vw;
+            width: 80vw;
         }
-        .b-search
-        input, button{
+        .b-search input, button{
             letter-spacing: 0px;
         }
     }
