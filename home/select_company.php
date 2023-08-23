@@ -414,17 +414,17 @@ include 'myheader.php';
 <div class="b-container">
     <div class="container in-container slide-in-bottom">
 
-        <div class="d-flex flex-column gap-5 border border-primary">
+        <div class="d-flex flex-column gap-5 p-3 border border-primary">
                     
             <!-- Page Title and Instructions -->
-            <div>
+            <div class="border border-secondary">
                 <h2 class="text-center">MoverzFax Reputation Data Reports</h2>
                 <?php if (!defined('LOGIN')) { ?>
                     <p class="text-center">If you are already a Moverzfax member, please <a href="signin.php">Login</a>.</p>
                 <?php } ?>
             </div>
 
-            <div>
+            <div class="border border-secondary">
                 <p style="font-size:17px;">
                     1. Search a mover by their USDOT.
                 </p>
@@ -453,7 +453,6 @@ include 'myheader.php';
 
                     </form>
                 </div>
-            </div>
 
                 <!-- Result of Search Message -->
                 <div class="contain-result">
@@ -482,6 +481,8 @@ include 'myheader.php';
                     </div>
 
                 </div>
+
+            </div>
 
             <!-- Display only when there is something in the table -->
             <div id="results-table" class="d-flex flex-column gap-5 border border-secondary">
