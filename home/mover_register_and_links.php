@@ -201,8 +201,8 @@ if(isset($_REQUEST["usdot-check"])){
 	
 			//sets table values to variables
 			while ($rows = mysqli_fetch_assoc($result)) {
-				$checkSuccessMsg = "Your company is already in our database! Please review and update your information. 
-				By registering, you'll get the opportunity to connect with the vast market of 15 million customers in this industry. 
+				$checkSuccessMsg = "We found your company information, but the process is not yet complete. Please review and update your status. 
+				Upon completion, you'll get the opportunity to connect with the vast market of 15 million customers in this industry. 
 				You'll have control over the information in your reports and significantly improve your business grade. Let's work together to drive your profits up!";
 				$checkMsg = '';
 				$usdot = $rows['usdot'];
@@ -248,7 +248,7 @@ if(isset($_REQUEST["usdot-check"])){
 				//$movingguardian_link = $rows['movingguardian_link'];
 			}
 		} else {
-			$checkMsg = "Your USDOT was not found in our database. Please fill out the form manually so we can add you to our records!";
+			$checkMsg = "Your USDOT registration could not be validated by our database. Kindly proceed to the form below to update your current status.";
 			$checkSuccessMsg = '';
 	
 			//insert into tracking table
@@ -285,13 +285,13 @@ if(isset($_REQUEST["usdot-check"])){
 						<h1 class="text-center"><i class="fas fa-search me-2"></i>Validate Your USDOT Registration</h1>
 
 						<h5 class="text-center">
-							Use the search box to check for your USDOT number. If you do not appear on the nationwide database, please continue to the form below to update your standing. 
+							Utilize the search box below to verify your USDOT license information within our nationwide Department of Transportation database. 
 						</h5>
 						<h5 class="text-danger text-center"><?= $msg ?><?= $cmsg ?></h5>
 
 						<form method="get" action="mover_register_and_links.php">
 							<input type="text" class="form-control" name="usdot-check" value="" placeholder="Check My #USDOT" required><br>
-							<button type="submit" class="btn button-mf me-5">Check Database</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
+							<button type="submit" class="btn button-mf me-5">Validate</button><h5 class="text-danger text-center"><?= $checkMsg ?></h5><h5 class="text-success text-center"><?= $checkSuccessMsg ?></h5>
 						</form>
 						<br>
 					</div>
@@ -300,7 +300,7 @@ if(isset($_REQUEST["usdot-check"])){
 						<h1 class="text-center"><i class="fas fa-truck me-2"></i>Mover Registration</h1>
 
 						<h5 class="text-center">
-							If we have your information, the majority of the form will be pre-filled for your convenience. Kindly review and update any necessary details to finalize the process.
+							Kindly review and update all necessary details to finalize the process of updating your registration standing.
 						</h5>
 						<br>
 					</div>
