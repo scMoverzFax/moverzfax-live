@@ -1,5 +1,6 @@
 <?php
 include 'myheader.php';
+include '../css/index.css';
 
 ?>
 <title>USDOT Search</title>
