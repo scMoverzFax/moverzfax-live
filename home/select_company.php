@@ -248,7 +248,7 @@ include 'myheader.php';
                     </div>
                         
 
-                    <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary" style="padding-top:15px;">
+                    <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary">
                         <div class="row border border-primary">
 
                             <div class="contain-search border border-secondary">
