@@ -442,23 +442,8 @@ include 'myheader.php';
             <!-- Search USDOT and Result Message -->
             <div class="b-search"> 
             <form action="../model/select_operation.php" name="usdot" method="post" class="border border-secondary">
-                
-                <!-- <div class="border border-primary"> -->
 
-                    <!-- <div class="contain-search">
-
-                        <div class="contain-input">
-
-                            <span>Add A Mover:</span>
-                            <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
-                            <input name="function" type="hidden" value="search">
-
-                            <input type="submit" class="btn btn-success btn-sm" value="Go">
-
-                        </div>
-
-                    </div> -->
-                    <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4">
+                    <!-- <input type="hidden" name="_token" value="SD49uC9YMu0Jcm972BpNLVnuT4gcNjI0pZ3HQBk4"> -->
                     <div class="inner-form">
                         <div class="input-field first-wrap">
                             <div class="svg-wrapper">
