@@ -428,7 +428,7 @@ include 'myheader.php';
                 1. Search a mover by their USDOT.
             </p>
 
-            <!-- Search USDOT and Result Message -->
+            <!-- Search USDOT -->
             <div class="b-search mb-5">
                 <form action="../model/select_operation.php" name="usdot" method="post">
 
@@ -453,6 +453,15 @@ include 'myheader.php';
 
                 </form>
             </div>
+
+            <p style="font-size:17px;">
+                2. Use the table to create a package of up to five movers.
+            </p>
+            <span style="font-size:12px;">
+                Purchase your first report for $10 and receive the second one free of charge. 
+                Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
+                and a fantastic deal of $1 for the fifth.
+            </span>
 
             <!-- Result of Search Message -->
             <div class="contain-result">
@@ -510,19 +519,14 @@ include 'myheader.php';
                 <div class="text-center">
                     <span style="color:red;font-size:17px;" id="not_valid"></span>
                 </div>
-                
-                <div class="border border-secondary">
-                    <span style="font-size:15px;">
-                        Purchase your first report for $10 and receive the second one free of charge. 
-                        Subsequent reports are priced as follows: $3 for the third, $2 for the fourth, 
-                        and a fantastic deal of $1 for the fifth.
-                    </span>
-                </div>
 
-                <div class="border border-secondary" id="results-table">
-                    <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
-                </div>
+            </div>
 
+            <p style="font-size:17px;">
+                3. Proceed to confirmation page.
+            </p>
+            <div class="border border-secondary" id="results-table">
+                <a href="payment_app.php" id="proceed" class="btn btn-warning" onclick="proceed();">Proceed</a>
             </div>
 
         </div>
