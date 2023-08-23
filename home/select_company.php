@@ -256,9 +256,9 @@ include 'myheader.php';
                         <!-- <div class="row border border-primary"> -->
                         <div class="border border-primary">
 
-                            <div class="contain-search border border-secondary">
+                            <div class="contain-search">
 
-                                <div class="contain-input border border-secondary">
+                                <div class="contain-input">
 
                                     <span>Add A Mover:</span>
                                     <input type="text" name="usdot" id="usdot-search" class="form-control form-control-sm" placeholder="Enter #USDOT Number" required>
@@ -268,7 +268,7 @@ include 'myheader.php';
 
                                 </div>
 
-                                <div class="contain-result border border-secondary">
+                                <div class="contain-result">
 
                                     <div class="spinner-border text-success" id="cart_spinner" role="status" style="display:none;">
                                         <span class="visually-hidden">Loading...</span>
@@ -313,7 +313,7 @@ include 'myheader.php';
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
                                     <div class="d-flex">
-                                        <span class="me-2" id="cart_label1"><?php echo $usdot; ?></span>
+                                        <span class="me-2" id="cart_label1"><?php //echo $usdot; ?></span>
                                         <span for="" id="cart_label2">
                                             <?php 
                                                 // if ($status == "as") {
