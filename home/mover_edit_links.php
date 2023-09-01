@@ -282,6 +282,8 @@ $transportreviews_link = '';
 				<?php } else if($noflags===true){ ?>
 					<h5 class="text-center">MoverzFax is currently reveiwing your information. Hang tight, there is nothing for you to do on this page now.</h5>
 				<?php } ?>
+				<h5 class="text-center">Important notice: We ask to emphasizes the importance of accuracy when adding links to your profile on Moverzfax. Even if these links don't have live reviews, 
+				including them will improve your overall rating on the top consumer protection portal on the internet, which is ranked number one in its field.</h5>
 				<div style="<?php if($approved==1 || $noflags===true) { echo "display: none;"; } ?>">
 					<h5 class="text-danger text-center">Please review any areas outlined in red, these sections have been flagged by the MoverzFax admin.</h5>
 					<br>
