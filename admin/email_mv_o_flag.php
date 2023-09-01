@@ -31,7 +31,8 @@
         </html>';
         $header = "MIME-Version: 1.0" . "\r\n";
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $header .= "From: project.egift@gmail.com";
+        // $header .= "From: project.egift@gmail.com";
+        $header .= "From: admin@moverzfax.com";
 
         if(mail($to_mail, $subject, $body, $header)){
             echo "Mail Sent";
