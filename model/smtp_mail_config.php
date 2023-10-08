@@ -17,7 +17,7 @@ function sendMailViaMailrelay($to, $subject, $message, $isHTML = true) {
         $mail->SMTPSecure = 'tls';                   // Or 'ssl', based on your Mailrelay configuration
         $mail->Port       = 587;                     // Or 465 for 'ssl'
 
-        $mail->setFrom('admin@moverzfax.com', 'MoverzFax Admin');
+        $mail->setFrom('admin@moverzfax.com');
         $mail->addAddress($to);
 
         $mail->isHTML(true);
