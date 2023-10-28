@@ -10,9 +10,7 @@ function sendRegistrationNotification($usdot) {
     // Use the function to send the email
     $result = sendMailViaMailrelay($to_mail, $subject, $body);
 
-    if ($result) {
-        echo "Mail Sent";
-    } else {
+    if (!$result) {
         echo "Failed";
     }
 }
