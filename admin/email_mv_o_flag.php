@@ -37,9 +37,9 @@
     if ($result) {
         echo "Mail Sent";
     } else {
-        echo "Failed";
-        echo $to_mail;
-        echo $email;
+        echo "Failed to send";
+        // echo $to_mail;
+        // echo $email;
     }
 
     header('Location: ../admin/admin_mv_approval.php');
