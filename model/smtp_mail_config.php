@@ -39,7 +39,7 @@ function sendMailViaMailrelay($to, $subject, $message, $isHTML = true) {
         return true;
     } catch (Exception $e) {
         // Handle the error or log it, you can even return the error message if you want more detail
-        echo $e;
+        // echo $e;
         return false;
     }
 }
