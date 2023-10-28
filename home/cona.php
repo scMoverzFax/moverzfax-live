@@ -10,6 +10,7 @@ if ($response_data->success) {
     // Process the form data here
 
     include '../model/connection.php';
+    require '../model/smtp_mail_config.php';
 
     $name = $_POST["na"];
     $email = $_POST["ea"];
@@ -32,7 +33,8 @@ if ($response_data->success) {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    mail($to, $subject, $message, $headers);
+    // mail($to, $subject, $message, $headers);
+    sendMailViaMailrelay($to, $subject, $message);
 
     $sql = "INSERT INTO contact(name,email,subject,message)
             VALUES ('" . $name . "',

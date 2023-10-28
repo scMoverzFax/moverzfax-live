@@ -1,5 +1,22 @@
 <?php
 
+require 'smtp_mail_config.php';
+
+function sendRegistrationNotification($usdot) {
+    $to_mail = "admin@moverzfax.com";
+    $subject = "A New Mover Registered with MoverzFax!";
+    $body = "A mover with the USDOT: $usdot, just registered with MoverzFax!";
+
+    // Use the function to send the email
+    $result = sendMailViaMailrelay($to_mail, $subject, $body);
+
+    if ($result) {
+        echo "Mail Sent";
+    } else {
+        echo "Failed";
+    }
+}
+
 $recaptcha_secret = "6LcoH5ckAAAAAMisl9y8YoyVgZr8L_duQJ5qypJo";
 $token = $_POST['token'];
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$token}");
@@ -144,6 +161,9 @@ if ($response_data->success) {
         // echo $sql; die();
         if (mysqli_query($con, $sql1)) {
             // move_uploaded_file($logo_tmp_name, "upload/logo/".$logo_name);
+            
+            //notify admin that a mover registered
+            sendRegistrationNotification($usdot);
             header("Location: ../home/signin.php");
         } else {
             header("Location: ../home/mover_register_and_links.php");

@@ -1,4 +1,7 @@
-<?php include_once 'myheader.php'; ?>
+<?php 
+include_once 'myheader.php';
+require '../model/smtp_mail_config.php';
+?>
 
 <title>Mover Registration</title>
 <head>
@@ -145,6 +148,21 @@ function linkInput($siteName, $siteLink, $name, $value, $stars, $starsName){
 	<?php
 }
 
+function sendSearchNotification($usdot) {
+    $to_mail = "admin@moverzfax.com";
+    $subject = "USDOT Search Notification: $usdot";
+    $body = "Someone searched for a USDOT number from the Mover Registration page. USDOT: $usdot";
+
+    // Use the function to send the email
+    $result = sendMailViaMailrelay($to_mail, $subject, $body);
+
+    if ($result) {
+        echo "Mail Sent";
+    } else {
+        echo "Failed";
+    }
+}
+
 //session_start();
 //$this_state_link = "https://www.llcuniversity.com/50-secretary-of-state-sos-business-entity-search/";
 $this_state_link = (isset($_SESSION["state_link"])) ? $_SESSION["state_link"] : "https://arc-sos.state.al.us/CGI/CORPNAME.MBR/INPUT";
@@ -177,6 +195,9 @@ $transportreviews_link = '';
 if(isset($_REQUEST["usdot-check"])){
 	require_once '../model/connection.php';
     $search = $_REQUEST["usdot-check"];
+
+	//notify admin of which usdot was searched
+	sendSearchNotification($search);
 
 	//check if mover is already registered
 	$sqlExist = "SELECT  * FROM mover_register WHERE usdot = '" . $search . "';";

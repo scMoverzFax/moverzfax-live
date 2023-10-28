@@ -12,6 +12,7 @@ if(isset($_SESSION["email"])){
 }
 
 include 'connection.php';
+require 'smtp_mail_config.php';
 $sql = "SELECT * FROM payment WHERE user_id='".$user_id."'";
 $result = $con->query($sql);
 $res = mysqli_fetch_array($result);
@@ -289,7 +290,10 @@ $headers .= "From: project.egift@gmail.com \r\n"; // Sender Email
 $headers .= "Content-type:text/html;charset=UTF-8"; // Defining Content-Type
 // $headers .= "boundary = md5("random") \r\n";
 
-if(mail($to_mail, $subject, $body, $headers)){
+$result = sendMailViaMailrelay($to_mail, $subject, $body);
+if($result){
+    
+// if(mail($to_mail, $subject, $body, $headers)){
     echo "Mail Sent";
 }
 else{

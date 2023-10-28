@@ -1,4 +1,5 @@
 <?php 
+    require '../../model/smtp_mail_config.php';
     session_start();
     // include 'demo4.php';
     // include 'admin_payment_app.php';
@@ -128,7 +129,12 @@
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $header .= "From: project.egift@gmail.com";
 
-        if(mail($to_mail, $subject, $body, $header) && mail($tr_email_address, $subject, $body, $header)){
+        // new mail function
+        $result = sendMailViaMailrelay($to_mail, $subject, $body);
+        $result2 = sendMailViaMailrelay($tr_email_address, $subject, $body);
+        if ($result && $result2) {
+
+        // if(mail($to_mail, $subject, $body, $header) && mail($tr_email_address, $subject, $body, $header)){
             // echo "Mail Sent";
             header('Location: ../confirmation.php');
         }

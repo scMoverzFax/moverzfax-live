@@ -19,6 +19,7 @@
     // echo "<pre>"; print_r($obj); die();
 
     include 'connection.php';
+    require 'smtp_mail_config.php';
 
     $tr_id = $obj['id'];
     $tr_status =$obj['status'];
@@ -108,7 +109,10 @@
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $header .= "From: project.egift@gmail.com";
 
-        if(mail($to_mail, $subject, $body, $header)){
+        $result = sendMailViaMailrelay($to_mail, $subject, $body);
+        if($result){
+            
+        // if(mail($to_mail, $subject, $body, $headers)){
             echo "Mail Sent";
         }
         else{
