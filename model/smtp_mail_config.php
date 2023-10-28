@@ -23,7 +23,8 @@ function sendMailViaMailrelay($to, $subject, $message, $isHTML = true) {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'moverzfax@gmail.com';   // Replace with your Gmail email
-        $mail->Password   = 'consumerprotect2023@#';         // Replace with your Gmail password
+        // $mail->Password   = 'consumerprotect2023@#';         // Replace with your Gmail password
+        $mail->Password   = 'nsmrzgdnoetkxneb';         // App Password    
         $mail->SMTPSecure = 'tls';                   // Use 'ssl' if you choose Port 465
         $mail->Port       = 587;                     // Use 465 for 'ssl'
 
